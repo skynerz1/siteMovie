@@ -40,6 +40,7 @@ function getDownloadLink($links) {
 function getSeriesEpisodes($seriesId) {
     $url = "https://app.arabypros.com/api/season/by/serie/{$seriesId}/4F5A9C3D9A86FA54EACEDDD635185/d506abfd-9fe2-4b71-b979-feff21bcad13/";
     $headers = ['User-Agent: okhttp/4.8.0', 'Accept-Encoding: gzip'];
+    
 
     $ch = curl_init();
     curl_setopt_array($ch, [
@@ -86,243 +87,70 @@ if ($episodeId) {
 }
 
 $initialServer = $episodeLinks[0]['url'] ?? '';
+
+function isServerAlive($url) {
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_NOBODY, true);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+    return ($httpCode >= 200 && $httpCode < 400);
+}
+
+// فلترة الروابط الغير شغالة
+$episodeLinks = array_filter($episodeLinks, function($link) {
+    return !empty($link['url']) && isServerAlive($link['url']);
+});
+
+// إعادة تعيين أول سيرفر (بعد الفلترة)
+$initialServer = $episodeLinks ? $episodeLinks[array_key_first($episodeLinks)]['url'] : '';
+
+
 ?>
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- مهم للجوال -->
     <title>مشاهدة - Arab Stream</title>
     <link rel="icon" type="image/png" href="a.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
-            background-color: #000;
-            color: #fff;
-            font-family: 'Segoe UI', sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 1100px;
-            width: 100%;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .back-button {
-            background-color: #e50914;
-            color: #fff;
-            padding: 10px 18px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            margin-bottom: 20px;
-        }
-
-        .back-button:hover {
-            background-color: #ff1a25;
-        }
-
-        .player-box {
-            background-color: #1a1a1a;
-            border-radius: 10px;
-            padding: 20px;
-        }
-
-        .player-iframe {
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            border: none;
-            border-radius: 8px;
-            background-color: #000;
-        }
-
-        .button-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 15px;
-            justify-content: center;
-        }
-
-        .action-button {
-            padding: 10px 15px;
-            border-radius: 5px;
-            border: none;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .toggle-button {
-            background-color: #e50914;
-            color: #fff;
-        }
-
-        .toggle-button:hover {
-            background-color: #ff1a25;
-        }
-
-        .report-button {
-            background-color: #444;
-            color: #fff;
-        }
-
-        .report-button:hover {
-            background-color: #666;
-        }
-
-        .fullscreen-button {
-            background-color: #007bff;
-            color: #fff;
-        }
-
-        .fullscreen-button:hover {
-            background-color: #0056b3;
-        }
-
-        .server-selection {
-            background: #121212;
-            border: 1px solid #e50914;
-            border-radius: 12px;
-            padding: 20px;
-            margin-top: 25px;
-        }
-
-        .server-selection h3 {
-            color: #e50914;
-            margin-bottom: 20px;
-            font-size: 18px;
-            text-align: center;
-        }
-
-        .server-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-        }
-
-        .server-button {
-            background: #2a2a2a;
-            border: none;
-            padding: 15px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            cursor: pointer;
-            transition: background 0.3s;
-            color: #fff;
-        }
-
-        .server-button:hover {
-            background: #3a3a3a;
-        }
-
-        .server-icon i {
-            color: #e50914;
-            font-size: 24px;
-        }
-
-        .server-info {
-            flex-grow: 1;
-            padding: 0 12px;
-            text-align: right;
-        }
-
-        .server-name {
-            font-weight: bold;
-            display: block;
-        }
-
-        .server-quality {
-            font-size: 12px;
-            color: #ccc;
-        }
-
-        .server-status .status-indicator {
-            width: 10px;
-            height: 10px;
-            background: #00e676;
-            border-radius: 50%;
-        }
-
-        .download-button {
-            display: block;
-            margin: 20px auto;
-            padding: 12px 20px;
-            background-color: #4CAF50;
-            color: #fff;
-            border: none;
-            border-radius: 6px;
-            font-weight: bold;
-            text-align: center;
-            text-decoration: none;
-            max-width: 300px;
-        }
-
-        .download-button:hover {
-            background-color: #45a049;
-        }
-
-        .episode-selector {
-            margin-top: 40px;
-            background: #111;
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        .episode-selector h3 {
-            color: #e50914;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        .episode-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-        }
-
-        .episode-link {
-            background: #333;
-            padding: 10px 15px;
-            border-radius: 8px;
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-
-        .episode-link:hover {
-            background: #e50914;
-            color: #fff;
-        }
-
-        /* استجابة الشاشات الصغيرة */
-        @media (max-width: 600px) {
-            .button-row {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .server-button {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .server-info {
-                padding: 5px 0;
-                text-align: center;
-            }
-        }
+        body { background-color: #000; color: #fff; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; }
+        .container { max-width: 1100px; margin: 30px auto; padding: 20px; }
+        .back-button { background-color: #e50914; color: #fff; padding: 10px 18px; border-radius: 5px; text-decoration: none; font-weight: bold; display: inline-block; margin-bottom: 20px; }
+        .back-button:hover { background-color: #ff1a25; }
+        .player-box { background-color: #1a1a1a; border-radius: 10px; padding: 20px; }
+        .player-iframe { width: 100%; aspect-ratio: 16/9; border: none; border-radius: 8px; background-color: #000; }
+        .button-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+        .action-button { padding: 10px 15px; border-radius: 5px; border: none; font-weight: bold; cursor: pointer; }
+        .toggle-button { background-color: #e50914; color: #fff; }
+        .toggle-button:hover { background-color: #ff1a25; }
+        .report-button { background-color: #444; color: #fff; }
+        .report-button:hover { background-color: #666; }
+        .fullscreen-button { background-color: #007bff; color: #fff; }
+        .fullscreen-button:hover { background-color: #0056b3; }
+        .server-selection { background: #121212; border: 1px solid #e50914; border-radius: 12px; padding: 20px; margin-top: 25px; }
+        .server-selection h3 { color: #e50914; margin-bottom: 20px; font-size: 18px; }
+        .server-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+        .server-button { background: #2a2a2a; border: none; padding: 15px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; transition: background 0.3s; color: #fff; }
+        .server-button:hover { background: #3a3a3a; }
+        .server-icon i { color: #e50914; font-size: 28px; }
+        .server-info { flex-grow: 1; padding: 0 12px; text-align: right; }
+        .server-name { font-weight: bold; display: block; }
+        .server-quality { font-size: 12px; color: #ccc; }
+        .server-status .status-indicator { width: 10px; height: 10px; background: #00e676; border-radius: 50%; }
+        .download-button { display: block; margin: 20px auto; padding: 12px 20px; background-color: #4CAF50; color: #fff; border: none; border-radius: 6px; font-weight: bold; text-align: center; text-decoration: none; }
+        .download-button:hover { background-color: #45a049; }
+        .episode-selector { margin-top: 40px; background: #111; padding: 20px; border-radius: 10px; }
+        .episode-selector h3 { color: #e50914; margin-bottom: 15px; }
+        .episode-list { display: flex; flex-wrap: wrap; gap: 10px; }
+        .episode-link { background: #333; padding: 10px 15px; border-radius: 8px; color: #fff; text-decoration: none; font-weight: bold; transition: background 0.3s; }
+        .episode-link:hover { background: #e50914; color: #fff; }
     </style>
 </head>
-
 <body>
     <div class="container">
         <a href="<?= htmlspecialchars($backLink) ?>" class="back-button">رجوع</a>
