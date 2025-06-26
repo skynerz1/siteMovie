@@ -118,37 +118,172 @@ $initialServer = $episodeLinks ? $episodeLinks[array_key_first($episodeLinks)]['
     <title>مشاهدة - Arab Stream</title>
     <link rel="icon" type="image/png" href="a.png">
     <style>
-        body { background-color: #000; color: #fff; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; }
-        .container { max-width: 1100px; margin: 30px auto; padding: 20px; }
-        .back-button { background-color: #e50914; color: #fff; padding: 10px 18px; border-radius: 5px; text-decoration: none; font-weight: bold; display: inline-block; margin-bottom: 20px; }
-        .back-button:hover { background-color: #ff1a25; }
-        .player-box { background-color: #1a1a1a; border-radius: 10px; padding: 20px; }
-        .player-iframe { width: 100%; aspect-ratio: 16/9; border: none; border-radius: 8px; background-color: #000; }
-        .button-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
-        .action-button { padding: 10px 15px; border-radius: 5px; border: none; font-weight: bold; cursor: pointer; }
-        .toggle-button { background-color: #e50914; color: #fff; }
-        .toggle-button:hover { background-color: #ff1a25; }
-        .report-button { background-color: #444; color: #fff; }
-        .report-button:hover { background-color: #666; }
-        .fullscreen-button { background-color: #007bff; color: #fff; }
-        .fullscreen-button:hover { background-color: #0056b3; }
-        .server-selection { background: #121212; border: 1px solid #e50914; border-radius: 12px; padding: 20px; margin-top: 25px; }
-        .server-selection h3 { color: #e50914; margin-bottom: 20px; font-size: 18px; }
-        .server-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
-        .server-button { background: #2a2a2a; border: none; padding: 15px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; transition: background 0.3s; color: #fff; }
-        .server-button:hover { background: #3a3a3a; }
-        .server-icon i { color: #e50914; font-size: 28px; }
-        .server-info { flex-grow: 1; padding: 0 12px; text-align: right; }
-        .server-name { font-weight: bold; display: block; }
-        .server-quality { font-size: 12px; color: #ccc; }
-        .server-status .status-indicator { width: 10px; height: 10px; background: #00e676; border-radius: 50%; }
-        .download-button { display: block; margin: 20px auto; padding: 12px 20px; background-color: #4CAF50; color: #fff; border: none; border-radius: 6px; font-weight: bold; text-align: center; text-decoration: none; }
-        .download-button:hover { background-color: #45a049; }
-        .episode-selector { margin-top: 40px; background: #111; padding: 20px; border-radius: 10px; }
-        .episode-selector h3 { color: #e50914; margin-bottom: 15px; }
-        .episode-list { display: flex; flex-wrap: wrap; gap: 10px; }
-        .episode-link { background: #333; padding: 10px 15px; border-radius: 8px; color: #fff; text-decoration: none; font-weight: bold; transition: background 0.3s; }
-        .episode-link:hover { background: #e50914; color: #fff; }
+      body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 15px;
+}
+.back-button {
+    background-color: #e50914;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+.back-button:hover { background-color: #ff1a25; }
+
+.player-box {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    padding: 15px;
+}
+.player-iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border: none;
+    border-radius: 8px;
+    background-color: #000;
+}
+
+.button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+.action-button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    flex: 1 1 30%;
+    min-width: 120px;
+}
+.toggle-button { background-color: #e50914; color: #fff; }
+.toggle-button:hover { background-color: #ff1a25; }
+.report-button { background-color: #444; color: #fff; }
+.report-button:hover { background-color: #666; }
+.fullscreen-button { background-color: #007bff; color: #fff; }
+.fullscreen-button:hover { background-color: #0056b3; }
+
+.server-selection {
+    background: #121212;
+    border: 1px solid #e50914;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 25px;
+}
+.server-selection h3 {
+    color: #e50914;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+.server-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+}
+.server-button {
+    background: #2a2a2a;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: background 0.3s;
+    color: #fff;
+}
+.server-button:hover { background: #3a3a3a; }
+.server-icon i { color: #e50914; font-size: 22px; }
+.server-info {
+    flex-grow: 1;
+    padding: 0 12px;
+    text-align: right;
+}
+.server-name { font-weight: bold; display: block; }
+.server-quality { font-size: 12px; color: #ccc; }
+.status-indicator {
+    width: 10px;
+    height: 10px;
+    background: #00e676;
+    border-radius: 50%;
+}
+.download-button {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+}
+.download-button:hover { background-color: #45a049; }
+
+.episode-selector {
+    margin-top: 40px;
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+}
+.episode-selector h3 {
+    color: #e50914;
+    margin-bottom: 15px;
+}
+.episode-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.episode-link {
+    background: #333;
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+    flex: 1 1 100px;
+    text-align: center;
+}
+.episode-link:hover {
+    background: #e50914;
+    color: #fff;
+}
+
+/* استجابة للجوال */
+@media (max-width: 768px) {
+    .button-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .action-button {
+        width: 100%;
+        font-size: 14px;
+    }
+    .server-grid {
+        grid-template-columns: 1fr;
+    }
+    .episode-link {
+        flex: 1 1 45%;
+    }
+}
+
     </style>
 </head>
 <body>
