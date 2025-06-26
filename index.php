@@ -323,22 +323,130 @@ if (isset($_GET['search'])) {
         .footer p {
             margin: 5px 0;
         }
+        .slider-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    scroll-behavior: smooth;
+    padding-bottom: 20px;
+}
+.slider-container::-webkit-scrollbar {
+    height: 8px;
+}
+.slider-container::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 4px;
+}
+.movie-card {
+    flex: 0 0 auto;
+    width: 200px;
+    background: #111;
+    border-radius: 12px;
+    overflow: hidden;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+}
+.movie-card:hover {
+    transform: scale(1.05);
+}
+
+    .navbar {
+    background-color: rgba(20, 20, 20, 0.95);
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+nav {
+    display: flex;
+    align-items: center;
+}
+.nav-toggle {
+    display: none;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 12px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+.nav-links li:hover a {
+    color: #e50914;
+    transform: scale(1.05);
+}
+
+/* responsive styles */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+    nav {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        margin-top: 10px;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .nav-links li {
+        width: 100%;
+    }
+    .nav-links li a {
+        width: 100%;
+        padding: 10px 0;
+    }
+}
+
+
     </style>
 </head>
 <body>
-    <header class="navbar">
-        <div class="container">
-            <a href="/" class="logo">Watch Series</a>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="?action=home">Home</a></li>
-                    <li><a href="?action=popular">Popular Series</a></li>
-                    <li><a href="?action=new-releases">New Releases</a></li>
-                    <li><a href="./movie" class="external-link">Movies</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<header class="navbar">
+    <div class="container">
+        <a href="/" class="logo">Watch Series</a>
+        <div class="nav-toggle" onclick="toggleNav()">☰</div>
+        <nav>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="?action=home">Home</a></li>
+                <li><a href="?action=popular">Popular Series</a></li>
+                <li><a href="?action=new-releases">New Releases</a></li>
+                <li><a href="/movie" class="external-link">Movies</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
 
     <main class="main-content">
         <section class="hero">
@@ -350,46 +458,100 @@ if (isset($_GET['search'])) {
             </div>
         </section>
 
-        <section id="movie-section" class="movie-section">
-            <div class="container">
-                <?php if (!empty($error)): ?>
-                    <p class="error-message"><?php echo htmlspecialchars($error); ?></p>
-                <?php elseif (!empty($seriesData) && (isset($seriesData['posters']) || is_array($seriesData))): ?>
-                    <h2><?php 
-                        if (isset($_GET['search'])) echo 'Search Results';
-                        elseif (isset($_GET['action']) && $_GET['action'] === 'popular') echo 'Popular Series';
-                        else echo 'New Releases';
-                    ?></h2>
-                    <?php 
-                    $seriesArray = isset($seriesData['posters']) ? $seriesData['posters'] : $seriesData;
-                    $filteredSeries = filterAsianSeries($seriesArray);
-                    if (empty($filteredSeries)): ?>
-                        <p class="no-results">No series available after filtering.</p>
-                    <?php else: ?>
-                        <div class="movie-grid">
-                            <?php foreach ($filteredSeries as $series): ?>
-                                <div class="movie-card">
-                                    <div class="content-type">Series</div>
-                                    <img src="<?php echo htmlspecialchars($series['image']); ?>" alt="<?php echo htmlspecialchars($series['title']); ?>" class="movie-poster">
-                                    <div class="movie-info">
-                                        <h3 class="movie-title"><?php echo htmlspecialchars($series['title']); ?></h3>
-                                        <p class="movie-year"><?php echo htmlspecialchars($series['year']); ?></p>
-                                    </div>
-                                    <div class="movie-details">
-                                        <p>Year: <?php echo htmlspecialchars($series['year']); ?></p>
-                                        <p>IMDB: <?php echo htmlspecialchars($series['imdb']); ?></p>
-                                        <p>Classification: <?php echo htmlspecialchars($series['classification']); ?></p>
-                                    </div>
-                                    <a href="series.php?id=<?php echo htmlspecialchars($series['id']); ?>" class="btn-watch">View Series</a>
-                                </div>
-                            <?php endforeach; ?>
-                        </div>
-                    <?php endif; ?>
+  <section id="movie-section" class="movie-section">
+    <div class="container">
+        <?php if (!empty($error)): ?>
+            <p class="error-message"><?php echo htmlspecialchars($error); ?></p>
+
+        <?php elseif (isset($_GET['search']) && !empty($seriesData)): ?>
+            <h2 class="section-title">نتائج البحث</h2>
+            <?php 
+                $seriesArray = isset($seriesData['posters']) ? $seriesData['posters'] : $seriesData;
+                $filteredSeries = filterAsianSeries($seriesArray);
+                if (empty($filteredSeries)): ?>
+                    <p class="no-results">لم يتم العثور على نتائج.</p>
                 <?php else: ?>
-                    <p class="no-results">No series available yet. Try searching or browsing categories.</p>
+                    <div class="movie-grid">
+                        <?php foreach ($filteredSeries as $series): ?>
+                            <div class="movie-card">
+                                <div class="content-type">Series</div>
+                                <img src="<?php echo htmlspecialchars($series['image']); ?>" alt="<?php echo htmlspecialchars($series['title']); ?>" class="movie-poster" loading="lazy">
+                                <div class="movie-info">
+                                    <h3 class="movie-title"><?php echo htmlspecialchars($series['title']); ?></h3>
+                                    <p class="movie-year"><?php echo htmlspecialchars($series['year']); ?></p>
+                                </div>
+                                <div class="movie-details">
+                                    <p>Year: <?php echo htmlspecialchars($series['year']); ?></p>
+                                    <p>IMDB: <?php echo htmlspecialchars($series['imdb']); ?></p>
+                                    <p>Classification: <?php echo htmlspecialchars($series['classification']); ?></p>
+                                </div>
+                                <a href="series.php?id=<?php echo htmlspecialchars($series['id']); ?>" class="btn-watch">View Series</a>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
                 <?php endif; ?>
-            </div>
-        </section>
+
+        <?php else: ?>
+            <!-- سلايدر جديد -->
+            <h2 class="section-title">جديد</h2>
+            <?php
+                $newReleases = getNewReleases();
+                $seriesArray = isset($newReleases['posters']) ? $newReleases['posters'] : $newReleases;
+                $filteredSeries = filterAsianSeries($seriesArray);
+                if (!empty($filteredSeries)):
+            ?>
+                <div class="slider-container">
+                    <?php foreach ($filteredSeries as $series): ?>
+                        <div class="movie-card">
+                            <div class="content-type">Series</div>
+                            <img src="<?php echo htmlspecialchars($series['image']); ?>" alt="<?php echo htmlspecialchars($series['title']); ?>" class="movie-poster" loading="lazy">
+                            <div class="movie-info">
+                                <h3 class="movie-title"><?php echo htmlspecialchars($series['title']); ?></h3>
+                                <p class="movie-year"><?php echo htmlspecialchars($series['year']); ?></p>
+                            </div>
+                            <div class="movie-details">
+                                <p>Year: <?php echo htmlspecialchars($series['year']); ?></p>
+                                <p>IMDB: <?php echo htmlspecialchars($series['imdb']); ?></p>
+                                <p>Classification: <?php echo htmlspecialchars($series['classification']); ?></p>
+                            </div>
+                            <a href="series.php?id=<?php echo htmlspecialchars($series['id']); ?>" class="btn-watch">View Series</a>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
+
+            <!-- سلايدر الأكثر شهرة -->
+            <h2 class="section-title">Popular Series</h2>
+            <?php
+                $popularData = fetchSeries('rating', 1);
+                $popularArray = isset($popularData['posters']) ? $popularData['posters'] : $popularData;
+                $filteredPopular = filterAsianSeries($popularArray);
+                if (!empty($filteredPopular)):
+            ?>
+                <div class="slider-container">
+                    <?php foreach ($filteredPopular as $series): ?>
+                        <div class="movie-card">
+                            <div class="content-type">Series</div>
+                            <img src="<?php echo htmlspecialchars($series['image']); ?>" alt="<?php echo htmlspecialchars($series['title']); ?>" class="movie-poster" loading="lazy">
+                            <div class="movie-info">
+                                <h3 class="movie-title"><?php echo htmlspecialchars($series['title']); ?></h3>
+                                <p class="movie-year"><?php echo htmlspecialchars($series['year']); ?></p>
+                            </div>
+                            <div class="movie-details">
+                                <p>Year: <?php echo htmlspecialchars($series['year']); ?></p>
+                                <p>IMDB: <?php echo htmlspecialchars($series['imdb']); ?></p>
+                                <p>Classification: <?php echo htmlspecialchars($series['classification']); ?></p>
+                            </div>
+                            <a href="series.php?id=<?php echo htmlspecialchars($series['id']); ?>" class="btn-watch">View Series</a>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
+        <?php endif; ?>
+    </div>
+</section>
+
+
     </main>
 
     <footer class="footer">
@@ -481,6 +643,11 @@ if (isset($_GET['search'])) {
                     });
             });
         });
+   function toggleNav() {
+        const navLinks = document.getElementById('navLinks');
+        navLinks.classList.toggle('active');
+    }
+        
     </script>
 </body>
 </html>
