@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['toggle_favorite'], $_
 }
 
 function getSeriesDetails($seriesId) {
-    $files = ['search_results.json', 'search_arab.json'];
+    $files = ['search_results_permanent.json', 'search_arab_permanent.json'];
     foreach ($files as $filename) {
         if (file_exists($filename)) {
             $searchResults = json_decode(file_get_contents($filename), true);
