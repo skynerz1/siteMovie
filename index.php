@@ -179,7 +179,7 @@ function filterAsianSeries($seriesArray) {
         }
         foreach ($series['genres'] as $genre) {
             if (
-                $genre['title'] === "مسلسلات آسيوية" ||
+                $genre['title'] === "مسلسلات " ||
                 $genre['title'] === "مسلسلات "
             ) {
                 return false;
