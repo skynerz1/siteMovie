@@ -1,6 +1,32 @@
 <?php
 session_start();
 
+
+function saveToSearchResults($newItems) {
+    $filename = 'search_results.json';
+    $existing = [];
+
+    if (file_exists($filename)) {
+        $json = file_get_contents($filename);
+        $existingData = json_decode($json, true);
+        if (isset($existingData['posters']) && is_array($existingData['posters'])) {
+            $existing = $existingData['posters'];
+        }
+    }
+
+    // تجنب التكرار باستخدام ID
+    $ids = array_column($existing, 'id');
+    foreach ($newItems as $item) {
+        if (!in_array($item['id'], $ids)) {
+            $existing[] = $item;
+            $ids[] = $item['id'];
+        }
+    }
+
+    file_put_contents($filename, json_encode(['posters' => $existing], JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
+}
+
+
 function fetchSeries($type, $page = 1) {
     $baseUrl = "https://app.arabypros.com/api/serie/by/filtres/0/{$type}/{$page}/4F5A9C3D9A86FA54EACEDDD635185/d506abfd-9fe2-4b71-b979-feff21bcad13/";
     
@@ -91,6 +117,26 @@ function getNewReleases() {
     }
     return $data;
 }
+function filterGulfSeries($seriesArray) {
+    return array_filter($seriesArray, function($series) {
+        if (!isset($series['genres']) || !is_array($series['genres'])) {
+            return true;
+        }
+        foreach ($series['genres'] as $genre) {
+            if (
+                $genre['title'] === "مسلسلات آسيوية" ||
+                $genre['title'] === "مسلسلات أجنبية" ||
+                $genre['title'] === "مسلسلات تركية" 
+                
+            ) {
+                return false;
+            }
+        }
+        return true;
+    });
+}
+
+
 
 function filterAsianSeries($seriesArray) {
     return array_filter($seriesArray, function($series) {
@@ -98,13 +144,17 @@ function filterAsianSeries($seriesArray) {
             return true;
         }
         foreach ($series['genres'] as $genre) {
-            if ($genre['title'] === "مسلسلات آسيوية") {
+            if (
+                $genre['title'] === "مسلسلات آسيوية" ||
+                $genre['title'] === "مسلسلات "
+            ) {
                 return false;
             }
         }
         return true;
     });
 }
+
 
 $seriesData = getNewReleases();
 $error = '';
@@ -130,6 +180,8 @@ if (isset($_GET['search'])) {
         $error = $seriesData['error'];
     }
 }
+
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -439,7 +491,7 @@ nav {
         <nav>
             <ul class="nav-links" id="navLinks">
                 <li><a href="?action=home">Home</a></li>
-                <li><a href="?action=popular">Popular Series</a></li>
+                <li><a href="/favorites.php" class="external-link">favorites</a></li>
                 <li><a href="?action=new-releases">New Releases</a></li>
                 <li><a href="/movie" class="external-link">Movies</a></li>
             </ul>
@@ -492,8 +544,9 @@ nav {
                 <?php endif; ?>
 
         <?php else: ?>
+   
             <!-- سلايدر جديد -->
-            <h2 class="section-title">جديد</h2>
+            <h2 class="section-title">New-Series</h2>
             <?php
                 $newReleases = getNewReleases();
                 $seriesArray = isset($newReleases['posters']) ? $newReleases['posters'] : $newReleases;
@@ -519,6 +572,56 @@ nav {
                     <?php endforeach; ?>
                 </div>
             <?php endif; ?>
+    <!-- ✅ سلايدر جديد لمسلسلات "خليجية" بناءً على نفس الفلترة -->
+    <h2 class="section-title">arab Series</h2>
+<?php
+$limit = 15; // كم مسلسل تبي تعرض
+$collected = [];
+
+for ($i = 0; $i < 3; $i++) { // نحاول 3 صفحات فقط كحد أقصى
+    $page = rand(1, 15);
+    $gulfData = fetchSeries('created', $page);
+    $gulfArray = isset($gulfData['posters']) ? $gulfData['posters'] : $gulfData;
+    $filteredGulf = filterGulfSeries($gulfArray);
+
+    // ندمج اللي لقيناه مع الموجود
+    $collected = array_merge($collected, $filteredGulf);
+
+    // إذا وصلنا للعدد المطلوب نوقف
+    if (count($collected) >= $limit) {
+        break;
+    }
+}
+
+// نأخذ العدد المحدد فقط
+$limitedGulf = array_slice($collected, 0, $limit);
+
+// 🟢 نحفظهم في ملف
+file_put_contents('search_arab.json', json_encode(['posters' => $limitedGulf], JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
+
+if (!empty($limitedGulf)):
+?>
+<div class="slider-container">
+    <?php foreach ($limitedGulf as $series): ?>
+        <div class="movie-card">
+            <div class="content-type">Series</div>
+            <img src="<?php echo htmlspecialchars($series['image']); ?>" alt="<?php echo htmlspecialchars($series['title']); ?>" class="movie-poster" loading="lazy">
+            <div class="movie-info">
+                <h3 class="movie-title"><?php echo htmlspecialchars($series['title']); ?></h3>
+                <p class="movie-year"><?php echo htmlspecialchars($series['year']); ?></p>
+            </div>
+            <div class="movie-details">
+                <p>Year: <?php echo htmlspecialchars($series['year']); ?></p>
+                <p>IMDB: <?php echo htmlspecialchars($series['imdb']); ?></p>
+                <p>Classification: <?php echo htmlspecialchars($series['classification']); ?></p>
+            </div>
+            <a href="series.php?id=<?php echo htmlspecialchars($series['id']); ?>" class="btn-watch">View Series</a>
+        </div>
+    <?php endforeach; ?>
+</div>
+<?php endif; ?>
+
+
 
             <!-- سلايدر الأكثر شهرة -->
             <h2 class="section-title">Popular Series</h2>
