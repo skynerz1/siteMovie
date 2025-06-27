@@ -109,9 +109,39 @@ function searchMovies($query) {
 
 function saveSearchResults($results) {
     $filename = 'search_results.json';
+    $permanentFile = 'search_results_permanent.json';
+
+    // تأكد أن النتائج داخل 'posters'
     $formattedResults = ['posters' => is_array($results) && isset($results['posters']) ? $results['posters'] : $results];
-    file_put_contents($filename, json_encode($formattedResults));
+
+    // 1. حفظ الملف العادي (يُكتب من جديد كل مرة)
+    file_put_contents($filename, json_encode($formattedResults, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
+
+    // 2. حفظ في الملف الدائم (لا يحذف، فقط يضيف الجديد)
+    $newItems = $formattedResults['posters'];
+    $existing = [];
+
+    if (file_exists($permanentFile)) {
+        $json = file_get_contents($permanentFile);
+        $data = json_decode($json, true);
+        if (isset($data['posters']) && is_array($data['posters'])) {
+            $existing = $data['posters'];
+        }
+    }
+
+    // تجنب التكرار حسب id
+    $existingIds = array_column($existing, 'id');
+    foreach ($newItems as $item) {
+        if (!in_array($item['id'], $existingIds)) {
+            $existing[] = $item;
+            $existingIds[] = $item['id'];
+        }
+    }
+
+    // حفظ الملف الدائم
+    file_put_contents($permanentFile, json_encode(['posters' => $existing], JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
 }
+
 
 function getNewReleases() {
     $page = rand(1,10);
