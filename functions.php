@@ -1,7 +1,7 @@
 <?php
 if (!function_exists('getSeriesDetails')) {
     function getSeriesDetails($seriesId) {
-        $files = ['search_results.json', 'search_arab.json'];
+        $files = ['search_results_permanent.json', 'search_arab_permanent.json'];
 
         foreach ($files as $filename) {
             if (file_exists($filename)) {
