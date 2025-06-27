@@ -4,17 +4,18 @@ session_start();
 
 function saveToSearchResults($newItems) {
     $filename = 'search_results.json';
-    $existing = [];
 
+    // قراءة الملف الحالي إن وُجد
+    $existing = [];
     if (file_exists($filename)) {
         $json = file_get_contents($filename);
-        $existingData = json_decode($json, true);
-        if (isset($existingData['posters']) && is_array($existingData['posters'])) {
-            $existing = $existingData['posters'];
+        $data = json_decode($json, true);
+        if (isset($data['posters']) && is_array($data['posters'])) {
+            $existing = $data['posters'];
         }
     }
 
-    // تجنب التكرار باستخدام ID
+    // دمج العناصر الجديدة بدون تكرار (حسب ID)
     $ids = array_column($existing, 'id');
     foreach ($newItems as $item) {
         if (!in_array($item['id'], $ids)) {
@@ -23,8 +24,11 @@ function saveToSearchResults($newItems) {
         }
     }
 
+    // حفظ الملف بشكل دائم (لا يُعاد تعيينه)
     file_put_contents($filename, json_encode(['posters' => $existing], JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
 }
+
+
 
 
 function fetchSeries($type, $page = 1) {
@@ -598,6 +602,37 @@ $limitedGulf = array_slice($collected, 0, $limit);
 
 // 🟢 نحفظهم في ملف
 file_put_contents('search_arab.json', json_encode(['posters' => $limitedGulf], JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
+
+// الملف الدائم
+$permanentFile = 'search_arab_permanent.json';
+
+// قراءة المحتوى الحالي من الملف الدائم
+$existing = [];
+if (file_exists($permanentFile)) {
+    $json = file_get_contents($permanentFile);
+    $data = json_decode($json, true);
+    if (isset($data['posters']) && is_array($data['posters'])) {
+        $existing = $data['posters'];
+    }
+}
+
+// دمج العناصر الجديدة بدون تكرار (حسب id مثلاً)
+foreach ($limitedGulf as $newItem) {
+    $found = false;
+    foreach ($existing as $item) {
+        if (isset($item['id']) && $item['id'] == $newItem['id']) {
+            $found = true;
+            break;
+        }
+    }
+    if (!$found) {
+        $existing[] = $newItem;
+    }
+}
+
+// حفظ في الملف الدائم بعد الدمج
+file_put_contents($permanentFile, json_encode(['posters' => $existing], JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
+
 
 if (!empty($limitedGulf)):
 ?>
