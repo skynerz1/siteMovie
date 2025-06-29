@@ -574,6 +574,8 @@ nav {
             </div>
         </section>
 
+
+        
   <section id="movie-section" class="movie-section">
     <div class="container">
         <?php if (!empty($error)): ?>
@@ -651,7 +653,7 @@ $limit = 15; // كم مسلسل تبي تعرض
 $collected = [];
 
 for ($i = 0; $i < 3; $i++) { // نحاول 3 صفحات فقط كحد أقصى
-    $page = rand(1, 15);
+    $page = rand(1, 20);
     $gulfData = fetchSeries('created', $page);
     $gulfArray = isset($gulfData['posters']) ? $gulfData['posters'] : $gulfData;
     $filteredGulf = filterGulfSeries($gulfArray);
@@ -735,44 +737,94 @@ if (!empty($limitedGulf)):
 <?php
 $limitTurkish = 15;
 $turkishCollected = [];
+$attempts = 0;
 
-for ($i = 0; $i < 3; $i++) {
-    $page = rand(1, 10);
+while (count($turkishCollected) < $limitTurkish && $attempts < 10) {
+    $page = rand(1, 20);
     $turkishData = fetchSeries('created', $page);
     $turkishArray = isset($turkishData['posters']) ? $turkishData['posters'] : $turkishData;
     $filteredTurkish = filterTurkishSeries($turkishArray);
 
-    $turkishCollected = array_merge($turkishCollected, $filteredTurkish);
+    foreach ($filteredTurkish as $series) {
+        if (count($turkishCollected) >= $limitTurkish) break;
+        // لا تضيف نفس المسلسل مرتين
+        if (!in_array($series['id'], array_column($turkishCollected, 'id'))) {
+            $turkishCollected[] = $series;
+        }
+    }
 
-    if (count($turkishCollected) >= $limitTurkish) break;
+    $attempts++;
 }
 
-$limitedTurkish = array_slice($turkishCollected, 0, $limitTurkish);
-
-if (!empty($limitedTurkish)):
+if (!empty($turkishCollected)):
 ?>
-<div class="slider-container">
-    <?php foreach ($limitedTurkish as $series): ?>
-        <div class="movie-card">
-            <?php if (!empty($series['sublabel'])): ?>
-                <div class="movie-sublabel"><?php echo htmlspecialchars($series['sublabel']); ?></div>
-            <?php endif; ?>
-            <div class="content-type">Series</div>
-            <img src="<?php echo htmlspecialchars($series['image']); ?>" alt="<?php echo htmlspecialchars($series['title']); ?>" class="movie-poster" loading="lazy">
-            <div class="movie-info">
-                <h3 class="movie-title"><?php echo htmlspecialchars($series['title']); ?></h3>
-                <p class="movie-year"><?php echo htmlspecialchars($series['year']); ?></p>
+    <div class="slider-container">
+        <?php foreach ($turkishCollected as $series): ?>
+            <div class="movie-card">
+                <?php if (!empty($series['sublabel'])): ?>
+                    <div class="movie-sublabel"><?php echo htmlspecialchars($series['sublabel']); ?></div>
+                <?php endif; ?>
+                <div class="content-type">Series</div>
+                <img src="<?php echo htmlspecialchars($series['image']); ?>" alt="<?php echo htmlspecialchars($series['title']); ?>" class="movie-poster" loading="lazy">
+                <div class="movie-info">
+                    <h3 class="movie-title"><?php echo htmlspecialchars($series['title']); ?></h3>
+                    <p class="movie-year"><?php echo htmlspecialchars($series['year']); ?></p>
+                </div>
+                <div class="movie-details">
+                    <p>Year: <?php echo htmlspecialchars($series['year']); ?></p>
+                    <p>IMDB: <?php echo htmlspecialchars($series['imdb']); ?></p>
+                    <p>Classification: <?php echo htmlspecialchars($series['classification']); ?></p>
+                </div>
+                <a href="series.php?id=<?php echo htmlspecialchars($series['id']); ?>" class="btn-watch">View Series</a>
             </div>
-            <div class="movie-details">
-                <p>Year: <?php echo htmlspecialchars($series['year']); ?></p>
-                <p>IMDB: <?php echo htmlspecialchars($series['imdb']); ?></p>
-                <p>Classification: <?php echo htmlspecialchars($series['classification']); ?></p>
-            </div>
-            <a href="series.php?id=<?php echo htmlspecialchars($series['id']); ?>" class="btn-watch">View Series</a>
-        </div>
-    <?php endforeach; ?>
-</div>
+        <?php endforeach; ?>
+    </div>
 <?php endif; ?>
+<!-- =========================== -->
+
+<!-- كود قائمتي -->
+
+<?php
+
+require_once 'functions.php';
+
+$favorites = [];
+if (isset($_SESSION['favorites']) && is_array($_SESSION['favorites'])) {
+    foreach ($_SESSION['favorites'] as $favId) {
+        $details = getSeriesDetails($favId);
+        if ($details) {
+            $favorites[] = $details;
+        }
+    }
+}
+?>
+
+<?php if (!empty($favorites)): ?>
+    <h2 class="section-title">❤️ قائمتي</h2>
+    <div class="slider-container">
+        <?php foreach ($favorites as $series): ?>
+            <div class="movie-card">
+                <?php if (!empty($series['sublabel'])): ?>
+                    <div class="movie-sublabel"><?php echo htmlspecialchars($series['sublabel']); ?></div>
+                <?php endif; ?>
+
+                <div class="content-type">Series</div>
+                <img src="<?php echo htmlspecialchars($series['image']); ?>" alt="<?php echo htmlspecialchars($series['title']); ?>" class="movie-poster" loading="lazy">
+                <div class="movie-info">
+                    <h3 class="movie-title"><?php echo htmlspecialchars($series['title']); ?></h3>
+                    <p class="movie-year"><?php echo htmlspecialchars($series['year']); ?></p>
+                </div>
+                <div class="movie-details">
+                    <p>Year: <?php echo htmlspecialchars($series['year']); ?></p>
+                    <p>IMDB: <?php echo htmlspecialchars($series['imdb']); ?></p>
+                    <p>Classification: <?php echo htmlspecialchars($series['classification']); ?></p>
+                </div>
+                <a href="series.php?id=<?php echo htmlspecialchars($series['id']); ?>" class="btn-watch">View Series</a>
+            </div>
+        <?php endforeach; ?>
+    </div>
+<?php endif; ?>
+
 
 
             <!-- سلايدر الأكثر شهرة -->
