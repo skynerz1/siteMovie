@@ -513,6 +513,23 @@ nav {
         padding: 10px 0;
     }
 }
+.movie-sublabel {
+    position: absolute;
+    top: 10px;
+    left: 10px; /* بدل right */
+    background: rgba(229, 9, 20, 0.9);
+    color: #fff;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 20px;
+    box-shadow: 0 0 6px rgba(229, 9, 20, 0.7);
+    pointer-events: none;
+    user-select: none;
+    z-index: 10;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+}
 
 
     </style>
@@ -560,6 +577,10 @@ nav {
                     <div class="movie-grid">
                         <?php foreach ($filteredSeries as $series): ?>
                             <div class="movie-card">
+                                <?php if (!empty($series['sublabel'])): ?>
+    <div class="movie-sublabel"><?php echo htmlspecialchars($series['sublabel']); ?></div>
+<?php endif; ?>
+
                                 <div class="content-type">Series</div>
                                 <img src="<?php echo htmlspecialchars($series['image']); ?>" alt="<?php echo htmlspecialchars($series['title']); ?>" class="movie-poster" loading="lazy">
                                 <div class="movie-info">
@@ -590,6 +611,10 @@ nav {
                 <div class="slider-container">
                     <?php foreach ($filteredSeries as $series): ?>
                         <div class="movie-card">
+                            <?php if (!empty($series['sublabel'])): ?>
+    <div class="movie-sublabel"><?php echo htmlspecialchars($series['sublabel']); ?></div>
+<?php endif; ?>
+
                             <div class="content-type">Series</div>
                             <img src="<?php echo htmlspecialchars($series['image']); ?>" alt="<?php echo htmlspecialchars($series['title']); ?>" class="movie-poster" loading="lazy">
                             <div class="movie-info">
@@ -669,6 +694,10 @@ if (!empty($limitedGulf)):
 <div class="slider-container">
     <?php foreach ($limitedGulf as $series): ?>
         <div class="movie-card">
+            <?php if (!empty($series['sublabel'])): ?>
+    <div class="movie-sublabel"><?php echo htmlspecialchars($series['sublabel']); ?></div>
+<?php endif; ?>
+
             <div class="content-type">Series</div>
             <img src="<?php echo htmlspecialchars($series['image']); ?>" alt="<?php echo htmlspecialchars($series['title']); ?>" class="movie-poster" loading="lazy">
             <div class="movie-info">
@@ -696,22 +725,27 @@ if (!empty($limitedGulf)):
                 $filteredPopular = filterAsianSeries($popularArray);
                 if (!empty($filteredPopular)):
             ?>
-                <div class="slider-container">
-                    <?php foreach ($filteredPopular as $series): ?>
-                        <div class="movie-card">
-                            <div class="content-type">Series</div>
-                            <img src="<?php echo htmlspecialchars($series['image']); ?>" alt="<?php echo htmlspecialchars($series['title']); ?>" class="movie-poster" loading="lazy">
-                            <div class="movie-info">
-                                <h3 class="movie-title"><?php echo htmlspecialchars($series['title']); ?></h3>
-                                <p class="movie-year"><?php echo htmlspecialchars($series['year']); ?></p>
+                    <div class="slider-container">
+                        <?php foreach ($filteredPopular as $series): ?>
+                            <div class="movie-card">
+                                <?php if (!empty($series['sublabel'])): ?>
+    <div class="movie-sublabel"><?php echo htmlspecialchars($series['sublabel']); ?></div>
+<?php endif; ?>
+
+                                <div class="content-type">Series</div>
+
+                                <img src="<?php echo htmlspecialchars($series['image']); ?>" alt="<?php echo htmlspecialchars($series['title']); ?>" class="movie-poster" loading="lazy">
+                                <div class="movie-info">
+                                    <h3 class="movie-title"><?php echo htmlspecialchars($series['title']); ?></h3>
+                                    <p class="movie-year"><?php echo htmlspecialchars($series['year']); ?></p>
+                                </div>
+                                <div class="movie-details">
+                                    <p>Year: <?php echo htmlspecialchars($series['year']); ?></p>
+                                    <p>IMDB: <?php echo htmlspecialchars($series['imdb']); ?></p>
+                                    <p>Classification: <?php echo htmlspecialchars($series['classification']); ?></p>
+                                </div>
+                                <a href="series.php?id=<?php echo htmlspecialchars($series['id']); ?>" class="btn-watch">View Series</a>
                             </div>
-                            <div class="movie-details">
-                                <p>Year: <?php echo htmlspecialchars($series['year']); ?></p>
-                                <p>IMDB: <?php echo htmlspecialchars($series['imdb']); ?></p>
-                                <p>Classification: <?php echo htmlspecialchars($series['classification']); ?></p>
-                            </div>
-                            <a href="series.php?id=<?php echo htmlspecialchars($series['id']); ?>" class="btn-watch">View Series</a>
-                        </div>
                     <?php endforeach; ?>
                 </div>
             <?php endif; ?>
