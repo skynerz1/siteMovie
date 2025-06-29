@@ -557,6 +557,24 @@ nav {
     text-transform: uppercase;
 }
 
+.section-title {
+  font-family: 'Cairo', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.new-badge {
+  background-color: #ffc107; /* أصفر */
+  color: #000;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 2px 10px;
+  border-radius: 8px 0 0 8px;
+  margin-left: 8px;
+}
 
     </style>
 </head>
@@ -632,7 +650,11 @@ nav {
         <?php else: ?>
    
             <!-- سلايدر جديد -->
-            <h2 class="section-title">New-Series</h2>
+<div class="section-title">
+  <span class="new-badge">جديد</span>
+ مسلسلات جديده 
+</div>
+
             <?php
                 $newReleases = getNewReleases();
                 $seriesArray = isset($newReleases['posters']) ? $newReleases['posters'] : $newReleases;
@@ -663,7 +685,7 @@ nav {
                 </div>
             <?php endif; ?>
     <!-- ✅ سلايدر جديد لمسلسلات "خليجية" بناءً على نفس الفلترة -->
-    <h2 class="section-title">arab Series</h2>
+    <h2 class="section-title">مسلسلات عربيه</h2>
 <?php
 $limit = 15; // كم مسلسل تبي تعرض
 $collected = [];
@@ -749,7 +771,7 @@ if (!empty($limitedGulf)):
 
 
 <!-- 🔵 سلايدر مسلسلات تركية -->
-<h2 class="section-title">Turkish Series</h2>
+<h2 class="section-title">مسلسلات تركية</h2>
 <?php
 $limitTurkish = 15;
 $turkishCollected = [];
