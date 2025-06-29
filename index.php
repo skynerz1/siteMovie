@@ -800,7 +800,11 @@ if (isset($_SESSION['favorites']) && is_array($_SESSION['favorites'])) {
 ?>
 
 <?php if (!empty($favorites)): ?>
-    <h2 class="section-title">❤️ قائمتي</h2>
+    <h2 class="section-title">
+      <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f648/512.webp" alt="قرد" style="width:1em; height:1em; vertical-align:middle;">
+      قائمتي
+    </h2>
+
     <div class="slider-container">
         <?php foreach ($favorites as $series): ?>
             <div class="movie-card">
