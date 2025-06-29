@@ -785,7 +785,6 @@ while (count($turkishCollected) < $limitTurkish && $attempts < 10) {
 
     foreach ($filteredTurkish as $series) {
         if (count($turkishCollected) >= $limitTurkish) break;
-        // لا تضيف نفس المسلسل مرتين
         if (!in_array($series['id'], array_column($turkishCollected, 'id'))) {
             $turkishCollected[] = $series;
         }
@@ -795,7 +794,38 @@ while (count($turkishCollected) < $limitTurkish && $attempts < 10) {
 }
 
 if (!empty($turkishCollected)):
+
+    // 🔹 تخزين مؤقت
+    file_put_contents('search_results.json', json_encode(['posters' => $turkishCollected], JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
+
+    // 🔸 تخزين دائم
+    $permanentFile = 'search_results_permanent.json';
+    $existing = [];
+
+    if (file_exists($permanentFile)) {
+        $json = file_get_contents($permanentFile);
+        $data = json_decode($json, true);
+        if (isset($data['posters']) && is_array($data['posters'])) {
+            $existing = $data['posters'];
+        }
+    }
+
+    foreach ($turkishCollected as $newItem) {
+        $found = false;
+        foreach ($existing as $item) {
+            if (isset($item['id']) && $item['id'] == $newItem['id']) {
+                $found = true;
+                break;
+            }
+        }
+        if (!$found) {
+            $existing[] = $newItem;
+        }
+    }
+
+    file_put_contents($permanentFile, json_encode(['posters' => $existing], JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
 ?>
+
     <div class="slider-container">
         <?php foreach ($turkishCollected as $series): ?>
             <div class="movie-card">
@@ -818,6 +848,7 @@ if (!empty($turkishCollected)):
         <?php endforeach; ?>
     </div>
 <?php endif; ?>
+
 <!-- =========================== -->
 
 <!-- كود قائمتي -->
