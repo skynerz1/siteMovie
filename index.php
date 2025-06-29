@@ -397,17 +397,30 @@ if (isset($_GET['search'])) {
         .movie-card:hover .btn-watch {
             opacity: 1;
         }
-        .content-type {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: #e50914;
-            color: white;
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: bold;
-        }
+.content-type {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #e50914;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.top-ser {
+    position: absolute;
+    top: 40px; /* تم تغيير القيمة لتكون أسفل content-type */
+    right: 10px;
+    background-color: rgb(255, 21, 0);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
         .error-message, .no-results {
             text-align: center;
             font-size: 1.2rem;
@@ -550,7 +563,10 @@ nav {
 <body>
 <header class="navbar">
     <div class="container">
-        <a href="/" class="logo">Watch Series</a>
+        <a href="/" class="logo" style="display: flex; align-items: center; gap: 10px;">
+            <img src="512.webp" alt="DfKzz Logo" style="height: 50px;">
+            <span style="font-size: 1.3rem; color: #fff;">DfKzz</span>
+        </a>
         <div class="nav-toggle" onclick="toggleNav()">☰</div>
         <nav>
             <ul class="nav-links" id="navLinks">
@@ -847,6 +863,7 @@ if (isset($_SESSION['favorites']) && is_array($_SESSION['favorites'])) {
 <?php endif; ?>
 
                                 <div class="content-type">Series</div>
+                                <div class="top-ser">Top Series</div>
 
                                 <img src="<?php echo htmlspecialchars($series['image']); ?>" alt="<?php echo htmlspecialchars($series['title']); ?>" class="movie-poster" loading="lazy">
                                 <div class="movie-info">
