@@ -801,7 +801,7 @@ if (isset($_SESSION['favorites']) && is_array($_SESSION['favorites'])) {
 
 <?php if (!empty($favorites)): ?>
     <h2 class="section-title">
-      <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f648/512.webp" alt="قرد" style="width:1em; height:1em; vertical-align:middle;">
+      <img src="https://dfkz.onrender.com/512.webp" alt="قرد" style="width:1em; height:1em; vertical-align:middle;">
       قائمتي
     </h2>
 
