@@ -115,7 +115,7 @@ $initialServer = $episodeLinks ? $episodeLinks[array_key_first($episodeLinks)]['
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <meta charset="UTF-8">
-    <title>مشاهدة - Arab Stream</title>
+    <title>مشاهدة - DfKzz</title>
     <link rel="icon" type="image/png" href="a.png">
     <style>
       body {
@@ -440,7 +440,7 @@ body {
 
         <?php if (!empty($currentSeason)): ?>
             <div class="episode-selector">
-                <h3><?= 'الموسم ' . htmlspecialchars($currentSeason['title']) ?></h3>
+                <h3><?= '' . htmlspecialchars($currentSeason['title']) ?></h3>
                 <div class="episode-list">
                     <?php foreach ($currentSeason['episodes'] as $ep): ?>
                         <?php
