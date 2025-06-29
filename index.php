@@ -215,7 +215,20 @@ if (isset($_GET['search'])) {
     }
 }
 
-    
+    function filterTurkishSeries($seriesArray) {
+    return array_filter($seriesArray, function($series) {
+        if (!isset($series['genres']) || !is_array($series['genres'])) {
+            return false;
+        }
+        foreach ($series['genres'] as $genre) {
+            if (isset($genre['title']) && $genre['title'] === "مسلسلات تركية") {
+                return true;
+            }
+        }
+        return false;
+    });
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -715,6 +728,51 @@ if (!empty($limitedGulf)):
 </div>
 <?php endif; ?>
 
+
+
+<!-- 🔵 سلايدر مسلسلات تركية -->
+<h2 class="section-title">Turkish Series</h2>
+<?php
+$limitTurkish = 15;
+$turkishCollected = [];
+
+for ($i = 0; $i < 3; $i++) {
+    $page = rand(1, 10);
+    $turkishData = fetchSeries('created', $page);
+    $turkishArray = isset($turkishData['posters']) ? $turkishData['posters'] : $turkishData;
+    $filteredTurkish = filterTurkishSeries($turkishArray);
+
+    $turkishCollected = array_merge($turkishCollected, $filteredTurkish);
+
+    if (count($turkishCollected) >= $limitTurkish) break;
+}
+
+$limitedTurkish = array_slice($turkishCollected, 0, $limitTurkish);
+
+if (!empty($limitedTurkish)):
+?>
+<div class="slider-container">
+    <?php foreach ($limitedTurkish as $series): ?>
+        <div class="movie-card">
+            <?php if (!empty($series['sublabel'])): ?>
+                <div class="movie-sublabel"><?php echo htmlspecialchars($series['sublabel']); ?></div>
+            <?php endif; ?>
+            <div class="content-type">Series</div>
+            <img src="<?php echo htmlspecialchars($series['image']); ?>" alt="<?php echo htmlspecialchars($series['title']); ?>" class="movie-poster" loading="lazy">
+            <div class="movie-info">
+                <h3 class="movie-title"><?php echo htmlspecialchars($series['title']); ?></h3>
+                <p class="movie-year"><?php echo htmlspecialchars($series['year']); ?></p>
+            </div>
+            <div class="movie-details">
+                <p>Year: <?php echo htmlspecialchars($series['year']); ?></p>
+                <p>IMDB: <?php echo htmlspecialchars($series['imdb']); ?></p>
+                <p>Classification: <?php echo htmlspecialchars($series['classification']); ?></p>
+            </div>
+            <a href="series.php?id=<?php echo htmlspecialchars($series['id']); ?>" class="btn-watch">View Series</a>
+        </div>
+    <?php endforeach; ?>
+</div>
+<?php endif; ?>
 
 
             <!-- سلايدر الأكثر شهرة -->
