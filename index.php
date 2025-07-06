@@ -576,6 +576,60 @@ nav {
   margin-left: 8px;
 }
 
+        .category-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 16px;
+            scroll-behavior: smooth;
+            padding-bottom: 20px;
+            padding-inline: 10px;
+        }
+
+        /* شكل السكرول */
+        .category-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        .category-container::-webkit-scrollbar-thumb {
+            background: #e50914;
+            border-radius: 10px;
+        }
+        .category-container::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+
+        /* الكروت */
+        .category-card {
+            flex: 0 0 auto;
+            width: 200px;
+            height: 120px;
+            border-radius: 12px;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            text-decoration: none;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        /* تأثير التحويم */
+        .category-card:hover,
+        .category-card.active {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px #e50914;
+        }
+
+        /* تحسين العرض للجوال */
+        @media (max-width: 600px) {
+            .category-card {
+                width: 150px;
+                height: 100px;
+            }
+        }
+
+
+
     </style>
 </head>
 <body>
@@ -648,7 +702,25 @@ nav {
                 <?php endif; ?>
 
         <?php else: ?>
-   
+
+    <h1>📺 اختر المنصة</h1>
+
+    <div class="category-container">
+        <a href="browser.php?platform=netflix&page=1" class="category-card <?= $platform == 'netflix' ? 'active' : '' ?>" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGhnm_NIUms1oIl6QLrxjZzws8wLW_MVPOyw&s');">
+
+        </a>
+        <a href="browser.php?platform=shahid&page=1" class="category-card <?= $platform == 'shahid' ? 'active' : '' ?>" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlwV1US7Ou5Sa4bd8ALXdp1QVcpQV9rPRr_A&s');">
+
+        </a>
+      
+        </a>
+        <a href="" class="category-card <?= $platform == 'kids' ? 'active' : '' ?>" style="background-image: url('https://i.pinimg.com/736x/e6/84/49/e68449b851a8ffb8256a71daab209775.jpg');">
+
+        </a>
+        
+    </div>
+
+    
             <!-- سلايدر جديد -->
 <div class="section-title">
   <span class="new-badge">جديد</span>
@@ -767,8 +839,6 @@ if (!empty($limitedGulf)):
     <?php endforeach; ?>
 </div>
 <?php endif; ?>
-
-
 
 <!-- 🔵 سلايدر مسلسلات تركية -->
 <h2 class="section-title">مسلسلات تركية</h2>
