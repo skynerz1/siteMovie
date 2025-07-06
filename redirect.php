@@ -1,8 +1,8 @@
 <?php
 // خريطة إعادة التوجيه حسب قيمة المعامل s
 $redirectMap = [
-    'squad' => 'https://dfkz.onrender.com/series.php?id=6410',
-    'ommi' => 'https://dfkz.onrender.com/series.php?id=24072',
+    'squad' => './series.php?id=6410',
+    'ommi' => './series.php?id=24072',
 ];
 
 
