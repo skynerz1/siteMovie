@@ -1,7 +1,7 @@
 <?php
 // خريطة إعادة التوجيه حسب قيمة المعامل s
 $redirectMap = [
-    'squad' => './?page=2&search=' . urlencode('لعبه الحبار'),
+    'squad' => './series.php?id=6410,
     'ommi' => './series.php?id=24072',
     // تقدر تضيف هنا قيم اخرى
 ];
