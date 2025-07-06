@@ -355,54 +355,92 @@ body {
     padding-top: 80px;
 }
 
-.telegram-promo {
-    background: linear-gradient(135deg, #1c1c1c, #2a2a2a);
-    border: 1px solid #e50914;
-    border-radius: 12px;
+.corner-ad {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: rgba(20, 20, 20, 0.92);
+    color: white;
+    padding: 14px 16px;
+    border-radius: 14px;
     display: flex;
     align-items: center;
-    gap: 15px;
-    padding: 20px;
-    margin-top: 20px;
-    color: #fff;
+    z-index: 99;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    max-width: 340px;
+    width: 100%;
+    box-sizing: border-box;
 }
-.promo-image {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-}
-.promo-text h3 {
-    margin: 0;
-    font-size: 18px;
-    color: #e50914;
-}
-.promo-text p {
-    margin: 5px 0 10px;
-    font-size: 14px;
-    color: #ccc;
-}
-.promo-button {
-    display: inline-block;
-    background-color: #229ED9;
-    color: #fff;
-    padding: 10px 16px;
-    border-radius: 6px;
+
+.corner-ad a {
+    display: flex;
     text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s ease;
+    color: inherit;
+    align-items: center;
+    width: 100%;
 }
-.promo-button:hover {
-    background-color: #1b8ab7;
+
+.corner-ad img {
+    width: 55px;
+    height: 55px;
+    margin-right: 12px;
+    border-radius: 12px;
+    flex-shrink: 0;
 }
+
+.corner-ad-text {
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+}
+
+.corner-ad-text strong {
+    font-size: 16px;
+    color: #00acee;
+    margin-bottom: 3px;
+}
+
+.close-corner-ad {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    background: none;
+    border: none;
+    color: #ccc;
+    font-size: 18px;
+    cursor: pointer;
+}
+
 @media (max-width: 768px) {
-    .telegram-promo {
-        flex-direction: column;
-        text-align: center;
+    .corner-ad {
+        bottom: 10px;
+        right: 10px;
+        max-width: 90%;
+        padding: 10px 12px;
+        flex-direction: row;
     }
-    .promo-image {
-        margin-bottom: 10px;
+
+    .corner-ad img {
+        width: 45px;
+        height: 45px;
+        margin-right: 10px;
+    }
+
+    .corner-ad-text {
+        font-size: 13px;
+    }
+
+    .corner-ad-text strong {
+        font-size: 14px;
+    }
+
+    .close-corner-ad {
+        font-size: 16px;
+        top: 4px;
+        right: 6px;
     }
 }
+
 
     </style>
 </head>
@@ -432,16 +470,22 @@ body {
             <p>لم يتم العثور على مصادر تشغيل.</p>
         <?php else: ?><?php endif; ?>
 
-            <div class="player-box">
-                <iframe id="player-iframe" class="player-iframe" allowfullscreen src="<?= htmlspecialchars($initialServer) ?>"></iframe>
-<div class="telegram-promo">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram" class="promo-image">
-    <div class="promo-text">
-        <h3>انضم لقناتنا على التليجرام</h3>
-        <p>تابع أحدث المسلسلات والأفلام أولاً بأول على قناتنا الحصرية 🎬</p>
-        <a href="https://t.me/MTVMSLSL1" target="_blank" class="promo-button"><i class="fab fa-telegram-plane"></i> دخول القناة</a>
+<div class="player-box" style="position: relative;">
+    <iframe id="player-iframe" class="player-iframe" allowfullscreen src="<?= htmlspecialchars($initialServer) ?>"></iframe>
+
+    <!-- إعلان متجاوب بأسفل يمين -->
+    <div class="corner-ad" id="cornerAd">
+        <button class="close-corner-ad" onclick="document.getElementById('cornerAd').style.display='none'">×</button>
+        <a href="https://t.me/MTVMSLSL1" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="إعلان" />
+            <div class="corner-ad-text">
+                <strong>تابعنا على تليجرام</strong>
+                <span>جديد الحلقات يومياً وبجودة عالية</span>
+            </div>
+        </a>
     </div>
 </div>
+
 
                 <div class="button-row">
                     <button class="action-button toggle-button" onclick="toggleServers(this)" id="server-toggle">
