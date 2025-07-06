@@ -1,20 +1,23 @@
 <?php
+// خريطة إعادة التوجيه حسب قيمة المعامل s
 $redirectMap = [
-    'squad' => './series.php?id=6410',
-    'ommi' => './series.php?id=24072',
-    // تقدر تضيف هنا قيم اخرى
+    'squad' => 'https://dfkz.onrender.com/series.php?id=6410',
+    'ommi' => 'https://dfkz.onrender.com/series.php?id=24072',
 ];
 
+
+// قراءة قيمة المعامل 's' من الرابط
 $s = $_GET['s'] ?? '';
 
-// إذا القيمة موجودة بالخريطة
+// إذا القيمة موجودة بالخريطة، نعيد التوجيه عليها
 if (array_key_exists($s, $redirectMap)) {
     $redirectUrl = $redirectMap[$s];
 } else {
-    // إذا غير موجود نعيد التوجيه لصفحة خطأ أو صفحة مخصصة
-    $redirectUrl = './error.php';  // مثلا صفحة خطأ جاهزة عندك
+    // لو القيمة غير موجودة نعيد التوجيه لصفحة افتراضية
+    $redirectUrl = './'; // أو اي رابط تحب
 }
 
+// إعادة التوجيه
 header("Location: $redirectUrl");
 exit;
 ?>
