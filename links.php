@@ -355,6 +355,55 @@ body {
     padding-top: 80px;
 }
 
+.telegram-promo {
+    background: linear-gradient(135deg, #1c1c1c, #2a2a2a);
+    border: 1px solid #e50914;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    margin-top: 20px;
+    color: #fff;
+}
+.promo-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+.promo-text h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #e50914;
+}
+.promo-text p {
+    margin: 5px 0 10px;
+    font-size: 14px;
+    color: #ccc;
+}
+.promo-button {
+    display: inline-block;
+    background-color: #229ED9;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+.promo-button:hover {
+    background-color: #1b8ab7;
+}
+@media (max-width: 768px) {
+    .telegram-promo {
+        flex-direction: column;
+        text-align: center;
+    }
+    .promo-image {
+        margin-bottom: 10px;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -385,6 +434,15 @@ body {
 
             <div class="player-box">
                 <iframe id="player-iframe" class="player-iframe" allowfullscreen src="<?= htmlspecialchars($initialServer) ?>"></iframe>
+<div class="telegram-promo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram" class="promo-image">
+    <div class="promo-text">
+        <h3>انضم لقناتنا على التليجرام</h3>
+        <p>تابع أحدث المسلسلات والأفلام أولاً بأول على قناتنا الحصرية 🎬</p>
+        <a href="https://t.me/MTVMSLSL1" target="_blank" class="promo-button"><i class="fab fa-telegram-plane"></i> دخول القناة</a>
+    </div>
+</div>
+
                 <div class="button-row">
                     <button class="action-button toggle-button" onclick="toggleServers(this)" id="server-toggle">
                         <i class="fas fa-server"></i> اختيار السيرفر
