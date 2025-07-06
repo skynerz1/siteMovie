@@ -1,7 +1,7 @@
 <?php
 // خريطة إعادة التوجيه حسب قيمة المعامل s
 $redirectMap = [
-    'squad' => './series.php?id=6410,
+    'squad' => './series.php?id=6410',
     'ommi' => './series.php?id=24072',
     // تقدر تضيف هنا قيم اخرى
 ];
