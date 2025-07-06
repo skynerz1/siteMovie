@@ -1,0 +1,33 @@
+        {
+            "id": 24072,
+            "title": "أمي",
+            "label": null,
+            "sublabel": "ح 46",
+            "type": "serie",
+            "description": "وسط الصراعات والتحديات التي تتقاطع خلالها حياة خمس أمهات، تسعى المعلمة مريم لإنقاذ حياة إحدى طالباتها من قسوة زوج والدتها وإهمال الأخيرة لها.\r\nمقتبس من المسلسل التركي Anne",
+            "year": 2025,
+            "rating": 4,
+            "imdb": 0,
+            "comment": true,
+            "duration": "45 min",
+            "downloadas": null,
+            "classification": "دراما, السعودية",
+            "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/132NXjSXMPJnUz57ym6M7Rw0q9X.jpg",
+            "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/7UPuyEXLLCjCV1Vga4GRXdq6odT.jpg",
+            "genres": [
+                {
+                    "id": 16,
+                    "title": "مسلسلات عربية"
+                },
+                {
+                    "id": 24,
+                    "title": "جديد المسلسلات"
+                }
+            ],
+            "trailer": {
+                "id": 3064013,
+                "type": "youtube",
+                "url": "https:\/\/www.youtube.com\/watch?v=ze4xTbW-ixs"
+            },
+            "sources": []
+        },
