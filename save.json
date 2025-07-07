@@ -33,6 +33,40 @@
                             "sources": []
                         },
                         {
+                            "id": 23714,
+                            "title": "هروج",
+                            "label": null,
+                            "sublabel": "ح 30",
+                            "type": "serie",
+                            "description": "عيشوا كل يوم قصة مضحكة جديدة، مستوحاة من لحظات حياتية واقعية في المجتمع السعودي، ستجعلكم تضحكون لا محالة!",
+                            "year": 2025,
+                            "rating": 3.6,
+                            "imdb": 0,
+                            "duration": "20 min",
+                            "comment": true,
+                            "downloadas": null,
+                            "playas": null,
+                            "classification": "كوميديا, السعودية",
+                            "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/tiYryhnorY0FTolK4JBZSIvYXQR.jpg",
+                            "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/xOYIe4r8XgHC2okc1Wij8lZMQE1.jpg",
+                            "genres": [
+                                {
+                                    "id": 1,
+                                    "title": "مسلسلات سعوديه"
+                                },
+                                {
+                                    "id": 2,
+                                    "title": "جديد المسلسلات"
+                                }
+                            ],
+                            "trailer": {
+                                "id": 3019337,
+                                "type": "youtube",
+                                "url": "https:\/\/www.youtube.com\/watch?v=YdAgNSuQeiU"
+                            },
+                            "sources": []
+                        },
+                        {
                             "id": 6410,
                             "title": "Squid Game",
                             "label": "الموسم الثالث",
