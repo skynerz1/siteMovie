@@ -645,7 +645,7 @@ nav {
                 <li><a href="?action=home">Home</a></li>
                 <li><a href="/favorites.php" class="external-link">favorites</a></li>
                 <li><a href="?action=new-releases">New Releases</a></li>
-                <li><a href="/movie" class="external-link">Movies</a></li>
+                <li><a href="/movie.php" class="external-link">Movies</a></li>
             </ul>
         </nav>
     </div>
