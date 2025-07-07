@@ -39,33 +39,25 @@ if (file_exists($cacheFile) && filemtime($cacheFile) >= filemtime($sourceFile)) 
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
     <title>تصفح المسلسلات</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, sans-serif;
-            background-color: #0d0d0d;
-            color: #fff;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #121212;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        h2.platform-title {
+            margin: 90px 20px 20px;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #e50914;
             text-align: center;
-        }
-
-        h1 {
-            margin-bottom: 30px;
-        }
-
-        .platform-selector {
-            margin-bottom: 30px;
-        }
-
-        .select-box {
-            padding: 10px 15px;
-            font-size: 16px;
-            border-radius: 8px;
-            border: none;
-            background-color: #1e1e1e;
-            color: white;
-            cursor: pointer;
         }
 
         .cards-container {
@@ -73,32 +65,31 @@ if (file_exists($cacheFile) && filemtime($cacheFile) >= filemtime($sourceFile)) 
             flex-wrap: wrap;
             justify-content: center;
             gap: 25px;
+            padding: 20px;
         }
 
         .card {
             position: relative;
             width: 280px;
-            background-color: #141414;
+            background-color: #1c1c1c;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.8);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.7);
             cursor: pointer;
             transition: transform 0.3s ease;
             text-align: center;
             color: #e5e5e5;
-            user-select: none;
         }
 
         .card:hover {
             transform: scale(1.05);
-            box-shadow: 0 12px 30px rgba(229, 9, 20, 0.8);
+            box-shadow: 0 12px 30px rgba(229, 9, 20, 0.7);
         }
 
         .card img {
             width: 100%;
             height: 400px;
             object-fit: cover;
-            display: block;
         }
 
         .rating {
@@ -116,88 +107,166 @@ if (file_exists($cacheFile) && filemtime($cacheFile) >= filemtime($sourceFile)) 
         }
 
         .card-title {
-            font-size: 22px;
-            font-weight: 700;
+            font-size: 20px;
+            font-weight: 600;
             margin: 15px 10px 20px 10px;
             color: #e50914;
-            text-shadow: 0 0 6px rgba(229, 9, 20, 0.7);
+            text-shadow: 0 0 6px rgba(229, 9, 20, 0.5);
         }
 
         .pagination {
-            margin-top: 30px;
-            user-select: none;
+            margin: 30px auto;
+            text-align: center;
         }
 
         .pagination a {
             display: inline-block;
             margin: 0 6px;
             padding: 8px 14px;
-            background: #333;
+            background: #2a2a2a;
             color: white;
             border-radius: 6px;
             text-decoration: none;
-            font-weight: 400;
-            transition: background-color 0.3s ease;
+            transition: background 0.3s ease;
         }
 
         .pagination a.active,
         .pagination a:hover {
             background: #e50914;
-            font-weight: 700;
+            font-weight: bold;
             box-shadow: 0 0 10px #e50914;
         }
 
+        /* Platform Cards */
+        .category-container {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            padding: 0 20px 30px;
+            flex-wrap: wrap;
+        }
+
+        .category-card {
+            width: 140px;
+            height: 80px;
+            border-radius: 12px;
+            background-size: cover;
+            background-position: center;
+            border: 2px solid transparent;
+            transition: 0.3s ease all;
+        }
+
+        .category-card:hover {
+            transform: scale(1.05);
+            border-color: white;
+        }
+
+        .category-card.active {
+            border: 2px solid #e50914;
+            box-shadow: 0 0 12px rgba(229, 9, 20, 0.6);
+        }
+
+        /* Top Bar */
+        .topbar {
+            background: linear-gradient(to left, #0f0f0f, #1a1a1a);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            font-family: 'Poppins', sans-serif;
+        }
+
+
+        .topbar .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .topbar .nav-links a {
+            color: #ffffff;
+            margin-left: 20px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+
+        .topbar .nav-links a:hover {
+            color: #e50914;
+        }
+
+
+        /* Responsive Adjustments */
         @media (max-width: 768px) {
             .card {
                 width: 90vw;
-                height: auto;
             }
 
             .card img {
                 height: auto;
             }
-        }
-        .category-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
 
-        .category-card {
-            position: relative;
-            width: 250px;
-            height: 140px;
-            border-radius: 16px;
-            overflow: hidden;
+            .topbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .topbar .nav-links {
+                margin-top: 10px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            .platform-title {
+                margin-top: 100px;
+            }
+
+            .category-container {
+                justify-content: center;
+            }
+        }
+        .topbar .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #fff;
             text-decoration: none;
-            color: white;
-            background-size: cover;
-            background-position: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: color 0.3s ease;
         }
 
-     
-
-        .category-card:hover,
-        .category-card.active {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px #e50914;
+        .topbar .logo:hover {
+            color: #e50914;
         }
 
     </style>
 </head>
 <body>
 
-    <h1>📺 اختر المنصة</h1>
+    <div class="topbar">
+        <a href="index.php" class="logo">🎬 Series</a>
 
+      <div class="nav-links">
+        <a href="index.php">Home</a>
+        <a href="./favorites.php">Favorites</a>
+        <a href="https://t.me/MTVMSLSL1" target="_blank">📣 Telegram</a>
+      </div>
+    </div>
+
+
+    <!-- Platform Title -->
+    <h2 class="platform-title">Choose Platform</h2>
+
+    <!-- Category Container -->
     <div class="category-container">
-        <a href="?platform=netflix&page=1" class="category-card <?= $platform == 'netflix' ? 'active' : '' ?>" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGhnm_NIUms1oIl6QLrxjZzws8wLW_MVPOyw&s');">
-        </a>
-        <a href="?platform=shahid&page=1" class="category-card <?= $platform == 'shahid' ? 'active' : '' ?>" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlwV1US7Ou5Sa4bd8ALXdp1QVcpQV9rPRr_A&s');">
-        </a>
+      <a href="?platform=netflix&page=1" class="category-card <?= $platform == 'netflix' ? 'active' : '' ?>" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGhnm_NIUms1oIl6QLrxjZzws8wLW_MVPOyw&s');"></a>
+      <a href="?platform=shahid&page=1" class="category-card <?= $platform == 'shahid' ? 'active' : '' ?>" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlwV1US7Ou5Sa4bd8ALXdp1QVcpQV9rPRr_A&s');"></a>
     </div>
 
 
