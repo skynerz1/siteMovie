@@ -645,7 +645,7 @@ nav {
                 <li><a href="?action=home">Home</a></li>
                 <li><a href="/favorites.php" class="external-link">favorites</a></li>
                 <li><a href="?action=new-releases">New Releases</a></li>
-                <li><a href="/movie.php" class="external-link">Movies</a></li>
+                <li><a href="/movie" class="external-link">Movies</a></li>
             </ul>
         </nav>
     </div>
@@ -1104,6 +1104,24 @@ if (isset($_SESSION['favorites']) && is_array($_SESSION['favorites'])) {
         navLinks.classList.toggle('active');
     }
         
+          document.querySelectorAll('a').forEach(link => {
+            let timer;
+
+            link.addEventListener('touchstart', e => {
+              // شغّل مؤقت الضغط المطوّل
+              timer = setTimeout(() => {
+                window.location.href = link.href; // يعتبرها نقرة
+              }, 300); // بعد 300 مللي ثانية يدخل
+            });
+
+            link.addEventListener('touchend', e => {
+              clearTimeout(timer); // إذا ترك قبل 300ms، ما يسوي شي
+            });
+
+            link.addEventListener('contextmenu', e => {
+              e.preventDefault(); // يمنع ظهور قائمة "فتح في متصفح"
+            });
+          });
     </script>
 </body>
 </html>
