@@ -698,7 +698,15 @@ nav {
                                     <p>IMDB: <?php echo htmlspecialchars($series['imdb']); ?></p>
                                     <p>Classification: <?php echo htmlspecialchars($series['classification']); ?></p>
                                 </div>
-                                <a href="series.php?id=<?php echo htmlspecialchars($series['id']); ?>" class="btn-watch">View Series</a>
+                                <?php
+                                    $isMovie = isset($series['type']) && $series['type'] === 'movie';
+                                    $link = $isMovie
+                                        ? 'movie/links.php?id=' . urlencode($series['id'])
+                                        : 'series.php?id=' . urlencode($series['id']);
+                                    $label = $isMovie ? 'View Movie' : 'View Series';
+                                ?>
+                                <a href="<?php echo $link; ?>" class="btn-watch"><?php echo $label; ?></a>
+
                             </div>
                         <?php endforeach; ?>
                     </div>
@@ -718,7 +726,7 @@ nav {
         </a>
       
         </a>
-        <a href="" class="category-card <?= $platform == 'kids' ? 'active' : '' ?>" style="background-image: url('https://i.pinimg.com/736x/e6/84/49/e68449b851a8ffb8256a71daab209775.jpg');">
+        <a href="browser.php?platform=kids&page=1" class="category-card <?= $platform == 'kids' ? 'active' : '' ?>" style="background-image: url('https://i.pinimg.com/736x/e6/84/49/e68449b851a8ffb8256a71daab209775.jpg');">
 
         </a>
         
@@ -1002,7 +1010,15 @@ if (isset($_SESSION['favorites']) && is_array($_SESSION['favorites'])) {
                                     <p>IMDB: <?php echo htmlspecialchars($series['imdb']); ?></p>
                                     <p>Classification: <?php echo htmlspecialchars($series['classification']); ?></p>
                                 </div>
-                                <a href="series.php?id=<?php echo htmlspecialchars($series['id']); ?>" class="btn-watch">View Series</a>
+                                <?php
+                                    $isMovie = isset($series['type']) && $series['type'] === 'movie';
+                                    $link = $isMovie
+                                        ? 'movie/links.php?id=' . urlencode($series['id'])
+                                        : 'series.php?id=' . urlencode($series['id']);
+                                    $label = $isMovie ? 'View Movie' : 'View Series';
+                                ?>
+                                <a href="<?php echo $link; ?>" class="btn-watch"><?php echo $label; ?></a>
+
                             </div>
                     <?php endforeach; ?>
                 </div>
