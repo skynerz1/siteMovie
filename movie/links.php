@@ -1,18 +1,23 @@
 <?php
 function getMovieDetails($movieId) {
-    $filename = 'search_results.json';
-    if (file_exists($filename)) {
-        $searchResults = json_decode(file_get_contents($filename), true);
-        if (isset($searchResults['posters']) && is_array($searchResults['posters'])) {
-            foreach ($searchResults['posters'] as $movie) {
-                if ($movie['id'] == $movieId) {
-                    return $movie;
+    $files = ['search_results.json', '../save.json'];
+
+    foreach ($files as $filename) {
+        if (file_exists($filename)) {
+            $searchResults = json_decode(file_get_contents($filename), true);
+            if (isset($searchResults['posters']) && is_array($searchResults['posters'])) {
+                foreach ($searchResults['posters'] as $movie) {
+                    if ($movie['id'] == $movieId) {
+                        return $movie; // وجدناه
+                    }
                 }
             }
         }
     }
-    return null;
+
+    return null; // لم يتم العثور عليه في أي من الملفين
 }
+
 
 function getMovieLinks($movieId) {
     $url = "https://app.arabypros.com/api/movie/source/by/{$movieId}/4F5A9C3D9A86FA54EACEDDD635185/d506abfd-9fe2-4b71-b979-feff21bcad13/";
