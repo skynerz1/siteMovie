@@ -1,105 +1,138 @@
-                {
-                    "posters": [
-                        {
-                            "id": 24072,
-                            "title": "أمي",
-                            "type": "serie",
-                            "description": "وسط الصراعات والتحديات التي تتقاطع خلالها حياة خمس أمهات، تسعى المعلمة مريم لإنقاذ حياة إحدى طالباتها من قسوة زوج والدتها وإهمال الأخيرة لها.\r\nمقتبس من المسلسل التركي Anne",
-                            "year": 2025,
-                            "rating": 4,
-                            "imdb": 0,
-                            "duration": "45 min",
-                            "comment": true,
-                            "downloadas": null,
-                            "playas": null,
-                            "classification": "دراما, السعودية",
-                            "image": "https://image.tmdb.org/t/p/w500/132NXjSXMPJnUz57ym6M7Rw0q9X.jpg",
-                            "cover": "https://image.tmdb.org/t/p/w780/7UPuyEXLLCjCV1Vga4GRXdq6odT.jpg",
-                            "genres": [
-                                {
-                                    "id": 1,
-                                    "title": "مسلسلات سعوديه"
-                                },
-                                {
-                                    "id": 2,
-                                    "title": "جديد المسلسلات"
-                                }
-                            ],
-                            "trailer": {
-                                "id": 3064013,
-                                "type": "youtube",
-                                "url": "https://www.youtube.com/watch?v=ze4xTbW-ixs"
-                            },
-                            "sources": []
-                        },
-                        {
-                            "id": 23714,
-                            "title": "هروج",
-                            "label": null,
-                            "sublabel": "ح 30",
-                            "type": "serie",
-                            "description": "عيشوا كل يوم قصة مضحكة جديدة، مستوحاة من لحظات حياتية واقعية في المجتمع السعودي، ستجعلكم تضحكون لا محالة!",
-                            "year": 2025,
-                            "rating": 3.6,
-                            "imdb": 0,
-                            "duration": "20 min",
-                            "comment": true,
-                            "downloadas": null,
-                            "playas": null,
-                            "classification": "كوميديا, السعودية",
-                            "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/tiYryhnorY0FTolK4JBZSIvYXQR.jpg",
-                            "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/xOYIe4r8XgHC2okc1Wij8lZMQE1.jpg",
-                            "genres": [
-                                {
-                                    "id": 1,
-                                    "title": "مسلسلات سعوديه"
-                                },
-                                {
-                                    "id": 2,
-                                    "title": "جديد المسلسلات"
-                                }
-                            ],
-                            "trailer": {
-                                "id": 3019337,
-                                "type": "youtube",
-                                "url": "https:\/\/www.youtube.com\/watch?v=YdAgNSuQeiU"
-                            },
-                            "sources": []
-                        },
-                        {
-                            "id": 6410,
-                            "title": "Squid Game",
-                            "label": "الموسم الثالث",
-                            "sublabel": null,
-                            "type": "serie",
-                            "description": "لعبة الحبار:\r\nيقبل مئات اللاعبين الذين يعانون من ضائقة مالية دعوة غريبة للتنافس في ألعاب للأطفال، حيث تنتظرهم جائزة مُغرية تصحبها مخاطر كبيرة ومميتة.",
-                            "year": 2021,
-                            "rating": 4.5,
-                            "imdb": 8,
-                            "duration": "60 min",
-                            "comment": true,
-                            "downloadas": "3",
-                            "playas": "1",
-                            "classification": "اكشن, اثارة, غموض, كوريا",
-                            "image": "https://image.tmdb.org/t/p/w500/iH3jOYJr5ZXYJZqHqMoUMaVIUUK.jpg",
-                            "cover": "https://image.tmdb.org/t/p/w780/oaGvjB0DvdhXhOAuADfHb261ZHa.jpg",
-                            "genres": [
-                                {
-                                    "id": 1,
-                                    "title": "مسلسلات كوريه"
-                                },
-                                {
-                                    "id": 2,
-                                    "title": "جديد المسلسلات"
-                                }
-                            ],
-                            "trailer": {
-                                "id": 179902,
-                                "type": "youtube",
-                                "url": "https://www.youtube.com/watch?v=oqxAJKy0ii4"
-                            },
-                            "sources": []
-                        }
-
-                    ]
-                }
+{
+  "posters": [
+    {
+      "id": 24072,
+      "title": "أمي",
+      "type": "serie",
+      "description": "وسط الصراعات والتحديات التي تتقاطع خلالها حياة خمس أمهات، تسعى المعلمة مريم لإنقاذ حياة إحدى طالباتها من قسوة زوج والدتها وإهمال الأخيرة لها.\r\nمقتبس من المسلسل التركي Anne",
+      "year": 2025,
+      "rating": 4,
+      "imdb": 0,
+      "duration": "45 min",
+      "comment": true,
+      "downloadas": null,
+      "playas": null,
+      "classification": "دراما, السعودية",
+      "image": "https://image.tmdb.org/t/p/w500/132NXjSXMPJnUz57ym6M7Rw0q9X.jpg",
+      "cover": "https://image.tmdb.org/t/p/w780/7UPuyEXLLCjCV1Vga4GRXdq6odT.jpg",
+      "genres": [
+        {
+          "id": 1,
+          "title": "مسلسلات سعوديه"
+        },
+        {
+          "id": 2,
+          "title": "جديد المسلسلات"
+        }
+      ],
+      "trailer": {
+        "id": 3064013,
+        "type": "youtube",
+        "url": "https://www.youtube.com/watch?v=ze4xTbW-ixs"
+      },
+      "sources": []
+    },
+    {
+      "id": 23714,
+      "title": "هروج",
+      "label": null,
+      "sublabel": "ح 30",
+      "type": "serie",
+      "description": "عيشوا كل يوم قصة مضحكة جديدة، مستوحاة من لحظات حياتية واقعية في المجتمع السعودي، ستجعلكم تضحكون لا محالة!",
+      "year": 2025,
+      "rating": 3.6,
+      "imdb": 0,
+      "duration": "20 min",
+      "comment": true,
+      "downloadas": null,
+      "playas": null,
+      "classification": "كوميديا, السعودية",
+      "image": "https://image.tmdb.org/t/p/w500/tiYryhnorY0FTolK4JBZSIvYXQR.jpg",
+      "cover": "https://image.tmdb.org/t/p/w780/xOYIe4r8XgHC2okc1Wij8lZMQE1.jpg",
+      "genres": [
+        {
+          "id": 1,
+          "title": "مسلسلات سعوديه"
+        },
+        {
+          "id": 2,
+          "title": "جديد المسلسلات"
+        }
+      ],
+      "trailer": {
+        "id": 3019337,
+        "type": "youtube",
+        "url": "https://www.youtube.com/watch?v=YdAgNSuQeiU"
+      },
+      "sources": []
+    },
+    {
+      "id": 6410,
+      "title": "Squid Game",
+      "label": "الموسم الثالث",
+      "sublabel": null,
+      "type": "serie",
+      "description": "لعبة الحبار:\r\nيقبل مئات اللاعبين الذين يعانون من ضائقة مالية دعوة غريبة للتنافس في ألعاب للأطفال، حيث تنتظرهم جائزة مُغرية تصحبها مخاطر كبيرة ومميتة.",
+      "year": 2021,
+      "rating": 4.5,
+      "imdb": 8,
+      "duration": "60 min",
+      "comment": true,
+      "downloadas": "3",
+      "playas": "1",
+      "classification": "اكشن, اثارة, غموض, كوريا",
+      "image": "https://image.tmdb.org/t/p/w500/iH3jOYJr5ZXYJZqHqMoUMaVIUUK.jpg",
+      "cover": "https://image.tmdb.org/t/p/w780/oaGvjB0DvdhXhOAuADfHb261ZHa.jpg",
+      "genres": [
+        {
+          "id": 1,
+          "title": "مسلسلات كوريه"
+        },
+        {
+          "id": 2,
+          "title": "جديد المسلسلات"
+        }
+      ],
+      "trailer": {
+        "id": 179902,
+        "type": "youtube",
+        "url": "https://www.youtube.com/watch?v=oqxAJKy0ii4"
+      },
+      "sources": []
+    },
+    {
+      "id": 20545,
+      "title": "فيلم شباب البومب",
+      "label": "WEB-DL",
+      "sublabel": "1080p",
+      "type": "movie",
+      "description": "يتجادل عامر مع أصدقاؤه خلال رحلة برية، مما يدفعه للانعزال وقضاء بعض الوقت وحيدًا، ولكن يتقابل مع ضب صحراوي يأخذه في رحلة مثيرة.",
+      "year": 2024,
+      "rating": 3.9,
+      "imdb": 0,
+      "duration": "1h 45min",
+      "comment": true,
+      "downloadas": "3",
+      "playas": "1",
+      "classification": "كوميديا, دراما, السعودية",
+      "image": "https://image.tmdb.org/t/p/w500/8c7jXUO3cSvp193nxGr2ijNc8PX.jpg",
+      "cover": "https://image.tmdb.org/t/p/w780/kFGU0hvXyVeH1Td4u1zTPn6yK1H.jpg",
+      "genres": [
+        {
+          "id": 19,
+          "title": "أفلام عربية"
+        },
+        {
+          "id": 25,
+          "title": "الأفلام الأكثر مشاهدة"
+        }
+      ],
+      "trailer": {
+        "id": 2346751,
+        "type": "youtube",
+        "url": "https://www.youtube.com/watch?v=xbChqPr00nc"
+      },
+      "sources": []
+    }
+  ]
+}
