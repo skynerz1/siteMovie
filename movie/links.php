@@ -19,7 +19,7 @@ function getMovieDetails($movieId) {
     }
 
     // 2) ثانوي: search_results.json و save.json
-    $files = ['search_results.json', '../save.json'];
+    $files = ['search_results.json', '../save.json', '../search_results.json'];
     foreach ($files as $filename) {
         if (!file_exists($filename)) {
             continue;
