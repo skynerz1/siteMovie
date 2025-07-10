@@ -2,6 +2,7 @@
 session_start();
 
 
+
 function saveToSearchResults($newItems) {
     $filename = 'search_results.json';
 
@@ -179,7 +180,7 @@ function filterAsianSeries($seriesArray) {
         }
         foreach ($series['genres'] as $genre) {
             if (
-                $genre['title'] === "مسلسلات " ||
+                $genre['title'] === "مسلسلات آسيوية" ||
                 $genre['title'] === "مسلسلات "
             ) {
                 return false;
@@ -672,8 +673,10 @@ nav {
         <?php elseif (isset($_GET['search']) && !empty($seriesData)): ?>
             <h2 class="section-title">نتائج البحث</h2>
             <?php 
+                // لا نفلتر عند البحث
                 $seriesArray = isset($seriesData['posters']) ? $seriesData['posters'] : $seriesData;
-                $filteredSeries = filterAsianSeries($seriesArray);
+                $filteredSeries = $seriesArray;
+
                 if (empty($filteredSeries)): ?>
                     <p class="no-results">لم يتم العثور على نتائج.</p>
                 <?php else: ?>
@@ -681,8 +684,8 @@ nav {
                         <?php foreach ($filteredSeries as $series): ?>
                             <div class="movie-card">
                                 <?php if (!empty($series['sublabel'])): ?>
-    <div class="movie-sublabel"><?php echo htmlspecialchars($series['sublabel']); ?></div>
-<?php endif; ?>
+                                    <div class="movie-sublabel"><?php echo htmlspecialchars($series['sublabel']); ?></div>
+                                <?php endif; ?>
 
                                 <div class="content-type">Series</div>
                                 <img src="<?php echo htmlspecialchars($series['image']); ?>" alt="<?php echo htmlspecialchars($series['title']); ?>" class="movie-poster" loading="lazy">
@@ -702,6 +705,7 @@ nav {
                 <?php endif; ?>
 
         <?php else: ?>
+
 
     <h1>📺 اختر المنصة</h1>
 
@@ -1099,11 +1103,6 @@ if (isset($_SESSION['favorites']) && is_array($_SESSION['favorites'])) {
                     });
             });
         });
-   function toggleNav() {
-        const navLinks = document.getElementById('navLinks');
-        navLinks.classList.toggle('active');
-    }
-        
           document.querySelectorAll('a').forEach(link => {
             let timer;
 
