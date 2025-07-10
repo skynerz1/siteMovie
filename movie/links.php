@@ -1,22 +1,48 @@
 <?php
 function getMovieDetails($movieId) {
-    $files = ['search_results.json', '../save.json'];
-
-    foreach ($files as $filename) {
-        if (file_exists($filename)) {
-            $searchResults = json_decode(file_get_contents($filename), true);
-            if (isset($searchResults['posters']) && is_array($searchResults['posters'])) {
-                foreach ($searchResults['posters'] as $movie) {
-                    if ($movie['id'] == $movieId) {
-                        return $movie; // وجدناه
+    // 1) أساسي: browser.json → netflix / shahid / kids
+    $browserFile = '../browser.json';
+    if (file_exists($browserFile)) {
+        $content = file_get_contents($browserFile);
+        $data = json_decode($content, true);
+        if (json_last_error() === JSON_ERROR_NONE) {
+            foreach (['netflix', 'shahid', 'kids'] as $source) {
+                if (isset($data[$source]) && is_array($data[$source])) {
+                    foreach ($data[$source] as $item) {
+                        if (isset($item['id']) && $item['id'] == $movieId) {
+                            return $item;
+                        }
                     }
                 }
             }
         }
     }
 
-    return null; // لم يتم العثور عليه في أي من الملفين
+    // 2) ثانوي: search_results.json و save.json
+    $files = ['search_results.json', '../save.json'];
+    foreach ($files as $filename) {
+        if (!file_exists($filename)) {
+            continue;
+        }
+        $content = file_get_contents($filename);
+        $searchResults = json_decode($content, true);
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            continue;
+        }
+        if (isset($searchResults['posters']) && is_array($searchResults['posters'])) {
+            foreach ($searchResults['posters'] as $movie) {
+                if (isset($movie['id']) && $movie['id'] == $movieId) {
+                    return $movie;
+                }
+            }
+        }
+    }
+
+    return null; // لم يتم العثور على الفيلم/المسلسل في أي من المصادر
 }
+
+
+
 
 
 function getMovieLinks($movieId) {
