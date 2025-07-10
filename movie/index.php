@@ -380,7 +380,7 @@ if (isset($_GET['search'])) {
                                         <p>IMDB: <?php echo htmlspecialchars($movie['imdb']); ?></p>
                                         <p>Classification: <?php echo htmlspecialchars($movie['classification']); ?></p>
                                     </div>
-                                    <a href="links.php?id=<?php echo htmlspecialchars($movie['id']); ?>" class="btn-watch">View Movie</a>
+                                    <a href="movie/links.php?id=<?php echo htmlspecialchars($movie['id']); ?>" class="btn-watch">View Movie</a>
                                 </div>
                             <?php endforeach; ?>
                         </div>
