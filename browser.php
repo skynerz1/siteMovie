@@ -33,6 +33,8 @@ if (file_exists($cacheFile) && filemtime($cacheFile) >= filemtime($sourceFile)) 
     file_put_contents($cacheFile, json_encode($showsPage, JSON_UNESCAPED_UNICODE));
     file_put_contents($cacheMeta, $totalPages);
 }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -265,21 +267,47 @@ if (file_exists($cacheFile) && filemtime($cacheFile) >= filemtime($sourceFile)) 
 
     <!-- Category Container -->
     <div class="category-container">
-      <a href="?platform=netflix&page=1" class="category-card <?= $platform == 'netflix' ? 'active' : '' ?>" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGhnm_NIUms1oIl6QLrxjZzws8wLW_MVPOyw&s');"></a>
-      <a href="?platform=shahid&page=1" class="category-card <?= $platform == 'shahid' ? 'active' : '' ?>" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlwV1US7Ou5Sa4bd8ALXdp1QVcpQV9rPRr_A&s');"></a>
+      <a
+        href="?platform=netflix&page=1"
+        class="category-card <?= $platform === 'netflix' ? 'active' : '' ?>"
+        style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGhnm_NIUms1oIl6QLrxjZzws8wLW_MVPOyw&s');"
+        title="Netflix"
+      ></a>
+
+      <a
+        href="?platform=shahid&page=1"
+        class="category-card <?= $platform === 'shahid' ? 'active' : '' ?>"
+        style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlwV1US7Ou5Sa4bd8ALXdp1QVcpQV9rPRr_A&s');"
+        title="Shahid"
+      ></a>
+
+      <a
+        href="?platform=kids&page=1"
+        class="category-card <?= $platform === 'kids' ? 'active' : '' ?>"
+        style="background-image: url('https://i.pinimg.com/736x/e6/84/49/e68449b851a8ffb8256a71daab209775.jpg');"
+        title="Kids"
+      ></a>
     </div>
 
 
 
-<div class="cards-container">
-<?php foreach ($showsPage as $show): ?>
-    <a href="series.php?id=<?= $show['id'] ?>" class="card" title="<?= htmlspecialchars($show['title']) ?>">
-        <img src="<?= htmlspecialchars($show['image']) ?>" alt="<?= htmlspecialchars($show['title']) ?>" />
-        <div class="rating">⭐ <?= htmlspecialchars($show['rating']) ?>/5</div>
-        <div class="card-title"><?= htmlspecialchars($show['title']) ?></div>
-    </a>
-<?php endforeach; ?>
-</div>
+
+    <div class="cards-container">
+    <?php foreach ($showsPage as $show): ?>
+        <?php
+            $isMovie = isset($show['type']) && $show['type'] === 'movie';
+            $link = $isMovie
+                ? 'movie/links.php?id=' . urlencode($show['id'])
+                : 'series.php?id=' . urlencode($show['id']);
+        ?>
+        <a href="<?= $link ?>" class="card" title="<?= htmlspecialchars($show['title']) ?>">
+            <img src="<?= htmlspecialchars($show['image']) ?>" alt="<?= htmlspecialchars($show['title']) ?>" />
+            <div class="rating">⭐ <?= htmlspecialchars($show['rating']) ?>/5</div>
+            <div class="card-title"><?= htmlspecialchars($show['title']) ?></div>
+        </a>
+    <?php endforeach; ?>
+    </div>
+
 
 <?php if ($totalPages > 1): ?>
     <div class="pagination">
