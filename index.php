@@ -1038,6 +1038,11 @@ if (isset($_SESSION['favorites']) && is_array($_SESSION['favorites'])) {
     </footer>
 
     <script>
+          function toggleNav() {
+            const nav = document.getElementById("navLinks");
+            nav.classList.toggle("active");
+          }
+        
         document.addEventListener('DOMContentLoaded', function() {
             const navLinks = document.querySelectorAll('.nav-links a:not(.external-link)');
             navLinks.forEach(link => {
