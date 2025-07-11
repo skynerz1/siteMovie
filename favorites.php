@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once 'functions.php';
-
+include 'load.php';
 if (!isset($_SESSION['favorites'])) {
     $_SESSION['favorites'] = [];
 }
