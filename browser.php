@@ -1,4 +1,5 @@
 <?php
+include 'load.php';
 $platform = $_GET['platform'] ?? 'netflix';
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $perPage = 12;
