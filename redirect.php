@@ -1,5 +1,4 @@
 <?php
-include 'load.php';
 // خريطة إعادة التوجيه حسب قيمة المعامل s
 $redirectMap = [
     'squad' => './series.php?id=6410',
