@@ -4,6 +4,7 @@ $redirectMap = [
     'squad' => './series.php?id=6410',
     'ommi' => './series.php?id=24072',
     'hroug' => './series.php?id=23714',
+    '7moud' => './series.php?id=25125',
 ];
 
 
