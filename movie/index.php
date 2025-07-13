@@ -382,12 +382,7 @@ if (isset($_GET['search'])) {
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Watch Movies. All rights reserved.</p>
-            <p>Created by ✨dfkz✨</p>
-        </div>
-    </footer>
+
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
