@@ -1,5 +1,6 @@
 <?php
 include '../load.php';
+include '../includes/header.php';
 function getMovieDetails($movieId) {
     // 1) أساسي: browser.json → netflix / shahid / kids
     $browserFile = '../browser.json';
