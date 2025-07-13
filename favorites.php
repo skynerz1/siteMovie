@@ -2,6 +2,7 @@
 session_start();
 require_once 'functions.php';
 include 'load.php';
+include 'includes/header.php';
 
 // تحميل المفضلة من الكوكيز إذا لم تكن موجودة في الجلسة
 if (!isset($_SESSION['favorites'])) {
@@ -40,6 +41,7 @@ foreach ($_SESSION['favorites'] as $favId) {
     }
 }
 ?>
+
 
 
 <!DOCTYPE html>
@@ -231,20 +233,6 @@ foreach ($_SESSION['favorites'] as $favId) {
 </head>
 <body>
 
-    <header class="navbar">
-        <div class="container">
-            <a href="/" class="logo">Watch Series</a>
-            <div class="nav-toggle" onclick="toggleNav()">☰</div>
-            <nav>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/favorites.php" class="external-link">favorites</a></li>
-                    <li><a href="?soon">contact</a></li>
-                    <li><a href="/movie" class="external-link">Movies</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
 <h1>قائمة المفضلة ❤️</h1>
 
