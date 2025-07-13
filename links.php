@@ -441,20 +441,7 @@ body {
     </style>
 </head>
 <body>
-    <header class="navbar">
-    <div class="container">
-        <a href="/" class="logo">Watch Series</a>
-        <div class="nav-toggle" onclick="toggleNav()">☰</div>
-        <nav>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.php">Home</a></li>
-                <li><a href="favorites.php">Favorites</a></li>
-                <li><a href="?soon">Contact</a></li>
-                <li><a href="/movie">Movies</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+
 
 
     
