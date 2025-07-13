@@ -1,6 +1,7 @@
 <?php
 session_start();
 include '../load.php';
+include '../includes/header.php';
 function fetchMovies($type, $page = 1) {
     $baseUrl = "https://app.arabypros.com/api/movie/by/filtres/0/{$type}/{$page}/4F5A9C3D9A86FA54EACEDDD635185/d506abfd-9fe2-4b71-b979-feff21bcad13/";
     
