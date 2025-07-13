@@ -2,7 +2,7 @@
 session_start();
 
 include 'load.php';
-
+include 'includes/header.php';
 function saveToSearchResults($newItems) {
     $filename = 'search_results.json';
 
@@ -1046,12 +1046,7 @@ if (isset($_SESSION['favorites']) && is_array($_SESSION['favorites'])) {
 
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <p>© 2025 Watch Series. All rights reserved.</p>
-            <p>Created by ✨DFKZ✨</p>
-        </div>
-    </footer>
+
 
     <script>
           function toggleNav() {
@@ -1159,5 +1154,6 @@ if (isset($_SESSION['favorites']) && is_array($_SESSION['favorites'])) {
             });
           });
     </script>
+    <?php include 'includes/footer.php'; ?>
 </body>
 </html>
