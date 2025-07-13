@@ -134,7 +134,14 @@ if (isset($_GET['id'])) {
     <link rel="icon" href="a.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body { margin: 0; font-family: 'Roboto', sans-serif; background-color: #000; color: #fff; padding-top: 60px; scroll-behavior: smooth; }
+        body {
+          margin: 0;
+          font-family: 'Roboto', sans-serif;
+          background-color: #000;
+          color: #fff;
+          scroll-behavior: smooth;
+        }
+
         .top-bar {
             position: fixed; top: 0; left: 0; right: 0; height: 60px;
             background: linear-gradient(90deg, #e6b600, #b29300);
@@ -147,11 +154,26 @@ if (isset($_GET['id'])) {
         }
         .top-bar button:hover { background-color: #fff; color: #b29300; }
         .background-blur {
-            position: fixed; top: 0; left: 0; right: 0; height: 75vh;
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 75vh;
             background-image: url('<?php echo safeOutput($seriesDetails['cover'] ?? ''); ?>');
-            background-size: cover; background-position: center; filter: blur(10px); opacity: 0.55; z-index: -1;
+            background-size: cover;
+            background-position: center;
+            filter: blur(10px);
+            opacity: 0.55;
+            z-index: -1;
         }
-        .background-black { position: fixed; top: 75vh; left: 0; right: 0; bottom: 0; background-color: #000; z-index: -1; }
+
+        .background-black {
+            background-color: #000;
+            position: relative;
+            margin-top: -75vh; /* ← اسحب فوق */
+            padding-top: 75vh; /* ← وادفع المحتوى */
+            z-index: 0;
+        }
+
+
         .container { max-width: 1200px; margin: auto; padding: 20px; }
         .series-header { display: flex; flex-wrap: wrap; gap: 30px; align-items: flex-start; margin-bottom: 40px; }
         .series-info { flex: 1; }
