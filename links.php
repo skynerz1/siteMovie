@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+
 function getEpisodeSources($episodeId) {
     $url = "https://app.arabypros.com/api/episode/source/by/{$episodeId}/4F5A9C3D9A86FA54EACEDDD635185/d506abfd-9fe2-4b71-b979-feff21bcad13/";
     $headers = ['User-Agent: okhttp/4.8.0', 'Accept-Encoding: gzip'];
@@ -100,13 +101,8 @@ function isServerAlive($url) {
     return ($httpCode >= 200 && $httpCode < 400);
 }
 
-// فلترة الروابط الغير شغالة
-$episodeLinks = array_filter($episodeLinks, function($link) {
-    return !empty($link['url']) && isServerAlive($link['url']);
-});
+$initialServer = $episodeLinks[0]['url'] ?? '';
 
-// إعادة تعيين أول سيرفر (بعد الفلترة)
-$initialServer = $episodeLinks ? $episodeLinks[array_key_first($episodeLinks)]['url'] : '';
 
 
 ?>
@@ -459,6 +455,9 @@ body {
         </nav>
     </div>
 </header>
+
+
+    
     <div class="container">
         <a href="<?= htmlspecialchars($backLink) ?>" class="back-button">رجوع</a>
 
@@ -503,7 +502,11 @@ body {
                     <div class="server-grid">
                         <?php foreach ($episodeLinks as $index => $link): ?>
                             <?php if (!empty($link['url'])): ?>
-                                <button class="server-button" onclick="loadServer('<?= htmlspecialchars($link['url']) ?>', this)">
+                                    <button class="server-button" 
+                                    id="server-<?= $index ?>"
+                                    data-url="<?= htmlspecialchars($link['url']) ?>" 
+                                    onclick="loadServer('<?= htmlspecialchars($link['url']) ?>', this)">
+
                                     <div class="server-icon">
                                         <i class="fas fa-play-circle"></i>
                                     </div>
@@ -593,82 +596,96 @@ body {
             }
         }
 
-(function () {
-  const currentHost = window.location.host;
-  const originalLocation = window.location.href;
-  const originalWindowOpen = window.open;
-  let lastClickTime = 0;
 
-  const allowedLinks = ['t.me/MTVMSLSL1'];
+        document.addEventListener("DOMContentLoaded", () => {
+          document.querySelectorAll(".server-button").forEach(button => {
+            const url = button.dataset.url;
 
-  // ✅ 1. منع فتح روابط خارجية عند الضغط (باستثناء المسموح بها)
-  document.addEventListener('click', function (e) {
-    const target = e.target.closest('a');
-    const now = Date.now();
+            fetch(url, { method: "HEAD", mode: "no-cors" })
+              .then(() => {
+                // يعتبر حي
+              })
+              .catch(() => {
+                button.remove(); // نحذف السيرفر الغير شغال
+              });
+          });
+        });
 
-    if (now - lastClickTime < 1500) {
-      console.warn('⏳ Blocked rapid click redirect');
-      e.preventDefault();
-      e.stopPropagation();
-      return;
-    }
-    lastClickTime = now;
+        (function () {
+          const currentHost = window.location.host;
+          const originalLocation = window.location.href;
+          const originalWindowOpen = window.open;
+          let lastClickTime = 0;
 
-    if (!target) return;
+          const allowedLinks = ['t.me/MTVMSLSL1'];
 
-    try {
-      const linkHref = target.href;
-      const url = new URL(linkHref);
-      const linkHostPath = url.host + url.pathname;
+          // ✅ 1. منع فتح روابط خارجية عند الضغط (باستثناء المسموح بها)
+          document.addEventListener('click', function (e) {
+            const target = e.target.closest('a');
+            const now = Date.now();
 
-      if (url.host !== currentHost && !allowedLinks.includes(linkHostPath)) {
-        e.preventDefault();
-        e.stopPropagation();
-        console.warn('❌ Blocked external link:', linkHref);
-      }
-    } catch (err) {
-      console.warn('⚠️ Invalid or blocked link:', err);
-      e.preventDefault();
-      e.stopPropagation();
-    }
-  });
+            if (now - lastClickTime < 1500) {
+              console.warn('⏳ Blocked rapid click redirect');
+              e.preventDefault();
+              e.stopPropagation();
+              return;
+            }
+            lastClickTime = now;
 
-  // ✅ 2. منع أي محاولة تغيير غير مباشرة للموقع (window.location)
-  setInterval(() => {
-    if (window.location.href !== originalLocation) {
-      console.warn('❌ Blocked forced redirect to:', window.location.href);
-      window.location.href = originalLocation;
-    }
-  }, 150);
+            if (!target) return;
 
-  // ✅ 3. حظر window.open على روابط خارجية (باستثناء المسموح بها)
-  window.open = function (url, ...args) {
-    try {
-      const parsedUrl = new URL(url);
-      const fullPath = parsedUrl.host + parsedUrl.pathname;
+            try {
+              const linkHref = target.href;
+              const url = new URL(linkHref);
+              const linkHostPath = url.host + url.pathname;
 
-      if (parsedUrl.host !== currentHost && !allowedLinks.includes(fullPath)) {
-        console.warn('❌ Blocked window.open redirect to:', url);
-        return null;
-      }
-    } catch (err) {
-      console.warn('⚠️ Invalid URL or blocked:', url);
-      return null;
-    }
+              if (url.host !== currentHost && !allowedLinks.includes(linkHostPath)) {
+                e.preventDefault();
+                e.stopPropagation();
+                console.warn('❌ Blocked external link:', linkHref);
+              }
+            } catch (err) {
+              console.warn('⚠️ Invalid or blocked link:', err);
+              e.preventDefault();
+              e.stopPropagation();
+            }
+          });
 
-    return originalWindowOpen.call(window, url, ...args);
-  };
+          // ✅ 2. منع أي محاولة تغيير غير مباشرة للموقع (window.location)
+          setInterval(() => {
+            if (window.location.href !== originalLocation) {
+              console.warn('❌ Blocked forced redirect to:', window.location.href);
+              window.location.href = originalLocation;
+            }
+          }, 150);
 
-  // ✅ 4. منع التحويل عند فقدان التركيز قبل الخروج
-  window.addEventListener("beforeunload", function (e) {
-    if (!document.hasFocus()) {
-      e.preventDefault();
-      e.returnValue = '';
-      console.warn('⚠️ Blocked suspicious unload redirect');
-    }
-  });
-})();
+          // ✅ 3. حظر window.open على روابط خارجية (باستثناء المسموح بها)
+          window.open = function (url, ...args) {
+            try {
+              const parsedUrl = new URL(url);
+              const fullPath = parsedUrl.host + parsedUrl.pathname;
 
+              if (parsedUrl.host !== currentHost && !allowedLinks.includes(fullPath)) {
+                console.warn('❌ Blocked window.open redirect to:', url);
+                return null;
+              }
+            } catch (err) {
+              console.warn('⚠️ Invalid URL or blocked:', url);
+              return null;
+            }
+
+            return originalWindowOpen.call(window, url, ...args);
+          };
+
+          // ✅ 4. منع التحويل عند فقدان التركيز قبل الخروج
+          window.addEventListener("beforeunload", function (e) {
+            if (!document.hasFocus()) {
+              e.preventDefault();
+              e.returnValue = '';
+              console.warn('⚠️ Blocked suspicious unload redirect');
+            }
+          });
+        })();
     </script>
 </body>
 </html>
