@@ -256,6 +256,6 @@ foreach ($_SESSION['favorites'] as $favId) {
         <?php endforeach; ?>
     </div>
 <?php endif; ?>
-
+    <?php include 'includes/footer.php'; ?>
 </body>
 </html>
