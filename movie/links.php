@@ -311,6 +311,7 @@ if (isset($_GET['id'])) {
             document.getElementById('refresh-button').style.display = 'none';
         });
     </script>
+    <?php include '../includes/footer.php'; ?>
 </body>
 </html>
 
