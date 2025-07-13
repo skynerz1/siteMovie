@@ -4,6 +4,7 @@ session_start();
 
 require_once 'functions.php';
 include 'load.php';
+include 'includes/header.php';
 if (!isset($_SESSION['favorites'])) {
     $_SESSION['favorites'] = [];
 }
@@ -329,20 +330,7 @@ nav {
 </head>
 <body>
 
-<header class="navbar">
-    <div class="container">
-        <a href="/" class="logo">Watch Series</a>
-        <div class="nav-toggle" onclick="toggleNav()">☰</div>
-        <nav>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.php">Home</a></li>
-                <li><a href="favorites.php">Favorites</a></li>
-                <li><a href="?soon">Contact</a></li>
-                <li><a href="/movie">Movies</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+
 
 
 <div class="background-blur"></div>
@@ -427,7 +415,7 @@ nav {
     <?php endif; ?>
 </div>
 
-<footer>© 2025 Watch Series. Created by ✨DFKZ✨</footer>
+
 
 <!-- تريلر overlay -->
 <div class="trailer-overlay" id="trailerOverlay">
@@ -471,6 +459,6 @@ function toggleNav() {
 
 
 </script>
-
+    <?php include 'includes/footer.php'; ?>
 </body>
 </html>
