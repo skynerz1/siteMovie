@@ -347,9 +347,7 @@ nav {
         padding: 10px 0;
     }
 }
-body {
-    padding-top: 80px;
-}
+
 
 .corner-ad {
     position: absolute;
@@ -442,35 +440,37 @@ body {
 </head>
 <body>
 
+        <body>
+        <!-- الهيدر -->
 
 
-    
-    <div class="container">
-        <a href="<?= htmlspecialchars($backLink) ?>" class="back-button">رجوع</a>
+            <div class="container" style="padding-top: 100px;">
 
-        <?php if (!empty($error)): ?>
-            <h2>خطأ</h2>
-            <p><?= htmlspecialchars($error) ?></p>
-        <?php elseif (empty($episodeLinks)): ?>
-            <h2>لا توجد روابط</h2>
-            <p>لم يتم العثور على مصادر تشغيل.</p>
-        <?php else: ?><?php endif; ?>
+            <?php if (!empty($error)): ?>
+                <h2>خطأ</h2>
+                <p><?= htmlspecialchars($error) ?></p>
+            <?php elseif (empty($episodeLinks)): ?>
+                <h2>لا توجد روابط</h2>
+                <p>لم يتم العثور على مصادر تشغيل.</p>
+            <?php else: ?><?php endif; ?>
 
-<div class="player-box" style="position: relative;">
-    <iframe id="player-iframe" class="player-iframe" allowfullscreen src="<?= htmlspecialchars($initialServer) ?>"></iframe>
+            <!-- مشغل الفيديو في الأعلى -->
+            <div class="player-box" style="position: relative;">
+                <iframe id="player-iframe" class="player-iframe" allowfullscreen src="<?= htmlspecialchars($initialServer) ?>"></iframe>
 
-    <!-- إعلان متجاوب بأسفل يمين -->
-    <div class="corner-ad" id="cornerAd">
-        <button class="close-corner-ad" onclick="document.getElementById('cornerAd').style.display='none'">×</button>
-        <a href="https://t.me/MTVMSLSL1" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="إعلان" />
-            <div class="corner-ad-text">
-                <strong>تابعنا على تليجرام</strong>
-                <span>جديد الحلقات يومياً وبجودة عالية</span>
+                <!-- إعلان تليجرام -->
+                <div class="corner-ad" id="cornerAd">
+                    <button class="close-corner-ad" onclick="document.getElementById('cornerAd').style.display='none'">×</button>
+                    <a href="https://t.me/MTVMSLSL1" target="_blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="إعلان" />
+                        <div class="corner-ad-text">
+                            <strong>تابعنا على تليجرام</strong>
+                            <span>جديد الحلقات يومياً وبجودة عالية</span>
+                        </div>
+                    </a>
+                </div>
             </div>
-        </a>
-    </div>
-</div>
+
 
 
                 <div class="button-row">
@@ -674,6 +674,6 @@ body {
           });
         })();
     </script>
-    <?php include 'includes/footer.php'; ?>
+            <?php include 'includes/footer.php'; ?>
 </body>
 </html>
