@@ -114,18 +114,29 @@ $initialServer = $episodeLinks[0]['url'] ?? '';
     <title>مشاهدة - DfKzz</title>
     <link rel="icon" type="image/png" href="a.png">
     <style>
-      body {
-    background-color: #000;
-    color: #fff;
-    font-family: 'Segoe UI', sans-serif;
-    margin: 0;
-    padding: 0;
-}
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 15px;
-}
+        html, body {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+        }
+
+        body {
+          display: flex;
+          flex-direction: column;
+          background-color: #000;
+          color: #fff;
+          font-family: 'Segoe UI', sans-serif;
+        }
+
+        .container {
+          max-width: 1100px;
+          margin: auto;
+          padding: 15px;
+          flex: 1; /* هذا يدفع الفوتر لتحت */
+          width: 100%;
+          box-sizing: border-box;
+        }
+
 .back-button {
     background-color: #e50914;
     color: #fff;
@@ -279,74 +290,7 @@ $initialServer = $episodeLinks[0]['url'] ?? '';
         flex: 1 1 45%;
     }
 }
-.navbar {
-    background-color: #111;
-    padding: 15px 20px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 10000;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
-.navbar .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-.logo {
-    font-size: 1.6rem;
-    font-weight: bold;
-    color: #e50914;
-    text-decoration: none;
-}
-.nav-toggle {
-    display: none;
-    font-size: 2rem;
-    color: #fff;
-    cursor: pointer;
-}
-nav {
-    display: flex;
-    align-items: center;
-}
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    margin: 0;
-    padding: 0;
-}
-.nav-links li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    padding: 8px 12px;
-    display: inline-block;
-    transition: all 0.3s ease;
-}
-.nav-links li:hover a {
-    color: #e50914;
-}
-@media (max-width: 768px) {
-    .nav-toggle { display: block; }
-    nav { width: 100%; flex-direction: column; align-items: flex-start; }
-    .nav-links {
-        flex-direction: column;
-        width: 100%;
-        display: none;
-        margin-top: 10px;
-    }
-    .nav-links.active { display: flex; }
-    .nav-links li { width: 100%; }
-    .nav-links li a {
-        width: 100%;
-        padding: 10px 0;
-    }
-}
+
 
 
 .corner-ad {
