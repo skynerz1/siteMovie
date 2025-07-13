@@ -2,6 +2,7 @@
 session_start();
 include '../load.php';
 include '../includes/header.php';
+
 function fetchMovies($type, $page = 1) {
     $baseUrl = "https://app.arabypros.com/api/movie/by/filtres/0/{$type}/{$page}/4F5A9C3D9A86FA54EACEDDD635185/d506abfd-9fe2-4b71-b979-feff21bcad13/";
     
@@ -327,19 +328,7 @@ if (isset($_GET['search'])) {
     </style>
 </head>
 <body>
-    <header class="navbar">
-        <div class="container">
-            <a href="/" class="logo">Watch Movies</a>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="?action=home">Home</a></li>
-                    <li><a href="?action=popular">Popular Movies</a></li>
-                    <li><a href="?action=new-releases">New Releases</a></li>
-                    <li><a href="../index.php" class="external-link">Series</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+
 
     <main class="main-content">
         <section class="hero">
@@ -483,5 +472,6 @@ if (isset($_GET['search'])) {
             });
         });
     </script>
+    <?php include '../includes/footer.php'; ?>
 </body>
 </html>
