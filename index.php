@@ -634,23 +634,7 @@ nav {
     </style>
 </head>
 <body>
-<header class="navbar">
-    <div class="container">
-        <a href="/" class="logo" style="display: flex; align-items: center; gap: 10px;">
-            <img src="512.webp" alt="DfKzz Logo" style="height: 50px;">
-            <span style="font-size: 1.3rem; color: #fff;">DfKzz</span>
-        </a>
-        <div class="nav-toggle" onclick="toggleNav()">☰</div>
-        <nav>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="?action=home">Home</a></li>
-                <li><a href="/favorites.php" class="external-link">favorites</a></li>
-                <li><a href="?action=new-releases">New Releases</a></li>
-                <li><a href="/movie" class="external-link">Movies</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+
 
 
     <main class="main-content">
@@ -968,7 +952,7 @@ if (isset($_SESSION['favorites']) && is_array($_SESSION['favorites'])) {
 
 <?php if (!empty($favorites)): ?>
     <h2 class="section-title">
-      <img src="https://dfkz.onrender.com/512.webp" alt="قرد" style="width:1em; height:1em; vertical-align:middle;">
+      <img src="/512.webp" alt="قرد" style="width:1em; height:1em; vertical-align:middle;">
       قائمتي
     </h2>
 
