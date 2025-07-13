@@ -183,7 +183,7 @@
     <!-- Desktop Nav -->
     <nav class="main-nav desktop-only">
       <ul class="nav-list">
-        <li><a href="index.php"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="../index.php"><i class="fas fa-home"></i> Home</a></li>
         <li><a href="../movie"><i class="fas fa-film"></i> Movies</a></li>
         <li><a href="../index.php"><i class="fas fa-tv"></i> Series</a></li>
         <li><a href=""><i class="fas fa-broadcast-tower"></i> Channels</a></li>
