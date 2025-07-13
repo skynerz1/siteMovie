@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+include 'includes/header.php';
 
 function getEpisodeSources($episodeId) {
     $url = "https://app.arabypros.com/api/episode/source/by/{$episodeId}/4F5A9C3D9A86FA54EACEDDD635185/d506abfd-9fe2-4b71-b979-feff21bcad13/";
@@ -674,5 +674,6 @@ body {
           });
         })();
     </script>
+    <?php include 'includes/footer.php'; ?>
 </body>
 </html>
