@@ -2,21 +2,36 @@
 session_start();
 require_once 'functions.php';
 include 'load.php';
+
+// تحميل المفضلة من الكوكيز إذا لم تكن موجودة في الجلسة
 if (!isset($_SESSION['favorites'])) {
-    $_SESSION['favorites'] = [];
+    if (isset($_COOKIE['favorites'])) {
+        $_SESSION['favorites'] = json_decode($_COOKIE['favorites'], true) ?? [];
+    } else {
+        $_SESSION['favorites'] = [];
+    }
 }
 
+// تحديث المفضلة (إضافة/إزالة)
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['toggle_favorite'], $_POST['favorite_id'])) {
     $favId = $_POST['favorite_id'];
+
     if (in_array($favId, $_SESSION['favorites'])) {
+        // إزالة من المفضلة
         $_SESSION['favorites'] = array_values(array_filter($_SESSION['favorites'], fn($id) => $id !== $favId));
     } else {
+        // إضافة إلى المفضلة
         $_SESSION['favorites'][] = $favId;
     }
+
+    // حفظ المفضلة في الكوكيز (لمدة 30 يوم)
+    setcookie('favorites', json_encode($_SESSION['favorites']), time() + (86400 * 30), "/");
+
     header("Location: favorites.php");
     exit;
 }
 
+// تحميل تفاصيل المفضلات
 $favorites = [];
 foreach ($_SESSION['favorites'] as $favId) {
     $details = getSeriesDetails($favId);
@@ -25,6 +40,7 @@ foreach ($_SESSION['favorites'] as $favId) {
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
