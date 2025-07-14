@@ -1124,13 +1124,12 @@ if (!empty($turkishCollected)):
       </a>
     </div>
 
-
     <?php
     $limitKhaleeji = 15;
     $khaleejiCollected = [];
-    $attempts = 0;
+    $khaleejiAttempts = 0;
 
-    while (count($khaleejiCollected) < $limitKhaleeji && $attempts < 10) {
+    while (count($khaleejiCollected) < $limitKhaleeji && $khaleejiAttempts < 10) {
         $page = rand(1, 20);
         $data = fetchSeries('created', $page);
         $array = isset($data['posters']) ? $data['posters'] : $data;
@@ -1142,8 +1141,7 @@ if (!empty($turkishCollected)):
                 $khaleejiCollected[] = $series;
             }
         }
-
-        $attempts++;
+        $khaleejiAttempts++;
     }
 
     if (!empty($khaleejiCollected)):
@@ -1198,6 +1196,7 @@ if (!empty($turkishCollected)):
         <?php endforeach; ?>
     </div>
     <?php endif; ?>
+
 
     <!-- 🟢 سلايدر مسلسلات رمضان 2025 - عربي -->
     <div class="section-header">
@@ -1212,29 +1211,27 @@ if (!empty($turkishCollected)):
     </div>
 
     <?php
-    $limitKhaleeji = 15;
-    $khaleejiCollected = [];
-    $attempts = 0;
+    $limitAraby = 15;
+    $arabyCollected = [];
+    $arabyAttempts = 0;
 
-    while (count($khaleejiCollected) < $limitKhaleeji && $attempts < 10) {
+    while (count($arabyCollected) < $limitAraby && $arabyAttempts < 10) {
         $page = rand(1, 20);
         $data = fetchSeries('created', $page);
         $array = isset($data['posters']) ? $data['posters'] : $data;
         $filtered = filterRamadanAraby($array);
 
-
         foreach ($filtered as $series) {
-            if (count($khaleejiCollected) >= $limitKhaleeji) break;
-            if (!in_array($series['id'], array_column($khaleejiCollected, 'id'))) {
-                $khaleejiCollected[] = $series;
+            if (count($arabyCollected) >= $limitAraby) break;
+            if (!in_array($series['id'], array_column($arabyCollected, 'id'))) {
+                $arabyCollected[] = $series;
             }
         }
-
-        $attempts++;
+        $arabyAttempts++;
     }
 
-    if (!empty($khaleejiCollected)):
-        file_put_contents('search_results.json', json_encode(['posters' => $khaleejiCollected], JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
+    if (!empty($arabyCollected)):
+        file_put_contents('search_results.json', json_encode(['posters' => $arabyCollected], JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
 
         $permanentFile = 'search_results_permanent.json';
         $existing = [];
@@ -1247,7 +1244,7 @@ if (!empty($turkishCollected)):
             }
         }
 
-        foreach ($khaleejiCollected as $newItem) {
+        foreach ($arabyCollected as $newItem) {
             $found = false;
             foreach ($existing as $item) {
                 if (isset($item['id']) && $item['id'] == $newItem['id']) {
@@ -1264,7 +1261,7 @@ if (!empty($turkishCollected)):
     ?>
 
     <div class="slider-container">
-        <?php foreach ($khaleejiCollected as $series): ?>
+        <?php foreach ($arabyCollected as $series): ?>
             <div class="movie-card">
                 <?php if (!empty($series['sublabel'])): ?>
                     <div class="movie-sublabel"><?php echo htmlspecialchars($series['sublabel']); ?></div>
@@ -1285,6 +1282,7 @@ if (!empty($turkishCollected)):
         <?php endforeach; ?>
     </div>
     <?php endif; ?>
+
 
 <!-- =========================== -->
 
