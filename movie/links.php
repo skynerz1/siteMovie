@@ -1,47 +1,70 @@
 <?php
 include '../load.php';
 include '../includes/header.php';
-function getMovieDetails($movieId) {
-    // 1) أساسي: browser.json → netflix / shahid / kids
-    $browserFile = '../browser.json';
-    if (file_exists($browserFile)) {
-        $content = file_get_contents($browserFile);
-        $data = json_decode($content, true);
-        if (json_last_error() === JSON_ERROR_NONE) {
-            foreach (['netflix', 'shahid', 'kids'] as $source) {
-                if (isset($data[$source]) && is_array($data[$source])) {
-                    foreach ($data[$source] as $item) {
-                        if (isset($item['id']) && $item['id'] == $movieId) {
-                            return $item;
+    function getMovieDetails($movieId) {
+        // 1) أساسي: browser.json → netflix / shahid / kids
+        $browserFile = '../browser.json';
+        if (file_exists($browserFile)) {
+            $content = file_get_contents($browserFile);
+            $data = json_decode($content, true);
+            if (json_last_error() === JSON_ERROR_NONE) {
+                foreach (['netflix', 'shahid', 'kids'] as $source) {
+                    if (isset($data[$source]) && is_array($data[$source])) {
+                        foreach ($data[$source] as $item) {
+                            if (isset($item['id']) && $item['id'] == $movieId) {
+                                return $item;
+                            }
                         }
                     }
                 }
             }
         }
-    }
 
-    // 2) ثانوي: search_results.json و save.json
-    $files = ['search_results.json', '../save.json', '../search_results.json'];
-    foreach ($files as $filename) {
-        if (!file_exists($filename)) {
-            continue;
+        // 2) ثانوي: ملفات ثابتة (search_results.json و save.json)
+        $files = ['search_results.json', '../save.json', '../search_results.json'];
+        foreach ($files as $filename) {
+            if (!file_exists($filename)) continue;
+
+            $content = file_get_contents($filename);
+            $searchResults = json_decode($content, true);
+            if (json_last_error() !== JSON_ERROR_NONE) continue;
+
+            if (isset($searchResults['posters']) && is_array($searchResults['posters'])) {
+                foreach ($searchResults['posters'] as $movie) {
+                    if (isset($movie['id']) && $movie['id'] == $movieId) {
+                        return $movie;
+                    }
+                }
+            }
         }
-        $content = file_get_contents($filename);
-        $searchResults = json_decode($content, true);
-        if (json_last_error() !== JSON_ERROR_NONE) {
-            continue;
-        }
-        if (isset($searchResults['posters']) && is_array($searchResults['posters'])) {
-            foreach ($searchResults['posters'] as $movie) {
+
+        // 3) قراءة كل ملفات cache التي تبدأ بـ movies
+        $cacheFiles = glob('../cache/movies*.json');
+        foreach ($cacheFiles as $filename) {
+            if (!file_exists($filename)) continue;
+
+            $content = file_get_contents($filename);
+            $searchResults = json_decode($content, true);
+            if (json_last_error() !== JSON_ERROR_NONE) continue;
+
+            // بيانات ممكن تكون في مصفوفة أو داخل مفتاح 'posters'
+            $items = [];
+            if (isset($searchResults['posters']) && is_array($searchResults['posters'])) {
+                $items = $searchResults['posters'];
+            } elseif (is_array($searchResults)) {
+                $items = $searchResults;
+            }
+
+            foreach ($items as $movie) {
                 if (isset($movie['id']) && $movie['id'] == $movieId) {
                     return $movie;
                 }
             }
         }
+
+        return null; // لم يتم العثور على الفيلم/المسلسل في أي من المصادر
     }
 
-    return null; // لم يتم العثور على الفيلم/المسلسل في أي من المصادر
-}
 
 
 
