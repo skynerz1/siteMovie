@@ -629,6 +629,90 @@ nav {
             }
         }
 
+        /* تصميم الزر "مشاهدة الكل" */
+        .view-all-button {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          color: #fff;
+          font-size: 14px;
+          font-weight: 500;
+          text-decoration: none;
+          transition: color 0.3s ease;
+          cursor: pointer;
+        }
+
+        .view-all-button svg {
+          fill: currentColor;
+          transition: fill 0.3s ease;
+        }
+
+        .view-all-button:hover {
+          color: #ff4757;
+        }
+
+        .view-all-button:hover svg {
+          fill: currentColor;
+        }
+
+        /* مثال لتنسيق العنوان مع زر في جهة اليمين */
+        .section-title {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 15px;
+          font-size: 20px;
+          font-weight: bold;
+          color: #fff;
+        }
+
+        /* علامة جديد */
+        .new-badge {
+          background-color: #ff4757;
+          color: #fff;
+          padding: 2px 8px;
+          font-size: 12px;
+          border-radius: 4px;
+          margin-left: 8px;
+        }
+        .section-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 15px;
+        }
+
+        .section-title {
+          font-size: 20px;
+          font-weight: bold;
+          color: #fff;
+          margin: 0;
+        }
+
+        .view-all-button {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          color: #fff;
+          font-size: 14px;
+          font-weight: 500;
+          text-decoration: none;
+          transition: color 0.3s ease;
+          cursor: pointer;
+        }
+
+        .view-all-button svg {
+          fill: currentColor;
+          transition: fill 0.3s ease;
+        }
+
+        .view-all-button:hover {
+          color: #ff4757;
+        }
+
+        .view-all-button:hover svg {
+          fill: currentColor;
+        }
 
 
     </style>
@@ -733,11 +817,23 @@ nav {
     </div>
 
     
-            <!-- سلايدر جديد -->
-<div class="section-title">
-  <span class="new-badge">جديد</span>
- مسلسلات جديده 
-</div>
+    <!-- سلايدر جديد -->
+    <div class="section-title" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+      <div style="font-size: 20px; font-weight: bold; color: #fff;">
+        <span class="new-badge" style="background-color: #ff4757; color: white; padding: 2px 8px; font-size: 12px; border-radius: 4px; margin-left: 8px;">جديد</span>
+        مسلسلات جديدة
+      </div>
+
+        <a href="cat.php?category=series&type=created" class="view-all-button">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24" width="18" fill="currentColor">
+            <path d="M0 0h24v24H0V0z" fill="none"/>
+            <path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z"/>
+          </svg>
+          مشاهدة الكل
+        </a>
+
+    </div>
+
 
             <?php
                 $newReleases = getNewReleases();
@@ -769,7 +865,18 @@ nav {
                 </div>
             <?php endif; ?>
     <!-- ✅ سلايدر جديد لمسلسلات "خليجية" بناءً على نفس الفلترة -->
-    <h2 class="section-title">مسلسلات عربيه</h2>
+    <div class="section-header">
+      <h2 class="section-title">مسلسلات عربيه</h2>
+      <a href="cat.php" class="view-all-button">
+        <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24" width="18" fill="currentColor">
+          <path d="M0 0h24v24H0V0z" fill="none"/>
+          <path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z"/>
+        </svg>
+        مشاهدة الكل
+      </a>
+    </div>
+
+    
 <?php
 $limit = 15; // كم مسلسل تبي تعرض
 $collected = [];
@@ -853,7 +960,16 @@ if (!empty($limitedGulf)):
 <?php endif; ?>
 
 <!-- 🔵 سلايدر مسلسلات تركية -->
-<h2 class="section-title">مسلسلات تركية</h2>
+    <div class="section-header">
+      <h2 class="section-title">مسلسلات تركيه</h2>
+      <a href="cat.php" class="view-all-button">
+        <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24" width="18" fill="currentColor">
+          <path d="M0 0h24v24H0V0z" fill="none"/>
+          <path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z"/>
+        </svg>
+        مشاهدة الكل
+      </a>
+    </div>
 <?php
 $limitTurkish = 15;
 $turkishCollected = [];
@@ -983,7 +1099,16 @@ if (isset($_SESSION['favorites']) && is_array($_SESSION['favorites'])) {
 
 
             <!-- سلايدر الأكثر شهرة -->
-            <h2 class="section-title">Popular Series</h2>
+    <div class="section-header">
+      <h2 class="section-title">الاكثر شهره</h2>
+      <a href="cat.php?category=series&type=rating" class="view-all-button">
+        <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24" width="18" fill="currentColor">
+          <path d="M0 0h24v24H0V0z" fill="none"/>
+          <path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z"/>
+        </svg>
+        مشاهدة الكل
+      </a>
+    </div>
             <?php
                 $popularData = fetchSeries('rating', 1);
                 $popularArray = isset($popularData['posters']) ? $popularData['posters'] : $popularData;
