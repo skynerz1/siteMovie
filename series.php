@@ -18,28 +18,54 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['toggle_favorite'], $_
     }
 }
 
-function getSeriesDetails($seriesId) {
-    $localFiles = ['search_results_permanent.json', 'search_arab_permanent.json', 'save.json', 'browser.json'];
+    function getSeriesDetails($seriesId) {
+        $localFiles = ['search_results_permanent.json', 'search_arab_permanent.json', 'save.json', 'browser.json'];
 
-    foreach ($localFiles as $filename) {
-        if (!file_exists($filename)) continue;
+        // 1) البحث في الملفات المحلية العادية
+        foreach ($localFiles as $filename) {
+            if (!file_exists($filename)) continue;
 
-        $jsonData = json_decode(file_get_contents($filename), true);
-        if (!is_array($jsonData)) continue;
+            $jsonData = json_decode(file_get_contents($filename), true);
+            if (!is_array($jsonData)) continue;
 
-        // إذا فيه posters
-        if (isset($jsonData['posters']) && is_array($jsonData['posters'])) {
-            foreach ($jsonData['posters'] as $item) {
-                if (isset($item['id'], $item['type']) && $item['id'] == $seriesId && $item['type'] === 'serie') {
-                    return $item;
+            // إذا فيه posters
+            if (isset($jsonData['posters']) && is_array($jsonData['posters'])) {
+                foreach ($jsonData['posters'] as $item) {
+                    if (isset($item['id'], $item['type']) && $item['id'] == $seriesId && $item['type'] === 'serie') {
+                        return $item;
+                    }
+                }
+            }
+
+            // باقي المفاتيح (مثل netflix، shahid، إلخ)
+            foreach ($jsonData as $key => $items) {
+                if ($key === 'posters') continue; // تفادي التكرار
+                if (!is_array($items)) continue;
+
+                foreach ($items as $item) {
+                    if (isset($item['id'], $item['type']) && $item['id'] == $seriesId && $item['type'] === 'serie') {
+                        return $item;
+                    }
                 }
             }
         }
 
-        // باقي المفاتيح (مثل netflix، shahid، إلخ)
-        foreach ($jsonData as $key => $items) {
-            if ($key === 'posters') continue; // تفادينا التكرار
-            if (!is_array($items)) continue;
+        // 2) البحث في ملفات الكاش التي تبدأ بـ series داخل مجلد cache
+        $cacheDir = 'cache';  // عدل حسب موقع مجلد cache الحقيقي
+        $cacheFiles = glob($cacheDir . '/series*.json');
+        foreach ($cacheFiles as $filename) {
+            if (!file_exists($filename)) continue;
+
+            $jsonData = json_decode(file_get_contents($filename), true);
+            if (!is_array($jsonData)) continue;
+
+            // نفس طريقة البحث: ضمن posters أو المصفوفة مباشرة
+            $items = [];
+            if (isset($jsonData['posters']) && is_array($jsonData['posters'])) {
+                $items = $jsonData['posters'];
+            } elseif (is_array($jsonData)) {
+                $items = $jsonData;
+            }
 
             foreach ($items as $item) {
                 if (isset($item['id'], $item['type']) && $item['id'] == $seriesId && $item['type'] === 'serie') {
@@ -47,35 +73,35 @@ function getSeriesDetails($seriesId) {
                 }
             }
         }
-    }
 
-    // محاولة من API خارجي إذا ما تم العثور محلياً
-    $sources = ['created' => rand(1, 10), 'rating' => 1];
-    foreach ($sources as $type => $page) {
-        $url = "https://app.arabypros.com/api/serie/by/filtres/0/{$type}/{$page}/4F5A9C3D9A86FA54EACEDDD635185/d506abfd-9fe2-4b71-b979-feff21bcad13/";
-        $headers = ['User-Agent: okhttp/4.8.0', 'Accept-Encoding: gzip'];
-        $ch = curl_init();
-        curl_setopt_array($ch, [
-            CURLOPT_URL => $url,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_HTTPHEADER => $headers,
-            CURLOPT_SSL_VERIFYPEER => false,
-            CURLOPT_ENCODING => 'gzip'
-        ]);
-        $response = curl_exec($ch);
-        curl_close($ch);
-        $data = json_decode($response, true);
-        if (is_array($data)) {
-            foreach ($data as $item) {
-                if (isset($item['id'], $item['type']) && $item['id'] == $seriesId && $item['type'] === 'serie') {
-                    return $item;
+        // 3) محاولة من API خارجي إذا ما تم العثور محلياً
+        $sources = ['created' => rand(1, 10), 'rating' => 1];
+        foreach ($sources as $type => $page) {
+            $url = "https://app.arabypros.com/api/serie/by/filtres/0/{$type}/{$page}/4F5A9C3D9A86FA54EACEDDD635185/d506abfd-9fe2-4b71-b979-feff21bcad13/";
+            $headers = ['User-Agent: okhttp/4.8.0', 'Accept-Encoding: gzip'];
+            $ch = curl_init();
+            curl_setopt_array($ch, [
+                CURLOPT_URL => $url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_HTTPHEADER => $headers,
+                CURLOPT_SSL_VERIFYPEER => false,
+                CURLOPT_ENCODING => 'gzip'
+            ]);
+            $response = curl_exec($ch);
+            curl_close($ch);
+            $data = json_decode($response, true);
+            if (is_array($data)) {
+                foreach ($data as $item) {
+                    if (isset($item['id'], $item['type']) && $item['id'] == $seriesId && $item['type'] === 'serie') {
+                        return $item;
+                    }
                 }
             }
         }
+
+        return null;
     }
 
-    return null;
-}
 
 
 function getSeasonsAndEpisodes($seriesId) {
