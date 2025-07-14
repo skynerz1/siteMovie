@@ -230,6 +230,70 @@ if (isset($_GET['search'])) {
     });
 }
 
+
+function hasRamadan2025Genre($series) {
+    if (!isset($series['genres']) || !is_array($series['genres'])) return false;
+
+    foreach ($series['genres'] as $genre) {
+        if (
+            isset($genre['title']) &&
+            mb_strtolower(trim($genre['title'])) === 'مسلسلات رمضان 2025'
+        ) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function filterRamadanKhaleeji($seriesArray) {
+    $khaleejiCountries = ['السعودية', 'الامارات', 'الكويت'];
+
+    return array_filter($seriesArray, function($series) use ($khaleejiCountries) {
+        if (
+            !isset($series['classification']) ||
+            trim($series['classification']) === '' ||
+            !hasRamadan2025Genre($series)
+        ) return false;
+
+        $classification = mb_strtolower(trim($series['classification']));
+
+        foreach ($khaleejiCountries as $country) {
+            if (mb_strpos($classification, mb_strtolower($country)) !== false) {
+                return true;
+            }
+        }
+        return false;
+    });
+}
+
+function filterRamadanAraby($seriesArray) {
+    $arabCountries = ['مصر', 'تونس', 'سوريا', 'العراق'];
+
+    return array_filter($seriesArray, function($series) use ($arabCountries) {
+        if (
+            !isset($series['classification']) ||
+            trim($series['classification']) === '' ||
+            !hasRamadan2025Genre($series)
+        ) return false;
+
+        $classification = mb_strtolower(trim($series['classification']));
+
+        foreach ($arabCountries as $country) {
+            if (mb_strpos($classification, mb_strtolower($country)) !== false) {
+                return true;
+            }
+        }
+
+        return false;
+    });
+}
+
+
+
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -1046,6 +1110,181 @@ if (!empty($turkishCollected)):
         <?php endforeach; ?>
     </div>
 <?php endif; ?>
+
+
+    <!-- 🟢 سلايدر مسلسلات رمضان 2025 - خليجي -->
+    <div class="section-header">
+      <h2 class="section-title">مسلسلات رمضان 2025 - خليجي</h2>
+      <a href="cat.php?category=series&type=ramadan2025&subtype=khaleeji" class="view-all-button">
+        <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24" width="18" fill="currentColor">
+          <path d="M0 0h24v24H0V0z" fill="none"/>
+          <path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z"/>
+        </svg>
+        مشاهدة الكل
+      </a>
+    </div>
+
+
+    <?php
+    $limitKhaleeji = 15;
+    $khaleejiCollected = [];
+    $attempts = 0;
+
+    while (count($khaleejiCollected) < $limitKhaleeji && $attempts < 10) {
+        $page = rand(1, 20);
+        $data = fetchSeries('created', $page);
+        $array = isset($data['posters']) ? $data['posters'] : $data;
+        $filtered = filterRamadanKhaleeji($array);
+
+        foreach ($filtered as $series) {
+            if (count($khaleejiCollected) >= $limitKhaleeji) break;
+            if (!in_array($series['id'], array_column($khaleejiCollected, 'id'))) {
+                $khaleejiCollected[] = $series;
+            }
+        }
+
+        $attempts++;
+    }
+
+    if (!empty($khaleejiCollected)):
+        file_put_contents('search_results.json', json_encode(['posters' => $khaleejiCollected], JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
+
+        $permanentFile = 'search_results_permanent.json';
+        $existing = [];
+
+        if (file_exists($permanentFile)) {
+            $json = file_get_contents($permanentFile);
+            $data = json_decode($json, true);
+            if (isset($data['posters']) && is_array($data['posters'])) {
+                $existing = $data['posters'];
+            }
+        }
+
+        foreach ($khaleejiCollected as $newItem) {
+            $found = false;
+            foreach ($existing as $item) {
+                if (isset($item['id']) && $item['id'] == $newItem['id']) {
+                    $found = true;
+                    break;
+                }
+            }
+            if (!$found) {
+                $existing[] = $newItem;
+            }
+        }
+
+        file_put_contents($permanentFile, json_encode(['posters' => $existing], JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
+    ?>
+
+    <div class="slider-container">
+        <?php foreach ($khaleejiCollected as $series): ?>
+            <div class="movie-card">
+                <?php if (!empty($series['sublabel'])): ?>
+                    <div class="movie-sublabel"><?php echo htmlspecialchars($series['sublabel']); ?></div>
+                <?php endif; ?>
+                <div class="content-type">Series</div>
+                <img src="<?php echo htmlspecialchars($series['image']); ?>" alt="<?php echo htmlspecialchars($series['title']); ?>" class="movie-poster" loading="lazy">
+                <div class="movie-info">
+                    <h3 class="movie-title"><?php echo htmlspecialchars($series['title']); ?></h3>
+                    <p class="movie-year"><?php echo htmlspecialchars($series['year']); ?></p>
+                </div>
+                <div class="movie-details">
+                    <p>Year: <?php echo htmlspecialchars($series['year']); ?></p>
+                    <p>IMDB: <?php echo htmlspecialchars($series['imdb']); ?></p>
+                    <p>Classification: <?php echo htmlspecialchars($series['classification']); ?></p>
+                </div>
+                <a href="series.php?id=<?php echo htmlspecialchars($series['id']); ?>" class="btn-watch">View Series</a>
+            </div>
+        <?php endforeach; ?>
+    </div>
+    <?php endif; ?>
+
+    <!-- 🟢 سلايدر مسلسلات رمضان 2025 - عربي -->
+    <div class="section-header">
+      <h2 class="section-title">مسلسلات رمضان 2025 - عربي</h2>
+      <a href="cat.php?category=series&type=ramadan2025&subtype=araby" class="view-all-button">
+        <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24" width="18" fill="currentColor">
+          <path d="M0 0h24v24H0V0z" fill="none"/>
+          <path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z"/>
+        </svg>
+        مشاهدة الكل
+      </a>
+    </div>
+
+    <?php
+    $limitKhaleeji = 15;
+    $khaleejiCollected = [];
+    $attempts = 0;
+
+    while (count($khaleejiCollected) < $limitKhaleeji && $attempts < 10) {
+        $page = rand(1, 20);
+        $data = fetchSeries('created', $page);
+        $array = isset($data['posters']) ? $data['posters'] : $data;
+        $filtered = filterRamadanAraby($array);
+
+
+        foreach ($filtered as $series) {
+            if (count($khaleejiCollected) >= $limitKhaleeji) break;
+            if (!in_array($series['id'], array_column($khaleejiCollected, 'id'))) {
+                $khaleejiCollected[] = $series;
+            }
+        }
+
+        $attempts++;
+    }
+
+    if (!empty($khaleejiCollected)):
+        file_put_contents('search_results.json', json_encode(['posters' => $khaleejiCollected], JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
+
+        $permanentFile = 'search_results_permanent.json';
+        $existing = [];
+
+        if (file_exists($permanentFile)) {
+            $json = file_get_contents($permanentFile);
+            $data = json_decode($json, true);
+            if (isset($data['posters']) && is_array($data['posters'])) {
+                $existing = $data['posters'];
+            }
+        }
+
+        foreach ($khaleejiCollected as $newItem) {
+            $found = false;
+            foreach ($existing as $item) {
+                if (isset($item['id']) && $item['id'] == $newItem['id']) {
+                    $found = true;
+                    break;
+                }
+            }
+            if (!$found) {
+                $existing[] = $newItem;
+            }
+        }
+
+        file_put_contents($permanentFile, json_encode(['posters' => $existing], JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
+    ?>
+
+    <div class="slider-container">
+        <?php foreach ($khaleejiCollected as $series): ?>
+            <div class="movie-card">
+                <?php if (!empty($series['sublabel'])): ?>
+                    <div class="movie-sublabel"><?php echo htmlspecialchars($series['sublabel']); ?></div>
+                <?php endif; ?>
+                <div class="content-type">Series</div>
+                <img src="<?php echo htmlspecialchars($series['image']); ?>" alt="<?php echo htmlspecialchars($series['title']); ?>" class="movie-poster" loading="lazy">
+                <div class="movie-info">
+                    <h3 class="movie-title"><?php echo htmlspecialchars($series['title']); ?></h3>
+                    <p class="movie-year"><?php echo htmlspecialchars($series['year']); ?></p>
+                </div>
+                <div class="movie-details">
+                    <p>Year: <?php echo htmlspecialchars($series['year']); ?></p>
+                    <p>IMDB: <?php echo htmlspecialchars($series['imdb']); ?></p>
+                    <p>Classification: <?php echo htmlspecialchars($series['classification']); ?></p>
+                </div>
+                <a href="series.php?id=<?php echo htmlspecialchars($series['id']); ?>" class="btn-watch">View Series</a>
+            </div>
+        <?php endforeach; ?>
+    </div>
+    <?php endif; ?>
 
 <!-- =========================== -->
 
