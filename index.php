@@ -1114,7 +1114,11 @@ if (!empty($turkishCollected)):
 
     <!-- 🟢 سلايدر مسلسلات رمضان 2025 - خليجي -->
     <div class="section-header">
-      <h2 class="section-title">مسلسلات رمضان 2025 - خليجي</h2>
+        <h2 class="section-title" style="display: flex; align-items: center; gap: 8px;">
+          <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f31c/512.webp" alt="رمضان 2025" style="width: 32px; height: 32px;">
+          مسلسلات رمضان 2025 - خليجي
+        </h2>
+
       <a href="cat.php?category=series&type=ramadan2025&subtype=khaleeji" class="view-all-button">
         <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24" width="18" fill="currentColor">
           <path d="M0 0h24v24H0V0z" fill="none"/>
@@ -1200,7 +1204,11 @@ if (!empty($turkishCollected)):
 
     <!-- 🟢 سلايدر مسلسلات رمضان 2025 - عربي -->
     <div class="section-header">
-      <h2 class="section-title">مسلسلات رمضان 2025 - عربي</h2>
+        <h2 class="section-title" style="display: flex; align-items: center; gap: 8px;">
+          <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f31c/512.webp" alt="رمضان 2025" style="width: 32px; height: 32px;">
+          مسلسلات رمضان 2025 - عربي
+        </h2>
+
       <a href="cat.php?category=series&type=ramadan2025&subtype=araby" class="view-all-button">
         <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24" width="18" fill="currentColor">
           <path d="M0 0h24v24H0V0z" fill="none"/>
@@ -1337,7 +1345,11 @@ if (isset($_SESSION['favorites']) && is_array($_SESSION['favorites'])) {
 
             <!-- سلايدر الأكثر شهرة -->
     <div class="section-header">
-      <h2 class="section-title">الاكثر شهره</h2>
+        <h2 class="section-title">
+          الاكثر شهره
+          <img src="https://em-content.zobj.net/source/animated-noto-color-emoji/356/fire_1f525.gif" alt="🔥" style="width:24px; height:24px; vertical-align:middle; margin-left:8px;">
+        </h2>
+
       <a href="cat.php?category=series&type=rating" class="view-all-button">
         <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24" width="18" fill="currentColor">
           <path d="M0 0h24v24H0V0z" fill="none"/>
