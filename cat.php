@@ -4,6 +4,7 @@ include 'includes/header.php';
 
 $category = $_GET['category'] ?? 'series'; // 'series' أو 'movies'
 $type = $_GET['type'] ?? 'created';
+$subtype = $_GET['subtype'] ?? 'all'; // 'khaleeji', 'araby', 'all'
 $page = $_GET['page'] ?? 1;
 
 $KEY1 = "4F5A9C3D9A86FA54EACEDDD635185";
@@ -16,6 +17,7 @@ if (!is_dir($cacheDir)) {
     mkdir($cacheDir, 0755, true);
 }
 
+// جلب بيانات رمضان 2025 لمسلسلات فقط
 if ($type === 'ramadan2025' && $category === 'series') {
     $jsonFile = "{$cacheDir}/{$category}-ramadan2025.json";
 
@@ -41,7 +43,17 @@ if ($type === 'ramadan2025' && $category === 'series') {
                 $data = json_decode($response, true);
                 $pageItems = isset($data[0]['id']) ? $data : ($data['posters'] ?? []);
                 foreach ($pageItems as $item) {
-                    if (stripos($item['title'], 'رمضان 2025') !== false) {
+                    // تأكد وجود نوع "مسلسلات رمضان 2025" ضمن الـ genres
+                    $hasRamadanGenre = false;
+                    if (isset($item['genres']) && is_array($item['genres'])) {
+                        foreach ($item['genres'] as $g) {
+                            if (isset($g['title']) && trim($g['title']) === 'مسلسلات رمضان 2025') {
+                                $hasRamadanGenre = true;
+                                break;
+                            }
+                        }
+                    }
+                    if ($hasRamadanGenre) {
                         $allItems[] = $item;
                     }
                 }
@@ -53,6 +65,43 @@ if ($type === 'ramadan2025' && $category === 'series') {
 
     if (file_exists($jsonFile)) {
         $items = json_decode(file_get_contents($jsonFile), true);
+    }
+
+    // تطبيق الفلترة حسب subtype
+    function filterRamadanKhaleeji($items) {
+        $khaleeji = ['السعودية', 'الامارات', 'الكويت'];
+        return array_filter($items, function($item) use ($khaleeji) {
+            if (empty($item['classification'])) return false;
+
+            $classification = mb_strtolower(trim($item['classification']));
+            foreach ($khaleeji as $country) {
+                if (mb_strpos($classification, mb_strtolower($country)) !== false) {
+                    return true;
+                }
+            }
+            return false;
+        });
+    }
+
+    function filterRamadanAraby($items) {
+        $araby = ['مصر', 'سوريا', 'العراق', 'تونس'];
+        return array_filter($items, function($item) use ($araby) {
+            if (empty($item['classification'])) return false;
+
+            $classification = mb_strtolower(trim($item['classification']));
+            foreach ($araby as $country) {
+                if (mb_strpos($classification, mb_strtolower($country)) !== false) {
+                    return true;
+                }
+            }
+            return false;
+        });
+    }
+
+    if ($subtype === 'khaleeji') {
+        $items = filterRamadanKhaleeji($items);
+    } elseif ($subtype === 'araby') {
+        $items = filterRamadanAraby($items);
     }
 } else {
     $jsonFile = "{$cacheDir}/{$category}-{$type}-{$page}.json";
@@ -90,7 +139,9 @@ if ($type === 'ramadan2025' && $category === 'series') {
 ?>
 
 <div class="container">
-    <h2>🎬 <?= $category === 'movies' ? 'الأفلام' : 'المسلسلات' ?> - حسب: <?= htmlspecialchars($type) ?> <?= ($type === 'ramadan2025' && $category === 'series') ? '' : "(صفحة $page)" ?></h2>
+    <h2>🎬 <?= $category === 'movies' ? 'الأفلام' : 'المسلسلات' ?> - حسب: <?= htmlspecialchars($type) ?> 
+        <?= ($type === 'ramadan2025' && $category === 'series') ? ($subtype !== 'all' ? "($subtype)" : '') : "(صفحة $page)" ?>
+    </h2>
 
     <div class="categories">
         <strong>التصنيف:</strong>
@@ -99,7 +150,6 @@ if ($type === 'ramadan2025' && $category === 'series') {
     </div>
 
     <div class="filters">
-        
         <strong>فرز حسب:</strong>
         <a href="?category=<?= $category ?>&type=created" class="<?= $type === 'created' ? 'active' : '' ?>">🆕 الأحدث</a>
         <a href="?category=<?= $category ?>&type=rating" class="<?= $type === 'rating' ? 'active' : '' ?>">⭐ الأعلى تقييماً</a>
@@ -111,6 +161,15 @@ if ($type === 'ramadan2025' && $category === 'series') {
         <a href="?category=<?= $category ?>&type=<?= $type ?>&page=<?= $page ?>&refresh=1">🔄 تحديث</a>
     </div>
 
+    <?php if ($type === 'ramadan2025' && $category === 'series'): ?>
+        <div class="filters">
+            <strong>عرض:</strong>
+            <a href="?category=series&type=ramadan2025&subtype=all" class="<?= $subtype === 'all' ? 'active' : '' ?>">الكل</a>
+            <a href="?category=series&type=ramadan2025&subtype=khaleeji" class="<?= $subtype === 'khaleeji' ? 'active' : '' ?>">الخليجي</a>
+            <a href="?category=series&type=ramadan2025&subtype=araby" class="<?= $subtype === 'araby' ? 'active' : '' ?>">العربي</a>
+        </div>
+    <?php endif; ?>
+
     <?php if (empty($items)): ?>
         <div style="color:red;">⚠️ لا توجد بيانات متوفرة.</div>
     <?php endif; ?>
@@ -119,37 +178,28 @@ if ($type === 'ramadan2025' && $category === 'series') {
         <?php foreach ($items as $index => $item): ?>
             <div class="movie-card">
                 <a href="<?= $category === 'movies' ? 'movie/links.php?id=' : 'series.php?id=' ?><?= $item['id'] ?>">
-                    <?php
-                    $hasTopBadge = ($index < 5);
-                    ?>
-
+                    <?php $hasTopBadge = ($index < 5); ?>
                     <div class="movie-thumb <?= $hasTopBadge ? 'has-top-badge' : 'no-top-badge' ?>">
                         <?php if ($hasTopBadge): ?>
                             <div class="top-badge">TOP <?= $index + 1 ?></div>
                         <?php endif; ?>
-
                         <?php if (!empty($item['label'])): ?>
                             <div class="label-badge"><?= htmlspecialchars($item['label']) ?></div>
                         <?php endif; ?>
-
                         <?php if (!empty($item['sublabel'])): ?>
                             <div class="sub-badge"><?= htmlspecialchars($item['sublabel']) ?></div>
                         <?php endif; ?>
-
                         <img src="<?= $item['image'] ?>" alt="<?= htmlspecialchars($item['title']) ?>">
-
                         <div class="rating-overlay">
                             ⭐ <?= 
                                 (isset($item['rating']) && is_numeric($item['rating'])) ? $item['rating'] : 
                                 ((isset($item['rate']) && is_numeric($item['rate'])) ? $item['rate'] : 'N/A') 
                             ?>
                         </div>
-
                         <div class="watch-overlay">
                           <i class="fa fa-play play-icon" aria-hidden="true"></i>
                         </div>
                     </div>
-
                     <div class="movie-info">
                         <div class="movie-title"><?= htmlspecialchars($item['title']) ?></div>
                         <div class="movie-meta">
@@ -161,10 +211,6 @@ if ($type === 'ramadan2025' && $category === 'series') {
         <?php endforeach; ?>
     </div>
 
-
-
-
-
     <?php if (!($type === 'ramadan2025' && $category === 'series')): ?>
         <div class="pagination">
             <?php if ($page > 1): ?>
@@ -174,6 +220,7 @@ if ($type === 'ramadan2025' && $category === 'series') {
         </div>
     <?php endif; ?>
 </div>
+
 
 
 <style>
