@@ -104,6 +104,26 @@ function isServerAlive($url) {
 $initialServer = $episodeLinks[0]['url'] ?? '';
 
 
+function getSeriesDetails($seriesId) {
+    $localFiles = ['search_results_permanent.json', 'search_arab_permanent.json', 'save.json', 'browser.json'];
+
+    foreach ($localFiles as $file) {
+        if (!file_exists($file)) continue;
+
+        $content = file_get_contents($file);
+        $data = json_decode($content, true);
+
+        if (!is_array($data)) continue;
+
+        foreach ($data as $item) {
+            if (isset($item['id']) && $item['id'] == $seriesId) {
+                return $item; // لقينا المسلسل
+            }
+        }
+    }
+
+    return null; // ما لقينا
+}
 
 ?>
 <!DOCTYPE html>
@@ -399,6 +419,8 @@ $initialServer = $episodeLinks[0]['url'] ?? '';
             <?php else: ?><?php endif; ?>
 
             <!-- مشغل الفيديو في الأعلى -->
+                <a href="<?= $backLink ?>" class="back-button"><i class="fas fa-arrow-right"></i> رجوع</a>
+
             <div class="player-box" style="position: relative;">
                 <iframe id="player-iframe" class="player-iframe" allowfullscreen src="<?= htmlspecialchars($initialServer) ?>"></iframe>
 
