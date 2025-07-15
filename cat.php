@@ -18,8 +18,10 @@ if (!is_dir($cacheDir)) {
 }
 
 // جلب بيانات رمضان 2025 لمسلسلات فقط
-if ($type === 'ramadan2025' && $category === 'series') {
-    $jsonFile = "{$cacheDir}/{$category}-ramadan2025.json";
+if ($type === 'ramadan' && $category === 'series' && isset($_GET['ramadanYear'])) {
+    $ramadanYear = preg_replace('/[^0-9]/', '', $_GET['ramadanYear']);
+$jsonFile = "{$cacheDir}/{$category}-ramadan{$ramadanYear}.json";
+
 
     if (!file_exists($jsonFile) || isset($_GET['refresh'])) {
         $allItems = [];
@@ -47,7 +49,7 @@ if ($type === 'ramadan2025' && $category === 'series') {
                     $hasRamadanGenre = false;
                     if (isset($item['genres']) && is_array($item['genres'])) {
                         foreach ($item['genres'] as $g) {
-                            if (isset($g['title']) && trim($g['title']) === 'مسلسلات رمضان 2025') {
+                            if (isset($g['title']) && trim($g['title']) === "مسلسلات رمضان {$ramadanYear}") {
                                 $hasRamadanGenre = true;
                                 break;
                             }
@@ -149,26 +151,40 @@ if ($type === 'ramadan2025' && $category === 'series') {
         <a href="?category=movies&type=<?= $type ?>" class="<?= $category === 'movies' ? 'active' : '' ?>">🎥 أفلام</a>
     </div>
 
-    <div class="filters">
-        <strong>فرز حسب:</strong>
-        <a href="?category=<?= $category ?>&type=created" class="<?= $type === 'created' ? 'active' : '' ?>">🆕 الأحدث</a>
-        <a href="?category=<?= $category ?>&type=rating" class="<?= $type === 'rating' ? 'active' : '' ?>">⭐ الأعلى تقييماً</a>
-        <a href="?category=<?= $category ?>&type=views" class="<?= $type === 'views' ? 'active' : '' ?>">🔥 الأكثر مشاهدة</a>
-        <a href="?category=<?= $category ?>&type=year" class="<?= $type === 'year' ? 'active' : '' ?>">📅 الأحدث سنة</a>
-        <?php if ($category === 'series'): ?>
-            <a href="?category=series&type=ramadan2025" class="<?= $type === 'ramadan2025' ? 'active' : '' ?>">🌙 رمضان 2025</a>
-        <?php endif; ?>
-        <a href="?category=<?= $category ?>&type=<?= $type ?>&page=<?= $page ?>&refresh=1">🔄 تحديث</a>
-    </div>
-
-    <?php if ($type === 'ramadan2025' && $category === 'series'): ?>
-        <div class="filters">
-            <strong>عرض:</strong>
-            <a href="?category=series&type=ramadan2025&subtype=all" class="<?= $subtype === 'all' ? 'active' : '' ?>">الكل</a>
-            <a href="?category=series&type=ramadan2025&subtype=khaleeji" class="<?= $subtype === 'khaleeji' ? 'active' : '' ?>">الخليجي</a>
-            <a href="?category=series&type=ramadan2025&subtype=araby" class="<?= $subtype === 'araby' ? 'active' : '' ?>">العربي</a>
-        </div>
+<div class="filters">
+    <strong>فرز حسب:</strong>
+    <a href="?category=<?= $category ?>&type=created" class="<?= $type === 'created' ? 'active' : '' ?>">🆕 الأحدث</a>
+    <a href="?category=<?= $category ?>&type=rating" class="<?= $type === 'rating' ? 'active' : '' ?>">⭐ الأعلى تقييماً</a>
+    <a href="?category=<?= $category ?>&type=views" class="<?= $type === 'views' ? 'active' : '' ?>">🔥 الأكثر مشاهدة</a>
+    <a href="?category=<?= $category ?>&type=year" class="<?= $type === 'year' ? 'active' : '' ?>">📅 الأحدث سنة</a>
+    <?php if ($category === 'series'): ?>
+        <a href="?category=series&type=ramadan&ramadanYear=2025" class="<?= $type === 'ramadan' ? 'active' : '' ?>">🌙 رمضان</a>
     <?php endif; ?>
+    <a href="?category=<?= $category ?>&type=<?= $type ?>&page=<?= $page ?>&refresh=1">🔄 تحديث</a>
+</div>
+
+<?php if ($type === 'ramadan' && $category === 'series'): ?>
+    <div class="filters">
+        <strong>رمضان:</strong>
+        <?php 
+        $ramadanYears = [2025, 2024];
+        foreach ($ramadanYears as $year): 
+        ?>
+            <a href="?category=series&type=ramadan&ramadanYear=<?= $year ?>&subtype=<?= $subtype ?>" 
+               class="<?= ($_GET['ramadanYear'] ?? '') == $year ? 'active' : '' ?>">🌙 رمضان <?= $year ?></a>
+        <?php endforeach; ?>
+    </div>
+<?php endif; ?>
+
+<?php if ($type === 'ramadan' && $category === 'series' && isset($_GET['ramadanYear'])): ?>
+    <div class="filters">
+        <strong>عرض:</strong>
+        <a href="?category=series&type=ramadan&ramadanYear=<?= $_GET['ramadanYear'] ?>&subtype=all" class="<?= $subtype === 'all' ? 'active' : '' ?>">الكل</a>
+        <a href="?category=series&type=ramadan&ramadanYear=<?= $_GET['ramadanYear'] ?>&subtype=khaleeji" class="<?= $subtype === 'khaleeji' ? 'active' : '' ?>">الخليجي</a>
+        <a href="?category=series&type=ramadan&ramadanYear=<?= $_GET['ramadanYear'] ?>&subtype=araby" class="<?= $subtype === 'araby' ? 'active' : '' ?>">العربي</a>
+    </div>
+<?php endif; ?>
+
 
     <?php if (empty($items)): ?>
         <div style="color:red;">⚠️ لا توجد بيانات متوفرة.</div>
