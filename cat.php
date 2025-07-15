@@ -5,7 +5,7 @@ include 'includes/header.php';
 $category = $_GET['category'] ?? 'series'; // 'series' أو 'movies'
 $type = $_GET['type'] ?? 'created';
 $subtype = $_GET['subtype'] ?? 'all'; // 'khaleeji', 'araby', 'all'
-$page = $_GET['page'] ?? 1;
+$page = (int)($_GET['page'] ?? 1);
 
 $KEY1 = "4F5A9C3D9A86FA54EACEDDD635185";
 $KEY2 = "d506abfd-9fe2-4b71-b979-feff21bcad13";
@@ -17,11 +17,18 @@ if (!is_dir($cacheDir)) {
     mkdir($cacheDir, 0755, true);
 }
 
+// دالة فلترة genre عامة
+function filterByGenre($items, $selectedGenre) {
+    return array_filter($items, function($item) use ($selectedGenre) {
+        if (empty($item['classification'])) return false;
+        return mb_strpos(mb_strtolower($item['classification']), mb_strtolower($selectedGenre)) !== false;
+    });
+}
+
 // جلب بيانات رمضان 2025 لمسلسلات فقط
 if ($type === 'ramadan' && $category === 'series' && isset($_GET['ramadanYear'])) {
     $ramadanYear = preg_replace('/[^0-9]/', '', $_GET['ramadanYear']);
-$jsonFile = "{$cacheDir}/{$category}-ramadan{$ramadanYear}.json";
-
+    $jsonFile = "{$cacheDir}/{$category}-ramadan{$ramadanYear}.json";
 
     if (!file_exists($jsonFile) || isset($_GET['refresh'])) {
         $allItems = [];
@@ -45,7 +52,6 @@ $jsonFile = "{$cacheDir}/{$category}-ramadan{$ramadanYear}.json";
                 $data = json_decode($response, true);
                 $pageItems = isset($data[0]['id']) ? $data : ($data['posters'] ?? []);
                 foreach ($pageItems as $item) {
-                    // تأكد وجود نوع "مسلسلات رمضان 2025" ضمن الـ genres
                     $hasRamadanGenre = false;
                     if (isset($item['genres']) && is_array($item['genres'])) {
                         foreach ($item['genres'] as $g) {
@@ -105,40 +111,108 @@ $jsonFile = "{$cacheDir}/{$category}-ramadan{$ramadanYear}.json";
     } elseif ($subtype === 'araby') {
         $items = filterRamadanAraby($items);
     }
+
+// فلترة genre
+$selectedGenre = $_GET['genre'] ?? 'all';
+if ($selectedGenre !== 'all') {
+    $items = filterByGenre($items, $selectedGenre);
+}
+
+// ✅ فلترة classification
+$currentClassification = $_GET['classification'] ?? 'all';
+if ($currentClassification !== 'all') {
+    $items = array_filter($items, function($item) use ($currentClassification) {
+        return isset($item['classification']) &&
+               mb_stripos($item['classification'], $currentClassification) !== false;
+    });
+}
+
+
 } else {
-    $jsonFile = "{$cacheDir}/{$category}-{$type}-{$page}.json";
+    $selectedGenre = $_GET['genre'] ?? 'all';
 
-    $baseUrl = $category === 'series' 
-        ? "https://app.arabypros.com/api/serie/by/filtres/0/{$type}/{$page}/{$KEY1}/{$KEY2}/"
-        : "https://app.arabypros.com/api/movie/by/filtres/0/{$type}/{$page}/{$KEY1}/{$KEY2}/";
+    if ($selectedGenre !== 'all') {
+        // جلب من عدة صفحات (مثلاً 5 صفحات) وتجميعها
+        $pagesToFetch = 5;
+        $allItems = [];
 
-    if (!file_exists($jsonFile) || isset($_GET['refresh'])) {
-        $headers = ["User-Agent: okhttp/4.8.0", "Accept-Encoding: gzip"];
+        for ($p = 1; $p <= $pagesToFetch; $p++) {
+            $jsonFile = "{$cacheDir}/{$category}-{$type}-{$p}.json";
 
-        $ch = curl_init($baseUrl);
-        curl_setopt_array($ch, [
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_HTTPHEADER => $headers,
-            CURLOPT_SSL_VERIFYPEER => false,
-            CURLOPT_ENCODING => 'gzip'
-        ]);
+            $baseUrl = $category === 'series' 
+                ? "https://app.arabypros.com/api/serie/by/filtres/0/{$type}/{$p}/{$KEY1}/{$KEY2}/"
+                : "https://app.arabypros.com/api/movie/by/filtres/0/{$type}/{$p}/{$KEY1}/{$KEY2}/";
 
-        $response = curl_exec($ch);
-        curl_close($ch);
+            if (!file_exists($jsonFile) || isset($_GET['refresh'])) {
+                $headers = ["User-Agent: okhttp/4.8.0", "Accept-Encoding: gzip"];
 
-        if ($response) {
-            file_put_contents($jsonFile, $response);
-        } else {
-            echo "<div style='color: red;'>❌ فشل في جلب البيانات من API.</div>";
+                $ch = curl_init($baseUrl);
+                curl_setopt_array($ch, [
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_HTTPHEADER => $headers,
+                    CURLOPT_SSL_VERIFYPEER => false,
+                    CURLOPT_ENCODING => 'gzip'
+                ]);
+
+                $response = curl_exec($ch);
+                curl_close($ch);
+
+                if ($response) {
+                    file_put_contents($jsonFile, $response);
+                } else {
+                    echo "<div style='color: red;'>❌ فشل في جلب البيانات من API الصفحة $p.</div>";
+                    continue;
+                }
+            }
+
+            if (file_exists($jsonFile)) {
+                $data = json_decode(file_get_contents($jsonFile), true);
+                $pageItems = isset($data[0]['id']) ? $data : ($data['posters'] ?? []);
+                $allItems = array_merge($allItems, $pageItems);
+            }
+        }
+
+        // تطبيق فلترة genre على كل العناصر المجمعة
+        $items = filterByGenre($allItems, $selectedGenre);
+
+    } else {
+        // لو مافيش فلترة genre، نكتفي بصفحة واحدة فقط
+        $jsonFile = "{$cacheDir}/{$category}-{$type}-{$page}.json";
+
+        $baseUrl = $category === 'series' 
+            ? "https://app.arabypros.com/api/serie/by/filtres/0/{$type}/{$page}/{$KEY1}/{$KEY2}/"
+            : "https://app.arabypros.com/api/movie/by/filtres/0/{$type}/{$page}/{$KEY1}/{$KEY2}/";
+
+        if (!file_exists($jsonFile) || isset($_GET['refresh'])) {
+            $headers = ["User-Agent: okhttp/4.8.0", "Accept-Encoding: gzip"];
+
+            $ch = curl_init($baseUrl);
+            curl_setopt_array($ch, [
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_HTTPHEADER => $headers,
+                CURLOPT_SSL_VERIFYPEER => false,
+                CURLOPT_ENCODING => 'gzip'
+            ]);
+
+            $response = curl_exec($ch);
+            curl_close($ch);
+
+            if ($response) {
+                file_put_contents($jsonFile, $response);
+            } else {
+                echo "<div style='color: red;'>❌ فشل في جلب البيانات من API.</div>";
+            }
+        }
+
+        if (file_exists($jsonFile)) {
+            $data = json_decode(file_get_contents($jsonFile), true);
+            $items = isset($data[0]['id']) ? $data : ($data['posters'] ?? []);
         }
     }
-
-    if (file_exists($jsonFile)) {
-        $data = json_decode(file_get_contents($jsonFile), true);
-        $items = isset($data[0]['id']) ? $data : ($data['posters'] ?? []);
-    }
 }
+
 ?>
+
 
 <div class="container">
     <h2>🎬 <?= $category === 'movies' ? 'الأفلام' : 'المسلسلات' ?> - حسب: <?= htmlspecialchars($type) ?> 
@@ -162,6 +236,81 @@ $jsonFile = "{$cacheDir}/{$category}-ramadan{$ramadanYear}.json";
     <?php endif; ?>
     <a href="?category=<?= $category ?>&type=<?= $type ?>&page=<?= $page ?>&refresh=1">🔄 تحديث</a>
 </div>
+
+<?php
+$seriesGenres = ['دراما', 'اثارة', 'جريمة', 'غموض', 'اكشن'];
+$movieGenres  = ['رعب', 'مغامرة', 'رومانسي', 'دراما', 'علمي', 'خيال', 'كوميديا', 'غموض', 'اثارة'];
+
+$currentGenres = $category === 'series' ? $seriesGenres : $movieGenres;
+$currentGenre = $_GET['genre'] ?? 'all';
+
+if ($category === 'series') {
+    $classifications = [
+        'all' => 'الكل',
+        'مسلسلات تركية' => 'مسلسلات تركية',
+        'مسلسلات عربية' => 'مسلسلات عربية',
+        'مسلسلات أجنبية' => 'مسلسلات أجنبية',
+        'مسلسلات آسيوية' => 'مسلسلات آسيوية',
+    ];
+} else {
+    $classifications = [
+        'all' => 'الكل',
+        'أفلام أجنبية' => 'أفلام أجنبية',
+        'أفلام عربية' => 'أفلام عربية',
+        'أفلام آسيوية' => 'أفلام آسيوية',
+    ];
+}
+
+$currentClassification = $_GET['classification'] ?? 'all';
+
+// شرط ما يظهر الفلاتر في حالة رمضان
+if ($type !== 'ramadan'):
+ 
+?>
+
+<div class="filters">
+    <strong>فلترة حسب النوع:</strong>
+    <select id="genreFilter" style="padding:5px 10px; font-size:16px;">
+        <option value="all" <?= $currentGenre === 'all' ? 'selected' : '' ?>>الكل</option>
+        <?php foreach ($currentGenres as $genre): ?>
+            <option value="<?= htmlspecialchars($genre) ?>" <?= $currentGenre === $genre ? 'selected' : '' ?>>
+                <?= htmlspecialchars($genre) ?>
+            </option>
+        <?php endforeach; ?>
+    </select>
+
+    <strong>فلترة حسب التصنيف:</strong>
+    <select id="classificationFilter" style="padding:5px 10px; font-size:16px;">
+        <?php foreach ($classifications as $key => $label): ?>
+            <option value="<?= htmlspecialchars($key) ?>" <?= $currentClassification === $key ? 'selected' : '' ?>>
+                <?= htmlspecialchars($label) ?>
+            </option>
+        <?php endforeach; ?>
+    </select>
+</div>
+
+<script>
+document.getElementById('genreFilter').addEventListener('change', function() {
+    const genre = this.value;
+    const params = new URLSearchParams(window.location.search);
+    params.set('genre', genre);
+    params.set('page', '1');
+    window.location.search = params.toString();
+});
+
+document.getElementById('classificationFilter').addEventListener('change', function() {
+    const classification = this.value;
+    const params = new URLSearchParams(window.location.search);
+    params.set('classification', classification);
+    params.set('page', '1');
+    window.location.search = params.toString();
+});
+</script>
+
+<?php endif; ?>
+
+
+
 
 <?php if ($type === 'ramadan' && $category === 'series'): ?>
     <div class="filters">
@@ -490,6 +639,28 @@ $jsonFile = "{$cacheDir}/{$category}-ramadan{$ramadanYear}.json";
         background-color: #f44336;
     }
 
-   
+    .filters select {
+        background-color: #2a2a2a;
+        color: #fff;
+        padding: 8px 14px;
+        border-radius: 8px;
+        border: none;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background 0.2s ease;
+        min-width: 150px;
+    }
+
+    .filters select:hover {
+        background-color: #f44336;
+        color: #fff;
+    }
+
+    .filters select:focus {
+        outline: none;
+        background-color: #f44336;
+        color: #fff;
+    }
+
 
 </style>
