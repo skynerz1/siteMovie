@@ -929,41 +929,7 @@ nav {
                 </div>
             <?php endif; ?>
 
-    <h1>📺 اختر القناه</h1>
-
-    <div class="category-container">
-
-      <a href="server-live.php?id=1" class="category-card <?= $platform == 'mbc' ? 'active' : '' ?>" style="background-image: url('https://shahid.mbc.net/mediaObject/a7dcf0c9-1178-4cb9-a490-a8313975e37c?height=129&width=230&croppingPoint=&version=1&type=avif');">
-      </a>
-
-          <a href="server-live.php?id=18" class="category-card <?= $platform == 'ssc' ? 'active' : '' ?>" style="background-image: url('https://shahid.mbc.net/mediaObject/8abc6233-1ef2-443b-8de6-d401a60aa025?height=129&width=230&croppingPoint=&version=1&type=avif');">
-          </a>
-
-          <a href="server-live.php?id=19" class="category-card <?= $platform == 'bein' ? 'active' : '' ?>" style="background-image: url('https://play-lh.googleusercontent.com/BDUySDHFzY4JcRzQpLsIHiZKLvIEmVL5N30qc-DWwVhwN3dJqV0J4BKE6XH9EOw_ygQ');">
-          </a>
-
-          <a href="server-live.php?id=17" class="category-card <?= $platform == 'rot' ? 'active' : '' ?>" style="background-image: url('https://www.wesal.com.sa/public/storage/uploaded/projects/project_bwCK2gz1XfMp_2022-08-24.jpeg');">
-          </a>
-
-          <a href="server-live.php?id=16" class="category-card <?= $platform == 'wansah' ? 'active' : '' ?>" style="background-image: url('https://shahid.mbc.net/mediaObject/97613919-40eb-4032-9dcb-e940e08ae761?height=129&width=230&croppingPoint=&version=1&type=avif');">
-          </a>
-
-          <a href="server-live.php?id=13" class="category-card <?= $platform == 'ror' ? 'active' : '' ?>" style="background-image: url('https://jordandir.com/images/screenshots/1711030162.webp');">
-          </a>
-
-          <a href="server-live.php?id=8" class="category-card <?= $platform == 'qa6' ? 'active' : '' ?>" style="background-image: url('https://yt3.googleusercontent.com/pcLGQIWlrO000zyC8SEZzOmm3iZmDAmMQSNRTG28toSt9p-QX88NuiEc4GCmfXk8EwH3twcb=s900-c-k-c0x00ffffff-no-rj');">
-          </a>
-
-          <a href="server-live.php?id=14" class="category-card <?= $platform == 'dbay' ? 'active' : '' ?>" style="background-image: url('https://admango.cdn.mangomolo.com/analytics/uploads/71/5fb0fc1d19.png');">
-          </a>
-
-          <a href="server-live.php?id=15" class="category-card <?= $platform == 'dbay2' ? 'active' : '' ?>" style="background-image: url('https://admango.cdn.mangomolo.com/analytics/uploads/71/659cd942e4.png');">
-          </a>
-
-          <a href="server-live.php?id=12" class="category-card <?= $platform == '7dth' ? 'active' : '' ?>" style="background-image: url('https://yt3.googleusercontent.com/ehhpuQeVHO0g3kIPkmwrw1x0fLqDk7RyWH733oe4wcKb_1jBEMvGt4WVlQEEzcTCL6zq01K5HQ=s900-c-k-c0x00ffffff-no-rj');">
-          </a>
-        
-    </div>
+   
 
     
     <!-- ✅ سلايدر جديد لمسلسلات "خليجية" بناءً على نفس الفلترة -->
@@ -1060,6 +1026,42 @@ if (!empty($limitedGulf)):
     <?php endforeach; ?>
 </div>
 <?php endif; ?>
+
+    <h1>📺 اختر القناه</h1>
+
+    <div class="category-container">
+
+      <a href="server-live.php?id=1" class="category-card <?= $platform == 'mbc' ? 'active' : '' ?>" style="background-image: url('https://shahid.mbc.net/mediaObject/a7dcf0c9-1178-4cb9-a490-a8313975e37c?height=129&width=230&croppingPoint=&version=1&type=avif');">
+      </a>
+
+          <a href="server-live.php?id=18" class="category-card <?= $platform == 'ssc' ? 'active' : '' ?>" style="background-image: url('https://shahid.mbc.net/mediaObject/8abc6233-1ef2-443b-8de6-d401a60aa025?height=129&width=230&croppingPoint=&version=1&type=avif');">
+          </a>
+
+          <a href="server-live.php?id=19" class="category-card <?= $platform == 'bein' ? 'active' : '' ?>" style="background-image: url('https://play-lh.googleusercontent.com/BDUySDHFzY4JcRzQpLsIHiZKLvIEmVL5N30qc-DWwVhwN3dJqV0J4BKE6XH9EOw_ygQ');">
+          </a>
+
+          <a href="server-live.php?id=17" class="category-card <?= $platform == 'rot' ? 'active' : '' ?>" style="background-image: url('https://www.wesal.com.sa/public/storage/uploaded/projects/project_bwCK2gz1XfMp_2022-08-24.jpeg');">
+          </a>
+
+          <a href="server-live.php?id=16" class="category-card <?= $platform == 'wansah' ? 'active' : '' ?>" style="background-image: url('https://shahid.mbc.net/mediaObject/97613919-40eb-4032-9dcb-e940e08ae761?height=129&width=230&croppingPoint=&version=1&type=avif');">
+          </a>
+
+          <a href="server-live.php?id=13" class="category-card <?= $platform == 'ror' ? 'active' : '' ?>" style="background-image: url('https://jordandir.com/images/screenshots/1711030162.webp');">
+          </a>
+
+          <a href="server-live.php?id=8" class="category-card <?= $platform == 'qa6' ? 'active' : '' ?>" style="background-image: url('https://yt3.googleusercontent.com/pcLGQIWlrO000zyC8SEZzOmm3iZmDAmMQSNRTG28toSt9p-QX88NuiEc4GCmfXk8EwH3twcb=s900-c-k-c0x00ffffff-no-rj');">
+          </a>
+
+          <a href="server-live.php?id=14" class="category-card <?= $platform == 'dbay' ? 'active' : '' ?>" style="background-image: url('https://admango.cdn.mangomolo.com/analytics/uploads/71/5fb0fc1d19.png');">
+          </a>
+
+          <a href="server-live.php?id=15" class="category-card <?= $platform == 'dbay2' ? 'active' : '' ?>" style="background-image: url('https://admango.cdn.mangomolo.com/analytics/uploads/71/659cd942e4.png');">
+          </a>
+
+          <a href="server-live.php?id=12" class="category-card <?= $platform == '7dth' ? 'active' : '' ?>" style="background-image: url('https://yt3.googleusercontent.com/ehhpuQeVHO0g3kIPkmwrw1x0fLqDk7RyWH733oe4wcKb_1jBEMvGt4WVlQEEzcTCL6zq01K5HQ=s900-c-k-c0x00ffffff-no-rj');">
+          </a>
+
+    </div>
 
 <!-- 🔵 سلايدر مسلسلات تركية -->
     <div class="section-header">
