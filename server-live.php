@@ -562,7 +562,8 @@ $playerUrl = "https://dfkz.up.railway.app/api-live.php?ch=" . intval($channelId)
 
 
         <!-- نموذج البلاغ -->
-<div id="reportModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:9999; display:flex; align-items:center; justify-content:center;">
+<div id="reportModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:9999; align-items:center; justify-content:center;">
+
   <div style="background:#1a1a1a; padding:30px; border-radius:10px; width:90%; max-width:400px; color:#fff;">
     <h3 style="color:#e50914;">إرسال بلاغ</h3>
     <form id="reportForm" onsubmit="submitReport(event)">
