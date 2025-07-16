@@ -30,6 +30,59 @@
     justify-content: center;
     align-items: center;
   }
+
+  /* القائمة المخصصة للكلك اليمين */
+  .custom-context-menu {
+    position: absolute;
+    display: none;
+    background-color: #222;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 8px;
+    z-index: 9999;
+    min-width: 160px;
+    padding: 10px;
+  }
+  .custom-context-menu button {
+    background: none;
+    color: white;
+    border: none;
+    text-align: right;
+    display: block;
+    width: 100%;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  .custom-context-menu button:hover {
+    background-color: #333;
+  }
+
+  /* نافذة الاختصارات */
+  .shortcuts-modal {
+    display: none;
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #111;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 99999;
+    box-shadow: 0 0 20px #000;
+  }
+
+  .shortcuts-modal h3 {
+    margin-top: 0;
+  }
+
+  .shortcuts-modal ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .shortcuts-modal li {
+    margin: 5px 0;
+  }
   .player-wrapper {
     position: relative;
     width: 100vw;
@@ -430,6 +483,24 @@
 </head>
 <body>
 
+<!-- قائمة الكلك اليمين -->
+<div class="custom-context-menu" id="contextMenu">
+  <button onclick="showShortcuts()">اختصارات الكيبورد</button>
+  <button onclick="window.open('https://t.me/mtvmslsl1', '_blank')">DFkz Player</button>
+</div>
+
+<div class="shortcuts-modal" id="shortcutsModal">
+  <h3>اختصارات لوحة المفاتيح</h3>
+  <ul>
+    <li><b>Space:</b> تشغيل / إيقاف</li>
+    <li><b>F:</b> ملء الشاشة</li>
+    <li><b>↑:</b> رفع الصوت</li>
+    <li><b>↓:</b> خفض الصوت</li>
+  </ul>
+  <button onclick="document.getElementById('shortcutsModal').style.display='none'">إغلاق</button>
+</div>
+
+
 <div class="player-wrapper" tabindex="0" aria-label="مشغل فيديو مع اختيار القنوات">
   <video id="video" playsinline></video>
 
@@ -559,6 +630,60 @@
         { id: 12, name: "الحدث", url:"https://av.alarabiya.net/alarabiapublish/alhadath.smil/playlist.m3u8", logo: "https://yt3.googleusercontent.com/ehhpuQeVHO0g3kIPkmwrw1x0fLqDk7RyWH733oe4wcKb_1jBEMvGt4WVlQEEzcTCL6zq01K5HQ=s900-c-k-c0x00ffffff-no-rj" },
   ];
 
+
+ const video = document.querySelector('#video');
+
+  // اختصارات لوحة المفاتيح
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName.toLowerCase() === 'input') return;
+
+    switch (e.key.toLowerCase()) {
+      case ' ':
+        e.preventDefault();
+        if (video.paused) video.play();
+        else video.pause();
+        break;
+      case 'f':
+        if (document.fullscreenElement) {
+          document.exitFullscreen();
+        } else {
+          video.requestFullscreen();
+        }
+        break;
+      case 'arrowup':
+        e.preventDefault();
+        video.volume = Math.min(1, video.volume + 0.1);
+        break;
+      case 'arrowdown':
+        e.preventDefault();
+        video.volume = Math.max(0, video.volume - 0.1);
+        break;
+    }
+  });
+
+  // منع كلك يمين وإظهار القائمة المخصصة
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+    const menu = document.getElementById('contextMenu');
+    menu.style.display = 'block';
+    menu.style.left = e.pageX + 'px';
+    menu.style.top = e.pageY + 'px';
+  });
+
+  // إغلاق القائمة عند الضغط في أي مكان
+  document.addEventListener('click', function(e) {
+    document.getElementById('contextMenu').style.display = 'none';
+  });
+
+  function showShortcuts() {
+    document.getElementById('shortcutsModal').style.display = 'block';
+  }
+
+  // ضغط في أي مكان في الفيديو لإيقاف/تشغيل
+  video.addEventListener('click', () => {
+    if (video.paused) video.play();
+    else video.pause();
+  });
 
   function getChannelFromURL() {
     const params = new URLSearchParams(window.location.search);
