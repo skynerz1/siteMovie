@@ -186,7 +186,7 @@
         <li><a href="../index.php"><i class="fas fa-home"></i> Home</a></li>
         <li><a href="../movie"><i class="fas fa-film"></i> Movies</a></li>
         <li><a href="../index.php"><i class="fas fa-tv"></i> Series</a></li>
-        <li><a href="/server-live.php"><i class="fas fa-broadcast-tower"></i> Channels</a></li>
+        <li><a href="/server-live.php#channel"><i class="fas fa-broadcast-tower"></i> Channels</a></li>
         <li><a href="../favorites.php"><i class="fas fa-heart"></i> Favorites</a></li>
         <li><a href="../contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
       </ul>
