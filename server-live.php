@@ -377,9 +377,10 @@ $playerUrl = "https://dfkz.up.railway.app/api-live.php?ch=" . intval($channelId)
                     </button>
                 </div>
 
-                <div class="channel-list">
-                  <h3>قنوات أخرى</h3>
-                  <div class="channels-grid">
+               <div class="channel-list" id="channel">
+  <h3>قنوات أخرى</h3>
+  <div class="channels-grid">
+
                     <a href="server-live.php?id=1" class="channel-item">
                       <img src="https://shahid.mbc.net/mediaObject/a7dcf0c9-1178-4cb9-a490-a8313975e37c?height=129&width=230&croppingPoint=&version=1&type=avif" alt="MBC 1" />
                       <span class="channel-name">MBC 1</span>
@@ -490,6 +491,16 @@ $playerUrl = "https://dfkz.up.railway.app/api-live.php?ch=" . intval($channelId)
 
     </div>
     <script>
+
+  window.addEventListener('DOMContentLoaded', () => {
+    if (window.location.hash === '#channel') {
+      const channelSection = document.getElementById('channel');
+      if (channelSection) {
+        channelSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  });
+
         function reportIssue() {
             document.getElementById('reportModal').style.display = 'flex';
         }
