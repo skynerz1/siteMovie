@@ -501,16 +501,15 @@ $playerUrl = "https://dfkz.up.railway.app/api-live.php?ch=" . intval($channelId)
     }
   });
 
-        function reportIssue() {
-            document.getElementById('reportModal').style.display = 'flex';
-        }
+ function reportIssue() {
+    document.getElementById('reportModal').style.display = 'flex';
+  }
 
-        function closeReport() {
-            document.getElementById('reportModal').style.display = 'none';
-        }
+  function closeReport() {
+    document.getElementById('reportModal').style.display = 'none';
+  }
 
->
-function submitReport(event) {
+  function submitReport(event) {
     event.preventDefault();
 
     const channel = document.getElementById('channelSelect').value;
@@ -524,30 +523,30 @@ function submitReport(event) {
 
     // إرسال الطلب
     fetch(telegramUrl, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            chat_id: chatId,
-            text: message,
-            parse_mode: 'Markdown'
-        })
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        chat_id: chatId,
+        text: message,
+        parse_mode: 'Markdown'
+      })
     })
     .then(response => {
-        if (response.ok) {
-            alert('✅ تم إرسال البلاغ بنجاح!');
-        } else {
-            alert('❌ فشل في إرسال البلاغ. حاول لاحقاً.');
-        }
-        closeReport();
+      if (response.ok) {
+        alert('✅ تم إرسال البلاغ بنجاح!');
+      } else {
+        alert('❌ فشل في إرسال البلاغ. حاول لاحقاً.');
+      }
+      closeReport();
     })
     .catch(error => {
-        console.error('Telegram Error:', error);
-        alert('❌ حصل خطأ أثناء الإرسال.');
-        closeReport();
+      console.error('Telegram Error:', error);
+      alert('❌ حصل خطأ أثناء الإرسال.');
+      closeReport();
     });
-}
+  }
 
         function toggleFullscreen() {
             const iframe = document.getElementById('player-iframe');
@@ -562,33 +561,32 @@ function submitReport(event) {
     </script>
 
 
-            <!-- نموذج البلاغ -->
-<div id="reportModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:9999; display: flex; align-items:center; justify-content:center;">
+        <!-- نموذج البلاغ -->
+<div id="reportModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:9999; display:flex; align-items:center; justify-content:center;">
+  <div style="background:#1a1a1a; padding:30px; border-radius:10px; width:90%; max-width:400px; color:#fff;">
+    <h3 style="color:#e50914;">إرسال بلاغ</h3>
+    <form id="reportForm" onsubmit="submitReport(event)">
+      <label>اسم القناة:</label>
+      <select id="channelSelect" style="width:100%; padding:10px; margin-bottom:15px;">
+        <option value="MBC 1">MBC 1</option>
+        <option value="MBC 2">MBC 2</option>
+        <!-- أضف المزيد -->
+      </select>
 
+      <label>نوع المشكلة:</label>
+      <select id="issueType" style="width:100%; padding:10px; margin-bottom:15px;">
+        <option value="لا تعمل">لا تعمل</option>
+        <option value="جودة ضعيفة">جودة ضعيفة</option>
+        <option value="تقطيع مستمر">تقطيع مستمر</option>
+        <option value="أخرى">أخرى</option>
+      </select>
 
-              <div style="background:#1a1a1a; padding:30px; border-radius:10px; width:90%; max-width:400px; color:#fff;">
-                <h3 style="color:#e50914;">إرسال بلاغ</h3>
-                <form onsubmit="submitReport(event)">
-                  <label>اسم القناة:</label>
-                  <select id="channelSelect" style="width:100%; padding:10px; margin-bottom:15px;">
-                    <option value="MBC 1">MBC 1</option>
-                    <option value="MBC 2">MBC 2</option>
-                    <!-- أضف المزيد -->
-                  </select>
+      <button type="submit" style="background:#e50914; color:white; border:none; padding:10px 20px; border-radius:6px;">إرسال</button>
+      <button type="button" onclick="closeReport()" style="margin-right:10px; background:#555; color:white; border:none; padding:10px 20px; border-radius:6px;">إغلاق</button>
+    </form>
+  </div>
+</div>
 
-                  <label>نوع المشكلة:</label>
-                  <select id="issueType" style="width:100%; padding:10px; margin-bottom:15px;">
-                    <option value="لا تعمل">لا تعمل</option>
-                    <option value="جودة ضعيفة">جودة ضعيفة</option>
-                    <option value="تقطيع مستمر">تقطيع مستمر</option>
-                    <option value="أخرى">أخرى</option>
-                  </select>
-
-                  <button type="submit" style="background:#e50914; color:white; border:none; padding:10px 20px; border-radius:6px;">إرسال</button>
-                  <button type="button" onclick="closeReport()" style="margin-right:10px; background:#555; color:white; border:none; padding:10px 20px; border-radius:6px;">إغلاق</button>
-                </form>
-              </div>
-            </div>
 
             <?php include 'includes/footer.php'; ?>
 </body>
