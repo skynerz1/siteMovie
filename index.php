@@ -931,7 +931,7 @@ nav {
     <!-- ✅ سلايدر جديد لمسلسلات "خليجية" بناءً على نفس الفلترة -->
     <div class="section-header">
       <h2 class="section-title">مسلسلات عربيه</h2>
-      <a href="cat.php" class="view-all-button">
+      <a href="cat.php?category=series&type=created&classification=all&genre=مسلسلات%20عربية" class="view-all-button">
         <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24" width="18" fill="currentColor">
           <path d="M0 0h24v24H0V0z" fill="none"/>
           <path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z"/>
@@ -1026,7 +1026,7 @@ if (!empty($limitedGulf)):
 <!-- 🔵 سلايدر مسلسلات تركية -->
     <div class="section-header">
       <h2 class="section-title">مسلسلات تركيه</h2>
-      <a href="cat.php" class="view-all-button">
+      <a href="cat.php?category=series&type=views&classification=all&genre=مسلسلات%20تركية" class="view-all-button">
         <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24" width="18" fill="currentColor">
           <path d="M0 0h24v24H0V0z" fill="none"/>
           <path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z"/>
