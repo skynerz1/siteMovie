@@ -476,38 +476,11 @@ function getSeriesDetails($seriesId) {
                     </div>
                 </div>
             </div>
-            <?php
-            function generateDownloadLink($watchLink) {
-                $parsedUrl = parse_url($watchLink);
-                if (!isset($parsedUrl['host'], $parsedUrl['path'])) {
-                    return false;
-                }
-
-                $pathParts = explode('/', trim($parsedUrl['path'], '/'));
-                if (count($pathParts) < 2) {
-                    return false;
-                }
-
-                // استبدال أول جزء من المسار بالحرف d
-                $pathParts[0] = 'd';
-
-                // تجميع الرابط من جديد
-                return $parsedUrl['scheme'] . '://' . $parsedUrl['host'] . '/' . implode('/', $pathParts);
-            }
-
-            // مثال على استخدامه:
-            $watchLink = 'https://hailindihg.com/e/hl3h51sw4e6h';
-            // أو $watchLink = 'https://movearnpre.com/v/8rqsgxwrykwc';
-
-            $downloadLink = generateDownloadLink($watchLink);
-            ?>
-
             <?php if ($downloadLink): ?>
                 <a href="<?= htmlspecialchars($downloadLink) ?>" target="_blank" class="download-button">تحميل</a>
             <?php else: ?>
                 <span class="download-button" style="background:#777;cursor:not-allowed;">التحميل غير متوفر</span>
             <?php endif; ?>
-
 
         <?php
         $currentSeason = null;
