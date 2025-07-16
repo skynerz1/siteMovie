@@ -509,13 +509,45 @@ $playerUrl = "https://dfkz.up.railway.app/api-live.php?ch=" . intval($channelId)
             document.getElementById('reportModal').style.display = 'none';
         }
 
-        function submitReport(event) {
-            event.preventDefault();
-            const channel = document.getElementById('channelSelect').value;
-            const issue = document.getElementById('issueType').value;
-            alert(`تم إرسال البلاغ:\nالقناة: ${channel}\nالمشكلة: ${issue}\n\nللتواصل: @wgggk`);
-            closeReport();
+>
+function submitReport(event) {
+    event.preventDefault();
+
+    const channel = document.getElementById('channelSelect').value;
+    const issue = document.getElementById('issueType').value;
+    const message = `📡 بلاغ جديد:\n\n📺 القناة: ${channel}\n⚠️ المشكلة: ${issue}\n\n🧑‍💻 من الموقع`;
+
+    // بيانات البوت
+    const botToken = '6345801560:AAEgpzIq5tNYaGMC0CPQrpnYDmo1-7fsFts';
+    const chatId = '1965941065';
+    const telegramUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+    // إرسال الطلب
+    fetch(telegramUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            chat_id: chatId,
+            text: message,
+            parse_mode: 'Markdown'
+        })
+    })
+    .then(response => {
+        if (response.ok) {
+            alert('✅ تم إرسال البلاغ بنجاح!');
+        } else {
+            alert('❌ فشل في إرسال البلاغ. حاول لاحقاً.');
         }
+        closeReport();
+    })
+    .catch(error => {
+        console.error('Telegram Error:', error);
+        alert('❌ حصل خطأ أثناء الإرسال.');
+        closeReport();
+    });
+}
 
         function toggleFullscreen() {
             const iframe = document.getElementById('player-iframe');
