@@ -122,7 +122,7 @@ foreach ($_SESSION['favorites'] as $favId) {
             transform: scale(1.05);
         }
 
-        @media (max-width: 768px) {
+        /* @media (max-width: 768px) {
             .nav-toggle {
                 display: block;
             }
@@ -147,7 +147,7 @@ foreach ($_SESSION['favorites'] as $favId) {
                 width: 100%;
                 padding: 10px 0;
             }
-        }
+        } */
 
         h1 {
             text-align: center;
