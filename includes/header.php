@@ -258,6 +258,22 @@
     body {
       padding-bottom: 60px;
     }
+    @media (max-width: 768px) {
+      header {
+        padding: 8px 15px; /* قلل padding فوق وتحت */
+      }
+
+      .header-content {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px; /* تقليل المسافة بين العناصر */
+      }
+
+      .logo-text {
+        margin-bottom: 4px; /* تقليل المسافة تحت اللوقو */
+      }
+    }
 
   </style>
 </head>
