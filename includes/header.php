@@ -14,11 +14,12 @@
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f9f9f9;
+      background-color: #1c2229;
     }
 
     header {
-      background-color: #111;
+      background-color: linear-gradient(to bottom, #1c2229, #202831, #242d38);
+
       padding: 15px 30px;
       position: relative;
       z-index: 100;
@@ -38,6 +39,12 @@
       font-weight: bold;
       text-decoration: none;
     }
+
+    .logo-text img {
+      height: 85px; /* عدل الحجم اللي تبيه */
+      vertical-align: middle;
+    }
+
 
     .main-nav {
       align-items: center;
@@ -64,7 +71,7 @@
     }
 
     .main-nav ul.nav-list li a:hover {
-      background-color: #222;
+      background-color: #1c2229;
       color: red;
     }
 
@@ -139,7 +146,7 @@
         right: -100%;
         width: 80%;
         height: 100%;
-        background-color: #111;
+        background-color: #1c2229;
         padding: 60px 20px 100px;
         gap: 20px;
         box-shadow: -2px 0 10px rgba(0, 0, 0, 0.4);
@@ -171,6 +178,87 @@
         flex: 1;
       }
     }
+
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #1c2229;
+      display: flex;
+      justify-content: space-around;
+      border-top: 1px solid #333;
+      z-index: 999;
+      padding: 6px 0;
+    }
+
+    .bottom-nav .nav-item {
+      flex: 1;
+      text-align: center;
+      color: white;
+      text-decoration: none;
+      font-size: 11px;
+      transition: color 0.3s ease;
+    }
+
+    .bottom-nav .nav-item i {
+      display: block;
+      font-size: 20px;
+      margin-bottom: 3px;
+    }
+
+    .bottom-nav .nav-item:hover {
+      color: red;
+    }
+
+    @media (min-width: 769px) {
+      .bottom-nav {
+        display: none;
+      }
+    }
+
+    /* نموذج البحث المنبثق */
+    .mobile-search-overlay {
+      display: none;
+      position: fixed;
+      bottom: 60px;
+      left: 0;
+      width: 100%;
+      background: #1c2229;
+      padding: 10px;
+      border-top: 1px solid #333;
+      z-index: 1000;
+    }
+
+    .mobile-search-form {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .mobile-search-form input {
+      flex: 1;
+      padding: 8px 10px;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      background: #2a2f36;
+      color: white;
+    }
+
+    .mobile-search-form button {
+      padding: 8px 12px;
+      border: none;
+      background-color: red;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    body {
+      padding-bottom: 60px;
+    }
+
   </style>
 </head>
 <body>
@@ -178,7 +266,10 @@
 <header>
   <div class="header-content">
     <!-- Logo -->
-    <a href="index.php" class="logo-text">DFKZ</a>
+    <a href="index.php" class="logo-text">
+      <img src="../includes/img/dfkz.png" alt="dfkz Logo">
+    </a>
+
 
     <!-- Desktop Nav -->
     <nav class="main-nav desktop-only">
@@ -192,45 +283,53 @@
       </ul>
     </nav>
 
-    <!-- Hamburger (mobile only) -->
-    <div class="hamburger mobile-only" id="hamburger-btn">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </div>
-  </div>
+
 
   <!-- Mobile Nav -->
-  <nav class="main-nav mobile-only" id="mobile-menu">
-    <ul class="nav-list">
-      <li><a href="../index.php"><i class="fas fa-home"></i> Home</a></li>
-      <li><a href="../movie"><i class="fas fa-film"></i> Movies</a></li>
-      <li><a href="../index.php"><i class="fas fa-tv"></i> Series</a></li>
-      <li><a href="/server-live.php#channel"><i class="fas fa-broadcast-tower"></i> Channels</a></li>
-      <li><a href="../favorites.php"><i class="fas fa-heart"></i> Favorites</a></li>
-      <li><a href="../contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
-    </ul>
-
-    <!-- Search (mobile only) -->
-      <div class="menu-search-form">
-        <form method="GET" action="index.php">
-          <input type="hidden" name="page" value="2">
-          <input type="text" name="search" placeholder="Search..." required />
-          <button type="submit"><i class="fas fa-search"></i></button>
-        </form>
-      </div>
-
-
-
+  <!-- Bottom Navigation (Mobile Only) -->
+  <nav class="bottom-nav mobile-only">
+    <a href="../favorites.php" class="nav-item">
+      <i class="fas fa-heart"></i>
+      <span>المفضله</span>
+    </a>
+    <a href="#" class="nav-item" id="toggle-search">
+      <i class="fas fa-search"></i>
+      <span>بحث</span>
+    </a>
+    <a href="../index.php" class="nav-item">
+      <i class="fas fa-tv"></i>
+      <span>مسلسلات</span>
+    </a>
+    <a href="../movie" class="nav-item">
+      <i class="fas fa-film"></i>
+      <span>أفلام</span>
+    </a>
+    <a href="/server-live.php#channel" class="nav-item">
+      <i class="fas fa-broadcast-tower"></i>
+      <span>لايف</span>
+    </a>
   </nav>
+
+  <!-- نموذج البحث (يظهر عند الضغط على زر البحث) -->
+  <div class="mobile-search-overlay" id="search-overlay">
+    <form method="GET" action="index.php" class="mobile-search-form">
+      <input type="hidden" name="page" value="2">
+      <input type="text" name="search" placeholder="ابحث عن فيلم أو مسلسل..." required />
+      <button type="submit"><i class="fas fa-search"></i></button>
+    </form>
+  </div>
+
 </header>
 
 <script>
-  const hamburger = document.getElementById("hamburger-btn");
-  const mobileMenu = document.getElementById("mobile-menu");
+ 
 
-  hamburger.addEventListener("click", () => {
-    mobileMenu.classList.toggle("show");
+  const toggleSearchBtn = document.getElementById("toggle-search");
+  const searchOverlay = document.getElementById("search-overlay");
+
+  toggleSearchBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    searchOverlay.style.display = searchOverlay.style.display === "block" ? "none" : "block";
   });
 </script>
 
