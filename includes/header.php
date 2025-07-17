@@ -18,7 +18,7 @@
     }
 
     header {
-      background-color: linear-gradient(to bottom, #1c2229, #202831, #242d38);
+      background-color: #1c2229;
 
       padding: 15px 30px;
       position: relative;
