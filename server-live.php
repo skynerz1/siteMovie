@@ -1,6 +1,7 @@
 <?php
 session_start();
 include 'includes/header.php';
+include 'load.php';
 
 $channelId = $_GET['id'] ?? 1;
 $playerUrl = "https://dfkz.up.railway.app/api-live.php?ch=" . intval($channelId);
