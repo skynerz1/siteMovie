@@ -23,7 +23,7 @@
     }
 
     footer {
-      background: #111;
+      background: #1c2229;;
       color: #ddd;
       font-size: 15px;
       padding: 30px 20px;
