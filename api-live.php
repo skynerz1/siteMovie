@@ -538,6 +538,8 @@
 
       { id: 7, name: "mbc-masr", url:"https://shls-masr-prod-dub.shahid.net/out/v1/d5036cabf11e45bf9d0db410ca135c18/index.m3u8", logo: "https://shahid.mbc.net/mediaObject/2c600ff4-bd00-4b99-b94d-b178a7366247?height=129&width=230&croppingPoint=&version=1&type=avif" },
 
+      { id: 22, name: "سبيستون, url:"https://streams.spacetoon.com/live/stchannel/smil:livesmil.smil/chunklist_w819131178_b1296000_slAR.m3u8", logo: "https://sd.iqraa.news/wp-content/uploads/2024/12/%d8%aa%d8%b1%d8%af%d8%af-%d9%82%d9%86%d8%a7%d8%a9-%d8%b3%d8%a8%d9%8a%d8%b3%d8%aa%d9%88%d9%86-%d9%84%d9%84%d8%a7%d8%b7%d9%81%d8%a7%d9%84-2024-2.webp" },
+
         { id: 17, name: "روتانا خليجيه", url:"https://edge66.magictvbox.com/liveApple/rotana_khalijiah/tracks-v1a1/mono.m3u8", logo: "https://www.okaz.com.sa/uploads/images/2020/06/01/1574565.JPG" },
 
         { id: 16, name: "وناسه", url:"https://shls-wanasah-prod-dub.shahid.net/out/v1/c84ef3128e564b74a6a796e8b6287de6/index.m3u8", logo: "https://shahid.mbc.net/mediaObject/97613919-40eb-4032-9dcb-e940e08ae761?height=129&width=230&croppingPoint=&version=1&type=avif" },
