@@ -268,12 +268,7 @@ if (isset($_GET['id'])) {
             color: white; border: none; border-radius: 50%;
             width: 35px; height: 35px; font-size: 20px; cursor: pointer; z-index: 10000;
         }
-        footer { text-align: center; padding: 20px; color: #999; font-size: 0.9rem; }
-        @media (max-width: 768px) {
-            .series-header { flex-direction: column; align-items: center; text-align: center; }
-            .series-info { width: 100%; }
-            .series-poster { width: 100%; max-width: 300px; height: auto; }
-        }
+
 
         .favorite-btn {
     background: none;
@@ -294,86 +289,6 @@ if (isset($_GET['id'])) {
     color: red;
 
 }
-.navbar {
-    background-color: rgba(20, 20, 20, 0.95);
-    padding: 15px 20px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
-}
-.navbar .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-.logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #fff;
-    text-decoration: none;
-}
-.nav-toggle {
-    display: none;
-    font-size: 2rem;
-    color: #fff;
-    cursor: pointer;
-}
-nav {
-    display: flex;
-    align-items: center;
-}
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    margin: 0;
-    padding: 0;
-}
-.nav-links li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    padding: 8px 12px;
-    display: inline-block;
-    transition: all 0.3s ease;
-}
-.nav-links li:hover a {
-    color: #e50914;
-    transform: scale(1.05);
-}
-@media (max-width: 768px) {
-    .nav-toggle {
-        display: block;
-    }
-    nav {
-        width: 100%;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .nav-links {
-        flex-direction: column;
-        width: 100%;
-        display: none;
-        margin-top: 10px;
-    }
-    .nav-links.active {
-        display: flex;
-    }
-    .nav-links li {
-        width: 100%;
-    }
-    .nav-links li a {
-        width: 100%;
-        padding: 10px 0;
-    }
-}
-
     </style>
 </head>
 <body>
