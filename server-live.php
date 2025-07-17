@@ -475,7 +475,7 @@ $playerUrl = "https://dfkz.up.railway.app/api-live.php?ch=" . intval($channelId)
                       </a>
 
 <a href="server-live.php?id=21" class="channel-item">
-  <img src="https://upload.wikimedia.org/wikipedia/ar/thumb/e/e0/OmanTV.svg/1200px-OmanTV.svg.png" alt="Oman TV" />
+  <img src="https://www.klma.org/wp-content/uploads/2021/04/oman-tv-live-nilesat.jpg" alt="Oman TV" />
   <span class="channel-name">عمان تيفي</span>
 </a>
 
