@@ -473,6 +473,16 @@ $playerUrl = "https://dfkz.up.railway.app/api-live.php?ch=" . intval($channelId)
                         <span class="channel-name">دبي</span>
                       </a>
 
+                      <a href="server-live.php?id=20" class="channel-item">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk1M66wi3shj5YXhO6Cv9rf3B-ZXSLBEC2Tg&s" alt="MBC 2" />
+                        <span class="channel-name">البحرين</span>
+                      </a>
+
+                      <a href="server-live.php?id=21" class="channel-item">
+                        <img src="https://www.klma.org/wp-content/uploads/2021/04/oman-tv-live-nilesat.jpg" alt="MBC 2" />
+                        <span class="channel-name">عمان تيفي</span>
+                      </a>
+
                         <a href="server-live.php?id=9" class="channel-item">
                           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9hF9gGUDglabva3DrXaW7yGedHdx0nQoFztnuMXjBeNjCbEch9JM-omyLGH5xyLPeuRI&usqp=CAU" alt="MBC 2" />
                           <span class="channel-name">الجزيره</span>
