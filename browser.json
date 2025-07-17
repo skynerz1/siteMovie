@@ -1280,6 +1280,650 @@
       "sources": []
     },
     {
+        "id": 25006,
+        "title": "Trainwreck: The Cult of American Apparel",
+        "label": null,
+        "sublabel": null,
+        "type": "movie",
+        "description": "فوضى كارثية: طائفة أمريكان أباريل\r\nيتضمن هذا العرض الكاشف مقابلات تقدم الحقائق من المطلعين على الحدث والموظفين السابقين، ويستعرض مسيرة \"أمريكان أباريل\" من كونها ظاهرة في الموضة إلى أن بدأت التخبط في فشل مالي ذريع.",
+        "year": 2025,
+        "rating": 0,
+        "imdb": 0,
+        "duration": "54min",
+        "comment": true,
+        "downloadas": "3",
+        "playas": "1",
+        "classification": "وثائقي",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/jqDRiwqDsopRZe7xZRYz7KiTkjc.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/pS72Jg6QGB6eVsvByf5n1tDcTQ1.jpg",
+        "genres": [
+            {
+                "id": 22,
+                "title": "أفلام أجنبية"
+            }
+        ],
+        "trailer": {
+            "id": 3191824,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=jrOY-uESKoo"
+        },
+        "sources": []
+    },
+    {
+        "id": 25028,
+        "title": "Shark Whisperer",
+        "label": null,
+        "sublabel": null,
+        "type": "movie",
+        "description": "تدريب أسماك القرش\r\nتسبح أوشن رامزي، الناشطة في مجال الحفاظ على البيئة البحرية ووسائط التواصل الاجتماعي، بلا خوف مع أسماك القرش في هذا الفيلم الوثائقي الذي يتناول مهمتها الخطيرة لحمايتها.",
+        "year": 2025,
+        "rating": 0,
+        "imdb": 6.9,
+        "duration": "1h 30min",
+        "comment": true,
+        "downloadas": "3",
+        "playas": "1",
+        "classification": "وثائقي",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/v0WEubJKWTfqYX8laBGIPI07Z7t.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/oukZHooYhO4zmu4WTSjqwCoAIt7.jpg",
+        "genres": [
+            {
+                "id": 22,
+                "title": "أفلام أجنبية"
+            }
+        ],
+        "trailer": {
+            "id": 3197731,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=EzFguo4vEAQ"
+        },
+        "sources": []
+    },
+    {
+        "id": 24913,
+        "title": "Trainwreck: Poop Cruise",
+        "label": null,
+        "sublabel": null,
+        "type": "movie",
+        "description": "فوضى كارثية: باخرة دون دورات مياه\r\nتتقطع السبل بأربعة آلاف راكب في عرض البحر إثر اندلاع حريق في غرفة المحرّكات مخلفًا إياهم دون طاقة أو صرف صحي في هذا الوثائقي المثير عن رحلة \"باخرة دون دورات مياه\" المشينة عام 2013.",
+        "year": 2025,
+        "rating": 0,
+        "imdb": 6.1,
+        "duration": "55min",
+        "comment": true,
+        "downloadas": "3",
+        "playas": "1",
+        "classification": "وثائقي",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/nJZlsBpDxx3LrGwXvwXkQyVnp9A.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/zvXixohmQolI8qdvACeVkaSrPaG.jpg",
+        "genres": [
+            {
+                "id": 22,
+                "title": "أفلام أجنبية"
+            }
+        ],
+        "trailer": {
+            "id": 3175404,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=p81PafZ2d_8"
+        },
+        "sources": []
+    },
+    {
+        "id": 24847,
+        "title": "Olympo",
+        "label": null,
+        "sublabel": null,
+        "type": "serie",
+        "description": "أوليمبو\r\nحين تغيب سبّاحة عن الوعي في أحد أكبر المراكز الرياضية عالية الأداء، تبدأ \"أمايا\" التحقيق في المخاطر الجسيمة التي يخوضها زملاؤها الرياضيون لإيقاد شعلة طموحهم.",
+        "year": 2025,
+        "rating": 3.7,
+        "imdb": 0,
+        "duration": "45 min",
+        "comment": true,
+        "downloadas": "1",
+        "playas": "1",
+        "classification": "دراما, غموض, رياضة, اسبانيا",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/6BgcsLnjFiizUFSZchctgeZJRzY.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/fWOagGfFtMm70U8BtWPlVRW6efu.jpg",
+        "genres": [
+            {
+                "id": 18,
+                "title": "مسلسلات أجنبية"
+            },
+            {
+                "id": 24,
+                "title": "جديد المسلسلات"
+            }
+        ],
+        "trailer": {
+            "id": 3168730,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=FYTtD0HR_Jk"
+        },
+        "sources": []
+    },
+    {
+        "id": 24865,
+        "title": "KPop Demon Hunters",
+        "label": "WEB-DL",
+        "sublabel": "مترجم+مدبلج",
+        "type": "movie",
+        "description": "فرقة البوب الكورية: صائدات الشياطين\r\nحينما يهدأ هدير الجماهير في الملاعب، يوظّف نجوم البوب الكوري، \"رومي\" و\"ميرا\" و\"زوي\"، قواهم الخارقة السرية لحماية معجبيهم من مخاطر دائمة خارقة للطبيعة.",
+        "year": 2025,
+        "rating": 4.8,
+        "imdb": 7.4,
+        "duration": "1h 35min",
+        "comment": true,
+        "downloadas": "3",
+        "playas": "1",
+        "classification": "انيميشن, اكشن, مغامرة, كوميديا, خيال, موسيقى, عائلي",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/jfS5KEfiwsS35ieZvdUdJKkwLlZ.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/n7z6rHymrRdZL0ZDZS4aL1JUbLq.jpg",
+        "genres": [
+            {
+                "id": 25,
+                "title": "الأفلام الأكثر مشاهدة"
+            },
+            {
+                "id": 61,
+                "title": "أفلام أنيميشن"
+            }
+        ],
+        "trailer": {
+            "id": 3169928,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=AzCAwdp1uIQ"
+        },
+        "sources": []
+    },
+    {
+        "id": 24841,
+        "title": "Trainwreck: Mayor of Mayhem",
+        "label": null,
+        "sublabel": null,
+        "type": "movie",
+        "description": "فوضى كارثية: عمدة الفوضى\r\nيشعل روب فورد فضيحة هزّت السياسة الكندية، بصفته عمدة \"تورونتو\" الجريء والمحبوب في آن، إلى أن ينتشر مقطع له وهو يتعاطى الكوكايين، ممهدًا لسقوطه المدوي.",
+        "year": 2025,
+        "rating": 0,
+        "imdb": 6.3,
+        "duration": "50min",
+        "comment": true,
+        "downloadas": "3",
+        "playas": "1",
+        "classification": "وثائقي",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/2IA1Q16FBDhMkvpBsHaihtx6c31.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/nx3Wv4MWtg1FUN4AXw4GYD2GhHV.jpg",
+        "genres": [
+            {
+                "id": 22,
+                "title": "أفلام أجنبية"
+            }
+        ],
+        "trailer": {
+            "id": 3168340,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=fVZAcOToHtU"
+        },
+        "sources": []
+    },
+    {
+      "id": 24729,
+      "title": "Our Times",
+      "label": null,
+      "sublabel": null,
+      "type": "movie",
+      "description": "فترات زمنية\r\nبعد التوصّل لاكتشاف علمي مذهل، يتمكن الزوجان \"نورا\" و\"هيكتور\" من السفر عبر الزمن، من عام 1966 إلى 2025. وفيما يعاني \"هيكتور\" للتأقلم في العالم الجديد، تتفوق \"نورا\" مقابل ثمن باهظ.",
+      "year": 2025,
+      "rating": 4,
+      "imdb": 5.9,
+      "duration": "1h 30min",
+      "comment": true,
+      "downloadas": "3",
+      "playas": "1",
+      "classification": "كوميديا, رومانسي, خيال علمي, المكسيك",
+      "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/t0XyRsfjnxznZb803hXtleSXhtG.jpg",
+      "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/dD14o9KJDbmuJ80z4vKdVnQ0zks.jpg",
+      "genres": [
+          {
+              "id": 22,
+              "title": "أفلام أجنبية"
+          }
+      ],
+      "trailer": {
+          "id": 3154777,
+          "type": "youtube",
+          "url": "https:\/\/www.youtube.com\/watch?v=iFr_Zwf_908"
+      },
+      "sources": []
+    },
+    {
+      "id": 13058,
+      "title": "Our Times",
+      "label": null,
+      "sublabel": null,
+      "type": "serie",
+      "description": "أوقاتنا\r\nيروي قصة إحساس الناس المعززة بالربح والسعادة والأمن خلال السنوات العشر من 2012 إلى 2022.",
+      "year": 2022,
+      "rating": 2.5,
+      "imdb": 7.8,
+      "duration": "45 min",
+      "comment": true,
+      "downloadas": "1",
+      "playas": "1",
+      "classification": "دراما, الصين",
+      "image": "https:\/\/app.arabypros.com\/uploads\/cache\/poster_thumb\/uploads\/jpg\/f21fd2c590a8b6d8d64bf40655b6ef69.jpg",
+      "cover": "https:\/\/app.arabypros.com\/uploads\/cache\/cover_thumb\/uploads\/jpg\/74ed32fdf080b53d8b3a028e5a6b01af.jpg",
+      "genres": [
+          {
+              "id": 23,
+              "title": "مسلسلات آسيوية"
+          }
+      ],
+      "trailer": {
+          "id": 1013331,
+          "type": "youtube",
+          "url": "https:\/\/www.youtube.com\/watch?v=IR_YpwXOerA"
+      },
+      "sources": []
+    },
+    {
+        "id": 24631,
+        "title": "Mercy for None",
+        "label": null,
+        "sublabel": null,
+        "type": "serie",
+        "description": "لن أرحم أحدًا\r\nبعد أن قطع علاقاته مع عصابته، يعود رجل العصابات السابق ليكشف حقيقة مقتل أخيه، ويسلك طريقًا لا يعرف الرحمة في سعيه للانتقام.",
+        "year": 2025,
+        "rating": 4.7,
+        "imdb": 7.9,
+        "duration": "60 min",
+        "comment": true,
+        "downloadas": "1",
+        "playas": "1",
+        "classification": "اكشن, جريمة, غموض, دراما, كوريا",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/sYveikWCwS0yEIEy2iRwmiACIVz.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/y7OFTnu8Gh2KHWX0Y05y8OY9kCB.jpg",
+        "genres": [
+            {
+                "id": 23,
+                "title": "مسلسلات آسيوية"
+            },
+            {
+                "id": 24,
+                "title": "جديد المسلسلات"
+            }
+        ],
+        "trailer": {
+            "id": 3147195,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=GV6IZ14FZX8"
+        },
+        "sources": []
+    },
+    {
+        "id": 24827,
+        "title": "The Waterfront",
+        "label": null,
+        "sublabel": null,
+        "type": "serie",
+        "description": "الواجهة البحرية\r\nعائلة رفيعة المستوى، تمارس مهنة الصيد في ولاية كارولينا الشمالية، تُجبَر على الخوض في المياه الغادرة لضمان استمرار إمبراطوريتها التجارية المتداعية.",
+        "year": 2025,
+        "rating": 0,
+        "imdb": 0,
+        "duration": "45 min",
+        "comment": true,
+        "downloadas": "1",
+        "playas": "1",
+        "classification": "دراما, اثارة, جريمة, عائلي",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/uRzJaOysinMti88BGuu8m8shVCp.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/kootCU91JSYiQZwkJgHgyb4tz9m.jpg",
+        "genres": [
+            {
+                "id": 18,
+                "title": "مسلسلات أجنبية"
+            },
+            {
+                "id": 24,
+                "title": "جديد المسلسلات"
+            }
+        ],
+        "trailer": {
+            "id": 3166313,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=vE-oYo1hIEs"
+        },
+        "sources": []
+    },
+    {
+        "id": 24155,
+        "title": "The Royals",
+        "label": null,
+        "sublabel": null,
+        "type": "serie",
+        "description": "العائلة الملكية\r\nعندما يلتقي الأمير الجذّاب \"أفيراج\" بسيدة الأعمال العصامية الشابة \"صوفيا\"، يقع صدام بين عالمَي المَلكية والمؤسسات الناشئة وسط عاصفة من المشاعر الرومانسية والطموح الجامح.",
+        "year": 2025,
+        "rating": 4,
+        "imdb": 0,
+        "duration": "45 min",
+        "comment": true,
+        "downloadas": "1",
+        "playas": "1",
+        "classification": "كوميديا, رومانسي, الهند",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/3rC8tEeNLtyM5YONTgXqqiyfUGp.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/2lj4e5psR9jJA0LSn557fwxcqLv.jpg",
+        "genres": [
+            {
+                "id": 18,
+                "title": "مسلسلات أجنبية"
+            },
+            {
+                "id": 24,
+                "title": "جديد المسلسلات"
+            }
+        ],
+        "trailer": {
+            "id": 3072306,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=YV7FN78Dwxo"
+        },
+        "sources": []
+    },
+    {
+        "id": 24011,
+        "title": "The Four Seasons",
+        "label": null,
+        "sublabel": null,
+        "type": "serie",
+        "description": "الفصول الأربعة\r\nتصبح صداقة، امتدت لعقود بين ثلاثة أزواج وزوجاتهم، تحت المحك حين تنتهي حياة زوجين منهما بالطلاق، الأمر الذي يعقّد تقليدهم بالسفر خلال عطلة نهاية الأسبوع الربع سنوية.",
+        "year": 2025,
+        "rating": 5,
+        "imdb": 0,
+        "duration": "30 min",
+        "comment": true,
+        "downloadas": "1",
+        "playas": "1",
+        "classification": "كوميديا, دراما, رومانسي",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/w09XeYl096pwES8riRMZwEA9rnh.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/60zGoqvJzrflQEDiBKNxpZqVLNt.jpg",
+        "genres": [
+            {
+                "id": 18,
+                "title": "مسلسلات أجنبية"
+            },
+            {
+                "id": 24,
+                "title": "جديد المسلسلات"
+            }
+        ],
+        "trailer": {
+            "id": 3059271,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=41Kenrf9Htw"
+        },
+        "sources": []
+    },
+    {
+        "id": 24567,
+        "title": "Lost in Starlight",
+        "label": null,
+        "sublabel": "مترجم+مدبلج",
+        "type": "movie",
+        "description": "تائهان في فضاء الحب\r\nيفرّق الفضاء الأزلي الشاسع بين عاشقَيْن سيئي الحظ حين تغادر رائدة فضاء الأرض متوجهة إلى المريخ، في هذه الرومانسية العابرة للأكوان بتقنية الرسوم المتحركة.",
+        "year": 2025,
+        "rating": 2.5,
+        "imdb": 7.7,
+        "duration": "1h 36min",
+        "comment": true,
+        "downloadas": "3",
+        "playas": "1",
+        "classification": "انيميشن, دراما, رومانسي, خيال علمي, كوريا",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/dXlUIfwejWa9YvugU9V773dUASY.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/drSJ0HVuSNFMPq5VzAEHk37BiEC.jpg",
+        "genres": [
+            {
+                "id": 61,
+                "title": "أفلام أنيميشن"
+            }
+        ],
+        "trailer": {
+            "id": 3131655,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=VvMbyw_vIcA"
+        },
+        "sources": []
+    },
+    {
+        "id": 24575,
+        "title": "A Widow's Game",
+        "label": null,
+        "sublabel": null,
+        "type": "movie",
+        "description": "لعبة الأرملة\r\nعندما يعثر أحدهم على رجل ميت، يحطم التحقيق الواجهة المثالية لأرملته ويكشف عن حياة مزدوجة سرّية في هذا الفيلم التشويقي المستوحى من أحداث حقيقية.",
+        "year": 2025,
+        "rating": 4.7,
+        "imdb": 6.1,
+        "duration": "2hr 2min",
+        "comment": true,
+        "downloadas": "3",
+        "playas": "1",
+        "classification": "دراما, اثارة, جريمة, غموض, اسبانيا",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/yZOdrJDl2GwREoigC0y40kMosxj.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/9QQ81N0UndYhAUmk6FiTGU1j6Xc.jpg",
+        "genres": [
+            {
+                "id": 22,
+                "title": "أفلام أجنبية"
+            }
+        ],
+        "trailer": {
+            "id": 3131818,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=qRNBh78oYDo"
+        },
+        "sources": []
+    },
+    {
+        "id": 24458,
+        "title": "Our Unwritten Seoul",
+        "label": null,
+        "sublabel": "ح 12",
+        "type": "serie",
+        "description": "قصتي المجهولة في سول - سيول المجهولة\r\nمع تناقضهما في كل شيء باستثناء مظهرهما المتطابق تمامًا، تتبادل شقيقتان توأم هويّتيهما رغم صراعاتهما الشخصية... وتشرعان في رحلة لإعادة اكتشاف الحب والحياة.\r\n-\r\nعدد الحلقات : 12\r\n-\r\nموعد البث : 24 مايو 2025 لـ29 يونيو 2025 (السبت والأحد)",
+        "year": 2025,
+        "rating": 4.8,
+        "imdb": 0,
+        "duration": "60 min",
+        "comment": true,
+        "downloadas": "1",
+        "playas": "1",
+        "classification": "دراما, رومانسي, كوريا",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/6UaF702cnblPmqP7JvBruwgAdMY.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/oGhjj5VMz4a4socjv0ODP3cfLke.jpg",
+        "genres": [
+            {
+                "id": 23,
+                "title": "مسلسلات آسيوية"
+            },
+            {
+                "id": 24,
+                "title": "جديد المسلسلات"
+            }
+        ],
+        "trailer": {
+            "id": 3114106,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=lsDGSricQ60"
+        },
+        "sources": []
+    },
+    {
+        "id": 5508,
+        "title": "Sweet Tooth",
+        "label": "الموسم الثالث",
+        "sublabel": null,
+        "type": "serie",
+        "description": "السن الحلو: الفتى صاحب القرنين\r\nينطلق فتًى لطيف، نصفه بشري والآخر غزال، في مغامرة محفوفة بالمخاطر عبر عالم ما بعد النهاية باحثًا عن بداية جديدة برفقة حارس حازم السلوك.",
+        "year": 2021,
+        "rating": 4.5,
+        "imdb": 7.7,
+        "duration": "60 min",
+        "comment": true,
+        "downloadas": "3",
+        "playas": "1",
+        "classification": "اكشن, مغامرة, دراما, خيال",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/rYhvi3G1iVdDS30NzLPjNftpqK6.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/8P15FsYcTwQZ4G5rRMd1TKD14Aq.jpg",
+        "genres": [
+            {
+                "id": 18,
+                "title": "مسلسلات أجنبية"
+            },
+            {
+                "id": 24,
+                "title": "جديد المسلسلات"
+            }
+        ],
+        "trailer": {
+            "id": 150429,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=GrBw0pbF11s"
+        },
+        "sources": []
+    },
+    {
+      "id": 11644,
+      "title": "Obi-Wan Kenobi: A Jedi's Return",
+      "label": null,
+      "sublabel": null,
+      "type": "movie",
+      "description": "في إطار وثائقي، يسلط العمل الضوء على مراحل صناعة المسلسل الملحمي (Obi-Wan Kenobi)، من خلال مجموعة من اللقطات الحديثة والكواليس والمقابلات الخاصة بصناع العمل.",
+      "year": 2022,
+      "rating": 2.5,
+      "imdb": 6.4,
+      "duration": "1h 0min",
+      "comment": true,
+      "downloadas": "3",
+      "playas": "1",
+      "classification": "وثائقي",
+      "image": "https:\/\/app.arabypros.com\/uploads\/cache\/poster_thumb\/uploads\/jpg\/abedfe6a18a83aac4675c86d999807d6.jpg",
+      "cover": "https:\/\/app.arabypros.com\/uploads\/cache\/cover_thumb\/uploads\/jpg\/c82d73ff7f215e8de0bc66f1e9e25457.jpg",
+      "genres": [
+          {
+              "id": 22,
+              "title": "أفلام أجنبية"
+          }
+      ],
+      "trailer": {
+          "id": 841992,
+          "type": "youtube",
+          "url": "https:\/\/www.youtube.com\/watch?v=4WaC8k3WVl8"
+      },
+      "sources": []
+    },
+    {
+      "id": 9455,
+      "title": "Obi-Wan Kenobi",
+      "label": null,
+      "sublabel": null,
+      "type": "serie",
+      "description": "أوبي وان كينوبي\r\nتدور أحداث العمل بعد مرور 10 سنوات على (Star Wars: Revenge of the Sith)، حيث يواجه أوبي الخسائر الأكبر على الإطلاق بعد سقوط سكايواكر الصادم.",
+      "year": 2022,
+      "rating": 4.5,
+      "imdb": 9,
+      "duration": "60 min",
+      "comment": true,
+      "downloadas": "3",
+      "playas": "1",
+      "classification": "اكشن, مغامرة, خيال علمي",
+      "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/qJRB789ceLryrLvOKrZqLKr2CGf.jpg",
+      "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/vNPm1WG15IJHpsemb9ZRurm4ZC4.jpg",
+      "genres": [
+          {
+              "id": 18,
+              "title": "مسلسلات أجنبية"
+          }
+      ],
+      "trailer": {
+          "id": 512394,
+          "type": "youtube",
+          "url": "https:\/\/www.youtube.com\/watch?v=3Yh_6_zItPU"
+      },
+      "sources": []
+    },
+    {
+        "id": 6835,
+        "title": "Hellbound",
+        "label": "الموسم الثاني",
+        "sublabel": null,
+        "type": "serie",
+        "description": "الطريق إلى الجحيم\r\nتُصدر كائنات من عالم آخر أحكامًا دموية وترسل أشخاصًا إلى الجحيم، ممّا يتسبب في ظهور جماعة دينية مُتأسّسة على فكرة العدالة الإلهية.",
+        "year": 2021,
+        "rating": 4.2,
+        "imdb": 6.6,
+        "duration": "45 min",
+        "comment": true,
+        "downloadas": "3",
+        "playas": "1",
+        "classification": "اثارة, جريمة, غموض, خيال, كوريا",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/AmGfkJXzh7WDTECaqOdgERes4Kl.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/bfXTYu3oLtEUL0jAxgx7Jy56yHl.jpg",
+        "genres": [
+            {
+                "id": 23,
+                "title": "مسلسلات آسيوية"
+            },
+            {
+                "id": 24,
+                "title": "جديد المسلسلات"
+            }
+        ],
+        "trailer": {
+            "id": 206611,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=LtdXK6yNFN0"
+        },
+        "sources": []
+    },
+    {
+        "id": 6580,
+        "title": "Arcane",
+        "label": "الموسم الثاني",
+        "sublabel": "ح 9",
+        "type": "serie",
+        "description": "أركين\r\nوسط صراع مرير يفصل بين مدينتي \"بيلتوفر\" و\"زون\" المترابطتين، تُقاتل أختان على طرفي نقيض في حرب بين التقنيات السحرية والمعتقدات المتضاربة.",
+        "year": 2021,
+        "rating": 4.6,
+        "imdb": 9,
+        "duration": "45 min",
+        "comment": true,
+        "downloadas": "3",
+        "playas": "1",
+        "classification": "انيميشن, اكشن, خيال علمي",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/pTLCakNJsuKnHTQKPcgOUT8wpLr.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/rkB4LyZHo1NHXFEDHl9vSD9r1lI.jpg",
+        "genres": [
+            {
+                "id": 18,
+                "title": "مسلسلات أجنبية"
+            },
+            {
+                "id": 24,
+                "title": "جديد المسلسلات"
+            },
+            {
+                "id": 87,
+                "title": "مسلسلات أنيميشن"
+            }
+        ],
+        "trailer": {
+            "id": 199423,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=3Svs_hl897c"
+        },
+        "sources": []
+    },
+    {
       "id": 25009,
       "title": "The Old Guard 2",
       "label": "WEB-DL",
