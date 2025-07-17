@@ -278,14 +278,15 @@ $playerUrl = "https://dfkz.up.railway.app/api-live.php?ch=" . intval($channelId)
         right: 6px;
     }
 }
-      .channels-grid {
-        display: grid;
-        grid-template-columns: repeat(8, 1fr);
-        gap: 16px;
-        justify-items: center;
-        max-width: 100%; /* مهم عشان ما يطلع برا */
-        overflow-x: hidden; /* يمنع التمرير الأفقي */
-      }
+.channels-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* يتكيف مع حجم الشاشة */
+  gap: 16px;
+  justify-items: center;
+  width: 100%;
+  overflow: visible; /* السماح بظهور الأسطر التالية */
+}
+
 
       .channel-item {
         display: flex;
