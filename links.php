@@ -264,7 +264,7 @@ function getSeriesDetails($seriesId) {
 
 .episode-selector {
     margin-top: 40px;
-    background: #111;
+    background: #1c2229;
     padding: 20px;
     border-radius: 10px;
 }
