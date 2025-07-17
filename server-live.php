@@ -13,7 +13,7 @@ $playerUrl = "https://dfkz.up.railway.app/api-live.php?ch=" . intval($channelId)
     <meta charset="UTF-8">
     <title>مشاهدة - DfKzz</title>
     <link rel="icon" type="image/png" href="a.png">
-    <style>
+     <style>
         html, body {
           height: 100%;
           margin: 0;
@@ -278,60 +278,78 @@ $playerUrl = "https://dfkz.up.railway.app/api-live.php?ch=" . intval($channelId)
         right: 6px;
     }
 }
+      .channels-grid {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        gap: 16px;
+        justify-items: center;
+        max-width: 100%; /* مهم عشان ما يطلع برا */
+        overflow-x: hidden; /* يمنع التمرير الأفقي */
+      }
+
+      .channel-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 140px;
+        box-sizing: border-box; /* يتأكد من الحساب الصحيح للحجم */
+      }
+
+      .channel-item img {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 8px;
+        display: block;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .channel-item:hover img {
+        transform: scale(1.05);
+        box-shadow: 0 0 10px rgba(229, 9, 20, 0.8);
+      }
+
+      .channel-name {
+        margin-top: 6px;
+        font-size: 14px;
+        font-weight: bold;
+        color: #fff;
+        text-align: center;
+        user-select: none;
+      }
+
+      .channel-list h3 {
+        margin-bottom: 12px;
+        color: #fff;
+        font-weight: bold;
+        font-size: 20px;
+      }
+
+      /* ميديا كويري للشاشات الصغيرة */
+      @media (max-width: 768px) {
         .channels-grid {
-          display: grid;
-          grid-template-columns: repeat(8, 1fr); /* 8 أعمدة متساوية العرض */
-          gap: 16px; /* فراغ بين العناصر */
-          justify-items: center; /* يوسّط العناصر أفقياً داخل الخانات */
+          grid-template-columns: repeat(3, 1fr) !important;
+          justify-items: center; /* يوسّط العناصر داخل كل خانة */
+          gap: 10px;
+          max-width: 100%; /* تأكد لا يطلع برا */
+          overflow-x: hidden; /* يمنع التمرير الأفقي */
+          padding: 0 10px; /* مسافة بسيطة من الأطراف */
         }
 
         .channel-item {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          width: 140px; /* حجم ثابت للعنصر */
+          width: 100%; /* ياخذ كامل خانة الشبكة */
+          max-width: 120px; /* لا يزيد عن 120 */
+          box-sizing: border-box;
         }
 
         .channel-item img {
-          width: 120px;      /* حجم أكبر */
-          height: 120px;     /* نفس العرض عشان المربع */
-          object-fit: cover; /* يملأ المربع بدون تشويه */
-          border-radius: 8px; /* حواف دائرية بسيطة لو تحب */
-          display: block;
+          width: 90px;
+          height: 90px;
+          object-fit: cover;
+          border-radius: 8px;
         }
+      }
 
-        .channel-item:hover img {
-          transform: scale(1.05);
-          box-shadow: 0 0 10px rgba(229, 9, 20, 0.8);
-        }
-
-        .channel-name {
-          margin-top: 6px;
-          font-size: 14px;
-          font-weight: bold;
-          color: #fff;
-          text-align: center;
-          user-select: none;
-        }
-        .channel-list h3 {
-          margin-bottom: 12px; /* تقدر تزود أو تنقص حسب اللي يعجبك */
-          color: #fff; /* لو تحب تلوّن العنوان */
-          font-weight: bold;
-          font-size: 20px;
-        }
-
-        @media (max-width: 768px) {
-          .channels-grid {
-            grid-template-columns: repeat(3, 1fr) !important; /* 3 أعمدة بدل 8 */
-            justify-content: center; /* لو حاب الصور تكون في الوسط */
-            gap: 10px; /* مسافة بين الصور */
-          }
-
-          .channel-item img {
-            width: 90px;  /* أصغر شوي للجوال */
-            height: 90px; /* مربع */
-          }
-        }
 
     </style>
 </head>
