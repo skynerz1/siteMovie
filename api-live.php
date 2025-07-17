@@ -550,6 +550,10 @@
 
         { id: 15, name: "دبي", url:"https://dmieigthvllta.cdn.mgmlcdn.com/dubaitvht/smil:dubaitv.stream.smil/chunklist.m3u8", logo: "https://admango.cdn.mangomolo.com/analytics/uploads/71/659cd942e4.png" },
 
+        { id: 20, name: "البحرين", url:"https://5c7b683162943.streamlock.net/live/ngrp:bahraintvmain_all/playlist.m3u8", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk1M66wi3shj5YXhO6Cv9rf3B-ZXSLBEC2Tg&s" },
+
+        { id: 21, name: "عمان تيفي", url:"https://partneta.cdn.mgmlcdn.com/omantv/smil:omantv.stream.smil/chunklist.m3u8", logo: "https://www.klma.org/wp-content/uploads/2021/04/oman-tv-live-nilesat.jpg" },
+
       { id: 9, name: "الجزيره", url:"https://live-hls-apps-aja-fa.getaj.net/AJA/index.m3u8", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9hF9gGUDglabva3DrXaW7yGedHdx0nQoFztnuMXjBeNjCbEch9JM-omyLGH5xyLPeuRI&usqp=CAU" },
 
         { id: 10, name: "العربي", url:"https://alarabyta.cdn.octivid.com/alaraby/smil:alaraby.stream.smil/chunklist.m3u8", logo: "https://yt3.googleusercontent.com/dirOUBiyFLsQqf58hs78w2NRbQu2u3SfXr77jlH6y1mDwh4TpEtI5CXzhpCy8Aw7tz6CgveWbw=s900-c-k-c0x00ffffff-no-rj" },
