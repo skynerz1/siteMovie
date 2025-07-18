@@ -258,22 +258,34 @@
     body {
       padding-bottom: 60px;
     }
+    .desktop-search-overlay {
+      display: none;
+      background: #1c2229;
+      padding: 10px 20px;
+      border-bottom: 1px solid #333;
+      z-index: 999;
+    }
+
+    #desktop-search-btn.active i {
+      color: red !important;
+    }
+
+
     @media (max-width: 768px) {
-      header {
-        padding: 8px 15px; /* قلل padding فوق وتحت */
-      }
-
-      .header-content {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 4px; /* تقليل المسافة بين العناصر */
-      }
-
-      .logo-text {
-        margin-bottom: 4px; /* تقليل المسافة تحت اللوقو */
+      .desktop-search-overlay {
+        display: none !important;
       }
     }
+    .search-icon-btn {
+      text-decoration: none;
+      outline: none;
+      box-shadow: none;
+    }
+    .search-icon-btn:focus {
+      outline: none;
+    }
+
+
 
   </style>
 </head>
@@ -283,8 +295,20 @@
   <div class="header-content">
     <!-- Logo -->
     <a href="index.php" class="logo-text">
-      <img src="../includes/img/dfkz.png" alt="dfkz Logo">
+      <img src="../includes/img/dfkz.png" alt="n8n Logo">
     </a>
+
+    <!-- زر البحث بجانب اللوقو -->
+    <a href="#" id="desktop-search-btn" class="desktop-only search-icon-btn" style="margin-left: 10px;">
+      <i class="fas fa-search" style="color:white; font-size: 20px;"></i>
+    </a>
+
+
+
+    
+
+
+
 
 
     <!-- Desktop Nav -->
@@ -334,20 +358,49 @@
       <button type="submit"><i class="fas fa-search"></i></button>
     </form>
   </div>
+    <!-- نموذج البحث المنبثق (للديسكتوب) -->
+    <div class="desktop-search-overlay" id="desktop-search-overlay">
+      <form method="GET" action="index.php" class="mobile-search-form" style="padding: 10px;">
+        <input type="hidden" name="page" value="2">
+        <input type="text" name="search" placeholder="ابحث عن فيلم أو مسلسل..." required />
+        <button type="submit"><i class="fas fa-search"></i></button>
+      </form>
+    </div>
+
 
 </header>
 
-<script>
- 
+    <script>
+      // بحث الجوال
+      const toggleSearchBtn = document.getElementById("toggle-search");
+      const searchOverlay = document.getElementById("search-overlay");
 
-  const toggleSearchBtn = document.getElementById("toggle-search");
-  const searchOverlay = document.getElementById("search-overlay");
+      toggleSearchBtn?.addEventListener("click", (e) => {
+        e.preventDefault();
+        searchOverlay.style.display = searchOverlay.style.display === "block" ? "none" : "block";
+      });
 
-  toggleSearchBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    searchOverlay.style.display = searchOverlay.style.display === "block" ? "none" : "block";
-  });
-</script>
+      // بحث الديسكتوب
+      const desktopSearchBtn = document.getElementById("desktop-search-btn");
+      const desktopSearchOverlay = document.getElementById("desktop-search-overlay");
+
+      desktopSearchBtn?.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        const isVisible = desktopSearchOverlay.style.display === "block";
+
+        desktopSearchOverlay.style.display = isVisible ? "none" : "block";
+
+        // تغيير لون الأيقونة
+        if (isVisible) {
+          desktopSearchBtn.classList.remove("active");
+        } else {
+          desktopSearchBtn.classList.add("active");
+        }
+      });
+    </script>
+
+
 
 </body>
 </html>
