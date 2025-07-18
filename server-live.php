@@ -445,6 +445,11 @@ $playerUrl = "https://dfkz.up.railway.app/api-live.php?ch=" . intval($channelId)
                           <span class="channel-name">bein 1</span>
                         </a>
 
+                        <a href="server-live.php?id=22" class="channel-item">
+                          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStqDmOsCegryFEhcARKy82qGAK_q1_HRFH4IwoLUHp8c_Fi3B55nW3FdFZxa5X4xjyeSo&usqp=CAU" alt="MBC 2" />
+                          <span class="channel-name">ريال مدريد</span>
+                        </a>
+
                         <a href="server-live.php?id=17" class="channel-item">
                           <img src="https://cdna.artstation.com/p/assets/images/images/013/847/096/large/ali-hazime-60-rotana-kh-ramadan-bumpers-04.jpg?1541359241" alt="MBC 2" />
                           <span class="channel-name">روتانا خليجيه</span>
