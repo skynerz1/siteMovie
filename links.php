@@ -422,6 +422,39 @@ function getSeriesDetails($seriesId) {
         .share-btn:hover {
           filter: brightness(1.1);
         }
+
+        .modal {
+          position: fixed;
+          top: 0; right: 0; bottom: 0; left: 0;
+          background: rgba(0,0,0,0.5);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 9999;
+        }
+
+        .modal-content {
+          background: #fff;
+          padding: 20px;
+          border-radius: 10px;
+          width: 90%;
+          max-width: 400px;
+          direction: rtl;
+          text-align: right;
+        }
+        .modal-content select,
+        .modal-content textarea {
+          width: 100%;
+          margin: 5px 0 15px;
+          padding: 8px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+        }
+        .modal-content button {
+          margin-left: 10px;
+          padding: 8px 12px;
+          cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -466,7 +499,7 @@ function getSeriesDetails($seriesId) {
                         <i class="fas fa-server"></i> اختيار السيرفر
                     </button>
                     <button class="action-button report-button" onclick="reportIssue()">
-                        <i class="fas fa-flag"></i> بلاغ عن مشكلة
+                      <i class="fas fa-flag"></i> بلاغ عن مشكلة
                     </button>
                     <button class="action-button fullscreen-button" onclick="toggleFullscreen()">
                         <i class="fas fa-expand"></i> ملء الشاشة
@@ -540,7 +573,32 @@ function getSeriesDetails($seriesId) {
             </div>
         <?php endif; ?>
 
-        
+
+            <div id="reportModal" class="modal" style="display:none;">
+              <div class="modal-content">
+                <h3>بلاغ عن مشكلة</h3>
+
+                <label>نوع البلاغ:</label>
+                <select id="reportType" onchange="updateReasons()">
+                  <option value="">اختر النوع</option>
+                  <option value="video">مشكلة في الفيديو</option>
+                  <option value="title">خطأ في العنوان</option>
+                  <option value="other">أخرى</option>
+                </select>
+
+                <label>السبب:</label>
+                <select id="reportReason">
+                  <option value="">اختر السبب</option>
+                </select>
+
+                <label>سبب آخر (اختياري):</label>
+                <textarea id="customReason" placeholder="اكتب السبب هنا..."></textarea>
+
+                <button onclick="submitReport()">إرسال</button>
+                <button onclick="closeReportModal()">إغلاق</button>
+              </div>
+            </div>
+
 
 
     </div>
@@ -578,8 +636,96 @@ function getSeriesDetails($seriesId) {
         }
 
         function reportIssue() {
-            alert('شكراً لك، إذا واجهت مشكلة تواصل معنا على تليجرام @wgggk');
+          document.getElementById('reportModal').style.display = 'flex';
         }
+
+        function closeReportModal() {
+          document.getElementById('reportModal').style.display = 'none';
+        }
+
+        function updateReasons() {
+          const type = document.getElementById('reportType').value;
+          const reasonSelect = document.getElementById('reportReason');
+          reasonSelect.innerHTML = '<option value="">اختر السبب</option>';
+
+          let reasons = [];
+
+          if (type === 'video') {
+            reasons = ['لا يعمل', 'صوت غير واضح', 'تقطيع', 'رابط خاطئ'];
+          } else if (type === 'title') {
+            reasons = ['عنوان غير صحيح', 'موسم خاطئ', 'حلقات ناقصة'];
+          } else if (type === 'other') {
+            reasons = ['محتوى غير لائق', 'مشكلة أخرى'];
+          }
+
+          reasons.forEach(reason => {
+            const option = document.createElement('option');
+            option.value = reason;
+            option.textContent = reason;
+            reasonSelect.appendChild(option);
+          });
+        }
+
+        function submitReport() {
+          const type = document.getElementById('reportType').value;
+          const reason = document.getElementById('reportReason').value;
+          const custom = document.getElementById('customReason').value;
+
+          if (!type || (!reason && !custom)) {
+            alert('يرجى اختيار نوع البلاغ وسبب أو كتابة سبب آخر.');
+            return;
+          }
+
+          const fullReason = reason || 'سبب مخصص: ' + custom;
+
+          // رابط الصفحة الحالي (المسلسل + الحلقة)
+          const currentUrl = window.location.href;
+
+          // إعداد الرسالة
+          const message = `
+        🚨 بلاغ جديد
+
+        📌 النوع: ${type}
+        📝 السبب: ${fullReason}
+        🔗 الرابط: ${currentUrl}
+        `.trim();
+
+          // إعدادات تيليجرام
+          const botToken = '6345801560:AAH2rkXSmDeYT0pbpBBt6ID06PuIeX5F8uw';
+          const chatId = '1965941065';
+
+          const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+          const params = {
+            chat_id: chatId,
+            text: message,
+            parse_mode: 'HTML'
+          };
+
+          // إرسال الطلب
+          fetch(url, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(params)
+          })
+          .then(response => response.json())
+          .then(data => {
+            if (data.ok) {
+              alert('✅ تم إرسال البلاغ بنجاح، شكراً لتعاونك!');
+            } else {
+              alert('❌ حدث خطأ أثناء إرسال البلاغ، حاول لاحقًا.');
+              console.error(data);
+            }
+            closeReportModal();
+          })
+          .catch(error => {
+            alert('⚠️ تعذر الاتصال بتيليجرام.');
+            console.error(error);
+            closeReportModal();
+          });
+        }
+
 
         function toggleFullscreen() {
             const iframe = document.getElementById('player-iframe');
