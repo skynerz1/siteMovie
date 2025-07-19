@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DFKZ WATCH MOVIE & SERIES & CHANNEL</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <style>
+ <style>
     * {
       box-sizing: border-box;
       margin: 0;
@@ -19,11 +19,16 @@
 
     header {
       background-color: #1c2229;
-
-      padding: 15px 30px;
+      padding: 6px 30px; /* تقليل الـ padding من 15px إلى 6px */
       position: relative;
       z-index: 100;
     }
+
+    .logo-text img {
+      height: 45px; /* تقليل ارتفاع الصورة من 85px إلى 45px */
+      vertical-align: middle;
+    }
+
 
     .header-content {
       max-width: 1200px;
@@ -40,10 +45,7 @@
       text-decoration: none;
     }
 
-    .logo-text img {
-      height: 85px; /* عدل الحجم اللي تبيه */
-      vertical-align: middle;
-    }
+
 
 
     .main-nav {
@@ -295,7 +297,7 @@
   <div class="header-content">
     <!-- Logo -->
     <a href="index.php" class="logo-text">
-      <img src="../includes/img/dfkz.png" alt="n8n Logo">
+      <img src="../includes/img/dfkz.png" alt="dfkz Logo">
     </a>
 
     <!-- زر البحث بجانب اللوقو -->
