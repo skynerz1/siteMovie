@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once 'functions.php';
-include 'load.php';
+
 include 'includes/header.php';
 
 // تحميل المفضلة من الكوكيز إذا لم تكن موجودة في الجلسة
