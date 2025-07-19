@@ -669,28 +669,34 @@ function getSeriesDetails($seriesId) {
         function submitReport() {
           const type = document.getElementById('reportType').value;
           const reason = document.getElementById('reportReason').value;
-          const custom = document.getElementById('customReason').value;
+          const custom = document.getElementById('customReason').value.trim();
 
           if (!type || (!reason && !custom)) {
             alert('يرجى اختيار نوع البلاغ وسبب أو كتابة سبب آخر.');
             return;
           }
 
-          const fullReason = reason || 'سبب مخصص: ' + custom;
+          let fullReason = "";
 
-          // رابط الصفحة الحالي (المسلسل + الحلقة)
+          if (reason && custom) {
+            fullReason = reason + "\n" + "سبب إضافي: " + custom;
+          } else if (reason) {
+            fullReason = reason;
+          } else if (custom) {
+            fullReason = "سبب مخصص: " + custom;
+          }
+
           const currentUrl = window.location.href;
 
-          // إعداد الرسالة
           const message = `
         🚨 بلاغ جديد
 
         📌 النوع: ${type}
-        📝 السبب: ${fullReason}
+        📝 السبب:
+        ${fullReason}
         🔗 الرابط: ${currentUrl}
         `.trim();
 
-          // إعدادات تيليجرام
           const botToken = '6345801560:AAH2rkXSmDeYT0pbpBBt6ID06PuIeX5F8uw';
           const chatId = '1965941065';
 
@@ -701,15 +707,12 @@ function getSeriesDetails($seriesId) {
             parse_mode: 'HTML'
           };
 
-          // إرسال الطلب
           fetch(url, {
             method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(params)
           })
-          .then(response => response.json())
+          .then(res => res.json())
           .then(data => {
             if (data.ok) {
               alert('✅ تم إرسال البلاغ بنجاح، شكراً لتعاونك!');
