@@ -180,15 +180,19 @@ if (isset($_GET['id'])) {
         }
         .top-bar button:hover { background-color: #fff; color: #b29300; }
         .background-blur {
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 75vh;
-            background-image: url('<?php echo safeOutput($seriesDetails['cover'] ?? ''); ?>');
-            background-size: cover;
-            background-position: center;
-            filter: blur(10px);
-            opacity: 0.55;
-            z-index: -1;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 75vh;
+          background-image: 
+            linear-gradient(to top, rgba(28, 34, 41, 0.98) 0%, rgba(28, 34, 41, 0) 90%),
+            url('<?php echo safeOutput($seriesDetails['cover'] ?? ''); ?>');
+          background-size: cover;
+          background-position: center;
+
+          opacity: 0.85;
+          z-index: -1;
         }
 
         .background-black {
