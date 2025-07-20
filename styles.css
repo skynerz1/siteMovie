@@ -1,10 +1,13 @@
 /* General Styles */
 :root {
-  --primary-color: #e50914;
+  --primary-color: #e60adf;
   --secondary-color: #141414;
   --text-color: #ffffff;
-  --background-color: #000000;
+  --background-color: #1c2229; /* أخضر */
+  --1-color: #1c2229; /*  اخضر رمادي */
+  --2-color: #008000; /* أخضر */
 }
+
 
 * {
   margin: 0;
@@ -74,15 +77,15 @@ body {
 .search-input {
   padding: 10px;
   border: none;
-  background-color: rgba(255, 255, 255, 0.2);
-  color: var(--text-color);
+  /* background-color: rgba(255, 255, 255, 0.2); */
+  color: #008000;
   border-radius: 4px 0 0 4px;
 }
 
 .search-button {
   padding: 10px 20px;
   background-color: var(--primary-color);
-  color: var(--text-color);
+  color: #008000;
   border: none;
   border-radius: 0 4px 4px 0;
   cursor: pointer;
@@ -117,6 +120,8 @@ body {
   font-size: 1.5rem;
   margin-bottom: 30px;
 }
+
+
 
 /* Movie Grid */
 .movie-section {
@@ -194,7 +199,7 @@ body {
 }
 
 .btn-watch:hover {
-  background-color: #f40612;
+  background-color: var(--1-color);
 }
 
 /* Footer */
@@ -245,3 +250,302 @@ body {
   margin-top: 20px;
 }
 
+
+
+/* dfkz */
+.hero .search-button {
+  width: 30%;
+  padding: 15px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 0 30px 30px 0;
+  background-color: var(--2-color);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.hero .search-button:hover {
+  background-color: var(--1-color);
+}
+
+.movie-details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: var(--text-color);
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.btn-watch {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--2-color);
+  color: var(--text-color);
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.movie-card:hover .btn-watch {
+  opacity: 1;
+}
+
+.content-type {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--2-color);
+    color: var(--text-color);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.top-ser {
+  position: absolute;
+  top: 40px; /* تم تغيير القيمة لتكون أسفل content-type */
+  right: 10px;
+background-color: var(--2-color);
+
+  color: var(--text-color);
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.movie-sublabel {
+  position: absolute;
+  top: 10px;
+  left: 10px; /* بدل right */
+background: var(--2-color);
+  color: var(--text-color);
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 20px;
+box-shadow: 0 0 6px rgba(28, 34, 41, 0.7);
+
+  pointer-events: none;
+  user-select: none;
+  z-index: 10;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+}
+
+.new-badge {
+  background-color: var(--2-color);
+  color: var(--text-color);
+  font-size: 13px;
+  font-weight: bold;
+  padding: 2px 10px;
+  border-radius: 8px 0 0 8px;
+  margin-left: 8px;
+}
+
+.view-all-button:hover {
+  color: var(--2-color);
+}
+
+h2.platform-title {
+    margin: 120px 20px 20px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--2-color);
+    text-align: center;
+}
+.card {
+  position: relative;
+  width: 280px;
+  background-color: #1c1c1c;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px var(--1-color);
+
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  text-align: center;
+  color: #e5e5e5;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px var(--2-color);
+
+}
+.rating {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--2-color);
+  padding: 5px 12px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow: 0 6px 20px var(--1-color);
+  z-index: 10;
+  color: var(--text-color);
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 15px 10px 20px 10px;
+  color: var(--2-color);
+  text-shadow: 0 6px 20px var(--2-color);
+
+}
+.pagination a.active,
+.pagination a:hover {
+    background: var(--2-color);
+    font-weight: bold;
+    box-shadow: 0 6px 20px var(--2-color);
+}
+.category-card:hover {
+  transform: scale(1.05);
+  border-color: var(--text-color);
+}
+
+.category-card.active {
+  border: 2px solid var(--2-color);
+  box-shadow: 0 6px 20px var(--2-color);
+}
+
+.pagination {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.pagination a {
+  background-color: #2a2a2a;
+  color: var(--text-color);
+  padding: 10px 16px;
+  border-radius: 8px;
+  margin: 0 5px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.pagination a:hover {
+  background-color: var(--2-color);
+}
+
+.filters, .categories {
+  margin-bottom: 20px;
+}
+
+.filters a, .categories a {
+  background-color: #2a2a2a;
+  color: var(--text-color);
+  padding: 8px 14px;
+  border-radius: 8px;
+  margin: 4px;
+  display: inline-block;
+  font-size: 14px;
+  transition: background 0.2s ease;
+}
+
+.filters a:hover, .categories a:hover {
+  background-color: var(--2-color);
+}
+
+.filters a.active, .categories a.active {
+  background-color: var(--2-color);
+}
+
+/* خاص بالـ sub-badge */
+  .sub-badge {
+      position: absolute;
+      left: 10px;
+      z-index: 4;
+  }
+
+  /* sub-badge مع top-badge */
+  .movie-thumb.has-top-badge .sub-badge {
+      top: 40px;
+      background: #555;
+      box-shadow: 0 0 6px rgba(85, 85, 85, 0.8);
+  }
+
+  /* sub-badge بدون top-badge */
+  .movie-thumb.no-top-badge .sub-badge {
+      top: 10px;
+      background: var(--2-color);
+      box-shadow: 0 0 6px rgba(244, 67, 54, 0.8);
+  }
+
+
+  /* sub-badge تحت top-badge */
+  .movie-thumb.has-top-badge .sub-badge {
+      top: 40px; /* تحت التوب بادج */
+      background: #555; /* رمادي */
+      box-shadow: 0 0 6px rgba(85, 85, 85, 0.8);
+  }
+
+  /* sub-badge فوق لما ما في top-badge */
+  .movie-thumb.no-top-badge .sub-badge {
+      top: 10px;
+      background: var(--2-color); /* أحمر */
+      box-shadow: 0 0 6px rgba(85, 85, 85, 0.8);
+  }
+.top-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: var(--2-color);
+    color: white;
+    font-weight: bold;
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 8px;
+    z-index: 4;
+    box-shadow:0 0 6px rgba(85, 85, 85, 0.8);
+}
+.watch-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--2-color);
+  color: white;
+  font-weight: bold;
+  width: 50px;
+  height: 50px;
+  font-size: 0;
+  border-radius: 50%;
+  display: none;  /* خليها مخفية افتراضياً */
+  z-index: 2;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 6px rgba(85, 85, 85, 0.8);
+  transition: background-color 0.3s ease;
+}
+
+.movie-card:hover .movie-thumb .watch-overlay {
+  display: flex;
+}
+
+.watch-overlay:hover {
+  background-color: var(--2-color);
+}
+
+/* أيقونة بلاي */
+.watch-overlay i.fa-play {
+  color: white;
+  font-size: 26px;
+  text-shadow: 0 0 6px rgba(85, 85, 85, 0.8);
+}
