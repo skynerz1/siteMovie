@@ -83,10 +83,14 @@ if ($episodeId) {
             $error = $episodeLinks['error'];
             $episodeLinks = [];
         } else {
-            // فلترة السيرفرات حسب النوع
-            $movServers = array_filter($episodeLinks, fn($link) => strtolower($link['type'] ?? '') === 'mov');
-            $m3u8Servers = array_filter($episodeLinks, fn($link) => strtolower($link['type'] ?? '') === 'm3u8');
-            $otherServers = array_filter($episodeLinks, fn($link) => {
+            // فلترة السيرفرات حسب النوع باستخدام function عادية
+            $movServers = array_filter($episodeLinks, function($link) {
+                return strtolower($link['type'] ?? '') === 'mov';
+            });
+            $m3u8Servers = array_filter($episodeLinks, function($link) {
+                return strtolower($link['type'] ?? '') === 'm3u8';
+            });
+            $otherServers = array_filter($episodeLinks, function($link) {
                 $t = strtolower($link['type'] ?? '');
                 return $t !== 'mov' && $t !== 'm3u8';
             });
@@ -109,6 +113,7 @@ if ($episodeId) {
         $episodeLinks = [];
     }
 }
+
 
 
 else {
