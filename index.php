@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include 'load.php';
+
 include 'includes/header.php';
 function saveToSearchResults($newItems) {
     $filename = 'search_results.json';
@@ -335,20 +335,7 @@ function filterRamadanAraby($seriesArray) {
             border-radius: 30px 0 0 30px;
             outline: none;
         }
-        .hero .search-button {
-            width: 30%;
-            padding: 15px;
-            font-size: 1.1rem;
-            border: none;
-            border-radius: 0 30px 30px 0;
-            background-color: #008000;
-            color: white;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .hero .search-button:hover {
-            background-color: #1c2229;
-        }
+    
         .movie-section {
             padding: 40px 0;
         }
@@ -384,7 +371,7 @@ function filterRamadanAraby($seriesArray) {
         .movie-card:hover .movie-info {
             transform: translateY(100%);
         }
-        .movie-details {
+        /* .movie-details {
             position: absolute;
             top: 0;
             left: 0;
@@ -398,11 +385,11 @@ function filterRamadanAraby($seriesArray) {
             display: flex;
             flex-direction: column;
             justify-content: center;
-        }
+        } */
         .movie-card:hover .movie-details {
             opacity: 1;
         }
-        .btn-watch {
+        /* .btn-watch {
             position: absolute;
             bottom: 10px;
             left: 50%;
@@ -418,8 +405,8 @@ function filterRamadanAraby($seriesArray) {
         }
         .movie-card:hover .btn-watch {
             opacity: 1;
-        }
-.content-type {
+        } */
+/* .content-type {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -429,20 +416,9 @@ function filterRamadanAraby($seriesArray) {
     border-radius: 4px;
     font-size: 0.8rem;
     font-weight: bold;
-}
+} */
 
-.top-ser {
-    position: absolute;
-    top: 40px; /* تم تغيير القيمة لتكون أسفل content-type */
-    right: 10px;
-background-color: #008000;
 
-    color: white;
-    padding: 3px 8px;
-    border-radius: 4px;
-    font-size: 0.8rem;
-    font-weight: bold;
-}
 
         .error-message, .no-results {
             text-align: center;
@@ -562,24 +538,7 @@ nav {
         padding: 10px 0;
     }
 } */
-.movie-sublabel {
-    position: absolute;
-    top: 10px;
-    left: 10px; /* بدل right */
-background: #008000;
-    color: #fff;
-    padding: 4px 10px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    border-radius: 20px;
-box-shadow: 0 0 6px rgba(28, 34, 41, 0.7);
 
-    pointer-events: none;
-    user-select: none;
-    z-index: 10;
-    font-family: 'Roboto', sans-serif;
-    text-transform: uppercase;
-}
 
 .section-title {
   font-family: 'Cairo', sans-serif;
@@ -590,15 +549,6 @@ box-shadow: 0 0 6px rgba(28, 34, 41, 0.7);
   align-items: center;
 }
 
-.new-badge {
-  background-color: #ffc107; /* أصفر */
-  color: #000;
-  font-size: 13px;
-  font-weight: bold;
-  padding: 2px 10px;
-  border-radius: 8px 0 0 8px;
-  margin-left: 8px;
-}
 
         .category-container {
             display: flex;
@@ -632,7 +582,7 @@ box-shadow: 0 0 6px rgba(28, 34, 41, 0.7);
             background-position: center;
             text-decoration: none;
             color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            box-shadow: var(--text-color);
             transition: transform 0.3s ease;
             position: relative;
         }
@@ -641,7 +591,7 @@ box-shadow: 0 0 6px rgba(28, 34, 41, 0.7);
         .category-card:hover,
         .category-card.active {
             transform: scale(1.05);
-            box-shadow: 0 0 20px #e50914;
+            box-shadow: 0 0 20px var(--2-color);
         }
 
         /* تحسين العرض للجوال */
@@ -670,9 +620,7 @@ box-shadow: 0 0 6px rgba(28, 34, 41, 0.7);
           transition: fill 0.3s ease;
         }
 
-        .view-all-button:hover {
-          color: #ff4757;
-        }
+
 
         .view-all-button:hover svg {
           fill: currentColor;
@@ -689,15 +637,7 @@ box-shadow: 0 0 6px rgba(28, 34, 41, 0.7);
           color: #fff;
         }
 
-        /* علامة جديد */
-        .new-badge {
-         background-color: #008000; /* أخضر */
-          color: #fff;
-          padding: 2px 8px;
-          font-size: 12px;
-          border-radius: 4px;
-          margin-left: 8px;
-        }
+
         .section-header {
           display: flex;
           justify-content: space-between;
@@ -729,9 +669,7 @@ box-shadow: 0 0 6px rgba(28, 34, 41, 0.7);
           transition: fill 0.3s ease;
         }
 
-        .view-all-button:hover {
-          color: #ff4757;
-        }
+
 
         .view-all-button:hover svg {
           fill: currentColor;
@@ -845,7 +783,7 @@ box-shadow: 0 0 6px rgba(28, 34, 41, 0.7);
     <!-- سلايدر جديد -->
     <div class="section-title" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
       <div style="font-size: 20px; font-weight: bold; color: #fff;">
-        <span class="new-badge" style="background-color: #008000; /* أخضر */; color: white; padding: 2px 8px; font-size: 12px; border-radius: 4px; margin-left: 8px;">حصري على DFkz</span>
+        <span class="new-badge">حصري على DFkz</span>
         مسلسلات جديدة
       </div>
 
