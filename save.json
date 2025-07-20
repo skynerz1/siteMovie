@@ -100,43 +100,43 @@
       },
       "sources": []
     },
-    {
-        "id": 25125,
-        "title": "حمود وأبوه",
-        "label": "كل جمعه حلقيتن الساعه 12 صباحا",
-        "sublabel": "ح 4",
-        "type": "serie",
-        "description": "في يوميات طريفة، تتصادم خطط حمود اليومية مع حكمة والده التقليدية، لتتحول حياتهما إلى رحلة مليئة بالمواقف الكوميدية والمشاعر الصادقة.",
-        "year": 2025,
-        "rating": 2,
-        "imdb": 0,
-        "duration": "30 min",
-        "comment": true,
-        "downloadas": null,
-        "playas": null,
-        "classification": "كوميديا, السعودية",
-        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/9yGEmo0JL9VvRlOg9GwBUaYjZ7V.jpg",
-        "genres": [
-            {
-                "id": 16,
-                "title": "مسلسلات عربية"
-            },
-            {
-                "id": 24,
-                "title": "جديد المسلسلات"
-            }
-            {
-                "id": 25,
-                "title": "استمتعوا مع تحياتنا لكم"
-            }
-        ],
-        "trailer": {
-            "id": 3217582,
-            "type": "youtube",
-            "url": "https:\/\/www.youtube.com\/watch?v=eRbJfN1NwAw"
+   {
+    "id": 25125,
+    "title": "حمود وأبوه",
+    "label": "كل جمعه حلقيتن الساعه 12 صباحا",
+    "sublabel": "ح 4",
+    "type": "serie",
+    "description": "في يوميات طريفة، تتصادم خطط حمود اليومية مع حكمة والده التقليدية، لتتحول حياتهما إلى رحلة مليئة بالمواقف الكوميدية والمشاعر الصادقة.",
+    "year": 2025,
+    "rating": 2,
+    "imdb": 0,
+    "duration": "30 min",
+    "comment": true,
+    "downloadas": null,
+    "playas": null,
+    "classification": "كوميديا, السعودية",
+    "image": "https://image.tmdb.org/t/p/w500/9yGEmo0JL9VvRlOg9GwBUaYjZ7V.jpg",
+    "genres": [
+        {
+            "id": 16,
+            "title": "مسلسلات عربية"
         },
-        "sources": []
+        {
+            "id": 24,
+            "title": "جديد المسلسلات"
+        },
+        {
+            "id": 25,
+            "title": "استمتعوا مع تحياتنا لكم"
+        }
+    ],
+    "trailer": {
+        "id": 3217582,
+        "type": "youtube",
+        "url": "https://www.youtube.com/watch?v=eRbJfN1NwAw"
     },
+    "sources": []
+},
     {
       "id": 20545,
       "title": "فيلم شباب البومب",
