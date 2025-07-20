@@ -445,6 +445,270 @@
         "sources": []
     },
     {
+        "id": 7344,
+        "title": "عنبر 6",
+        "label": "الموسم الثاني",
+        "sublabel": "ح 12",
+        "type": "serie",
+        "description": "قصة مستوحاة من أحداث حقيقية لثلاث نساء مميزات يواجهن تحديات العالم الخفي وراء جدران أحد السجون.\r\n-----\r\nالموسم الثاني:\r\nعلى الرغم من كل الصعاب، تستمر السجينات في مواجهة واقعهن في العالم العنيف خلف القضبان، وتكوين صداقات وأعداء على طول الطريق.",
+        "year": 2021,
+        "rating": 3.6,
+        "imdb": 0,
+        "duration": "60 min",
+        "comment": true,
+        "downloadas": "3",
+        "playas": "1",
+        "classification": "دراما, اثارة, لبنان",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/7Nfrdj1bwXbcdz3GaTHS8NT4ccK.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/n0g3gZV7kBwTFgTizaxjyGebpWm.jpg",
+        "genres": [
+            {
+                "id": 16,
+                "title": "مسلسلات عربية"
+            },
+            {
+                "id": 24,
+                "title": "جديد المسلسلات"
+            }
+        ],
+        "trailer": {
+            "id": 224565,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=7mcQ4lZY-Tw"
+        },
+        "sources": []
+    },
+    {
+        "id": 15460,
+        "title": "كريستال",
+        "label": null,
+        "sublabel": "ح 90",
+        "type": "serie",
+        "description": "عندما تقع مصممة أزياء مشهورة وابنة الناطور الذي يعمل لديها في حب الرجل نفسه، سرعان ما تتحول المنافسة بينهما إلى صراع مفتوح لن يكتب النصر فيه إلا لإحداهما.",
+        "year": 2023,
+        "rating": 4.5,
+        "imdb": 0,
+        "duration": "45 min",
+        "comment": true,
+        "downloadas": "1",
+        "playas": "1",
+        "classification": "دراما, رومانسي, سوريا, لبنان",
+        "image": "https:\/\/app.arabypros.com\/uploads\/cache\/poster_thumb\/uploads\/jpg\/488e6c5e0e35e054682b0a517e20d0e7.jpg",
+        "cover": "https:\/\/app.arabypros.com\/uploads\/cache\/cover_thumb\/uploads\/jpg\/98b2d1c94dbdfdf06723c9dca6e9eab5.jpg",
+        "genres": [
+            {
+                "id": 16,
+                "title": "مسلسلات عربية"
+            },
+            {
+                "id": 24,
+                "title": "جديد المسلسلات"
+            }
+        ],
+        "trailer": {
+            "id": 1443974,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=9PXNOlVLjfg"
+        },
+        "sources": []
+    },
+    {
+        "id": 6102,
+        "title": "صالون زهرة",
+        "label": "الموسم الثاني",
+        "sublabel": null,
+        "type": "serie",
+        "description": "تدور قصته في صالون تملكه إمرأة تدعى زهرة، ويجمع بين المواقف الكوميدية والاجتماعية والرومنسية. يروي قصص نساء وعلاقاتهن بالرجال، ويعرّج قليلاً على تفجير مرفأ بيروت الذي وقع في 4 أغسطس 2021 والأضرار التي يلحقها بالصالون",
+        "year": 2021,
+        "rating": 4.4,
+        "imdb": 0,
+        "duration": "35 min",
+        "comment": true,
+        "downloadas": "3",
+        "playas": "1",
+        "classification": "كوميديا, دراما, رومانسي",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/tVFZsjJdMwz9Dq4yC3DNVjFfvOk.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/kPq0VHY1RARgNpumDrqod61tMk5.jpg",
+        "genres": [
+            {
+                "id": 16,
+                "title": "مسلسلات عربية"
+            }
+        ],
+        "trailer": {
+            "id": 169844,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=MJqKXJ_-aZw"
+        },
+        "sources": []
+    },
+    {
+        "id": 12048,
+        "title": "بنات الثانوي",
+        "label": "الموسم الثاني",
+        "sublabel": "ح 20",
+        "type": "serie",
+        "description": "تمر خمس رفيقات سعوديات في سلسلة من التحديات في الثانوية بينما يحاولن التأقلم مع محيطهن واكتشاف أنفسهن في آن واحد\r\n-\r\nتبدأ الرفيقات عامهن الدراسي بعزم، لكن وصول طالبة موهوبة يغير الأوضاع ويعقد خططهن.",
+        "year": 2022,
+        "rating": 4.3,
+        "imdb": 0,
+        "duration": "35 min",
+        "comment": true,
+        "downloadas": "1",
+        "playas": "1",
+        "classification": "دراما, عائلي, السعودية",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/odyZE8b5ur2VorwPwKEhHwgwmaD.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/wowx46z1RFRSFOgigJsyOROmUo0.jpg",
+        "genres": [
+            {
+                "id": 16,
+                "title": "مسلسلات عربية"
+            },
+            {
+                "id": 24,
+                "title": "جديد المسلسلات"
+            }
+        ],
+        "trailer": {
+            "id": 898903,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=u7ejx6hWqkc"
+        },
+        "sources": []
+    },
+    {
+        "id": 19117,
+        "title": "لعبة حب",
+        "label": null,
+        "sublabel": "ح 90",
+        "type": "serie",
+        "description": "يقع شاب ثري في حب فتاة فقيرة، ثم يكتشف لاحقًا أن قريبته وجده هما من دفعا المال إلى الفتاة استغلالًا لاحتياجها، لكي توقعه في شباكها ويتزوجها، وتتوالى الأحداث.",
+        "year": 2024,
+        "rating": 4.2,
+        "imdb": 0,
+        "duration": "45 min",
+        "comment": true,
+        "downloadas": "1",
+        "playas": "1",
+        "classification": "دراما, رومانسي, لبنان",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/w7xDlGYmhYU0GKpJqO3WulebI7P.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/n33wZIeq8CVQVrugwfcTjP6HkRt.jpg",
+        "genres": [
+            {
+                "id": 16,
+                "title": "مسلسلات عربية"
+            },
+            {
+                "id": 24,
+                "title": "جديد المسلسلات"
+            }
+        ],
+        "trailer": {
+            "id": 2055238,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=hEu2h7vZmig"
+        },
+        "sources": []
+    },
+    {
+        "id": 17363,
+        "title": "الخائن",
+        "label": null,
+        "sublabel": "ح 90",
+        "type": "serie",
+        "description": "تتحطم حياة الدكتورة (أسيل) المثالية عندما تكتشف خيانة زوجها (سيف) لها لمدة عامين مع امرأة تصغره بخمسة عشر عامًا، مما يدفعها لسلك طريق الانتقام، وتتوالى الأحداث.",
+        "year": 2023,
+        "rating": 4.2,
+        "imdb": 0,
+        "duration": "45 min",
+        "comment": true,
+        "downloadas": "1",
+        "playas": "1",
+        "classification": "دراما, اثارة, سوريا, لبنان",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/53BNh9n5ThYt3Y8VCxdZUooFkAu.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/8ZMkYZyEvm4okWUwHugnHuVgZsf.jpg",
+        "genres": [
+            {
+                "id": 16,
+                "title": "مسلسلات عربية"
+            },
+            {
+                "id": 24,
+                "title": "جديد المسلسلات"
+            }
+        ],
+        "trailer": {
+            "id": 1741777,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=oDHhdeHjgHE"
+        },
+        "sources": []
+    },
+    {
+        "id": 13309,
+        "title": "الثمن",
+        "label": null,
+        "sublabel": "ح 89",
+        "type": "serie",
+        "description": "تلجأ أرملة لخيارها الوحيد المتبقي لتغطية تكاليف علاج ابنتها من السرطان، وهو أن تطلب المال من مديرها الذي يشترط عليها تمضية ليلة واحدة معه.",
+        "year": 2023,
+        "rating": 4.5,
+        "imdb": 0,
+        "duration": "45 min",
+        "comment": true,
+        "downloadas": "1",
+        "playas": "1",
+        "classification": "دراما, سوريا, لبنان",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/e5KapNnaGfX4wSaCtAMIlRglypY.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/dRV1lMIxQBlIgngufjrQeRX1JJm.jpg",
+        "genres": [
+            {
+                "id": 16,
+                "title": "مسلسلات عربية"
+            },
+            {
+                "id": 24,
+                "title": "جديد المسلسلات"
+            }
+        ],
+        "trailer": {
+            "id": 1047138,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=ynzK86y2Upc"
+        },
+        "sources": []
+    },
+    {
+        "id": 132,
+        "title": "أمر إخلاء",
+        "label": "الموسم الثالث",
+        "sublabel": "ح 20",
+        "type": "serie",
+        "description": "يتناول في إطار كوميدي درامي قصة رجل أعمال يدعى \"عادل\" يمتلك شركة كبيرة يتهم السرقة والاختلاس ويتم الحجز على كل أمواله، ينتقل مع عائلته إلى منزل أخو زوجته لكن لفترة قصيرة لعدم تقبلها بقاء العائلة معهم وعن طريق الصدفة يكتشف الأب أن لديه بيتا قديما كان قد أعطاه لسائق في شركته من البدو الفقراء كصدقة، فيفكّر في استعادته مرة أخرى للإقامة فيه، لكنه يتعاطف مع الأسرة الفقيرة حين يتعرّف على أحوالها البسيطة. وتضطرهم إلى التعايش معا في بيت واحد ويتشابك مصير العائلتين: أسرة عادل وأسرة عمشة",
+        "year": 2020,
+        "rating": 4.7,
+        "imdb": 7,
+        "duration": "45 min",
+        "comment": true,
+        "downloadas": null,
+        "playas": null,
+        "classification": "كوميديا, دراما",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/xdAZKv684Ik4fOcGkroYR5E7vDR.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/zQ27C2f6jeVb85TBBeRdBIGy2XA.jpg",
+        "genres": [
+            {
+                "id": 16,
+                "title": "مسلسلات عربية"
+            },
+            {
+                "id": 24,
+                "title": "جديد المسلسلات"
+            }
+        ],
+        "sources": []
+    },
+    
+    {
         "id": 23181,
         "title": "من الأحد إلى الخميس",
         "label": null,
@@ -1779,6 +2043,36 @@
             "id": 3175404,
             "type": "youtube",
             "url": "https:\/\/www.youtube.com\/watch?v=p81PafZ2d_8"
+        },
+        "sources": []
+    },
+    {
+        "id": 18338,
+        "title": "‎جرس إنذار",
+        "label": null,
+        "sublabel": null,
+        "type": "movie",
+        "description": "دراما في مدرسة صارمة للبنات، يندلع حريق مجهول المصدر يصعب احتواؤه، وتُثار التساؤلات بعدها ما إن كان الأمر حادثًا عرضيًّا… أم مفتعلًا",
+        "year": 2024,
+        "rating": 3.8,
+        "imdb": 0,
+        "duration": "1h 30min",
+        "comment": true,
+        "downloadas": "3",
+        "playas": "1",
+        "classification": "دراما, اثارة, جريمة, غموض, السعودية",
+        "image": "https:\/\/app.arabypros.com\/uploads\/cache\/poster_thumb\/uploads\/jpg\/4Z3XlmD3xhjKmPofKj3wf9l3CtT.jpg",
+        "cover": "https:\/\/app.arabypros.com\/uploads\/cache\/cover_thumb\/uploads\/jpg\/uacWG9bF6xMBKW0qNBTMLC8GBif.jpg",
+        "genres": [
+            {
+                "id": 19,
+                "title": "أفلام عربية"
+            }
+        ],
+        "trailer": {
+            "id": 1855633,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=wmB5x_AcADY"
         },
         "sources": []
     },
