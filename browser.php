@@ -44,13 +44,7 @@ body {
     line-height: 1.6;
 }
 
-h2.platform-title {
-    margin: 120px 20px 20px;
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: #e50914;
-    text-align: center;
-}
+
 
 .cards-container {
     display: flex;
@@ -60,23 +54,7 @@ h2.platform-title {
     padding: 20px;
 }
 
-.card {
-    position: relative;
-    width: 280px;
-    background-color: #1c1c1c;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.7);
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    text-align: center;
-    color: #e5e5e5;
-}
 
-.card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 30px rgba(229, 9, 20, 0.7);
-}
 
 .card img {
     width: 100%;
@@ -84,27 +62,7 @@ h2.platform-title {
     object-fit: cover;
 }
 
-.rating {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    background: rgba(229, 9, 20, 0.85);
-    padding: 5px 12px;
-    border-radius: 10px;
-    font-weight: 700;
-    font-size: 14px;
-    box-shadow: 0 0 8px rgba(229, 9, 20, 0.7);
-    z-index: 10;
-    color: white;
-}
 
-.card-title {
-    font-size: 20px;
-    font-weight: 600;
-    margin: 15px 10px 20px 10px;
-    color: #e50914;
-    text-shadow: 0 0 6px rgba(229, 9, 20, 0.5);
-}
 
 .pagination {
     margin: 30px auto;
@@ -122,12 +80,7 @@ h2.platform-title {
     transition: background 0.3s ease;
 }
 
-.pagination a.active,
-.pagination a:hover {
-    background: #e50914;
-    font-weight: bold;
-    box-shadow: 0 0 10px #e50914;
-}
+
 
 .category-container {
     display: flex;
@@ -147,15 +100,7 @@ h2.platform-title {
     transition: 0.3s ease all;
 }
 
-.category-card:hover {
-    transform: scale(1.05);
-    border-color: white;
-}
 
-.category-card.active {
-    border: 2px solid #e50914;
-    box-shadow: 0 0 12px rgba(229, 9, 20, 0.6);
-}
 
 @media (max-width: 768px) {
     .card {
