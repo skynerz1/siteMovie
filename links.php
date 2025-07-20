@@ -105,6 +105,9 @@ if ($episodeId) {
             if (isset($episodeLinks[1])) {
                 $episodeLinks[1]['type'] = 'سيرفر دفكز 2';
             }
+            if (isset($episodeLinks[2])) {
+                $episodeLinks[2]['type'] = 'سيرفر دفكز 3';
+            }
 
             $downloadLink = getDownloadLink($episodeLinks);
         }
