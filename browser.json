@@ -34,6 +34,41 @@
         "sources": []
     },
     {
+        "id": 24746,
+        "title": "الصحبة الحلوة",
+        "label": null,
+        "sublabel": "ح 10",
+        "type": "serie",
+        "description": "في عزاء يتحول إلى لقاء من العمر، تجتمع ثلاث صديقات بعد 50 سنة من الغياب، ويبدأن رحلة بحث عن صديقة رابعة غابت عنهن... أو ربما لم تغب؟",
+        "year": 2025,
+        "rating": 4.3,
+        "imdb": 0,
+        "duration": "30 min",
+        "comment": true,
+        "downloadas": null,
+        "playas": null,
+        "classification": "كوميديا, الكويت",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/a8ywhXGl0BqAyEkZ03eifrmLcer.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/r0q8BGyyIIpkIHaiEpqCQE25N45.jpg",
+        "genres": [
+            {
+                "id": 16,
+                "title": "مسلسلات عربية"
+            },
+            {
+                "id": 24,
+                "title": "جديد المسلسلات"
+            }
+        ],
+        "trailer": {
+            "id": 3155777,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=SRHYUyplGOw"
+        },
+        "sources": []
+    },
+    
+    {
       "id": 24072,
       "title": "أمي",
       "type": "serie",
@@ -64,6 +99,384 @@
         "url": "https://www.youtube.com/watch?v=ze4xTbW-ixs"
       },
       "sources": []
+    },
+    {
+        "id": 23340,
+        "title": "حلم أشرف",
+        "label": "مترجم - ح 13",
+        "sublabel": "مدبلج - ح 39",
+        "type": "serie",
+        "description": "أصبح أشرف عضواً قوياً في المافيا أثناء بحثه لسنوات عن الفتاة التي أسماها \"رؤيا\". يقع في حب نيسان دون أن يعلم أنها هي رؤيا التي يبحث عنها ومخبرة للشرطة، مما يجره إلى صراع بين الحب والخيانة والسلطة.",
+        "year": 2025,
+        "rating": 4.6,
+        "imdb": 0,
+        "duration": "140 min",
+        "comment": true,
+        "downloadas": "1",
+        "playas": "1",
+        "classification": "دراما, رومانسي",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/nZ5ARdRcXnrGv8Zucdcqz0163aD.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/dnfNALeJwv1MNFZR6SV9iXF3VUr.jpg",
+        "genres": [
+            {
+                "id": 17,
+                "title": "مسلسلات تركية"
+            },
+            {
+                "id": 24,
+                "title": "جديد المسلسلات"
+            }
+        ],
+        "trailer": {
+            "id": 2930432,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=VFxCpSQWbOk"
+        },
+        "sources": []
+    },
+    {
+        "id": 21494,
+        "title": "المدينة البعيدة",
+        "label": "مترجم - ح 28",
+        "sublabel": "مدبلج - ح 140",
+        "type": "serie",
+        "description": "تأتي عليا ألبورا من كندا إلى ماردين مع ابنها ذي الخمس سنوات وجثمان زوجها لتنفيذ وصيته، لكنها تجد نفسها محاصرة في أراضي عائلة ألبورا دون إمكانية المغادرة. تواجه عليا صراعات مع عائلة زوجها وسط النزاعات العشائرية والتعصب الإقطاعي، محاولةً كشف أسرار الماضي وإنقاذ ابنها في الوقت نفسه.",
+        "year": 2024,
+        "rating": 4.6,
+        "imdb": 0,
+        "duration": "120 min",
+        "comment": true,
+        "downloadas": "1",
+        "playas": "1",
+        "classification": "اكشن, مغامرة, جريمة, دراما",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/lGfzYV5YVCnFPULG5RjsudTPCpm.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/UIg6E0ePJTwbYUCQhqEp0Ok92M.jpg",
+        "genres": [
+            {
+                "id": 17,
+                "title": "مسلسلات تركية"
+            },
+            {
+                "id": 24,
+                "title": "جديد المسلسلات"
+            }
+        ],
+        "trailer": {
+            "id": 2554754,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=MX45E-lE1yY"
+        },
+        "sources": []
+    },
+    {
+        "id": 23196,
+        "title": "فهد البطل",
+        "label": null,
+        "sublabel": "ح 30",
+        "type": "serie",
+        "description": "تدور الأحداث داخل مصنع رخام في منطقة شق الثعبان، حيث يعمل (فهد) صنايعي رخام بالمصنع، وذلك بعد هروبه من عائلته في الصعيد بسبب تعرضه للظلم، ثم يقع في حب زميلته (كناريا)، لكن المنافسة بينه وبين والدها في سوق الرخام تضع عوائق كبيرة أمام علاقتهما.",
+        "year": 2025,
+        "rating": 4.2,
+        "imdb": 0,
+        "duration": "50 min",
+        "comment": true,
+        "downloadas": "1",
+        "playas": "1",
+        "classification": "اكشن, دراما, مصر",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/8hXAQl2IIu9zR2odPc3IfPrZz5Z.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/jxeWQeP7J4XMfNVfPU7opqir4mJ.jpg",
+        "genres": [
+            {
+                "id": 24,
+                "title": "جديد المسلسلات"
+            },
+            {
+                "id": 88,
+                "title": "مسلسلات رمضان 2025"
+            }
+        ],
+        "trailer": {
+            "id": 2849469,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=m9DTlsAnD9Q"
+        },
+        "sources": []
+    },
+    {
+        "id": 18857,
+        "title": "أشغال شقة",
+        "label": "الموسم الثاني",
+        "sublabel": "ح 15",
+        "type": "serie",
+        "description": "عندما يرزق الطبيب الشرعي حمدي والمقدمة التلفزيونية ياسمين بتوأم، يقرران الاستعانة بعاملة منزلية. ولكن، سرعان ما يتسبب هذا القرار بمشاكل هما بغنى عنها.\r\n-\r\nفي الموسم الثاني، يصبح (حمدي) و(ياسمين) والدين لأربعة أطفال، لكن تشهد حياتهما عدم الاستقرار مجددًا عندما يواجه (حمدي) العديد من المشاكل في حياته المهنية، وتقرر (ياسمين) العودة إلى العمل، بينما تستمر معاناتهما في إيجاد مدبرة منزل مناسبة.",
+        "year": 2024,
+        "rating": 4.6,
+        "imdb": 0,
+        "duration": "40 min",
+        "comment": true,
+        "downloadas": "1",
+        "playas": "1",
+        "classification": "كوميديا, مصر",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/caO5yB44KrLKJCCxtqfwzUf2j7V.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/x32JMm2jpVjS9u3p0AKYkiZYwVO.jpg",
+        "genres": [
+            {
+                "id": 24,
+                "title": "جديد المسلسلات"
+            },
+            {
+                "id": 79,
+                "title": "مسلسلات رمضان 2024"
+            },
+            {
+                "id": 88,
+                "title": "مسلسلات رمضان 2025"
+            }
+        ],
+        "trailer": {
+            "id": 1950609,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=YVHe6Ws0ucU"
+        },
+        "sources": []
+    },
+    {
+      "id": 20820,
+      "title": "العبقري",
+      "label": "مترجم - ح 31",
+      "sublabel": "مدبلج - ح 155",
+      "type": "serie",
+      "description": "قصة انتقام عميقة تبدأ بمواجهة بين أب وابنه بعد سنوات من الفراق. الأب والابن كلاهما عبقري، لكن أحدهما في فعل الخير والآخر في الشر. خلال أحداث القصة، سيكتشف جميع الشخصيات جوانب من أنفسهم لم يكونوا مدركين لها من قبل. هذه الحكاية تستكشف تعقيدات العلاقات الأسرية والصراع بين الخير والشر داخل الإنسان.",
+      "year": 2024,
+      "rating": 4.6,
+      "imdb": 8.8,
+      "duration": "140 min",
+      "comment": true,
+      "downloadas": "1",
+      "playas": "1",
+      "classification": "دراما",
+      "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/aCP9WATkacJXBdoSdK8aFIVPGt9.jpg",
+      "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/kt7JCtDy5bfCW0z8zxMF7lHeUG3.jpg",
+      "genres": [
+          {
+              "id": 17,
+              "title": "مسلسلات تركية"
+          },
+          {
+              "id": 24,
+              "title": "جديد المسلسلات"
+          }
+      ],
+      "trailer": {
+          "id": 2407919,
+          "type": "youtube",
+          "url": "https:\/\/www.youtube.com\/watch?v=3uG1Yzv6dCM"
+      },
+      "sources": []
+    },
+    {
+      "id": 15798,
+      "title": "ابن سينا العبقري الصغير",
+      "label": null,
+      "sublabel": "ح 10",
+      "type": "serie",
+      "description": "فتى ذكي وفضولي متعطش للمعرفة . يتفاعل مع أشخاص مختلفة تساهم في تعليمه وتدريبه ، مما يجعله أحد أكثر العلماء شهرة في التاريخ.",
+      "year": 2023,
+      "rating": 4.7,
+      "imdb": 0,
+      "duration": "45 min",
+      "comment": true,
+      "downloadas": "1",
+      "playas": "1",
+      "classification": "دراما, مغامرة, تاريخ",
+      "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/ar750oKMKGFeJb3zMdG7UDfbh6o.jpg",
+      "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/tfGSMlOWQ0stbFvxS1x1zdPoNge.jpg",
+      "genres": [
+          {
+              "id": 17,
+              "title": "مسلسلات تركية"
+          },
+          {
+              "id": 24,
+              "title": "جديد المسلسلات"
+          }
+      ],
+      "trailer": {
+          "id": 1514890,
+          "type": "youtube",
+          "url": "https:\/\/www.youtube.com\/watch?v=RT66XopXIsA"
+      },
+      "sources": []
+    },
+    {
+        "id": 18356,
+        "title": "الغدار",
+        "label": "مترجم - ح 20",
+        "sublabel": "مدبلج - ح 100",
+        "type": "serie",
+        "description": "عند عودته إلى منزله بعد إنهاء خدمته العسكرية الطويلة، لم يعد عالم داغان كما تركه وقد أنقلبت حياته رأسًا على عقب.",
+        "year": 2024,
+        "rating": 4.5,
+        "imdb": 7.8,
+        "duration": "120 min",
+        "comment": true,
+        "downloadas": "1",
+        "playas": "1",
+        "classification": "اكشن, دراما",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/3D6C3h5aLgfY5KfahRtyZZ3WkIf.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/1SnjFOAISXFNgf0MXwD19HTpFGM.jpg",
+        "genres": [
+            {
+                "id": 17,
+                "title": "مسلسلات تركية"
+            },
+            {
+                "id": 24,
+                "title": "جديد المسلسلات"
+            }
+        ],
+        "trailer": {
+            "id": 1859372,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=Fv2hP98S7iM"
+        },
+        "sources": []
+    },
+    {
+        "id": 23714,
+        "title": "هروج",
+        "label": null,
+        "sublabel": "ح 30",
+        "type": "serie",
+        "description": "عيشوا كل يوم قصة مضحكة جديدة، مستوحاة من لحظات حياتية واقعية في المجتمع السعودي، ستجعلكم تضحكون لا محالة!",
+        "year": 2025,
+        "rating": 3.6,
+        "imdb": 0,
+        "duration": "20 min",
+        "comment": true,
+        "downloadas": null,
+        "playas": null,
+        "classification": "كوميديا, السعودية",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/tiYryhnorY0FTolK4JBZSIvYXQR.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/xOYIe4r8XgHC2okc1Wij8lZMQE1.jpg",
+        "genres": [
+            {
+                "id": 16,
+                "title": "مسلسلات عربية"
+            },
+            {
+                "id": 24,
+                "title": "جديد المسلسلات"
+            }
+        ],
+        "trailer": {
+            "id": 3019337,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=YdAgNSuQeiU"
+        },
+        "sources": []
+    },
+    {
+        "id": 24350,
+        "title": "حرب الجبالي",
+        "label": null,
+        "sublabel": "ح 41",
+        "type": "serie",
+        "description": "تدور أحداث المسلسل في إطار اجتماعي حول الحياة اليومية في حي الجمالية في مصر، حيث تظهر الصراعات ما بين عائلتين ذات نفوذ قوي في رحلة الوصول للسلطة وفرض السيطرة داخل الحي.",
+        "year": 2025,
+        "rating": 4.1,
+        "imdb": 0,
+        "duration": "40 min",
+        "comment": true,
+        "downloadas": "1",
+        "playas": "1",
+        "classification": "دراما, مصر",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/pVb4cWsKjB1V4SkzUgIgNe1C7fJ.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/apFiBT1GM7JeiiGZ6YxX5ZbSduc.jpg",
+        "genres": [
+            {
+                "id": 16,
+                "title": "مسلسلات عربية"
+            },
+            {
+                "id": 24,
+                "title": "جديد المسلسلات"
+            }
+        ],
+        "trailer": {
+            "id": 3097501,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=EuVStPin6GY"
+        },
+        "sources": []
+    },
+    {
+        "id": 22612,
+        "title": "هوبال",
+        "label": "WEB-DL",
+        "sublabel": "1080p",
+        "type": "movie",
+        "description": "تدور الأحداث حول عائلة سعودية تتبع تعليمات صارمة من جدهم بالبقاء في الصحراء خلال أوائل التسعينيات، فتتوالى سلسلة من الأحداث التي تهز أساس الأسرة ويجدونها في صراع بين الحياة والموت.",
+        "year": 2025,
+        "rating": 3.5,
+        "imdb": 0,
+        "duration": "1h 54min",
+        "comment": true,
+        "downloadas": "3",
+        "playas": "1",
+        "classification": "دراما, السعودية",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/z0YPcVdWvxG5dmBL0QRQeB2B6Th.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/aCk4WrOEsD4WgWzyc3XBg4zJANg.jpg",
+        "genres": [
+            {
+                "id": 19,
+                "title": "أفلام عربية"
+            },
+            {
+                "id": 25,
+                "title": "الأفلام الأكثر مشاهدة"
+            }
+        ],
+        "trailer": {
+            "id": 2745288,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=8DbWL7YCF5s"
+        },
+        "sources": []
+    },
+    {
+        "id": 23181,
+        "title": "من الأحد إلى الخميس",
+        "label": null,
+        "sublabel": "ح 30",
+        "type": "serie",
+        "description": "ثلاث قصص اجتماعية تجتمع كلها تحت ثوب الجريمة، فقصة ترتكب مها فيها جريمة بغير قصد دفاعا عن زوجها وتسعى لاخفاء الجريمة، وأخرى شخص مجهول الوالدين يخدع فاطمة بأنه تاجر غني حتى يتزوجها. وثالثهن أحد مشاهير السوشال ميديا يستغل فتاة ليكسب من خلالها أموالاً طائلة من عمله بشبكة تتاجر بالأعضاء",
+        "year": 2025,
+        "rating": 5,
+        "imdb": 0,
+        "duration": "40 min",
+        "comment": true,
+        "downloadas": "1",
+        "playas": "1",
+        "classification": "دراما, اثارة, جريمة, الكويت",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/1QXtaMjTT3NN3arQSjGY2MvfsUb.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/nZTWNndZCN03J1qLXBON0uJyutW.jpg",
+        "genres": [
+            {
+                "id": 24,
+                "title": "جديد المسلسلات"
+            },
+            {
+                "id": 88,
+                "title": "مسلسلات رمضان 2025"
+            }
+        ],
+        "trailer": {
+            "id": 2848790,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=QX-CZyr3g9w"
+        },
+        "sources": []
     },
     {
       "id": 5557,
