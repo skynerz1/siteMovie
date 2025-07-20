@@ -390,7 +390,7 @@ function applyFilters() {
 
 
     body {
-        background-color: #121212;
+
         color: #fff;
         font-family: 'Segoe UI', sans-serif;
         margin: 0;
@@ -447,41 +447,7 @@ function applyFilters() {
         display: block;
     }
 
-    .watch-overlay {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: #f44336;
-        color: white;
-        font-weight: bold;
-        width: 50px;
-        height: 50px;
-        font-size: 0;
-        border-radius: 50%;
-        display: none;  /* خليها مخفية افتراضياً */
-        z-index: 2;
-        cursor: pointer;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 0 0 12px rgba(244, 67, 54, 0.7);
-        transition: background-color 0.3s ease;
-    }
-
-    .movie-card:hover .movie-thumb .watch-overlay {
-        display: flex;
-    }
-
-    .watch-overlay:hover {
-        background-color: #d32f2f;
-    }
-
-    /* أيقونة بلاي */
-    .watch-overlay i.fa-play {
-        color: white;
-        font-size: 26px;
-        text-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
-    }
+   
 
     .rating-overlay {
         position: absolute;
@@ -501,19 +467,7 @@ function applyFilters() {
     }
 
 
-    .top-badge {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        background: #f44336;
-        color: white;
-        font-weight: bold;
-        padding: 4px 8px;
-        font-size: 12px;
-        border-radius: 8px;
-        z-index: 4;
-        box-shadow: 0 0 6px rgba(244, 67, 54, 0.8);
-    }
+
 
     .label-badge, .sub-badge {
         max-width: 120px;  /* أو القيمة اللي تناسب تصميمك */
@@ -538,41 +492,7 @@ function applyFilters() {
         box-shadow: 0 0 6px rgba(33, 150, 243, 0.8);
     }
 
-    /* خاص بالـ sub-badge */
-    .sub-badge {
-        position: absolute;
-        left: 10px;
-        z-index: 4;
-    }
-
-    /* sub-badge مع top-badge */
-    .movie-thumb.has-top-badge .sub-badge {
-        top: 40px;
-        background: #555;
-        box-shadow: 0 0 6px rgba(85, 85, 85, 0.8);
-    }
-
-    /* sub-badge بدون top-badge */
-    .movie-thumb.no-top-badge .sub-badge {
-        top: 10px;
-        background: #f44336;
-        box-shadow: 0 0 6px rgba(244, 67, 54, 0.8);
-    }
-
-
-    /* sub-badge تحت top-badge */
-    .movie-thumb.has-top-badge .sub-badge {
-        top: 40px; /* تحت التوب بادج */
-        background: #555; /* رمادي */
-        box-shadow: 0 0 6px rgba(85, 85, 85, 0.8);
-    }
-
-    /* sub-badge فوق لما ما في top-badge */
-    .movie-thumb.no-top-badge .sub-badge {
-        top: 10px;
-        background: #f44336; /* أحمر */
-        box-shadow: 0 0 6px rgba(244, 67, 54, 0.8);
-    }
+  
 
     
 
@@ -597,47 +517,8 @@ function applyFilters() {
 
 
 
-    .filters, .categories {
-        margin-bottom: 20px;
-    }
-
-    .filters a, .categories a {
-        background-color: #2a2a2a;
-        color: #fff;
-        padding: 8px 14px;
-        border-radius: 8px;
-        margin: 4px;
-        display: inline-block;
-        font-size: 14px;
-        transition: background 0.2s ease;
-    }
-
-    .filters a:hover, .categories a:hover {
-        background-color: #f44336;
-    }
-
-    .filters a.active, .categories a.active {
-        background-color: #f44336;
-    }
-
-    .pagination {
-        text-align: center;
-        margin-top: 30px;
-    }
-
-    .pagination a {
-        background-color: #2a2a2a;
-        color: #fff;
-        padding: 10px 16px;
-        border-radius: 8px;
-        margin: 0 5px;
-        font-weight: bold;
-        display: inline-block;
-    }
-
-    .pagination a:hover {
-        background-color: #f44336;
-    }
+    
+    
 
    
 
