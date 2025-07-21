@@ -455,7 +455,7 @@ $playerUrl = "https://dfkz.up.railway.app/api-live.php?ch=" . intval($channelId)
                         </a>
 
     <a href="server-live.php?id=22" class="channel-item">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStqDmOsCegryFEhcARKy82qGAK_q1_HRFH4IwoLUHp8c_Fi3B55nW3FdFZxa5X4xjyeSo&usqp=CAU" alt="MBC 2" />
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTsuYYAbLWXDmf678ip7wKmr1zvj3PlhOnig&s" alt="MBC 2" />
       <span class="channel-name">سبيستون</span>
     </a>
 
