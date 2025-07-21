@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['toggle_favorite'], $_
 }
 
     function getSeriesDetails($seriesId) {
-        $localFiles = ['search_results_permanent.json', 'search_arab_permanent.json', 'save.json', '../includes/sourse/browser.json', '../includes/sourse/browser1.json'];
+        $localFiles = ['search_results_permanent.json', 'search_arab_permanent.json', 'save.json', 'includes/sourse/browser.json', 'includes/sourse/browser1.json'];
 
         // 1) البحث في الملفات المحلية العادية
         foreach ($localFiles as $filename) {
