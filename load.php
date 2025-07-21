@@ -51,7 +51,7 @@
 <div id="global-loader">
   <div class="loading-overlay">
     <div class="loading-logo">
-      <img src="includes/img/dfkz.png" alt="جاري التحميل">
+      <img src="../includes/img/dfkz.png" alt="جاري التحميل">
     </div>
     <div class="loading-text">جاري التحميل...</div>
   </div>
