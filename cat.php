@@ -210,7 +210,15 @@ if (!($type === 'ramadan' && $category === 'series')) {
             <i class="fas fa-film"></i> أفلام
         </a>
 
+        <a href="?category=channels" class="<?= $category === 'channels' ? 'active' : '' ?>">
+            <i class="fas fa-broadcast-tower"></i> قنوات
+        </a>
+
+
     </div>
+
+    <?php if ($category !== 'channels'): ?>
+
 
     <div class="filters">
         <strong>فرز حسب:</strong>
@@ -246,9 +254,158 @@ if (!($type === 'ramadan' && $category === 'series')) {
 
 
     </div>
+        <!-- فلاتر التصنيف والأنواع والأزرار الأخرى -->
+    <?php endif; ?>
 
     <?php if (!($type === 'ramadan' && $category === 'series')): ?>
-        <div class="sub-filters" style="margin: 20px 0 30px 0; display: flex; gap: 12px; flex-wrap: wrap;">
+    <?php if ($category === 'channels'): ?>
+        <div class="channels-grid">
+            <?php 
+            // قنوات وهمية للتجربة
+            $channels = [
+ 
+                [
+                    'name' => 'ام بي سي 1',
+                    'image' => 'https://shahid.mbc.net/mediaObject/a7dcf0c9-1178-4cb9-a490-a8313975e37c?height=129&width=230&croppingPoint=&version=1&type=avif',
+                    'url' => 'server-live.php?id=1' 
+                ],
+                [
+                    'name' => 'ام بي سي 2',
+                    'image' => 'https://shahid.mbc.net/mediaObject/0fc148ad-de25-4bf6-8fc8-5f8f97a52e2d?height=129&width=230&croppingPoint=&version=1&type=avif',
+                    'url' => 'server-live.php?id=2'
+                ],
+                [
+                    'name' => 'ام بي سي 3',
+                    'image' => 'https://shahid.mbc.net/mediaObject/05162db8-9f01-4aeb-95e8-52aba8baf609',
+                    'url' => 'server-live.php?id=3'
+                ],
+                [
+                    'name' => 'ام بي سي 4',
+                    'image' => 'https://shahid.mbc.net/mediaObject/e4658f69-3cac-4522-a6db-ff399c4f48f1?height=129&width=230&croppingPoint=&version=1&type=avif',
+                    'url' => 'server-live.php?id=4'
+                ],
+                [
+                    'name' => 'ام بي سي 5',
+                    'image' => 'https://shahid.mbc.net/mediaObject/94786999-8a35-4e25-abc6-93680bd3b457?height=129&width=230&croppingPoint=&version=1&type=avif',
+                    'url' => 'server-live.php?id=5'
+                ],
+                [
+                    'name' => 'ام بي سي بوليود',
+                    'image' => 'https://shahid.mbc.net/mediaObject/ce2f5296-90ea-48f2-a997-125df5d73b42?height=129&width=230&croppingPoint=&version=1&type=avif',
+                    'url' => 'server-live.php?id=6'
+                ],
+                [
+                    'name' => 'ام بي سي مصر',
+                    'image' => 'https://shahid.mbc.net/mediaObject/2c600ff4-bd00-4b99-b94d-b178a7366247?height=129&width=230&croppingPoint=&version=1&type=avif',
+                    'url' => 'server-live.php?id=7'
+                ],
+                [
+                    'name' => 'ام بي سي دراما',
+                    'image' => 'https://shahid.mbc.net/mediaObject/4bac4257-39fa-4e00-b91e-befdcff0091a?height=129&width=230&croppingPoint=&version=1&type=avif%22%20alt=%22MBC%202',
+                    'url' => 'server-live.php?id=24'
+                ],
+                [
+                    'name' => 'ssc 1',
+                    'image' => 'https://shahid.mbc.net/mediaObject/8abc6233-1ef2-443b-8de6-d401a60aa025?height=129&width=230&croppingPoint=&version=1&type=avif',
+                    'url' => 'server-live.php?id=18'
+                ],
+                [
+                    'name' => 'bein sport 1',
+                    'image' => 'https://play-lh.googleusercontent.com/BDUySDHFzY4JcRzQpLsIHiZKLvIEmVL5N30qc-DWwVhwN3dJqV0J4BKE6XH9EOw_ygQ',
+                    'url' => 'server-live.php?id=19'
+                ],                [
+                    'name' => 'ريال مدريد',
+                    'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStqDmOsCegryFEhcARKy82qGAK_q1_HRFH4IwoLUHp8c_Fi3B55nW3FdFZxa5X4xjyeSo&usqp=CAU',
+                    'url' => 'server-live.php?id=23'
+                ],
+                [
+                    'name' => 'سبيستون',
+                    'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTsuYYAbLWXDmf678ip7wKmr1zvj3PlhOnig&s',
+                    'url' => 'server-live.php?id=19'
+                ], 
+                [
+                    'name' => 'روتانا خليجيه',
+                    'image' => 'https://cdna.artstation.com/p/assets/images/images/013/847/096/large/ali-hazime-60-rotana-kh-ramadan-bumpers-04.jpg?1541359241',
+                    'url' => 'server-live.php?id=17'
+                ], 
+                [
+                    'name' => 'وناسه',
+                    'image' => 'https://shahid.mbc.net/mediaObject/97613919-40eb-4032-9dcb-e940e08ae761?height=129&width=230&croppingPoint=&version=1&type=avif',
+                    'url' => 'server-live.php?id=16'
+                ], 
+                [
+                    'name' => 'رؤيا',
+                    'image' => 'https://jordandir.com/images/screenshots/1711030162.webp',
+                    'url' => 'server-live.php?id=13'
+                ],
+                [
+                    'name' => 'قطر 1',
+                    'image' => 'https://yt3.googleusercontent.com/pcLGQIWlrO000zyC8SEZzOmm3iZmDAmMQSNRTG28toSt9p-QX88NuiEc4GCmfXk8EwH3twcb=s900-c-k-c0x00ffffff-no-rj',
+                    'url' => 'server-live.php?id=8'
+                ],
+                [
+                    'name' => 'سما دبي',
+                    'image' => 'https://admango.cdn.mangomolo.com/analytics/uploads/71/5fb0fc1d19.png',
+                    'url' => 'server-live.php?id=14'
+                ],
+                [
+                    'name' => 'دبي',
+                    'image' => 'https://admango.cdn.mangomolo.com/analytics/uploads/71/659cd942e4.png',
+                    'url' => 'server-live.php?id=15'
+                ],
+                [
+                    'name' => 'عمان-تيفي',
+                    'image' => 'https://www.klma.org/wp-content/uploads/2021/04/oman-tv-live-nilesat.jpg',
+                    'url' => 'server-live.php?id=21'
+                ],
+                [
+                    'name' => 'البحرين',
+                    'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk1M66wi3shj5YXhO6Cv9rf3B-ZXSLBEC2Tg&s',
+                    'url' => 'server-live.php?id=20'
+                ],
+                [
+                    'name' => 'الجزيره',
+                    'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9hF9gGUDglabva3DrXaW7yGedHdx0nQoFztnuMXjBeNjCbEch9JM-omyLGH5xyLPeuRI&usqp=CAU',
+                    'url' => 'server-live.php?id=9'
+                ],
+                [
+                    'name' => 'العربي',
+                    'image' => 'https://yt3.googleusercontent.com/dirOUBiyFLsQqf58hs78w2NRbQu2u3SfXr77jlH6y1mDwh4TpEtI5CXzhpCy8Aw7tz6CgveWbw=s900-c-k-c0x00ffffff-no-rj',
+                    'url' => 'server-live.php?id=10'
+                ],
+                [
+                    'name' => 'الاخباريه',
+                    'image' => 'https://upload.wikimedia.org/wikipedia/commons/e/e3/%D8%A7%D9%84%D9%82%D9%86%D8%A7.png',
+                    'url' => 'server-live.php?id=11'
+                ],
+                [
+                    'name' => 'الحدث',
+                    'image' => 'https://yt3.googleusercontent.com/ehhpuQeVHO0g3kIPkmwrw1x0fLqDk7RyWH733oe4wcKb_1jBEMvGt4WVlQEEzcTCL6zq01K5HQ=s900-c-k-c0x00ffffff-no-rj',
+                    'url' => 'server-live.php?id=12'
+                ],
+
+                
+                
+            ];
+
+            foreach ($channels as $channel): ?>
+                <div class="channel-card">
+                    <a href="<?= htmlspecialchars($channel['url']) ?>">
+                        <img src="<?= htmlspecialchars($channel['image']) ?>" alt="<?= htmlspecialchars($channel['name']) ?>" class="channel-image">
+                        <div class="channel-name"><?= htmlspecialchars($channel['name']) ?></div>
+                    </a>
+                </div>
+            <?php endforeach; ?>
+
+
+        </div>
+    <?php endif; ?>
+
+    <?php if ($category !== 'channels'): ?>
+        <!-- فلاتر التصنيف والأنواع والأزرار الأخرى -->
+
+
+    <div class="sub-filters" style="margin: 20px 0 30px 0; display: flex; gap: 12px; flex-wrap: wrap;">
 
             <!-- Dropdown: النوع -->
             <strong>فلترة حسب النوع:</strong>
@@ -278,6 +435,7 @@ if (!($type === 'ramadan' && $category === 'series')) {
 
         </div>
     <?php endif; ?>
+    <?php endif; ?>
 
 
 
@@ -300,44 +458,47 @@ if (!($type === 'ramadan' && $category === 'series')) {
         <div style="color:red;">⚠️ لا توجد بيانات متوفرة.</div>
     <?php endif; ?>
 
-    <div class="series-grid">
-        <?php foreach ($items as $index => $item): ?>
-            <div class="movie-card">
-                <a href="<?= $category === 'movies' ? 'movie/links.php?id=' : 'series.php?id=' ?><?= $item['id'] ?>">
-                    <?php $hasTopBadge = ($index < 5); ?>
-                    <div class="movie-thumb <?= $hasTopBadge ? 'has-top-badge' : 'no-top-badge' ?>">
-                        <?php if ($hasTopBadge): ?>
-                            <div class="top-badge">TOP <?= $index + 1 ?></div>
-                        <?php endif; ?>
-                        <?php if (!empty($item['label'])): ?>
-                            <div class="label-badge"><?= htmlspecialchars($item['label']) ?></div>
-                        <?php endif; ?>
-                        <?php if (!empty($item['sublabel'])): ?>
-                            <div class="sub-badge"><?= htmlspecialchars($item['sublabel']) ?></div>
-                        <?php endif; ?>
-                        <img src="<?= $item['image'] ?>" alt="<?= htmlspecialchars($item['title']) ?>">
-                        <div class="rating-overlay">
-                            ⭐ <?= 
-                                (isset($item['rating']) && is_numeric($item['rating'])) ? $item['rating'] : 
-                                ((isset($item['rate']) && is_numeric($item['rate'])) ? $item['rate'] : 'N/A') 
-                            ?>
+    <?php if ($category !== 'channels'): ?>
+        <div class="series-grid">
+            <?php foreach ($items as $index => $item): ?>
+                <div class="movie-card">
+                    <a href="<?= $category === 'movies' ? 'movie/links.php?id=' : 'series.php?id=' ?><?= $item['id'] ?>">
+                        <?php $hasTopBadge = ($index < 5); ?>
+                        <div class="movie-thumb <?= $hasTopBadge ? 'has-top-badge' : 'no-top-badge' ?>">
+                            <?php if ($hasTopBadge): ?>
+                                <div class="top-badge">TOP <?= $index + 1 ?></div>
+                            <?php endif; ?>
+                            <?php if (!empty($item['label'])): ?>
+                                <div class="label-badge"><?= htmlspecialchars($item['label']) ?></div>
+                            <?php endif; ?>
+                            <?php if (!empty($item['sublabel'])): ?>
+                                <div class="sub-badge"><?= htmlspecialchars($item['sublabel']) ?></div>
+                            <?php endif; ?>
+                            <img src="<?= $item['image'] ?>" alt="<?= htmlspecialchars($item['title']) ?>">
+                            <div class="rating-overlay">
+                                ⭐ <?= 
+                                    (isset($item['rating']) && is_numeric($item['rating'])) ? $item['rating'] : 
+                                    ((isset($item['rate']) && is_numeric($item['rate'])) ? $item['rate'] : 'N/A') 
+                                ?>
+                            </div>
+                            <div class="watch-overlay">
+                              <i class="fa fa-play play-icon" aria-hidden="true"></i>
+                            </div>
                         </div>
-                        <div class="watch-overlay">
-                          <i class="fa fa-play play-icon" aria-hidden="true"></i>
+                        <div class="movie-info">
+                            <div class="movie-title"><?= htmlspecialchars($item['title']) ?></div>
+                            <div class="movie-meta">
+                                <?= $item['year'] ?? '----' ?> • <?= $category === 'movies' ? 'Movie' : 'Serie' ?>
+                            </div>
                         </div>
-                    </div>
-                    <div class="movie-info">
-                        <div class="movie-title"><?= htmlspecialchars($item['title']) ?></div>
-                        <div class="movie-meta">
-                            <?= $item['year'] ?? '----' ?> • <?= $category === 'movies' ? 'Movie' : 'Serie' ?>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        <?php endforeach; ?>
-    </div>
+                    </a>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
 
-    <?php if (!($type === 'ramadan' && $category === 'series')): ?>
+
+    <?php if (!($type === 'ramadan' && $category === 'series') && $category !== 'channels'): ?>
         <div class="pagination">
             <?php if ($block > 1): ?>
                 <a href="?category=<?= urlencode($category) ?>&type=<?= urlencode($type) ?>&classification=<?= urlencode($selectedClassification) ?>&genre=<?= urlencode($selectedGenre) ?>&block=<?= $block - 1 ?>" class="prev">⬅️ السابقة</a>
@@ -345,6 +506,7 @@ if (!($type === 'ramadan' && $category === 'series')) {
             <a href="?category=<?= urlencode($category) ?>&type=<?= urlencode($type) ?>&classification=<?= urlencode($selectedClassification) ?>&genre=<?= urlencode($selectedGenre) ?>&block=<?= $block + 1 ?>" class="next">التالي ➡️</a>
         </div>
     <?php endif; ?>
+
 
 </div>
 
@@ -368,6 +530,40 @@ function applyFilters() {
 
 
 <style>
+    .channels-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .channel-card {
+        background-color: #1e1e1e;
+        border-radius: 10px;
+        overflow: hidden;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        transition: transform 0.2s ease;
+    }
+
+    .channel-card:hover {
+        transform: scale(1.03);
+    }
+
+    .channel-card img {
+        width: 100%;
+        aspect-ratio: 1 / 1; /* يجعل الصورة مربعة */
+        object-fit: cover;
+        display: block;
+    }
+
+    .channel-name {
+        padding: 10px;
+        color: #fff;
+        font-weight: bold;
+        font-size: 15px;
+    }
+
 
     .gradient-icon {
         background: linear-gradient(to bottom, #00ffff 50%, #ffffff 50%);
