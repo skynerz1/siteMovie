@@ -21,7 +21,7 @@ include '../includes/header.php';
         }
 
         // 2) ثانوي: ملفات ثابتة (search_results.json و save.json)
-        $files = ['search_results.json', '../save.json', '../search_results.json'];
+        $files = ['search_results.json', '../save.json', '../search_results.json', '../includes/sourse/browser1.json', '../includes/sourse/browser.json'];
         foreach ($files as $filename) {
             if (!file_exists($filename)) continue;
 
