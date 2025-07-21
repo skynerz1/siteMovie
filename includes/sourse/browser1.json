@@ -1,0 +1,1046 @@
+{
+  "osn": [
+    {
+        "id": 248,
+        "title": "Game of Thrones",
+        "label": null,
+        "sublabel": null,
+        "type": "serie",
+        "description": "تسع عائلات نبيلة تتصارع فيما بينها للسيطرة على ارض ويستروس الخرافية, بينما يتربص بهم عدو قديم لهم ظل مختفي لآلاف السنين.",
+        "year": 2011,
+        "rating": 4.6,
+        "imdb": 9.4,
+        "duration": "90 min",
+        "comment": true,
+        "downloadas": null,
+        "playas": null,
+        "classification": "اكشن, مغامرة, دراما, خيال, رومانسي",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/ymlP99B7EQCJbJcdsQFtnh9ADlF.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/rIe3PnM6S7IBUmvNwDkBMX0i9EZ.jpg",
+        "genres": [
+            {
+                "id": 18,
+                "title": "مسلسلات أجنبية"
+            }
+        ],
+        "trailer": {
+            "id": 5668,
+            "type": "youtube",
+            "url": "https:\/\/youtu.be\/rlR4PJn8b8I"
+        },
+        "sources": []
+    },
+      {
+          "id": 11203,
+          "title": "House of the Dragon",
+          "label": "الموسم الثاني",
+          "sublabel": "ح 8",
+          "type": "serie",
+          "description": "آل التنّين\r\nتدور الأحداث قبل 200 عام من أحداث مسلسل صراع العروش.، حيث سيركز على تفاصيل عائلة \"آل تارغيريان\" ولمحات هامة في تاريخ العائلة التي حكمت ويستروس منذ زمن بعيد، وصولًا إلى رقصة التنانين والصراعات الداخلية في العائلة التي دمرت كل شيء وهددت بانقراض التنانين للأبد.",
+          "year": 2022,
+          "rating": 4.4,
+          "imdb": 9,
+          "duration": "60 min",
+          "comment": true,
+          "downloadas": "1",
+          "playas": "1",
+          "classification": "اكشن, مغامرة, دراما, خيال",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/t9XkeE7HzOsdQcDDDapDYh8Rrmt.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/xtAQ7j9Yd0j4Rjbvx1hW0ENpXjf.jpg",
+          "genres": [
+              {
+                  "id": 18,
+                  "title": "مسلسلات أجنبية"
+              },
+              {
+                  "id": 24,
+                  "title": "جديد المسلسلات"
+              }
+          ],
+          "trailer": {
+              "id": 783742,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=DotnJ7tTA34"
+          },
+          "sources": []
+      },
+    {
+        "id": 250,
+        "title": "The Sopranos",
+        "label": null,
+        "sublabel": null,
+        "type": "serie",
+        "description": "(توني سوبرانو) عضو هام في منظمة مافيا إيطالية، يعاني من مشاكل عائلية وعملية، وتقف أمامه صعوبات نتيجة محاولاته الدائمة في موازنة متطلباته المتعارضة بين منزله وعائلته والمنظمة الإجرامية التي يشترك في إدارتها.",
+        "year": 1999,
+        "rating": 4.7,
+        "imdb": 9.2,
+        "duration": "60 min",
+        "comment": true,
+        "downloadas": null,
+        "playas": null,
+        "classification": "جريمة, دراما",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/s7tmRFS4MHHl2KUGIQiFtXiaih1.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/lNpkvX2s8LGB0mjGODMT4o6Up7j.jpg",
+        "genres": [
+            {
+                "id": 18,
+                "title": "مسلسلات أجنبية"
+            }
+        ],
+        "trailer": {
+            "id": 5670,
+            "type": "youtube",
+            "url": "https:\/\/youtu.be\/NUT07eZoXPw"
+        },
+        "sources": []
+    },
+    {
+        "id": 224,
+        "title": "The Mentalist",
+        "label": null,
+        "sublabel": null,
+        "type": "serie",
+        "description": "تدور أحداث المسلسل حول اكتشاف لغز الجرائم الغامضة التي تقع، وهنا ينطلق محقق مكتب التحقيقات CSI (باتريك جين) مع فريق التحقيقات بقيادة (ليزبون) لحل لغز أصعب الجرائم، وفي الوقت نفسه يحاول باتريك جمع أكبر قدر من المعلومات حول القاتل (جون ريد)، الذى قتل زوجته وابنته، بل ويظل يطارد جون للانتقام منه.",
+        "year": 2008,
+        "rating": 4.7,
+        "imdb": 8.1,
+        "duration": "90 min",
+        "comment": true,
+        "downloadas": null,
+        "playas": null,
+        "classification": "جريمة, دراما, غموض, اثارة",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/acYXu4KaDj1NIkMgObnhe4C4a0T.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/rJFqKcmMSttdNP58l0dVzY2NcTA.jpg",
+        "genres": [
+            {
+                "id": 18,
+                "title": "مسلسلات أجنبية"
+            }
+        ],
+        "trailer": {
+            "id": 5635,
+            "type": "youtube",
+            "url": "https:\/\/youtu.be\/tCpWApgVqbc"
+        },
+        "sources": []
+    },
+      {
+          "id": 1557,
+          "title": "Harry Potter and the Sorcerer's Stone (1)",
+          "label": null,
+          "sublabel": null,
+          "type": "movie",
+          "description": "تدور أحداث الفلم في إطار خيالي استنادا إلى الرواية التي كتبتها الكاتبة البريطانية (ج . ك . رولينج) (هاري بوتر وحجر البروفسير) ، فتدور الأحداث حول الصغير (هاري بوتر) الذي يحتفل بعيد ميلاده الحادي عشر ، ويكتشف بالصدفة أنه ساحر فينتقل إلى مدرسة (هوجوارتس) ليتعلم هناك أعمال السحر والشعوذة .",
+          "year": 2001,
+          "rating": 4.6,
+          "imdb": 7.6,
+          "duration": "02:32:22",
+          "comment": true,
+          "downloadas": "3",
+          "playas": "1",
+          "classification": "مغامرة, خيال",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/wuMc08IPKEatf9rnMNXvIDxqP4W.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/bfh9Z3Ghz4FOJAfLOAhmc3ccnHU.jpg",
+          "genres": [
+              {
+                  "id": 22,
+                  "title": "أفلام أجنبية"
+              }
+          ],
+          "trailer": {
+              "id": 17031,
+              "type": "youtube",
+              "url": "https:\/\/youtu.be\/VyHV0BRtdxo"
+          },
+          "sources": []
+      },
+    {
+        "id": 249,
+        "title": "Shameless",
+        "label": null,
+        "sublabel": null,
+        "type": "serie",
+        "description": "تدور أحداث المسلسل حول عائلة جالاهار الغريبة الأطوار التي يعاني كل فرد فيها من مشكلة، فالأب مدمن على الخمور، والأم انفصلت عنهم منذ زمن طويل، وفيونا تحاول أن تحافظ على تماسك العائلة، ويحصل فيليب على خدمات جنسية مقابل منح دروس في الفيزياء، وإيان ذو ميول مثلية، وديبي تسرق الأموال من مجموعة اليونيسيف خاصتها.",
+        "year": 2011,
+        "rating": 4.6,
+        "imdb": 8,
+        "duration": "45 min",
+        "comment": true,
+        "downloadas": null,
+        "playas": null,
+        "classification": "كوميديا, دراما",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/9akij7PqZ1g6zl42DQQTtL9CTSb.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/bFVx0ydejF6NE8SEAVz95ns0o6A.jpg",
+        "genres": [
+            {
+                "id": 18,
+                "title": "مسلسلات أجنبية"
+            }
+        ],
+        "trailer": {
+            "id": 5669,
+            "type": "youtube",
+            "url": "https:\/\/youtu.be\/hcKuq9W7IPg"
+        },
+        "sources": []
+    },
+    {
+        "id": 258,
+        "title": "Banshee",
+        "label": null,
+        "sublabel": null,
+        "type": "serie",
+        "description": "يستولي (لوكاس هود) اللص القدير، والسجين السابق على هوية خاصة بمأمور مقتول. لاستغلالها في ممارسة أعماله الإجرامية البشعة، يطارده ماضيه الإجرامي، وخيانته وخداعه لمجموعة من زملائه، ويطبق نوعًا جديدًا من العدالة قوامها الأساسي العنف في كل منعطف، والدم في كل مكان، وبذلك يحول مدينة بانشي مدينة الأمس الهادئة إلى جحيم.",
+        "year": 2013,
+        "rating": 4.4,
+        "imdb": 8.4,
+        "duration": "60 min",
+        "comment": true,
+        "downloadas": null,
+        "playas": null,
+        "classification": "اكشن, دراما, جريمة, غموض",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/5nXFiz8Rn8eezVjSTZBd7HmnF1G.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/cwosIp9M9B6TcLnv0bBg86s0WUx.jpg",
+        "genres": [
+            {
+                "id": 18,
+                "title": "مسلسلات أجنبية"
+            }
+        ],
+        "trailer": {
+            "id": 5677,
+            "type": "youtube",
+            "url": "https:\/\/youtu.be\/3bopBAOSCpE"
+        },
+        "sources": []
+    },
+    {
+        "id": 13416,
+        "title": "The Last of Us",
+        "label": "الموسم الثاني",
+        "sublabel": "ح 7",
+        "type": "serie",
+        "description": "تدور الأحداث حول جويل الذي فقد ابنته في أعقاب انهيار العالم أمام فايروس خطير يحول البشر إلى وحوش قاتلة، ليجد جويل نفسه مجبرًا على مساعدة إيلي البالغة من العمر 14 عامًا على الهروب من أيدي العصابات والموتى.\r\n-\r\nفي الموسم الثاني، يستكمل (جويل) و(إيلي) رحلتهما في عالم تُسيطر عليه المخلوقات المرعبة والعصابات، وبينما تستكشف (إيلي) مشاعر عاطفية غير مسبوقة، يمر (جويل) باختبار عصيب يضع حياته على المحك.",
+        "year": 2023,
+        "rating": 4.1,
+        "imdb": 8.7,
+        "duration": "80 min",
+        "comment": true,
+        "downloadas": "1",
+        "playas": "1",
+        "classification": "اكشن, مغامرة, دراما, خيال علمي",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/dmo6TYuuJgaYinXBPjrgG9mB5od.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/7dowXHcFccjmxf0YZYxDFkfVq65.jpg",
+        "genres": [
+            {
+                "id": 18,
+                "title": "مسلسلات أجنبية"
+            },
+            {
+                "id": 24,
+                "title": "جديد المسلسلات"
+            }
+        ],
+        "trailer": {
+            "id": 1061021,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=uLtkt8BonwM"
+        },
+        "sources": []
+    },
+    {
+        "id": 12492,
+        "title": "شراب التوت",
+        "label": "مترجم - ح 103",
+        "sublabel": "مدبلج 3 - ح 127",
+        "type": "serie",
+        "description": "تدور الأحداث حول عائلتين مختلفتن بتعايشون بعدا عن بعضهما البعض، ومع مرور الزمن وقع شجار عائلي بين العائلتين وبدأت الاحداث والأشكاليات والصراعات تتزايد يوم بعد يوم، حيث وقع احدى الطرافين من هؤلاء العائلتين التي بينهما الصراع وقع هذان الطرفان بحب بعضهما البعض وبالرغم من تلك الصراعات، وكانت الاحداث في ايطار كوميدي رائع ورومانسي مشوق.",
+        "year": 2022,
+        "rating": 4.1,
+        "imdb": 0,
+        "duration": "120 min",
+        "comment": true,
+        "downloadas": "1",
+        "playas": "1",
+        "classification": "دراما, عائلي",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/77JSE7rHSCkQBlNoi4hPgyzWiRu.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/s0pUBjKbrNdFWXz4sT3RjywqfXK.jpg",
+        "genres": [
+            {
+                "id": 17,
+                "title": "مسلسلات تركية"
+            },
+            {
+                "id": 24,
+                "title": "جديد المسلسلات"
+            }
+        ],
+        "trailer": {
+            "id": 937644,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=PRnUBcZXN38"
+        },
+        "sources": []
+    },
+    {
+        "id": 17755,
+        "title": "The Couple Next Door",
+        "label": "الموسم الثاني",
+        "sublabel": null,
+        "type": "serie",
+        "description": "ينتقل زوجان شابان إلى حي راقي لتكوين أسرة، لكن سرعان ما يجدان نفسيهما متورطين في شبكة معقدة من الرغبة والخيانة مع جيرانهما الجدد.\r\n-\r\nفي الموسم الثاني, تُحدث عودة (ليو) تغييرًا في (تشارلوت) وتستغل (ميا) الفرصة لمحاولة كسب ود وثقة (تشارلوت) و(جاكوب)، لكن عودة ماضي (ميا) لمطاردتها يدفع أصدقائها للتساؤل عن هويتها الحقيقة خاصةً مع بداية موت المرضى في المستشفى بطرق غامضة.",
+        "year": 2023,
+        "rating": 5,
+        "imdb": 5.8,
+        "duration": "45 min",
+        "comment": true,
+        "downloadas": "1",
+        "playas": "1",
+        "classification": "دراما, اثارة, جريمة",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/9wZcBMvhlnTowsUneMwMqotKPwv.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/oxfuH3vC4UoAArjyRHyiLbBwxKQ.jpg",
+        "genres": [
+            {
+                "id": 18,
+                "title": "مسلسلات أجنبية"
+            },
+            {
+                "id": 24,
+                "title": "جديد المسلسلات"
+            }
+        ],
+        "trailer": {
+            "id": 1784205,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=iUrjasNOnPM"
+        },
+        "sources": []
+    },
+    {
+        "id": 21522,
+        "title": "المشردون",
+        "label": "مترجم - ح 28",
+        "sublabel": "مدبلج - ح 55",
+        "type": "serie",
+        "description": "قصة مأساوية لستة إخوة فقدوا والديهم بسبب انتقام يافوز الذي كان مهووساً بحب أمهم، مما اضطرهم للهرب من منزلهم في الغابة إلى إسطنبول. تتولى عزيزة، الأخت الكبرى، مسؤولية إخوتها في رحلة مليئة بالتحديات للوصول إلى عمهم أسلان، حيث يواجهون صعوبات الحياة في المدينة الكبيرة وهم يحاولون البقاء متحدين معاً.",
+        "year": 2024,
+        "rating": 4.5,
+        "imdb": 0,
+        "duration": "120 min",
+        "comment": true,
+        "downloadas": "1",
+        "playas": "1",
+        "classification": "دراما, مغامرة, عائلي",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/vp5BqsuAQynZr3djRCJhyBcSdYS.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/zLaUGlyvMDzAp7WMmmPG9nR52hL.jpg",
+        "genres": [
+            {
+                "id": 17,
+                "title": "مسلسلات تركية"
+            },
+            {
+                "id": 24,
+                "title": "جديد المسلسلات"
+            }
+        ],
+        "trailer": {
+            "id": 2564433,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=-qLHTUuaMX8"
+        },
+        "sources": []
+    },
+    {
+        "id": 14189,
+        "title": "Shazam! Fury of the Gods",
+        "label": "WEB-DL",
+        "sublabel": "1080p",
+        "type": "movie",
+        "description": "شازام! غضب الملوك\r\nيستكمل العمل مغامرة المراهق بيلي، والذي يتحول إلى بطل خارق بالغ يُدعى شازام، ويجد نفسه في مواجهة مع الآلهة.",
+        "year": 2023,
+        "rating": 4.4,
+        "imdb": 6.7,
+        "duration": "2h 10min",
+        "comment": true,
+        "downloadas": "3",
+        "playas": "1",
+        "classification": "اكشن, مغامرة, كوميديا, خيال علمي",
+        "image": "https:\/\/app.arabypros.com\/uploads\/cache\/poster_thumb\/uploads\/jpg\/81b6e6773afb8d07942a05d3dcc1bcb1.jpg",
+        "cover": "https:\/\/app.arabypros.com\/uploads\/cache\/cover_thumb\/uploads\/jpg\/e75913cb22d563ce3fbbe9328adb4b40.jpg",
+        "genres": [
+            {
+                "id": 22,
+                "title": "أفلام أجنبية"
+            },
+            {
+                "id": 25,
+                "title": "الأفلام الأكثر مشاهدة"
+            }
+        ],
+        "trailer": {
+            "id": 1170250,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=AIc671o9yCI"
+        },
+        "sources": []
+    },
+    {
+        "id": 1659,
+        "title": "Batman Begins",
+        "label": null,
+        "sublabel": null,
+        "type": "movie",
+        "description": "(بروس واين) صاحب الملايين وصاحب شركات واين، توفي والداه منذ صغره في حادثة سرقة حدثت أمام عينه، مما دفعه لتنمية قدراته الجسمانية والعقلية واتخذ الوطواط شعارًا له ليحارب الجريمة.",
+        "year": 2005,
+        "rating": 4.6,
+        "imdb": 8.2,
+        "duration": "02:20:04",
+        "comment": true,
+        "downloadas": "3",
+        "playas": "1",
+        "classification": "اكشن, مغامرة",
+        "image": "https:\/\/app.arabypros.com\/uploads\/cache\/poster_thumb\/uploads\/jpg\/d42592bef46219a1f048f36b5d421aac.jpg",
+        "genres": [
+            {
+                "id": 22,
+                "title": "أفلام أجنبية"
+            }
+        ],
+        "trailer": {
+            "id": 17544,
+            "type": "youtube",
+            "url": "https:\/\/youtu.be\/neY2xVmOfUM"
+        },
+        "sources": []
+    },
+    {
+        "id": 2207,
+        "title": "Joker",
+        "label": null,
+        "sublabel": null,
+        "type": "movie",
+        "description": "رويدًا رويدًا، تتكاتف الضغوظ والظروف على فنان كوميدي فاشل حتى يصيبه الجنون ويتحول إلى مجرم وقاتل مهووس.",
+        "year": 2019,
+        "rating": 4.5,
+        "imdb": 8.7,
+        "duration": "02:01:50",
+        "comment": true,
+        "downloadas": "3",
+        "playas": "1",
+        "classification": "جريمة, دراما, اثارة",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/gZWl93sf8AxavYpVT1Un6EF3oCj.jpg",
+        "genres": [
+            {
+                "id": 22,
+                "title": "أفلام أجنبية"
+            },
+            {
+                "id": 25,
+                "title": "الأفلام الأكثر مشاهدة"
+            }
+        ],
+        "trailer": {
+            "id": 20630,
+            "type": "youtube",
+            "url": "https:\/\/youtu.be\/zAGVQLHvwOY"
+        },
+        "sources": []
+    },
+    {
+        "id": 19597,
+        "title": "Furiosa: A Mad Max Saga",
+        "label": "WEB-DL",
+        "sublabel": "1080p",
+        "type": "movie",
+        "description": "فيوريوسا: ملحمة ماد ماكس\r\nمع سقوط العالم، يتم اختطاف فيوريوسا الصغيرة وتقع في أيدي حشد كبير من راكبي الدراجات النارية بقيادة أمير الحرب ديمنتوس. ويجب على فيوريوسا أن تنجو من العديد من المصاعب وأن تجد طريقها إلى المنزل.",
+        "year": 2024,
+        "rating": 3.5,
+        "imdb": 8,
+        "duration": "2h 29min",
+        "comment": true,
+        "downloadas": "3",
+        "playas": "1",
+        "classification": "اكشن, مغامرة, خيال علمي",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/sln8KBlJDTE67sSpx7Aiswa5Lti.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/1sh2S5J7bTPu6LuOgS9gamkGs2J.jpg",
+        "genres": [
+            {
+                "id": 22,
+                "title": "أفلام أجنبية"
+            },
+            {
+                "id": 25,
+                "title": "الأفلام الأكثر مشاهدة"
+            }
+        ],
+        "trailer": {
+            "id": 2159850,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=XJMuhwVlca4"
+        },
+        "sources": []
+    },
+    {
+        "id": 18661,
+        "title": "Dune: Part Two",
+        "label": "WEB-DL",
+        "sublabel": "1080p",
+        "type": "movie",
+        "description": "كثيب: الجزء الثاني\r\nتابع الرحلة الأسطورية لبول أتريدس وهو يتحد مع تشاني وفريمن أثناء وجوده في طريق حربي للانتقام من المتآمرين الذين دمروا عائلته. في مواجهة الاختيار بين حب حياته ومصير الكون المعروف ، يسعى بولس إلى منع مستقبل رهيب لا يستطيع التنبؤ به سواه.",
+        "year": 2024,
+        "rating": 4.3,
+        "imdb": 9,
+        "duration": "2h 47min",
+        "comment": true,
+        "downloadas": "3",
+        "playas": "1",
+        "classification": "اكشن, مغامرة, خيال علمي, دراما",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/8b8R8l88Qje9dn9OE8PY05Nxl1X.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/qBQV4i2sjIydDJUKm7pwvpyfy5p.jpg",
+        "genres": [
+            {
+                "id": 22,
+                "title": "أفلام أجنبية"
+            },
+            {
+                "id": 25,
+                "title": "الأفلام الأكثر مشاهدة"
+            }
+        ],
+        "trailer": {
+            "id": 1926120,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=U2Qp5pL3ovA"
+        },
+        "sources": []
+    },
+    {
+        "id": 11331,
+        "title": "Gangs of London",
+        "label": "الموسم الثالث",
+        "sublabel": null,
+        "type": "serie",
+        "description": "عصابات لندن\r\nتحكي عن قصة الصراعات المضطربة التي تمر بها مدينة (لندن) بين العصابات الدولية الموجودة بها والتي أندلعت نتيجة أغتيال رئيس أكبر عائلة إجرامية بها",
+        "year": 2020,
+        "rating": 4.8,
+        "imdb": 8,
+        "duration": "45 min",
+        "comment": true,
+        "downloadas": "1",
+        "playas": "1",
+        "classification": "اكشن, جريمة, دراما",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/tcs6El8ZI1s9CUSHJcrGP6b01F9.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/dcj9fyx9wMU7HazAAxSAZ65s3Nj.jpg",
+        "genres": [
+            {
+                "id": 18,
+                "title": "مسلسلات أجنبية"
+            },
+            {
+                "id": 24,
+                "title": "جديد المسلسلات"
+            }
+        ],
+        "trailer": {
+            "id": 807320,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=HZOlutzNs1k"
+        },
+        "sources": []
+    },
+    {
+        "id": 19259,
+        "title": "Monkey Man",
+        "label": "WEB-DL",
+        "sublabel": "1080p",
+        "type": "movie",
+        "description": "الرجل القردينطلق شاب مجهول في رحلة من العنف والدموية؛ في سبيل الانتقام من النظام الذي تسبب في مقتل والدته ووضع الكثير من الفقراء والضعفاء في ظروف بالغة الصعوبة",
+        "year": 2024,
+        "rating": 4,
+        "imdb": 7.2,
+        "duration": "2h 1min",
+        "comment": true,
+        "downloadas": "3",
+        "playas": "1",
+        "classification": "اكشن, اثارة, جريمة",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/4lhR4L2vzzjl68P1zJyCH755Oz4.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/9NSXdVHeSfSHUv49OzLispFcpz1.jpg",
+        "genres": [
+            {
+                "id": 22,
+                "title": "أفلام أجنبية"
+            }
+        ],
+        "trailer": {
+            "id": 2083815,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=UB1-fUGkqE8"
+        },
+        "sources": []
+    },
+    {
+        "id": 1788,
+        "title": "Inception",
+        "label": null,
+        "sublabel": null,
+        "type": "movie",
+        "description": "كوب (ليوناردو دي كابريو) هو عميل من طراز خاص جدًا ومستوى رفيع للغاية، في الواقع هو متسلل أحلام! يقوم بتجنيده رجل أعمال فاحش الثراء يدعى (سايتو) كي يقوم بالتسلل إلى عقل أحد منافسيه يدعى (روبرت فيشر) بمساعدة جهاز خاص، بزرع فكرة داخل عقل الرجل تبدو وكأنها تأتي من داخله هو نفسه، وليست من الخارج. الفكرة هي أن يفكك الرجل شركات أبيه التي سيورثها عنه.",
+        "year": 2010,
+        "rating": 4.7,
+        "imdb": 8.8,
+        "duration": "02:28:09",
+        "comment": true,
+        "downloadas": "3",
+        "playas": "1",
+        "classification": "اكشن, خيال علمي, اثارة",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/oYuLEt3zVCKq57qu2F8dT7NIa6f.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/8ZTVqvKDQ8emSGUEMjsS4yHAwrp.jpg",
+        "genres": [
+            {
+                "id": 22,
+                "title": "أفلام أجنبية"
+            }
+        ],
+        "trailer": {
+            "id": 18212,
+            "type": "youtube",
+            "url": "https:\/\/youtu.be\/YoHD9XEInc0"
+        },
+        "sources": []
+    },
+    {
+        "id": 1677,
+        "title": "300",
+        "label": null,
+        "sublabel": null,
+        "type": "movie",
+        "description": "حكي الفيلم رواية معركة الثرموبايلي حيث قاد الملك الفارسي خشايارشا الأول أكثر من 100000 رجل، وواجه فيها 300 من المحاربين الإسبرطيين و 700 من الثرسبيايين.",
+        "year": 2006,
+        "rating": 4.6,
+        "imdb": 7.7,
+        "duration": "01:56:39",
+        "comment": true,
+        "downloadas": "3",
+        "playas": "1",
+        "classification": "اكشن, تاريخ, خيال",
+        "image": "https:\/\/app.arabypros.com\/uploads\/cache\/poster_thumb\/uploads\/jpg\/f8e086dbb2d13a8a4032968d8b17a01c.jpg",
+        "genres": [
+            {
+                "id": 22,
+                "title": "أفلام أجنبية"
+            }
+        ],
+        "trailer": {
+            "id": 17638,
+            "type": "youtube",
+            "url": "https:\/\/youtu.be\/ZJ6yq-oVKPc"
+        },
+        "sources": []
+    },
+    {
+      "id": 2163,
+      "title": "Aquaman",
+      "label": null,
+      "sublabel": null,
+      "type": "movie",
+      "description": "يُدرك (آرثر كاري) أنه وريث مملكة (أتلانتيس) تحت الماء، وعليه أن يرنو إلى قيادة شعبه ليصبح بطلهم الأول، ومن ثَم بطل العالم، فيدخل في معارك لا نهاية لها، حتى يتمكن من تحقيق ما خُلق له.",
+      "year": 2018,
+      "rating": 5,
+      "imdb": 7.2,
+      "duration": "02:23:22",
+      "comment": true,
+      "downloadas": "3",
+      "playas": "1",
+      "classification": "اكشن, مغامرة, خيال علمي",
+      "image": "https:\/\/app.arabypros.com\/uploads\/cache\/poster_thumb\/uploads\/jpg\/68f43fec6b2c20fbd81ab3098e4e01d0.jpg",
+      "genres": [
+          {
+              "id": 22,
+              "title": "أفلام أجنبية"
+          }
+      ],
+      "sources": []
+    },
+    {
+      "id": 18289,
+      "title": "Aquaman and the Lost Kingdom",
+      "label": "WEB-DL",
+      "sublabel": "1080p",
+      "type": "movie",
+      "description": "أكوامان والمملكة المفقودة\r\nعندما يتم إطلاق العنان لقوة قديمة ، يجب على أكوامان إقامة تحالف غير مستقر مع حليف غير متوقع لحماية أتلانتس والعالم من الدمار الذي لا رجعة فيه.",
+      "year": 2023,
+      "rating": 4.7,
+      "imdb": 6,
+      "duration": "2h 4min",
+      "comment": true,
+      "downloadas": "3",
+      "playas": "1",
+      "classification": "اكشن, مغامرة, خيال",
+      "image": "https:\/\/app.arabypros.com\/uploads\/cache\/poster_thumb\/uploads\/jpg\/jDIo7Y6JFpKmmRhxB3yXTRTrqXH.jpg",
+      "cover": "https:\/\/app.arabypros.com\/uploads\/cache\/cover_thumb\/uploads\/jpg\/jXJxMcVoEuXzym3vFnjqDW4ifo6.jpg",
+      "genres": [
+          {
+              "id": 22,
+              "title": "أفلام أجنبية"
+          },
+          {
+              "id": 25,
+              "title": "الأفلام الأكثر مشاهدة"
+          }
+      ],
+      "trailer": {
+          "id": 1848466,
+          "type": "youtube",
+          "url": "https:\/\/www.youtube.com\/watch?v=FV3bqvOHRQo"
+      },
+      "sources": []
+    },
+    {
+        "id": 5603,
+        "title": "The White Lotus",
+        "label": "الموسم الثالث",
+        "sublabel": "ح 8",
+        "type": "serie",
+        "description": "اللوتس الأبيض\r\nحول مجموعة من الأثرياء يقضون إجازتهم في منتجع استوائي لكن مع مرور الوقت يبدو أن الصورة المثالية التي يحاول رسمها هؤلاء الأثرياء تصبح أكثر سوداوية\r\n-\r\nفي الموسم الثالث، يعود العمل بسلسلة من الأحداث الغير متوقعة والتي تُكشف عن العديد من أسرار شخصيات المنتجع السياحي.",
+        "year": 2021,
+        "rating": 3.7,
+        "imdb": 8,
+        "duration": "60 min",
+        "comment": true,
+        "downloadas": "3",
+        "playas": "1",
+        "classification": "كوميديا, دراما",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/jNFcfgLFPhCZdhUUmwjHvq6TLxh.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/rCTLaPwuApDx8vLGjYZ9pRl7zRB.jpg",
+        "genres": [
+            {
+                "id": 18,
+                "title": "مسلسلات أجنبية"
+            },
+            {
+                "id": 24,
+                "title": "جديد المسلسلات"
+            }
+        ],
+        "trailer": {
+            "id": 152823,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=TGLq7_MonZ4"
+        },
+        "sources": []
+    },
+    {
+      "id": 1856,
+      "title": "The Hobbit 3: The Battle of the Five Armies",
+      "label": null,
+      "sublabel": null,
+      "type": "movie",
+      "description": "يسعى الأقزام الثلاثة عشر بقيادة المحارب الأسطوري (ثورين أوكنشيلد) إلى استعادة المملكة المسلوبة، وذلك بعد أن آلت رحلتهم السابقة إلى الفشل، وتسببوا في إيقاظ التنين (سموج). ترى هل سيتمكنوا من ذلك رغم رحلتهم المكتظة بالأحداث، واستعداد الأورك واﻷقزام، والجن لمعركة الجيوش الخمسة؟",
+      "year": 2014,
+      "rating": 4.6,
+      "imdb": 7.4,
+      "duration": "02:44:04",
+      "comment": true,
+      "downloadas": "3",
+      "playas": "1",
+      "classification": "مغامرة, خيال",
+      "image": "https:\/\/app.arabypros.com\/uploads\/cache\/poster_thumb\/uploads\/jpg\/aa203a484c3ba9ba3e7f16bba2f4f532.jpg",
+      "genres": [
+          {
+              "id": 22,
+              "title": "أفلام أجنبية"
+          }
+      ],
+      "trailer": {
+          "id": 18801,
+          "type": "youtube",
+          "url": "https:\/\/youtu.be\/DaGGZ7bBkYI"
+      },
+      "sources": []
+    },
+    {
+      "id": 1855,
+      "title": "The Hobbit 2: The Desolation of Smaug",
+      "label": null,
+      "sublabel": null,
+      "type": "movie",
+      "description": "يستكمل بيلبو باجينز رحلته الملحمية إلى الجبل مصحوبًا بـ 13 قزمًا يقودهم ثورين أوكينشيلد وجاندالف الرمادي، لاستعادة مملكة الأقزام المفقودة إيريبور. بعد نجاتهم. في بداية رحلتهم غير المتوقعة يواصل شركاء الرحلة التقدم إلى الشرق، ويواجهون على طول الطريق الكثير من الأعداء في غابة ميركوود الغادرة. وبعد الهروب من قبضة جن الغابة الخطيرين، يبدأ الأقزام رحلتهم إلى ليك تاون، وأخيرًا إلى جبل الوحيد نفسه، حيث يواجهون التنين الأخير في الأرض الوسطى سموج، المخلوق الأكثر إرعابًا من أي شيءٍ آخر، والذي لن يختبر فقط مدى شجاعتهم، ولكن عمق الصداقة بينهم أيضًا.",
+      "year": 2013,
+      "rating": 5,
+      "imdb": 7.8,
+      "duration": "02:41:19",
+      "comment": true,
+      "downloadas": "3",
+      "playas": "1",
+      "classification": "مغامرة, خيال",
+      "image": "https:\/\/app.arabypros.com\/uploads\/cache\/poster_thumb\/uploads\/jpg\/b0aa8328505876988be1cec337740c8a.jpg",
+      "genres": [
+          {
+              "id": 22,
+              "title": "أفلام أجنبية"
+          }
+      ],
+      "trailer": {
+          "id": 18796,
+          "type": "youtube",
+          "url": "https:\/\/youtu.be\/UHqzmuIcttI"
+      },
+      "sources": []
+    },
+    {
+      "id": 1854,
+      "title": "The Hobbit 1: An Unexpected Journey",
+      "label": null,
+      "sublabel": null,
+      "type": "movie",
+      "description": "في عالم اﻷرض الوسطى، يروي الفيلم قصة الهوبيت (بيلبو باجنز) الذي يجد نفسه دون حسابات جزء من مغامرة كبرى مع الساحر (جاندالف) وثلاثة عشر قزمًا يقودهم (ثورين أوكنشيلد)، وذلك بهدف استعادة مملكة اﻷقزام المفقودة التي يحرسها التنين (سموج)، والحصول على الكنز الدفين الكامن في قلبها.",
+      "year": 2012,
+      "rating": 4.6,
+      "imdb": 7.9,
+      "duration": "02:49:38",
+      "comment": true,
+      "downloadas": "3",
+      "playas": "1",
+      "classification": "مغامرة, خيال",
+      "image": "https:\/\/app.arabypros.com\/uploads\/cache\/poster_thumb\/uploads\/jpg\/a338e6c6ffed6bb1c8cec6af6d29f0fb.jpg",
+      "genres": [
+          {
+              "id": 22,
+              "title": "أفلام أجنبية"
+          }
+      ],
+      "trailer": {
+          "id": 18792,
+          "type": "youtube",
+          "url": "https:\/\/youtu.be\/eI3f4b-b8ig"
+      },
+      "sources": []
+    },
+    {
+        "id": 1847,
+        "title": "The Dark Knight Rises",
+        "label": null,
+        "sublabel": null,
+        "type": "movie",
+        "description": "ثمان سنواتٍ مضت تحمْل فيها باتمان (كريستيان بال) مسئولية موت هارفي دنت حتى أنه عاش في ظلامٍ حالكٍ لفترةٍ طويلةٍ نتيجة ذلك. يعود باتمان مرةً أخرى عندما يهدد الشرير المقنع باين (توم هاردي) مدينة جوثام ويقودها نحو الهاوية؛ فيحاول باتمان إنقاذ المدينة وسكان المدينة من هذه العقلية الإجرامية. حيث إن باين ما هو إلا قائدٌ إرهابيٌ يقود مدينة جوثام للهلاك. في جوٍ مليءٍ بالتشويق والإثارة تدور معاركٌ حامية بين باتمان وباين وتتعقد الأحداث لتصل لمدى لا يتخيله أحد.",
+        "year": 2012,
+        "rating": 4.3,
+        "imdb": 8.4,
+        "duration": "02:44:33",
+        "comment": true,
+        "downloadas": "3",
+        "playas": "1",
+        "classification": "اكشن, جريمة, اثارة",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/hr0L2aueqlP2BYUblTTjmtn0hw4.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/y2DB71C4nyIdMrANijz8mzvQtk6.jpg",
+        "genres": [
+            {
+                "id": 22,
+                "title": "أفلام أجنبية"
+            }
+        ],
+        "trailer": {
+            "id": 18755,
+            "type": "youtube",
+            "url": "https:\/\/youtu.be\/GokKUqLcvD8"
+        },
+        "sources": []
+    },
+    {
+        "id": 19339,
+        "title": "The Fall Guy",
+        "label": "WEB-DL",
+        "sublabel": "1080p",
+        "type": "movie",
+        "description": "كبش الفداء\r\nبعد اعتزاله وابتعاده عن الساحة الفنية لظروف صحية، يقرر مؤدي المشاهد الخطيرة (كولت سيفرز) العودة إلى مجال الفن عبر بوابة فيلم ضخم الإنتاج تُخرجه حبيبته السابقة.",
+        "year": 2024,
+        "rating": 4.1,
+        "imdb": 7.3,
+        "duration": "2h 6min",
+        "comment": true,
+        "downloadas": "3",
+        "playas": "1",
+        "classification": "اكشن, مغامرة, كوميديا",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/tSz1qsmSJon0rqjHBxXZmrotuse.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/2rjI2uXmjitMAaXVO21r9ao7v2j.jpg",
+        "genres": [
+            {
+                "id": 22,
+                "title": "أفلام أجنبية"
+            },
+            {
+                "id": 25,
+                "title": "الأفلام الأكثر مشاهدة"
+            }
+        ],
+        "trailer": {
+            "id": 2097139,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=j7jPnwVGdZ8"
+        },
+        "sources": []
+    },
+    {
+        "id": 2014,
+        "title": "Suicide Squad",
+        "label": null,
+        "sublabel": null,
+        "type": "movie",
+        "description": "تدور أحداث الفيلم حول مجموعة من المساجين الأكثر شرًا على الأرض ويعرفهم الجميع باسم (الفرقة الانتحارية)، والذين ينجحون في عقد اتفاق مع وكالة حكومية فاسدة من أجل تنفيذ مهام شديدة الخطورة، ومقابل ذلك سيحصل جميع أفراد (الفرقة الانتحارية) على الأمان والحماية بالسجن، فضلًا عن بعض المزايا الأخرى.",
+        "year": 2016,
+        "rating": 4.5,
+        "imdb": 6.1,
+        "duration": "02:14:33",
+        "comment": true,
+        "downloadas": "3",
+        "playas": "1",
+        "classification": "اكشن, خيال",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/2eeRDA8MICo82yYrejoxiNA6Kph.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/wAk0yKrhAmvsoMvlKs4QImhvK5X.jpg",
+        "genres": [
+            {
+                "id": 22,
+                "title": "أفلام أجنبية"
+            }
+        ],
+        "trailer": {
+            "id": 19696,
+            "type": "youtube",
+            "url": "https:\/\/youtu.be\/mMb-RrhTxIE"
+        },
+        "sources": []
+    },
+    {
+        "id": 7424,
+        "title": "And Just Like That…",
+        "label": "الموسم الثالث",
+        "sublabel": "ح 8",
+        "type": "serie",
+        "description": "تدور الاحداث حول كاري وميراندا وشارلوت وهم يتنقلون في الرحلة من الواقع المعقد للحياة والصداقة في الثلاثينيات من العمر إلى الواقع الأكثر تعقيدًا للحياة والصداقة في الخمسينيات من العمر.",
+        "year": 2021,
+        "rating": 0,
+        "imdb": 5.7,
+        "duration": "35 min",
+        "comment": true,
+        "downloadas": "3",
+        "playas": "1",
+        "classification": "كوميديا, دراما, رومانسي",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/2b6E0pN19IGsmxSv6HyTKydKKdb.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/sHvTsXSWxuW7hoXAqWM4lBLJI50.jpg",
+        "genres": [
+            {
+                "id": 18,
+                "title": "مسلسلات أجنبية"
+            },
+            {
+                "id": 24,
+                "title": "جديد المسلسلات"
+            }
+        ],
+        "trailer": {
+            "id": 229660,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=Cy8Zz7Q56dY"
+        },
+        "sources": []
+    },
+    {
+        "id": 3549,
+        "title": "Euphoria",
+        "label": null,
+        "sublabel": null,
+        "type": "serie",
+        "description": "مجموعة من تلاميذ مدرسة ثانوية، يتفقدون حياة الحب والصداقة في عالم المخدرات، الجنس، الصدمة ووسائل التواصل الاجتماعي.",
+        "year": 2019,
+        "rating": 3.8,
+        "imdb": 8.4,
+        "duration": "60 min",
+        "comment": true,
+        "downloadas": null,
+        "playas": null,
+        "classification": "دراما",
+        "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/3Q0hd3heuWwDWpwcDkhQOA6TYWI.jpg",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/9KnIzPCv9XpWA0MqmwiKBZvV1Sj.jpg",
+        "genres": [
+            {
+                "id": 18,
+                "title": "مسلسلات أجنبية"
+            }
+        ],
+        "trailer": {
+            "id": 68587,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=iEcVVYaLRJQ"
+        },
+        "sources": []
+    },
+      {
+          "id": 20770,
+          "title": "The Penguin",
+          "label": null,
+          "sublabel": "ح 8",
+          "type": "serie",
+          "description": "البطريق\r\nيتبع العمل قصة أوزوالد كوبلبوت، ورحلة صعوده إلى واحد من أشهر المجرمين ورجال العصابات في مدينة جوثام.",
+          "year": 2024,
+          "rating": 4.5,
+          "imdb": 8.8,
+          "duration": "60 min",
+          "comment": true,
+          "downloadas": "1",
+          "playas": "1",
+          "classification": "دراما, جريمة, خيال",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/vOWcqC4oDQws1doDWLO7d3dh5qc.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/VSRmtRlYgd0pBISf7d34TAwWgB.jpg",
+          "genres": [
+              {
+                  "id": 18,
+                  "title": "مسلسلات أجنبية"
+              },
+              {
+                  "id": 24,
+                  "title": "جديد المسلسلات"
+              }
+          ],
+          "trailer": {
+              "id": 2400339,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=sfJG6IiA_s8"
+          },
+          "sources": []
+      },
+      {
+          "id": 5407,
+          "title": "Mare of Easttown",
+          "label": null,
+          "sublabel": null,
+          "type": "serie",
+          "description": "تتولى محققة مهمة البحث عن الحقيقة في بلد صغيرة ببنسلفانيا وقعت بها جريمة قتل غامضة، بينما تحاول على صعيد آخر الحفاظ على حياتها الشخصية من الانهيار.",
+          "year": 2021,
+          "rating": 3.3,
+          "imdb": 8.5,
+          "duration": "60 min",
+          "comment": true,
+          "downloadas": "3",
+          "playas": "1",
+          "classification": "دراما, جريمة, غموض",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/78aK4Msbr22A5PGa6PZV0pAvdwf.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/7X1IGIl1JMJ9YFzJymCVoqZbvTR.jpg",
+          "genres": [
+              {
+                  "id": 18,
+                  "title": "مسلسلات أجنبية"
+              }
+          ],
+          "trailer": {
+              "id": 146749,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=bm7RmpzCeyk"
+          },
+          "sources": []
+      }
+    
+  ],
+  "hulu": [],
+  "prime": []
+}
