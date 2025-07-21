@@ -79,6 +79,22 @@ body {
     text-decoration: none;
     transition: background 0.3s ease;
 }
+    .pagination span {
+        display: inline-block;
+        margin: 0 6px;
+        padding: 8px 14px;
+        background: #fff;
+        color: #000;
+        border-radius: 6px;
+        font-weight: bold;
+    }
+
+    .pagination span.dots {
+        background: transparent;
+        color: #999;
+        padding: 8px 10px;
+    }
+
 
 
 
@@ -143,13 +159,51 @@ body {
 
 <?php if ($totalPages > 1): ?>
 <div class="pagination">
-    <?php for ($i = 1; $i <= $totalPages; $i++): ?>
-        <a href="?platform=<?= urlencode($platform) ?>&page=<?= $i ?>" class="<?= $i === $page ? 'active' : '' ?>">
-           <?= $i ?>
-        </a>
-    <?php endfor; ?>
+    <?php if ($page > 1): ?>
+        <a href="?platform=<?= urlencode($platform) ?>&page=<?= $page - 1 ?>">⬅️ السابق</a>
+    <?php endif; ?>
+
+    <?php
+    $range = 2;  // عدد الصفحات قبل وبعد الحالية
+    $start = max(2, $page - $range);
+    $end = min($totalPages - 1, $page + $range);
+
+    // أول صفحة
+    if ($page !== 1) {
+        echo '<a href="?platform=' . urlencode($platform) . '&page=1">1</a>';
+    }
+
+    // نقاط قبل
+    if ($start > 2) {
+        echo '<span style="padding:0 5px;">...</span>';
+    }
+
+    // الصفحات بين
+    for ($i = $start; $i <= $end; $i++) {
+        if ($i == $page) {
+            echo '<span style="background:#fff;color:#000;padding:8px 14px;border-radius:6px;">' . $i . '</span>';
+        } else {
+            echo '<a href="?platform=' . urlencode($platform) . '&page=' . $i . '">' . $i . '</a>';
+        }
+    }
+
+    // نقاط بعد
+    if ($end < $totalPages - 1) {
+        echo '<span style="padding:0 5px;">...</span>';
+    }
+
+    // آخر صفحة
+    if ($page !== $totalPages) {
+        echo '<a href="?platform=' . urlencode($platform) . '&page=' . $totalPages . '">' . $totalPages . '</a>';
+    }
+    ?>
+
+    <?php if ($page < $totalPages): ?>
+        <a href="?platform=<?= urlencode($platform) ?>&page=<?= $page + 1 ?>">التالي ➡️</a>
+    <?php endif; ?>
 </div>
 <?php endif; ?>
+
 
 <?php include 'includes/footer.php'; ?>
 
