@@ -6,33 +6,46 @@ $platform = $_GET['platform'] ?? 'netflix';
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $perPage = 12;
 
-$sourceFile = "browser.json";
+$sourceFiles = ["includes/sourse/browser.json", "includes/sourse/browser1.json"];  // ملفات المصدر
 $cacheDir = "cache";
 $cacheFile = "{$cacheDir}/{$platform}_page_{$page}.json";
 $cacheMeta = "{$cacheDir}/{$platform}_pages.txt";
 
 if (!file_exists($cacheDir)) mkdir($cacheDir, 0777, true);
 
-if (file_exists($cacheFile) && filemtime($cacheFile) >= filemtime($sourceFile)) {
+if (file_exists($cacheFile) && 
+    filemtime($cacheFile) >= max(array_map('filemtime', $sourceFiles))) {
+
     $showsPage = json_decode(file_get_contents($cacheFile), true);
     $totalPages = (int)file_get_contents($cacheMeta);
-} else {
-    $data = json_decode(file_get_contents($sourceFile), true);
-    $shows = $data[$platform] ?? [];
 
-    $totalShows = count($shows);
+} else {
+    $allShows = [];
+
+    // قراءة ودمج البيانات من الملفين
+    foreach ($sourceFiles as $file) {
+        if (file_exists($file)) {
+            $data = json_decode(file_get_contents($file), true);
+            if (isset($data[$platform]) && is_array($data[$platform])) {
+                $allShows = array_merge($allShows, $data[$platform]);
+            }
+        }
+    }
+
+    $totalShows = count($allShows);
     $totalPages = max(1, ceil($totalShows / $perPage));
 
     if ($page < 1) $page = 1;
     if ($page > $totalPages) $page = $totalPages;
 
     $start = ($page - 1) * $perPage;
-    $showsPage = array_slice($shows, $start, $perPage);
+    $showsPage = array_slice($allShows, $start, $perPage);
 
     file_put_contents($cacheFile, json_encode($showsPage, JSON_UNESCAPED_UNICODE));
     file_put_contents($cacheMeta, $totalPages);
 }
 ?>
+
 
 <style>
 body {
@@ -138,6 +151,7 @@ body {
 <div class="category-container">
   <a href="?platform=netflix&page=1" class="category-card <?= $platform === 'netflix' ? 'active' : '' ?>" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGhnm_NIUms1oIl6QLrxjZzws8wLW_MVPOyw&s');" title="Netflix"></a>
   <a href="?platform=shahid&page=1" class="category-card <?= $platform === 'shahid' ? 'active' : '' ?>" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlwV1US7Ou5Sa4bd8ALXdp1QVcpQV9rPRr_A&s');" title="Shahid"></a>
+      <a href="?platform=osn&page=1" class="category-card <?= $platform === 'shahid' ? 'active' : '' ?>" style="background-image: url('https://play-lh.googleusercontent.com/1O4pKO7UZtF4lL61zgTeA9aoao3TRCZMgerHrvI-k0DNMvnL2-QQX63l_h2E_ayHvtU');" title="osn"></a>
   <a href="?platform=kids&page=1" class="category-card <?= $platform === 'kids' ? 'active' : '' ?>" style="background-image: url('https://i.pinimg.com/736x/e6/84/49/e68449b851a8ffb8256a71daab209775.jpg');" title="Kids"></a>
 </div>
 
