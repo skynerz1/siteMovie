@@ -40,6 +40,7 @@ $genresList = [
         'أفلام أجنبية' => 'أفلام أجنبية',
         'أفلام عربية' => 'أفلام عربية',
         'أفلام آسيوية' => 'أفلام آسيوية',
+    'أفلام هندية' => 'أفلام هندية',
     ]
 ];
 
@@ -201,20 +202,49 @@ if (!($type === 'ramadan' && $category === 'series')) {
 
     <div class="categories">
         <strong>التصنيف:</strong>
-        <a href="?category=series&type=<?= $type ?>" class="<?= $category === 'series' ? 'active' : '' ?>">📺 مسلسلات</a>
-        <a href="?category=movies&type=<?= $type ?>" class="<?= $category === 'movies' ? 'active' : '' ?>">🎥 أفلام</a>
+        <a href="?category=series&type=<?= $type ?>" class="<?= $category === 'series' ? 'active' : '' ?>">
+            <i class="fas fa-tv"></i> مسلسلات
+        </a>
+
+        <a href="?category=movies&type=<?= $type ?>" class="<?= $category === 'movies' ? 'active' : '' ?>">
+            <i class="fas fa-film"></i> أفلام
+        </a>
+
     </div>
 
     <div class="filters">
         <strong>فرز حسب:</strong>
-        <a href="?category=<?= $category ?>&type=created" class="<?= $type === 'created' ? 'active' : '' ?>">🆕 الأحدث</a>
-        <a href="?category=<?= $category ?>&type=rating" class="<?= $type === 'rating' ? 'active' : '' ?>">⭐ الأعلى تقييماً</a>
-        <a href="?category=<?= $category ?>&type=views" class="<?= $type === 'views' ? 'active' : '' ?>">🔥 الأكثر مشاهدة</a>
-        <a href="?category=<?= $category ?>&type=year" class="<?= $type === 'year' ? 'active' : '' ?>">📅 الأحدث سنة</a>
+        <a href="?category=<?= $category ?>&type=created" class="<?= $type === 'created' ? 'active' : '' ?>">
+            <i class="fa-solid fa-calendar" style="color: aqua;"></i> الأحدث
+        </a>
+
+
+        <a href="?category=<?= $category ?>&type=rating" class="<?= $type === 'rating' ? 'active' : '' ?>">
+            <i class="fa-solid fa-star" style="color: gold;"></i> الأعلى تقييماً
+        </a>
+
+        <a href="?category=<?= $category ?>&type=views" class="<?= $type === 'views' ? 'active' : '' ?>">
+            <img src="https://em-content.zobj.net/source/animated-noto-color-emoji/356/fire_1f525.gif" alt="الأكثر مشاهدة" style="width: 20px; vertical-align: middle; margin-right: 5px;">
+            الأكثر مشاهدة
+        </a>
+
+        <a href="?category=<?= $category ?>&type=year" class="<?= $type === 'year' ? 'active' : '' ?>">
+            <i class="fa-solid fa-calendar-days gradient-icon"></i> الأحدث سنة
+        </a>
+
+
         <?php if ($category === 'series'): ?>
-            <a href="?category=series&type=ramadan&ramadan_year=2025" class="<?= $type === 'ramadan' ? 'active' : '' ?>">🌙 رمضان</a>
+            <a href="?category=series&type=ramadan&ramadan_year=2025" class="<?= $type === 'ramadan' ? 'active' : '' ?>">
+                <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f31c/512.webp" alt="🌙" style="width: 18px; vertical-align: middle; margin-right: 5px;">
+                رمضان
+            </a>
         <?php endif; ?>
-        <a href="?category=<?= $category ?>&type=<?= $type ?>&page=<?= $page ?>&refresh=1">🔄 تحديث</a>
+
+        <a href="?category=<?= $category ?>&type=<?= $type ?>&page=<?= $page ?>&refresh=1">
+          <i class="fa-solid fa-rotate-right icon-bg"></i> تحديث
+        </a>
+
+
     </div>
 
     <?php if (!($type === 'ramadan' && $category === 'series')): ?>
@@ -338,6 +368,22 @@ function applyFilters() {
 
 
 <style>
+
+    .gradient-icon {
+        background: linear-gradient(to bottom, #00ffff 50%, #ffffff 50%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .icon-bg {
+      background-color: #00d5ff;
+      color: white;
+      padding: 6px;
+      border-radius: 50%; /* يخليها دائرية */
+      margin-right: 5px;
+    }
+
+
+    
 .sort-buttons a {
     display: inline-block;
     padding: 6px 12px;
