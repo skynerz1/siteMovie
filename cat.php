@@ -172,16 +172,19 @@ if ($type === 'ramadan' && $category === 'series') {
 
        
     }
-// تفعيل التقسيم الداخلي داخل البلوك
-$pageInBlock = max(1, (int)($_GET['page_in_block'] ?? 1));
-$itemsPerPage = 18;
+if (!($type === 'ramadan' && $category === 'series')) {
+    // تفعيل التقسيم الداخلي داخل البلوك
+    $pageInBlock = max(1, (int)($_GET['page_in_block'] ?? 1));
+    $itemsPerPage = 18;
 
-$totalItems = count($items);
-$totalPagesInBlock = ceil($totalItems / $itemsPerPage);
+    $totalItems = count($items);
+    $totalPagesInBlock = ceil($totalItems / $itemsPerPage);
 
-// قص النتائج حسب الصفحة الحالية داخل البلوك
-$startIndex = ($pageInBlock - 1) * $itemsPerPage;
-$items = array_slice($items, $startIndex, $itemsPerPage);
+    // قص النتائج حسب الصفحة الحالية داخل البلوك
+    $startIndex = ($pageInBlock - 1) * $itemsPerPage;
+    $items = array_slice($items, $startIndex, $itemsPerPage);
+}
+
 
 
 ?>
