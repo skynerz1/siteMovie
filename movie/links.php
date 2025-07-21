@@ -3,12 +3,18 @@ include '../load.php';
 include '../includes/header.php';
     function getMovieDetails($movieId) {
         // 1) أساسي: browser.json → netflix / shahid / kids
-        $browserFile = '../browser.json';
-        if (file_exists($browserFile)) {
+        $browserFiles = [
+            '../includes/sourse/browser.json',
+            '../includes/sourse/browser1.json'
+        ];
+
+        foreach ($browserFiles as $browserFile) {
+            if (!file_exists($browserFile)) continue;
+
             $content = file_get_contents($browserFile);
             $data = json_decode($content, true);
             if (json_last_error() === JSON_ERROR_NONE) {
-                foreach (['netflix', 'shahid', 'kids'] as $source) {
+                foreach (['netflix', 'shahid', 'kids', 'osn'] as $source) {
                     if (isset($data[$source]) && is_array($data[$source])) {
                         foreach ($data[$source] as $item) {
                             if (isset($item['id']) && $item['id'] == $movieId) {
@@ -20,8 +26,9 @@ include '../includes/header.php';
             }
         }
 
+
         // 2) ثانوي: ملفات ثابتة (search_results.json و save.json)
-        $files = ['search_results.json', '../save.json', '../search_results.json', '../includes/sourse/browser1.json', '../includes/sourse/browser.json'];
+        $files = ['search_results.json', '../save.json', '../search_results.json'];
         foreach ($files as $filename) {
             if (!file_exists($filename)) continue;
 
