@@ -405,7 +405,7 @@ $playerUrl = "https://dfkz.up.railway.app/api-live.php?ch=" . intval($channelId)
                       <img src="https://shahid.mbc.net/mediaObject/a7dcf0c9-1178-4cb9-a490-a8313975e37c?height=129&width=230&croppingPoint=&version=1&type=avif" alt="MBC 1" />
                       <span class="channel-name">MBC 1</span>
                     </a>
-    <a href="server-live.php?id=1" class="channel-item">
+    <a href="server-live.php?id=24" class="channel-item">
       <img src="https://shahid.mbc.net/mediaObject/4bac4257-39fa-4e00-b91e-befdcff0091a?height=129&width=230&croppingPoint=&version=1&type=avif%22%20alt=%22MBC%202" />
       <span class="channel-name">MBC DRAMA</span>
     </a>
