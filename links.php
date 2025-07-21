@@ -137,16 +137,15 @@
         return ($httpCode >= 200 && $httpCode < 400);
     }
 
-$aliveServers = [];
+$initialServer = '';
 
 foreach ($episodeLinks as $link) {
     if (!empty($link['url']) && isServerAlive($link['url'])) {
-        $aliveServers[] = $link;
+        $initialServer = $link['url'];
+        break; // أول سيرفر شغال، نوقف
     }
 }
 
-$episodeLinks = $aliveServers; // حدث المصفوفة نفسها
-$initialServer = $episodeLinks[0]['url'] ?? '';
 
 
 
