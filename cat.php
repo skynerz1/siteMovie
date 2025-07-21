@@ -5,7 +5,7 @@ include 'includes/header.php';
 $category = $_GET['category'] ?? 'series';
 $type = $_GET['type'] ?? 'created';
 $subtype = $_GET['subtype'] ?? 'all';
-$page = $_GET['page'] ?? 1;
+$page = max(1, (int)($_GET['page'] ?? 1));  // تأكد أن الصفحة عدد صحيح ≥ 1
 $ramadanYear = $_GET['ramadan_year'] ?? '2025';
 
 $selectedClassification = $_GET['classification'] ?? 'all';
@@ -21,7 +21,7 @@ if (!is_dir($cacheDir)) {
     mkdir($cacheDir, 0755, true);
 }
 
-// تعاريف التصنيفات والأنواع حسب الفئة
+// تعريفات التصنيفات والأنواع حسب الفئة
 $classificationsList = [
     'series' => ['all', 'دراما', 'اثارة', 'جريمة', 'غموض', 'اكشن'],
     'movies' => ['all', 'رعب', 'مغامرة', 'رومانسي', 'دراما', 'علمي', 'خيال', 'كوميديا', 'غموض', 'اثارة']
@@ -43,12 +43,45 @@ $genresList = [
     ]
 ];
 
-// ---------------------
-// جلب البيانات وترشيحها حسب النوع والتصنيف مع دعم 10 صفحات
-// ---------------------
+// دالة مساعدة لجلب البيانات من API مع التخزين المؤقت
+function fetchDataWithCache($url, $cacheFile) {
+    if (!file_exists($cacheFile) || isset($_GET['refresh'])) {
+        $headers = ["User-Agent: okhttp/4.8.0", "Accept-Encoding: gzip"];
+        $ch = curl_init($url);
+        curl_setopt_array($ch, [
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_HTTPHEADER => $headers,
+            CURLOPT_SSL_VERIFYPEER => false,
+            CURLOPT_ENCODING => 'gzip'
+        ]);
+        $response = curl_exec($ch);
+        curl_close($ch);
+        if ($response) {
+            file_put_contents($cacheFile, $response);
+        } else {
+            echo "<div style='color: red;'>❌ فشل في جلب البيانات من API.</div>";
+            return null;
+        }
+    }
+    return json_decode(file_get_contents($cacheFile), true);
+}
 
+// دوال الفلترة الخاصة برمضان
+function filterByClassificationKeywords($items, $keywords) {
+    return array_filter($items, function($item) use ($keywords) {
+        if (empty($item['classification'])) return false;
+        $classification = mb_strtolower(trim($item['classification']));
+        foreach ($keywords as $word) {
+            if (mb_strpos($classification, mb_strtolower($word)) !== false) {
+                return true;
+            }
+        }
+        return false;
+    });
+}
+
+// حالة النوع رمضاني
 if ($type === 'ramadan' && $category === 'series') {
-    // Ramadan section stays the same
     $jsonFile = "{$cacheDir}/{$category}-ramadan-{$ramadanYear}.json";
 
     if (!file_exists($jsonFile) || isset($_GET['refresh'])) {
@@ -56,149 +89,81 @@ if ($type === 'ramadan' && $category === 'series') {
 
         for ($p = 1; $p <= 30; $p++) {
             $apiUrl = "https://app.arabypros.com/api/serie/by/filtres/0/year/{$p}/{$KEY1}/{$KEY2}/";
-            $headers = ["User-Agent: okhttp/4.8.0", "Accept-Encoding: gzip"];
+            $data = fetchDataWithCache($apiUrl, "{$cacheDir}/temp_{$p}.json");
+            if (!$data) continue;
 
-            $ch = curl_init($apiUrl);
-            curl_setopt_array($ch, [
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_HTTPHEADER => $headers,
-                CURLOPT_SSL_VERIFYPEER => false,
-                CURLOPT_ENCODING => 'gzip'
-            ]);
-
-            $response = curl_exec($ch);
-            curl_close($ch);
-
-            if ($response) {
-                $data = json_decode($response, true);
-                $pageItems = isset($data[0]['id']) ? $data : ($data['posters'] ?? []);
-                foreach ($pageItems as $item) {
-                    $hasRamadanGenre = false;
-                    if (isset($item['genres']) && is_array($item['genres'])) {
-                        foreach ($item['genres'] as $g) {
-                            if (isset($g['title']) && trim($g['title']) === "مسلسلات رمضان {$ramadanYear}") {
-                                $hasRamadanGenre = true;
-                                break;
-                            }
+            $pageItems = isset($data[0]['id']) ? $data : ($data['posters'] ?? []);
+            foreach ($pageItems as $item) {
+                if (!empty($item['genres']) && is_array($item['genres'])) {
+                    foreach ($item['genres'] as $g) {
+                        if (isset($g['title']) && trim($g['title']) === "مسلسلات رمضان {$ramadanYear}") {
+                            $allItems[] = $item;
+                            break;
                         }
-                    }
-                    if ($hasRamadanGenre) {
-                        $allItems[] = $item;
                     }
                 }
             }
         }
 
         file_put_contents($jsonFile, json_encode($allItems, JSON_UNESCAPED_UNICODE));
+        // حذف الملفات المؤقتة
+        for ($p = 1; $p <= 30; $p++) {
+            @unlink("{$cacheDir}/temp_{$p}.json");
+        }
     }
 
     if (file_exists($jsonFile)) {
         $items = json_decode(file_get_contents($jsonFile), true);
     }
 
-    // Filters subtype as before
-    function filterRamadanKhaleeji($items) {
-        $khaleeji = ['السعودية', 'الامارات', 'الكويت'];
-        return array_filter($items, function($item) use ($khaleeji) {
-            if (empty($item['classification'])) return false;
-            $classification = mb_strtolower(trim($item['classification']));
-            foreach ($khaleeji as $country) {
-                if (mb_strpos($classification, mb_strtolower($country)) !== false) {
-                    return true;
-                }
-            }
-            return false;
-        });
-    }
-
-    function filterRamadanAraby($items) {
-        $araby = ['مصر', 'سوريا', 'العراق', 'تونس'];
-        return array_filter($items, function($item) use ($araby) {
-            if (empty($item['classification'])) return false;
-            $classification = mb_strtolower(trim($item['classification']));
-            foreach ($araby as $country) {
-                if (mb_strpos($classification, mb_strtolower($country)) !== false) {
-                    return true;
-                }
-            }
-            return false;
-        });
-    }
-
     if ($subtype === 'khaleeji') {
-        $items = filterRamadanKhaleeji($items);
+        $items = filterByClassificationKeywords($items, ['السعودية', 'الامارات', 'الكويت']);
     } elseif ($subtype === 'araby') {
-        $items = filterRamadanAraby($items);
+        $items = filterByClassificationKeywords($items, ['مصر', 'سوريا', 'العراق', 'تونس']);
     }
 
+// حالة الأنواع الأخرى (غير رمضاني)
 } else {
-    // For other types (not ramadan)
+    // جلب صفحة واحدة فقط حسب $page
+    $jsonFile = "{$cacheDir}/{$category}-{$type}-page{$page}.json";
 
-    // لجلب بيانات من 10 صفحات عند وجود فلتر genre أو classification != all
-    $allItems = [];
-    $maxPages = 10;
+    $apiUrl = $category === 'series' 
+        ? "https://app.arabypros.com/api/serie/by/filtres/0/{$type}/{$page}/{$KEY1}/{$KEY2}/"
+        : "https://app.arabypros.com/api/movie/by/filtres/0/{$type}/{$page}/{$KEY1}/{$KEY2}/";
 
-    for ($p = 1; $p <= $maxPages; $p++) {
-        $jsonFile = "{$cacheDir}/{$category}-{$type}-page{$p}.json";
+    $data = fetchDataWithCache($apiUrl, $jsonFile);
+    if (!$data) {
+        $items = [];
+    } else {
+        $pageItems = isset($data[0]['id']) ? $data : ($data['posters'] ?? []);
 
-        $baseUrl = $category === 'series' 
-            ? "https://app.arabypros.com/api/serie/by/filtres/0/{$type}/{$p}/{$KEY1}/{$KEY2}/"
-            : "https://app.arabypros.com/api/movie/by/filtres/0/{$type}/{$p}/{$KEY1}/{$KEY2}/";
-
-        if (!file_exists($jsonFile) || isset($_GET['refresh'])) {
-            $headers = ["User-Agent: okhttp/4.8.0", "Accept-Encoding: gzip"];
-
-            $ch = curl_init($baseUrl);
-            curl_setopt_array($ch, [
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_HTTPHEADER => $headers,
-                CURLOPT_SSL_VERIFYPEER => false,
-                CURLOPT_ENCODING => 'gzip'
-            ]);
-
-            $response = curl_exec($ch);
-            curl_close($ch);
-
-            if ($response) {
-                file_put_contents($jsonFile, $response);
-            } else {
-                echo "<div style='color: red;'>❌ فشل في جلب البيانات من API.</div>";
-                break;
-            }
+        // فلترة حسب التصنيف إذا اخترت غير all
+        if ($selectedClassification !== 'all') {
+            $pageItems = array_filter($pageItems, function($item) use ($selectedClassification) {
+                if (empty($item['classification'])) return false;
+                return mb_strtolower(trim($item['classification'])) === mb_strtolower($selectedClassification);
+            });
         }
 
-        if (file_exists($jsonFile)) {
-            $data = json_decode(file_get_contents($jsonFile), true);
-            $pageItems = isset($data[0]['id']) ? $data : ($data['posters'] ?? []);
-            $allItems = array_merge($allItems, $pageItems);
-        }
-    }
-
-    // تطبيق فلتر التصنيف classification (إن لم تكن all)
-    if ($selectedClassification !== 'all') {
-        $allItems = array_filter($allItems, function($item) use ($selectedClassification) {
-            if (empty($item['classification'])) return false;
-            return mb_strtolower(trim($item['classification'])) === mb_strtolower($selectedClassification);
-        });
-    }
-
-    // تطبيق فلتر النوع genre (إن لم تكن all)
-    if ($selectedGenre !== 'all') {
-        $allItems = array_filter($allItems, function($item) use ($selectedGenre) {
-            if (empty($item['genres']) || !is_array($item['genres'])) return false;
-            foreach ($item['genres'] as $g) {
-                if (isset($g['title']) && mb_strtolower(trim($g['title'])) === mb_strtolower($selectedGenre)) {
-                    return true;
+        // فلترة حسب النوع genre إذا اخترت غير all
+        if ($selectedGenre !== 'all') {
+            $pageItems = array_filter($pageItems, function($item) use ($selectedGenre) {
+                if (empty($item['genres']) || !is_array($item['genres'])) return false;
+                foreach ($item['genres'] as $g) {
+                    if (isset($g['title']) && mb_strtolower(trim($g['title'])) === mb_strtolower($selectedGenre)) {
+                        return true;
+                    }
                 }
-            }
-            return false;
-        });
-    }
+                return false;
+            });
+        }
 
-    // إعادة تعيين $items للعرض
-    $items = $allItems;
+        $items = $pageItems;
+    }
 }
 ?>
+
+
 
 
 
@@ -422,6 +387,14 @@ function applyFilters() {
         grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
         gap: 20px;
     }
+
+    /* على الشاشات الصغيرة (مثلاً أقل من 600px) */
+    @media (max-width: 600px) {
+        .series-grid {
+            grid-template-columns: repeat(2, 1fr); /* يعرض عنصرين في الصف */
+        }
+    }
+
 
     .movie-card {
         position: relative;
