@@ -122,24 +122,34 @@ if ($type === 'ramadan' && $category === 'series') {
         $items = filterByClassificationKeywords($items, ['مصر', 'سوريا', 'العراق', 'تونس']);
     }
 
-// حالة الأنواع الأخرى (غير رمضاني)
-} else {
-    // جلب صفحة واحدة فقط حسب $page
-    $jsonFile = "{$cacheDir}/{$category}-{$type}-page{$page}.json";
-
-    $apiUrl = $category === 'series' 
-        ? "https://app.arabypros.com/api/serie/by/filtres/0/{$type}/{$page}/{$KEY1}/{$KEY2}/"
-        : "https://app.arabypros.com/api/movie/by/filtres/0/{$type}/{$page}/{$KEY1}/{$KEY2}/";
-
-    $data = fetchDataWithCache($apiUrl, $jsonFile);
-    if (!$data) {
-        $items = [];
+    // حالة الأنواع الأخرى (غير رمضاني)
     } else {
-        $pageItems = isset($data[0]['id']) ? $data : ($data['posters'] ?? []);
+        $block = max(1, (int)($_GET['block'] ?? 1));  // رقم المجموعة الحالية (1, 2, 3, ...)
+        $pagesPerBlock = 10;
+        $startPage = ($block - 1) * $pagesPerBlock + 1;
+        $endPage = $block * $pagesPerBlock;
+
+        $allItems = [];
+
+        for ($p = $startPage; $p <= $endPage; $p++) {
+            $jsonFile = "{$cacheDir}/{$category}-{$type}-page{$p}.json";
+
+            $apiUrl = $category === 'series' 
+                ? "https://app.arabypros.com/api/serie/by/filtres/0/{$type}/{$p}/{$KEY1}/{$KEY2}/"
+                : "https://app.arabypros.com/api/movie/by/filtres/0/{$type}/{$p}/{$KEY1}/{$KEY2}/";
+
+            $data = fetchDataWithCache($apiUrl, $jsonFile);
+            if (!$data) {
+                break;  // لو فشل في جلب صفحة، نوقف اللوب
+            }
+
+            $pageItems = isset($data[0]['id']) ? $data : ($data['posters'] ?? []);
+            $allItems = array_merge($allItems, $pageItems);
+        }
 
         // فلترة حسب التصنيف إذا اخترت غير all
         if ($selectedClassification !== 'all') {
-            $pageItems = array_filter($pageItems, function($item) use ($selectedClassification) {
+            $allItems = array_filter($allItems, function($item) use ($selectedClassification) {
                 if (empty($item['classification'])) return false;
                 return mb_strtolower(trim($item['classification'])) === mb_strtolower($selectedClassification);
             });
@@ -147,7 +157,7 @@ if ($type === 'ramadan' && $category === 'series') {
 
         // فلترة حسب النوع genre إذا اخترت غير all
         if ($selectedGenre !== 'all') {
-            $pageItems = array_filter($pageItems, function($item) use ($selectedGenre) {
+            $allItems = array_filter($allItems, function($item) use ($selectedGenre) {
                 if (empty($item['genres']) || !is_array($item['genres'])) return false;
                 foreach ($item['genres'] as $g) {
                     if (isset($g['title']) && mb_strtolower(trim($g['title'])) === mb_strtolower($selectedGenre)) {
@@ -158,9 +168,22 @@ if ($type === 'ramadan' && $category === 'series') {
             });
         }
 
-        $items = $pageItems;
+        $items = array_values($allItems);
+
+       
     }
-}
+// تفعيل التقسيم الداخلي داخل البلوك
+$pageInBlock = max(1, (int)($_GET['page_in_block'] ?? 1));
+$itemsPerPage = 18;
+
+$totalItems = count($items);
+$totalPagesInBlock = ceil($totalItems / $itemsPerPage);
+
+// قص النتائج حسب الصفحة الحالية داخل البلوك
+$startIndex = ($pageInBlock - 1) * $itemsPerPage;
+$items = array_slice($items, $startIndex, $itemsPerPage);
+
+
 ?>
 
 
@@ -283,12 +306,13 @@ if ($type === 'ramadan' && $category === 'series') {
 
     <?php if (!($type === 'ramadan' && $category === 'series')): ?>
         <div class="pagination">
-            <?php if ($page > 1): ?>
-                <a href="?category=<?= $category ?>&type=<?= $type ?>&page=<?= $page - 1 ?>">⬅️ السابقة</a>
+            <?php if ($block > 1): ?>
+                <a href="?category=<?= urlencode($category) ?>&type=<?= urlencode($type) ?>&classification=<?= urlencode($selectedClassification) ?>&genre=<?= urlencode($selectedGenre) ?>&block=<?= $block - 1 ?>" class="prev">⬅️ السابقة</a>
             <?php endif; ?>
-            <a href="?category=<?= $category ?>&type=<?= $type ?>&page=<?= $page + 1 ?>">التالي ➡️</a>
+            <a href="?category=<?= urlencode($category) ?>&type=<?= urlencode($type) ?>&classification=<?= urlencode($selectedClassification) ?>&genre=<?= urlencode($selectedGenre) ?>&block=<?= $block + 1 ?>" class="next">التالي ➡️</a>
         </div>
     <?php endif; ?>
+
 </div>
 
 <script>
