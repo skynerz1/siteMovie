@@ -405,8 +405,12 @@ $playerUrl = "https://dfkz.up.railway.app/api-live.php?ch=" . intval($channelId)
                       <img src="https://shahid.mbc.net/mediaObject/a7dcf0c9-1178-4cb9-a490-a8313975e37c?height=129&width=230&croppingPoint=&version=1&type=avif" alt="MBC 1" />
                       <span class="channel-name">MBC 1</span>
                     </a>
-                    <a href="server-live.php?id=2" class="channel-item">
-                      <img src="https://shahid.mbc.net/mediaObject/0fc148ad-de25-4bf6-8fc8-5f8f97a52e2d?height=129&width=230&croppingPoint=&version=1&type=avif" alt="MBC 2" />
+    <a href="server-live.php?id=1" class="channel-item">
+      <img src="https://shahid.mbc.net/mediaObject/a7dcf0c9-1178-4cb9-a490-a8313975e37c?height=129&width=230&croppingPoint=&version=1&type=avif" alt="MBC 1" />
+      <span class="channel-name">MBC DRAMA</span>
+    </a>
+                    <a href="server-live.php?id=24" class="channel-item">
+                      <img src="https://shahid.mbc.net/mediaObject/4bac4257-39fa-4e00-b91e-befdcff0091a?height=129&width=230&croppingPoint=&version=1&type=avif" alt="MBC 2" />
                       <span class="channel-name">MBC 2</span>
                     </a>
 
@@ -445,10 +449,15 @@ $playerUrl = "https://dfkz.up.railway.app/api-live.php?ch=" . intval($channelId)
                           <span class="channel-name">bein 1</span>
                         </a>
 
-                        <a href="server-live.php?id=22" class="channel-item">
+                        <a href="server-live.php?id=23" class="channel-item">
                           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStqDmOsCegryFEhcARKy82qGAK_q1_HRFH4IwoLUHp8c_Fi3B55nW3FdFZxa5X4xjyeSo&usqp=CAU" alt="MBC 2" />
                           <span class="channel-name">ريال مدريد</span>
                         </a>
+
+    <a href="server-live.php?id=22" class="channel-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTsuYYAbLWXDmf678ip7wKmr1zvj3PlhOnig&s" alt="MBC 2" />
+      <span class="channel-name">سبيستون</span>
+    </a>
 
                         <a href="server-live.php?id=17" class="channel-item">
                           <img src="https://cdna.artstation.com/p/assets/images/images/013/847/096/large/ali-hazime-60-rotana-kh-ramadan-bumpers-04.jpg?1541359241" alt="MBC 2" />
