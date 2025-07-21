@@ -526,7 +526,7 @@
 
     { id: 19, name: "bein-1", url: "https://wo.cma.footballii.ir/hls2/b1_src.m3u8", logo: "https://upload.wikimedia.org/wikipedia/commons/8/85/Logo_beIN.png" },
 
-    { id: 22, name: "ريال مدريد", url: "https://rmtv.akamaized.net/hls/live/2043154/rmtv-en-web/bitrate_3.m3u8", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStqDmOsCegryFEhcARKy82qGAK_q1_HRFH4IwoLUHp8c_Fi3B55nW3FdFZxa5X4xjyeSo&usqp=CAU" },
+    { id: 23, name: "ريال مدريد", url: "https://rmtv.akamaized.net/hls/live/2043154/rmtv-en-web/bitrate_3.m3u8", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStqDmOsCegryFEhcARKy82qGAK_q1_HRFH4IwoLUHp8c_Fi3B55nW3FdFZxa5X4xjyeSo&usqp=CAU" },
 
     { id: 2, name: "mbc2", url: "https://edge66.magictvbox.com/liveApple/MBC_2/index.m3u8", logo: "https://shahid.mbc.net/mediaObject/0fc148ad-de25-4bf6-8fc8-5f8f97a52e2d?height=129&width=230&croppingPoint=&version=1&type=avif" },
 
@@ -537,6 +537,8 @@
     { id: 5, name: "mbc5", url: "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-5/ee6b000cee0629411b666ab26cb13e9b/index.m3u8", logo: "https://shahid.mbc.net/mediaObject/94786999-8a35-4e25-abc6-93680bd3b457?height=129&width=230&croppingPoint=&version=1&type=avif" },
 
     { id: 6, name: "mbc6", url:"https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-bollywood/546eb40d7dcf9a209255dd2496903764/index.m3u8", logo: "https://shahid.mbc.net/mediaObject/ce2f5296-90ea-48f2-a997-125df5d73b42?height=129&width=230&croppingPoint=&version=1&type=avif" },
+
+    { id: 24, name: "MBC DRAMA", url:"https://shls-live-ak.akamaized.net/out/v1/b0b3a0e6750d4408bb86d703d5feffd1/index_19.m3u8", logo: "https://shahid.mbc.net/mediaObject/4bac4257-39fa-4e00-b91e-befdcff0091a?height=129&width=230&croppingPoint=&version=1&type=avif" },
 
       { id: 7, name: "mbc-masr", url:"https://shls-masr-prod-dub.shahid.net/out/v1/d5036cabf11e45bf9d0db410ca135c18/index.m3u8", logo: "https://shahid.mbc.net/mediaObject/2c600ff4-bd00-4b99-b94d-b178a7366247?height=129&width=230&croppingPoint=&version=1&type=avif" },
 
