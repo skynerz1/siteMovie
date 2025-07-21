@@ -757,28 +757,22 @@ nav {
         <a href="browser.php?platform=netflix&page=1" class="category-card <?= $platform == 'netflix' ? 'active' : '' ?>" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGhnm_NIUms1oIl6QLrxjZzws8wLW_MVPOyw&s');">
 
         </a>
+        <a href="browser.php?platform=osn&page=1" class="category-card <?= $platform == 'osn' ? 'active' : '' ?>" style="background-image: url('https://play-lh.googleusercontent.com/1O4pKO7UZtF4lL61zgTeA9aoao3TRCZMgerHrvI-k0DNMvnL2-QQX63l_h2E_ayHvtU');">
+
+        </a>
         <a href="browser.php?platform=kids&page=1" class="category-card <?= $platform == 'kids' ? 'active' : '' ?>" style="background-image: url('https://i.pinimg.com/736x/e6/84/49/e68449b851a8ffb8256a71daab209775.jpg');">
 
         </a>
 
-        <a href="" class="category-card <?= $platform == 'disny' ? 'active' : '' ?>" style="background-image: url('https://store-images.s-microsoft.com/image/apps.55921.14495311847124170.7646206e-bd82-4cf0-8b8c-d06a67bc302c.f939755d-cf85-415a-80dc-b98e3ccacd22');">
 
-        </a>
         
-        <a href="" class="category-card <?= $platform == 'amazin-prime' ? 'active' : '' ?>" style="background-image: url('https://img.utdstc.com/icon/657/e60/657e607bbf486997cb7307e11ed88b3a90c40a94b093adc50c389721a250e65a:200');">
+      
+        
 
-        </a>
-        
-        <a href="" class="category-card <?= $platform == 'hulu' ? 'active' : '' ?>" style="background-image: url('https://greenhouse.hulu.com/app/uploads/sites/12/2023/10/logo-gradient-3up.svg');">
-
-        </a>
-        
-        </a>
 
 
         
     </div>
-
     
     <!-- سلايدر جديد -->
     <div class="section-title" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
