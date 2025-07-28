@@ -1,5 +1,38 @@
 {
   "shahid": [
+      {
+          "id": 25296,
+          "title": "الفوز أو الفوز: النادي الأهلي",
+          "label": null,
+          "sublabel": null,
+          "type": "serie",
+          "description": "دوري جديد. دم جديد. كل الأنظار تتجه نحو الأهلي. تابعوا رحلة مدرب نادي الأهلي الشاب ولاعبيه وهم يخوضون غمار الضغوط والشغف والطموح في موسم يسلط الضوء على عصر جديد لكرة القدم السعودية.",
+          "year": 2025,
+          "rating": 1.8,
+          "imdb": 0,
+          "duration": "40 min",
+          "comment": true,
+          "downloadas": null,
+          "playas": null,
+          "classification": "وثائقي, رياضة, السعودية",
+          "image": "https:\/\/app.arabypros.com\/uploads\/cache\/poster_thumb\/uploads\/jpg\/445b4f6da700feaf1a6811f2c7987b7a.jpg",
+          "genres": [
+              {
+                  "id": 24,
+                  "title": "جديد المسلسلات"
+              },
+              {
+                  "id": 28,
+                  "title": "برامج تلفزيونية"
+              }
+          ],
+          "trailer": {
+              "id": 3244148,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=8_kFRV8BMdw"
+          },
+          "sources": []
+      },
     {
         "id": 25125,
         "title": "حمود وأبوه",
@@ -263,6 +296,66 @@
               "title": "مسلسلات تركية"
           },
           {
+              "id": 13839,
+              "title": "الديفا",
+              "label": null,
+              "sublabel": null,
+              "type": "serie",
+              "description": "خلف كواليس أحد برامج اكتشاف المواهب الغنائية، تدور صراعات بين أعضاء لجنة التحكيم، المتسابقين والقائمين على البرنامج.",
+              "year": 2019,
+              "rating": 4.2,
+              "imdb": 0,
+              "duration": "15 min",
+              "comment": true,
+              "downloadas": "1",
+              "playas": "1",
+              "classification": "دراما, لبنان",
+              "image": "https:\/\/app.arabypros.com\/uploads\/cache\/poster_thumb\/uploads\/jpg\/fce761c93a25691837b31f87f7707115.jpg",
+              "cover": "https:\/\/app.arabypros.com\/uploads\/cache\/cover_thumb\/uploads\/jpg\/97a690edc93f080e9652324c536d1ae9.jpg",
+              "genres": [
+                  {
+                      "id": 16,
+                      "title": "مسلسلات عربية"
+                  }
+              ],
+              "trailer": {
+                  "id": 1128244,
+                  "type": "youtube",
+                  "url": "https:\/\/www.youtube.com\/watch?v=lNMtP3yxm_M"
+              },
+              "sources": []
+          },
+          {
+              "id": 221,
+              "title": "صد رد",
+              "label": null,
+              "sublabel": null,
+              "type": "serie",
+              "description": "تدور احداث المسلسل حول ثلاث شباب (كونو، حورس، وبكتيريا) يعيشون في منطقة شعبية يحاولون الهجرة إلى الخارج بمساعدة حمادة بني والقبطان سعيد سمكة وتحدث معهم الكثير من المواقف الكوميدية",
+              "year": 2016,
+              "rating": 5,
+              "imdb": 0,
+              "duration": "25 min",
+              "comment": true,
+              "downloadas": null,
+              "playas": null,
+              "classification": "كوميديا",
+              "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/uM1D4ee1Az5majk4uTmiS0U4WyN.jpg",
+              "cover": "https:\/\/app.arabypros.com\/uploads\/cache\/cover_thumb\/uploads\/jpg\/ea553cde30fd7ff849e8196715f7088b.jpg",
+              "genres": [
+                  {
+                      "id": 16,
+                      "title": "مسلسلات عربية"
+                  }
+              ],
+              "trailer": {
+                  "id": 5632,
+                  "type": "youtube",
+                  "url": "https:\/\/www.youtube.com\/watch?v=RNljVFzn82s"
+              },
+              "sources": []
+          },
+          {
               "id": 24,
               "title": "جديد المسلسلات"
           }
@@ -274,6 +367,104 @@
       },
       "sources": []
     },
+      {
+          "id": 69,
+          "title": "أولاد آدم",
+          "label": null,
+          "sublabel": null,
+          "type": "serie",
+          "description": "تدور الأحداث داخل سجن نسائي، حيث تنعكس مجموعة من القرارت على مصائر شخصيات أربعة.",
+          "year": 2020,
+          "rating": 4.4,
+          "imdb": 7,
+          "duration": "40 min",
+          "comment": true,
+          "downloadas": null,
+          "playas": null,
+          "classification": "دراما",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/6t4uqVUgbjvUASirUKcIs14NzOk.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/4qG7yV4LuKkEZ6LSq4dYIX9KfNW.jpg",
+          "genres": [
+              {
+                  "id": 16,
+                  "title": "مسلسلات عربية"
+              }
+          ],
+          "trailer": {
+              "id": 427,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=2xMEl4YRSio"
+          },
+          "sources": []
+      },
+      {
+          "id": 24523,
+          "title": "سيوف العرب",
+          "label": null,
+          "sublabel": "ح 9",
+          "type": "serie",
+          "description": "توثق أحداث المسلسل تاريخ السيف العربي، مستعرضة أبرز المحطات والأحداث التي رسمت ملامح الحضارة العربية والإسلامية، بدءا من أوائل معارك الفروسية وصولا إلى أعظم الانتصارات في التاريخ الإسلامي.",
+          "year": 2025,
+          "rating": 3.8,
+          "imdb": 0,
+          "duration": "60 min",
+          "comment": true,
+          "downloadas": "1",
+          "playas": "1",
+          "classification": "دراما, مغامرة, تاريخ",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/nE4syJHu0X2edEgXLQffhxrD7QG.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/c0g0dqIXEVH4BNpCIrctK7euCR1.jpg",
+          "genres": [
+              {
+                  "id": 16,
+                  "title": "مسلسلات عربية"
+              },
+              {
+                  "id": 24,
+                  "title": "جديد المسلسلات"
+              }
+          ],
+          "trailer": {
+              "id": 3129223,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=E3aO9akf0uI"
+          },
+          "sources": []
+      },
+      {
+          "id": 23220,
+          "title": "وش سعد",
+          "label": null,
+          "sublabel": "ح 30",
+          "type": "serie",
+          "description": "يسافر رجل الأعمال الإماراتي الثري (سعد) في رحلة عمل إلى مصر، لكن تنقلب حياته رأسًا على عقب بعدما تصدمه (شادية) بسيارتها، ليستفيق بعد الحادث ويجد نفسه مقيمًا في منزلها بأحد الأحياء الشعبية، فيحاول الاندماج والتأقلم مع عائلتها وسكان الحي، ويعيش معهم تجربة غير اعتيادية أثناء فترة علاجه.",
+          "year": 2025,
+          "rating": 2,
+          "imdb": 0,
+          "duration": "40 min",
+          "comment": true,
+          "downloadas": "1",
+          "playas": "1",
+          "classification": "دراما, الامارات, مصر",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/AtbLbmD1HHYolKqnHAWIefKN20J.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/dMhTkrYla69o0LnsFEEv1fGGLKT.jpg",
+          "genres": [
+              {
+                  "id": 24,
+                  "title": "جديد المسلسلات"
+              },
+              {
+                  "id": 88,
+                  "title": "مسلسلات رمضان 2025"
+              }
+          ],
+          "trailer": {
+              "id": 2851642,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=vU8Qx_XGTLU"
+          },
+          "sources": []
+      },
     {
       "id": 15798,
       "title": "ابن سينا العبقري الصغير",
@@ -954,6 +1145,40 @@
       },
       "sources": []
     },
+      {
+          "id": 21724,
+          "title": "صدف",
+          "label": null,
+          "sublabel": "ح 10",
+          "type": "serie",
+          "description": "تجد امرأة مصابة بالأليكسيثيميا، وهي حالة تجعلها عاجزة عن التعبير عن عواطفها، صعوبة في قبول فكرة انتحار شقيقتها أسرار. مدفوعة بالشك، تبدأ تحقيقها الخاص بينما تتابع السلطات تحقيقاتها الرسمية.",
+          "year": 2024,
+          "rating": 4.4,
+          "imdb": 0,
+          "duration": "40 min",
+          "comment": true,
+          "downloadas": "1",
+          "playas": "1",
+          "classification": "دراما, جريمة, الكويت",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/5I8bZncdQ9gfPdFFoMBxq7pVfFp.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/5IxcMMTfVyFT1sTlfnJpelKUyOP.jpg",
+          "genres": [
+              {
+                  "id": 16,
+                  "title": "مسلسلات عربية"
+              },
+              {
+                  "id": 24,
+                  "title": "جديد المسلسلات"
+              }
+          ],
+          "trailer": {
+              "id": 2599067,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=yEMNlyVEx4U"
+          },
+          "sources": []
+      },
     {
       "id": 598,
       "title": "سيلفي",
@@ -1560,6 +1785,74 @@
       },
       "sources": []
     },
+      {
+          "id": 23162,
+          "title": "أبو البنات",
+          "label": null,
+          "sublabel": "ح 30",
+          "type": "serie",
+          "description": "تدور الأحداث حول أب يحاول التعامل مع تحديات الحياة اليومية مع بناته وبذل الكثير من الحب والتضحية من أجلهن، ومحاولاً التغلب على المشاكل التي قد تواجه الأسرة.",
+          "year": 2025,
+          "rating": 4.7,
+          "imdb": 0,
+          "duration": "40 min",
+          "comment": true,
+          "downloadas": "1",
+          "playas": "1",
+          "classification": "دراما, الكويت",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/nY5V5L6O83bT9ODHhLAivkSGqD1.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/wYvSKzqfhMpyILGcrfE8Lz2Qlb2.jpg",
+          "genres": [
+              {
+                  "id": 24,
+                  "title": "جديد المسلسلات"
+              },
+              {
+                  "id": 88,
+                  "title": "مسلسلات رمضان 2025"
+              }
+          ],
+          "trailer": {
+              "id": 2848035,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=7fXa0yMJkWA"
+          },
+          "sources": []
+      },
+      {
+          "id": 23161,
+          "title": "عمتي نوير",
+          "label": null,
+          "sublabel": "ح 30",
+          "type": "serie",
+          "description": "بعد وفاة والدها، يتوجب على (نوير) تنفيذ وصيته وحفظ سر امتلاكه ثروة ضخمة وعدم إخبار العائلة بها، لكن تشتعل الصراعات والمؤامرات من حولها عندما يحاول الجميع الوصول إلى سر الثروة والحصول عليها، مما يؤدي لخلق توترات وخلافات غير متوقعة داخل الأسرة.",
+          "year": 2025,
+          "rating": 3.9,
+          "imdb": 0,
+          "duration": "40 min",
+          "comment": true,
+          "downloadas": "1",
+          "playas": "1",
+          "classification": "دراما, السعودية",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/mXerGhlTbGcxHlVip5Gk2sNQ13q.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/77EwwiaXaZQmG4KGpeVCPinnqXP.jpg",
+          "genres": [
+              {
+                  "id": 24,
+                  "title": "جديد المسلسلات"
+              },
+              {
+                  "id": 88,
+                  "title": "مسلسلات رمضان 2025"
+              }
+          ],
+          "trailer": {
+              "id": 2847976,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=t4-mXVjM8ng"
+          },
+          "sources": []
+      },
     {
       "id": 23217,
       "title": "الشميسي",
@@ -1922,6 +2215,583 @@
     }
   ],
   "netflix": [
+      {
+          "id": 7704,
+          "title": "Archive 81",
+          "label": null,
+          "sublabel": null,
+          "type": "serie",
+          "description": "يتولّى موظّف أرشيف مهمّة ترميم مجموعة من أشرطة الفيديو التالفة، فينغمس في دوّامة من الغموض تتضمّن مُخرجة مفقودة وطائفة شيطانية.",
+          "year": 2022,
+          "rating": 4.3,
+          "imdb": 7,
+          "duration": "45 min",
+          "comment": true,
+          "downloadas": "3",
+          "playas": "1",
+          "classification": "دراما, اثارة, رعب, غموض, خيال علمي",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/l1jeSEm6a88GFcLzlHQr60D0dOi.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/7TYMho2TM6ZcqSv6YaEjlNIyhXn.jpg",
+          "genres": [
+              {
+                  "id": 18,
+                  "title": "مسلسلات أجنبية"
+              }
+          ],
+          "trailer": {
+              "id": 252445,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=ibxKEqxARkE"
+          },
+          "sources": []
+      },
+      {
+          "id": 25222,
+          "title": "كتالوج",
+          "label": null,
+          "sublabel": null,
+          "type": "serie",
+          "description": "يحاول أب أرمل، مدمن على العمل، استيعاب الحياة وفهمها بطريقة فوضوية مع أطفاله، مستعينًا بنصائح زوجته الراحلة المنشورة على الإنترنت، فهل تُراه يتفوّق في هذه الدورة المكثفة في الأبوة؟",
+          "year": 2025,
+          "rating": 4.9,
+          "imdb": 0,
+          "duration": "50 min",
+          "comment": true,
+          "downloadas": "1",
+          "playas": "1",
+          "classification": "كوميديا, دراما, مصر",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/zeN0tLP6UpBqkAJOl9cdoRKjMRx.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/eJJK3xoZzVnOfZSXSG8cpu2MsyX.jpg",
+          "genres": [
+              {
+                  "id": 16,
+                  "title": "مسلسلات عربية"
+              },
+              {
+                  "id": 24,
+                  "title": "جديد المسلسلات"
+              }
+          ],
+          "trailer": {
+              "id": 3236900,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=tpnuMSjezDM"
+          },
+          "sources": []
+      },
+      {
+          "id": 13663,
+          "title": "الصفقة",
+          "label": "الموسم الثاني",
+          "sublabel": null,
+          "type": "serie",
+          "description": "تدخل امرأتان رائدتان معترك البورصة الكويتية التنافسية في ثمانينيات القرن الماضي وتزعزعان بيئة العمل التي يديرها الرجال. من وحي أحداث حقيقية.",
+          "year": 2023,
+          "rating": 4.8,
+          "imdb": 6.6,
+          "duration": "50 min",
+          "comment": true,
+          "downloadas": "1",
+          "playas": "1",
+          "classification": "دراما, الكويت",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/tj3o3nhuBZbZsrmcTFTtqlsvrjM.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/sMeOaqqovjWltuyDp2sAXxEomZ6.jpg",
+          "genres": [
+              {
+                  "id": 16,
+                  "title": "مسلسلات عربية"
+              },
+              {
+                  "id": 24,
+                  "title": "جديد المسلسلات"
+              }
+          ],
+          "trailer": {
+              "id": 1088709,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=wqMBUvI3bPI"
+          },
+          "sources": []
+      },
+      {
+          "id": 12703,
+          "title": "1899",
+          "label": null,
+          "sublabel": null,
+          "type": "serie",
+          "description": "حينما تغيّر أحداث غامضة مسار سفينة مهاجرين متجهة إلى \"نيويورك\" في عام 1899، يجد ركابها المذهولون أنفسهم أمام لغز محيّر.",
+          "year": 2022,
+          "rating": 4.3,
+          "imdb": 9.1,
+          "duration": "60 min",
+          "comment": true,
+          "downloadas": "1",
+          "playas": "1",
+          "classification": "دراما, رعب, غموض, تاريخ",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/8KGvYHQNOamON6ufQGjyhkiVn1V.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/s1xnjbOIQtwGObPnydTebp74G2c.jpg",
+          "genres": [
+              {
+                  "id": 18,
+                  "title": "مسلسلات أجنبية"
+              }
+          ],
+          "trailer": {
+              "id": 971528,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=p7OUQ9U2qIw"
+          },
+          "sources": []
+      },
+      {
+          "id": 8226,
+          "title": "The Fame Game",
+          "label": null,
+          "sublabel": null,
+          "type": "serie",
+          "description": "حين تختفي أشهر ممثلة في الهند، تؤدّي رحلة البحث عنها إلى الكشف عن حقائق مؤلمة تتوارى خلف زيف الواجهة البرّاقة لحياتها وعائلتها.",
+          "year": 2022,
+          "rating": 0,
+          "imdb": 7.2,
+          "duration": "45 min",
+          "comment": true,
+          "downloadas": "3",
+          "playas": "1",
+          "classification": "دراما, جريمة, الهند",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/cOIioieu1s2Sn2Vo6omMhgp8R0a.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/rSctHn6sxFCnKfKPjAOShCOoBTe.jpg",
+          "genres": [
+              {
+                  "id": 18,
+                  "title": "مسلسلات أجنبية"
+              }
+          ],
+          "trailer": {
+              "id": 311671,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=2EnMuY1g664"
+          },
+          "sources": []
+      },
+      {
+          "id": 10576,
+          "title": "Rebelde",
+          "label": null,
+          "sublabel": null,
+          "type": "serie",
+          "description": "متمرّدون\r\nمع بدء فصل جديد في \"إيليت واي سكول\" يعمد عدوّ مألوف، يُدعى \"النادي السرّي\"، إلى التهديد بالقضاء على الطموحات الموسيقية لطلّاب السنة الأولى.",
+          "year": 2022,
+          "rating": 3.8,
+          "imdb": 6.2,
+          "duration": "40 min",
+          "comment": true,
+          "downloadas": "1",
+          "playas": "1",
+          "classification": "كوميديا, دراما, رومانسي, عائلي, المكسيك",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/b1IBsimEJOLjBLYsdBZ1VAcmq73.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/3pu5UWb8OTuz1OhSN9ppn4ZhZkR.jpg",
+          "genres": [
+              {
+                  "id": 18,
+                  "title": "مسلسلات أجنبية"
+              }
+          ],
+          "trailer": {
+              "id": 702428,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=BJYJksHREIc"
+          },
+          "sources": []
+      },
+      {
+          "id": 6501,
+          "title": "Luna Park",
+          "label": null,
+          "sublabel": null,
+          "type": "serie",
+          "description": "شابّة متحرّرة مفعمة بالحياة نشأت في سيرك عائلتها تكتشف فجأةً أنّها تنتمي إلى عالمين مختلفين تمامًا… قصّة تدور في \"روما\" خلال الستينيّات.",
+          "year": 2021,
+          "rating": 5,
+          "imdb": 6.8,
+          "duration": "60 min",
+          "comment": true,
+          "downloadas": "3",
+          "playas": "1",
+          "classification": "دراما, رومانسي, ايطاليا",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/fGABVcpMTfnvjZQ2s50DvTrCqxQ.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/tn6PMr7nWpcGUxr3eAaa9otkFML.jpg",
+          "genres": [
+              {
+                  "id": 18,
+                  "title": "مسلسلات أجنبية"
+              }
+          ],
+          "trailer": {
+              "id": 185880,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=_xy6F5OfveU"
+          },
+          "sources": []
+      },
+      {
+          "id": 658,
+          "title": "13 Reasons Why",
+          "label": null,
+          "sublabel": null,
+          "type": "serie",
+          "description": "(كلاي جينسن) مراهق يعود إلى منزله بعد يومه المدرسي ليجد صندوقًا غامضًا مُعنوَّنًا بإسمه أمام عتبة المنزل.. يكتشف كلاي أن ما بداخل الصندوق مجموعة من شرائط الكاسيت المُسجلّة بواسطة زميلته وحبيبته السابقة (هانا بيكر)، والتي انتحرت منذ أسبوعين، وفي تلك الشرائط تكشف هانا عن قصة انتحارها والأسباب التي دفعتها لذلك والأشخاص التي ساهمت في اتخاذها قرار إنهاء حياتها.",
+          "year": 2017,
+          "rating": 4.3,
+          "imdb": 7.7,
+          "duration": "80 min",
+          "comment": true,
+          "downloadas": null,
+          "playas": null,
+          "classification": "دراما, غموض",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/nel144y4dIOdFFid6twN5mAX9Yd.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/c4CSgKL6QfkJxsWcGYDyTxpbzpW.jpg",
+          "genres": [
+              {
+                  "id": 18,
+                  "title": "مسلسلات أجنبية"
+              }
+          ],
+          "trailer": {
+              "id": 6456,
+              "type": "youtube",
+              "url": "https:\/\/youtu.be\/HC765gMqmew"
+          },
+          "sources": []
+      },
+      {
+          "id": 11432,
+          "title": "Family Secrets",
+          "label": null,
+          "sublabel": null,
+          "type": "serie",
+          "description": "أسرار العائلة\r\nينذر يوم زفاف حبيبين بالتحوّل إلى كارثة حين يبدآن في كشف شبكة من الأسرار والأكاذيب المرتبطة بعائلتيهما.",
+          "year": 2022,
+          "rating": 0,
+          "imdb": 6.4,
+          "duration": "50 min",
+          "comment": true,
+          "downloadas": "1",
+          "playas": "1",
+          "classification": "كوميديا, عائلي, بولندا",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/nBrhdfr2gt9yDzONuWpZ0XnH0R8.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/AvMP8ICeb5of8D85sJz2GpeWHRo.jpg",
+          "genres": [
+              {
+                  "id": 18,
+                  "title": "مسلسلات أجنبية"
+              }
+          ],
+          "trailer": {
+              "id": 825203,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=B1WKeN3X0ak"
+          },
+          "sources": []
+      },
+      {
+          "id": 6514,
+          "title": "Maid",
+          "label": null,
+          "sublabel": null,
+          "type": "serie",
+          "description": "بعدما تلوذ أمّ شابّة بالفرار من علاقة مسيئة، تجد عملًا في تنظيف المنازل بينما تواصل كفاحها لإعالة طفلتها وبناء مستقبل أفضل لهما.",
+          "year": 2021,
+          "rating": 4.1,
+          "imdb": 7.3,
+          "duration": "60 min",
+          "comment": true,
+          "downloadas": "3",
+          "playas": "1",
+          "classification": "كوميديا, دراما, اثارة, غموض",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/4brWcSXdH31BZUTtRTHj2BYFe6M.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/u4ydZotyPdOxSGAVUBiQnKLVwmz.jpg",
+          "genres": [
+              {
+                  "id": 18,
+                  "title": "مسلسلات أجنبية"
+              }
+          ],
+          "trailer": {
+              "id": 186568,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=tGtaHcqsSE8"
+          },
+          "sources": []
+      },
+      {
+          "id": 6569,
+          "title": "Call My Agent: Bollywood",
+          "label": null,
+          "sublabel": null,
+          "type": "serie",
+          "description": "من اختيار ممثّلين مرموقين إلى تهدئة غرور المشاهير، لا تتوقّف فصول الدراما لأربعة وكلاء فنّانين في \"مومباي\" يهرعون لإنقاذ شركتهم المتهاوية.",
+          "year": 2021,
+          "rating": 0,
+          "imdb": 5.2,
+          "duration": "45 min",
+          "comment": true,
+          "downloadas": "3",
+          "playas": "1",
+          "classification": "كوميديا, دراما, الهند",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/3yHiUdRws0zm7O8vkBl7WZzBYHF.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/jrvtdM1olcDeL1qnVx2tyef5iVc.jpg",
+          "genres": [
+              {
+                  "id": 18,
+                  "title": "مسلسلات أجنبية"
+              }
+          ],
+          "trailer": {
+              "id": 198831,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=HJGtb9QYVRU"
+          },
+          "sources": []
+      },
+      {
+          "id": 648,
+          "title": "The End of the F***ing World",
+          "label": null,
+          "sublabel": null,
+          "type": "serie",
+          "description": "نهاية العالم اللعين\r\nيتقابل جيمس البالغ من العمر 17 عاما والذي يظن أنه مختل عقليا مع إيلسا فتاة المدرسة اللطيفة، وبينما يخطط لكي تصبح ضحيته الأولى تنشأ علاقة غير متوقعة بينهما.",
+          "year": 2017,
+          "rating": 4.1,
+          "imdb": 8.1,
+          "duration": "20 min",
+          "comment": true,
+          "downloadas": null,
+          "playas": null,
+          "classification": "مغامرة, كوميديا, اثارة, جريمة, رومانسي",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/f1OV9xEJCZVYcYSDRr5xOD8NJw3.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/vbWfxIva1jabZeZ4v8jVS6Cmab7.jpg",
+          "genres": [
+              {
+                  "id": 18,
+                  "title": "مسلسلات أجنبية"
+              }
+          ],
+          "trailer": {
+              "id": 6422,
+              "type": "youtube",
+              "url": "https:\/\/youtu.be\/aV-y3bvYFYA"
+          },
+          "sources": []
+      },
+      {
+          "id": 528,
+          "title": "Bard of Blood",
+          "label": null,
+          "sublabel": null,
+          "type": "serie",
+          "description": "الإثارة السياسية للتجسس على أساس \"شاعر الدم\" للمخرج بلال صديقي.",
+          "year": 2019,
+          "rating": 0,
+          "imdb": 6.9,
+          "duration": "40 min",
+          "comment": true,
+          "downloadas": null,
+          "playas": null,
+          "classification": "اكشن, مغامرة, دراما, اثارة, هندي",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/5t1haWOmaWqwCm48D5zzDEKjSJZ.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/s0FqBD48QNib8BxzErMot9hIrBS.jpg",
+          "genres": [
+              {
+                  "id": 18,
+                  "title": "مسلسلات أجنبية"
+              }
+          ],
+          "trailer": {
+              "id": 6186,
+              "type": "youtube",
+              "url": "https:\/\/youtu.be\/uEE7HqPvqOg"
+          },
+          "sources": []
+      },
+      {
+          "id": 2382,
+          "title": "Adu",
+          "label": null,
+          "sublabel": null,
+          "type": "movie",
+          "description": "آدو : بالقرب من بلدة إسبانية في شمال \"أفريقيا\"، نشاهد طفلًا يخوض رحلة شاقّة مؤلمة، وأبًا يتواصل مجدّدًا مع ابنته، وخفير سواحل يجلده شعور بالذنب.",
+          "year": 2020,
+          "rating": 0,
+          "imdb": 6.5,
+          "duration": "01:59:45",
+          "comment": true,
+          "downloadas": "3",
+          "playas": "1",
+          "classification": "دراما, اسباني",
+          "image": "https:\/\/app.arabypros.com\/uploads\/cache\/poster_thumb\/uploads\/jpg\/6a218a1cc68ed49e158f0582bec02b59.jpg",
+          "genres": [
+              {
+                  "id": 22,
+                  "title": "أفلام أجنبية"
+              }
+          ],
+          "trailer": {
+              "id": 21854,
+              "type": "youtube",
+              "url": "https:\/\/youtu.be\/PdJbkVEkAMM"
+          },
+          "sources": []
+      },
+      {
+          "id": 1915,
+          "title": "Whiplash",
+          "label": null,
+          "sublabel": null,
+          "type": "movie",
+          "description": "قصة حول العلاقة المتقلبة بين المُعلم وتلميذه ، ترانس فليتشر (جي كيه سيمونز) موسيقار جاز متميز ، وهو المُعلم الخاص بقارع الطبول الطموح أندرو نيمان (مايلز تيلر) ، برغم أن أسلوب (ترانس) التعليمي قاس جدًا ، وعنيف لأقصى حد إلا أنه يريد الوصول للكمال والمثالية ، حتى لو كان الثمن هو أن يقسو على طلابه ، فما القَدْر الذي يمكن أن يتحمله العازف الطموح (أندرو) من أجل التميز في عمله؟",
+          "year": 2014,
+          "rating": 4.4,
+          "imdb": 8.5,
+          "duration": "01:46:46",
+          "comment": true,
+          "downloadas": "3",
+          "playas": "1",
+          "classification": "دراما, موسيقي",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/7fn624j5lj3xTme2SgiLCeuedmO.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/bF8eIIIJJoMZf2mFibAejqEGQcX.jpg",
+          "genres": [
+              {
+                  "id": 22,
+                  "title": "أفلام أجنبية"
+              }
+          ],
+          "trailer": {
+              "id": 19085,
+              "type": "youtube",
+              "url": "https:\/\/youtu.be\/7d_jQycdQGo"
+          },
+          "sources": []
+      },
+      {
+          "id": 25146,
+          "title": "Almost Cops",
+          "label": null,
+          "sublabel": null,
+          "type": "movie",
+          "description": "شراكة قاتلة\r\nحين يُجبر ضابط مجتمع مندفع ومحقق سابق متهور على التعاون معًا، تندلع فوضى كبيرة في شوارع \"روتردام\".",
+          "year": 2025,
+          "rating": 5,
+          "imdb": 0,
+          "duration": "1h 35min",
+          "comment": true,
+          "downloadas": "3",
+          "playas": "1",
+          "classification": "اكشن, جريمة, غموض, كوميديا, هولندا",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/vRfaESjUXHvsSv1fx8keTiLavZt.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/qtSY2SAL5QApuCUD0sXqyzgHYnl.jpg",
+          "genres": [
+              {
+                  "id": 22,
+                  "title": "أفلام أجنبية"
+              }
+          ],
+          "trailer": {
+              "id": 3222018,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=QsMBhTskZC8"
+          },
+          "sources": []
+      },
+      {
+          "id": 25357,
+          "title": "A Normal Woman",
+          "label": null,
+          "sublabel": null,
+          "type": "movie",
+          "description": "امرأة على طبيعتها\r\nبعدما يقلب مرض غير معروف حياتها رأسًا على عقب، تضطر سيدة مجتمع لحلّ لغز هذا المرض... قبل أن يتدهور إحساسها بذاتها.",
+          "year": 2025,
+          "rating": 0,
+          "imdb": 0,
+          "duration": "1h 50min",
+          "comment": true,
+          "downloadas": "3",
+          "playas": "1",
+          "classification": "رعب, اثارة, دراما, اندنوسيا",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/p8QqvttODrPYdJLjAUvcUsJtDTD.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/lCKRTbMKlXlwSydZpIqPu6hP0n0.jpg",
+          "genres": [
+              {
+                  "id": 27,
+                  "title": "أفلام آسيوية"
+              }
+          ],
+          "trailer": {
+              "id": 3252184,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=Iz7CtQVHMEk"
+          },
+          "sources": []
+      },
+      {
+          "id": 21293,
+          "title": "Don't Move",
+          "label": null,
+          "sublabel": null,
+          "type": "movie",
+          "description": "لا تتحرّكي\r\nتواجه امرأة مكلومة قاتلًا في غابة معزولة، يحقنها بعقار يشلّ الجسم، وفيما يُنهَك جسدها وينهار، تبدأ رحلة كفاحها من أجل البقاء على قيد الحياة.",
+          "year": 2024,
+          "rating": 4.3,
+          "imdb": 6.7,
+          "duration": "1h 32min",
+          "comment": true,
+          "downloadas": "3",
+          "playas": "1",
+          "classification": "رعب, اثارة",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/cRDJxdnRb7ikKd6fVJTrGeaL34v.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/ecbDNMopkvmq35P8Tc3cNKPrYAu.jpg",
+          "genres": [
+              {
+                  "id": 22,
+                  "title": "أفلام أجنبية"
+              }
+          ],
+          "trailer": {
+              "id": 2499336,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=YjTZMEbpKsc"
+          },
+          "sources": []
+      },
+      {
+          "id": 22625,
+          "title": "Brick",
+          "label": null,
+          "sublabel": null,
+          "type": "movie",
+          "description": "بعد مكالمة هاتفية من حبيبته السابقة، يعلم بريندان فراي، وهو مراهق منعزل، أنه تم العثور على جثتها. ويتعهد بحل جريمة قتلها بنفسه، فيتعين عليه التسلل إلى عصابات المدرسة الثانوية التي كان يتجنبها سابقًا. ويقوده بحثه عن الحقيقة إلى مواجهة بعض أقسى شخصيات المدرسة.",
+          "year": 2005,
+          "rating": 1,
+          "imdb": 7.1,
+          "duration": "1h 50min",
+          "comment": true,
+          "downloadas": "3",
+          "playas": "1",
+          "classification": "اكشن, جريمة, غموض, دراما",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/5WVk8JpNIxepn4fpZzQeCumkOL5.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/sDr2KjWpEbJ8M1F88rEmhoczLkX.jpg",
+          "genres": [
+              {
+                  "id": 22,
+                  "title": "أفلام أجنبية"
+              }
+          ],
+          "trailer": {
+              "id": 2748836,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=4Zfw8__A7ps"
+          },
+          "sources": []
+      },
     {
       "id": 6410,
       "title": "Squid Game",
