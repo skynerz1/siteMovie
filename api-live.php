@@ -522,7 +522,7 @@
   const channels = [
     { id: 1, name: "mbc1", url: "https://d3o3cim6uzorb4.cloudfront.net/out/v1/0965e4d7deae49179172426cbfb3bc5e/index.m3u8", logo: "https://shahid.mbc.net/mediaObject/a7dcf0c9-1178-4cb9-a490-a8313975e37c?height=129&width=230&croppingPoint=&version=1&type=avif" },
 
-      { id: 18, name: "ssc-1", url: "https://stream.sainaertebat.com/hls2/ssc1.m3u8", logo: "https://shahid.mbc.net/mediaObject/8abc6233-1ef2-443b-8de6-d401a60aa025?height=129&width=230&croppingPoint=&version=1&type=avif" },
+      { id: 18, name: "ssc-1", url: "https://proxy.anime.gt.tc/m3u8-proxy?url=https://stream.sainaertebat.com/hls2/ssc1.m3u8", logo: "https://shahid.mbc.net/mediaObject/8abc6233-1ef2-443b-8de6-d401a60aa025?height=129&width=230&croppingPoint=&version=1&type=avif" },
 
     { id: 19, name: "bein-1", url: "https://wo.cma.footballii.ir/hls2/b1_src.m3u8", logo: "https://upload.wikimedia.org/wikipedia/commons/8/85/Logo_beIN.png" },
 
