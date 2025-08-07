@@ -524,9 +524,9 @@
 
       { id: 18, name: "ssc-1", url: "https://proxy.anime.gt.tc/m3u8-proxy?url=https://stream.sainaertebat.com/hls2/ssc1.m3u8", logo: "https://shahid.mbc.net/mediaObject/8abc6233-1ef2-443b-8de6-d401a60aa025?height=129&width=230&croppingPoint=&version=1&type=avif" },
 
-    { id: 19, name: "bein-1", url: "https://wo.cma.footballii.ir/hls2/b1_src.m3u8", logo: "https://upload.wikimedia.org/wikipedia/commons/8/85/Logo_beIN.png" },
+    { id: 19, name: "bein-1", url: "https://proxy.anime.gt.tc/m3u8-proxy?url=https://wo.cma.footballii.ir/hls2/b1_src.m3u8", logo: "https://upload.wikimedia.org/wikipedia/commons/8/85/Logo_beIN.png" },
 
-    { id: 23, name: "ريال مدريد", url: "https://rmtv.akamaized.net/hls/live/2043154/rmtv-en-web/bitrate_3.m3u8", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStqDmOsCegryFEhcARKy82qGAK_q1_HRFH4IwoLUHp8c_Fi3B55nW3FdFZxa5X4xjyeSo&usqp=CAU" },
+    { id: 23, name: "ريال مدريد", url: "https://proxy.anime.gt.tc/m3u8-proxy?url=https://rmtv.akamaized.net/hls/live/2043154/rmtv-en-web/bitrate_3.m3u8", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStqDmOsCegryFEhcARKy82qGAK_q1_HRFH4IwoLUHp8c_Fi3B55nW3FdFZxa5X4xjyeSo&usqp=CAU" },
 
     { id: 2, name: "mbc2", url: "https://edge66.magictvbox.com/liveApple/MBC_2/index.m3u8", logo: "https://shahid.mbc.net/mediaObject/0fc148ad-de25-4bf6-8fc8-5f8f97a52e2d?height=129&width=230&croppingPoint=&version=1&type=avif" },
 
