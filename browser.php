@@ -286,15 +286,25 @@ body {
                         <strong>تصنيف:</strong> <?= htmlspecialchars($show['classification'] ?? '') ?>
                     </div>
 
-                    <!-- الأزرار -->
-                    <div class="hero-buttons">
-                        <a href="<?= $isMovie ? 'movie/links.php?id=' . urlencode($show['id']) : 'series.php?id=' . urlencode($show['id']) ?>" 
-                           class="btn-watch">▶ شاهد الآن</a>
+<!-- الأزرار -->
+<div class="hero-buttons">
+    <a href="<?= $isMovie ? 'movie/links.php?id=' . urlencode($show['id']) : 'series.php?id=' . urlencode($show['id']) ?>" 
+       class="btn-watch">▶ شاهد الآن</a>
 
-                        <button class="btn-trailer" data-trailer="<?= htmlspecialchars($show['trailer_url'] ?? '') ?>">
-                            ▶ شاهد البرومو
-                        </button>
-                    </div>
+    <button class="btn-trailer" data-trailer="<?= htmlspecialchars($show['trailer_url'] ?? '') ?>">
+        ▶ شاهد البرومو
+    </button>
+</div>
+
+<!-- ... -->
+
+<!-- نافذة عرض البرومو -->
+<div id="trailer-modal" class="trailer-modal">
+    <span class="close-modal">✖</span>
+    <iframe id="trailer-frame" src="" allowfullscreen></iframe>
+</div>
+
+<!-- ... -->
                 </div>
             </div>
         <?php endforeach; ?>
@@ -405,17 +415,53 @@ document.querySelector('.hero-slider').addEventListener('mouseleave', () => {
     swiper.autoplay.start();
 });
 
-// إيقاف السلايدر عند فتح البرومو
+// فتح مودال البرومو وعرض الفيديو مع إيقاف السلايدر
 document.querySelectorAll('.btn-trailer').forEach(btn => {
     btn.addEventListener('click', () => {
+        let trailerUrl = btn.getAttribute('data-trailer');
+        if (!trailerUrl) {
+            alert('لا يوجد فيديو برومو متاح.');
+            return;
+        }
+
+        let modal = document.getElementById('trailer-modal');
+        let iframe = document.getElementById('trailer-frame');
+
+        // دعم روابط يوتيوب أو روابط فيديو مباشرة
+        // أضف ?autoplay=1 تلقائياً عند يوتيوب
+        if(trailerUrl.includes('youtube.com') || trailerUrl.includes('youtu.be')) {
+            if (!trailerUrl.includes('autoplay=1')) {
+                trailerUrl += trailerUrl.includes('?') ? '&autoplay=1&mute=1' : '?autoplay=1&mute=1';
+            }
+        } else {
+            // روابط mp4 مثلاً ممكن تتعامل معها كما هي أو تضيف autoplay
+            // لبعض الفيديوهات mp4 autoplay مع muted مطلوب
+            // يمكنك تعديل حسب الحاجة
+        }
+
+        iframe.src = trailerUrl;
+        modal.style.display = 'flex';
         swiper.autoplay.stop();
     });
 });
 
-// إعادة تشغيل السلايدر عند إغلاق البرومو
+// إغلاق المودال ومسح src لإيقاف الفيديو وإعادة تشغيل السلايدر
 document.querySelector('.close-modal').addEventListener('click', () => {
+    let modal = document.getElementById('trailer-modal');
+    let iframe = document.getElementById('trailer-frame');
+
+    iframe.src = '';
+    modal.style.display = 'none';
     swiper.autoplay.start();
 });
+
+// إغلاق المودال عند الضغط على الخلفية السوداء (خارج iframe)
+document.getElementById('trailer-modal').addEventListener('click', (e) => {
+    if (e.target === e.currentTarget) {
+        document.querySelector('.close-modal').click();
+    }
+});
+
 </script>
 
 </body>
