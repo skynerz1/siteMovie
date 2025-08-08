@@ -61,6 +61,61 @@ body {
 }
 
 
+.hero-slider {
+    width: 100%;
+    height: 90vh;
+    position: relative;
+    color: white;
+}
+.hero-slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.2) 100%);
+}
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    max-width: 600px;
+}
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+.hero-content p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #ddd;
+}
+.hero-buttons a {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.btn-watch {
+    background: #e50914;
+    color: white;
+}
+.btn-add {
+    background: rgba(255,255,255,0.2);
+    color: white;
+}
+.swiper-button-next,
+.swiper-button-prev {
+    color: white;
+}
+
 
 .cards-container {
     display: flex;
@@ -159,7 +214,27 @@ body {
 </div>
 
 
+<div class="swiper hero-slider">
+    <div class="swiper-wrapper">
+        <?php foreach ($heroShows as $show): ?>
+            <div class="swiper-slide hero-slide" style="background-image: url('<?= htmlspecialchars($show['image']) ?>');">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h1><?= htmlspecialchars($show['title']) ?></h1>
+                    <p><?= htmlspecialchars(substr($show['description'] ?? '', 0, 150)) ?>...</p>
+                    <div class="hero-buttons">
+                        <a href="<?= $isMovie ? 'movie/links.php?id=' . urlencode($show['id']) : 'series.php?id=' . urlencode($show['id']) ?>" class="btn-watch">▶ شاهد الآن</a>
+                        <a href="#" class="btn-add">+ أضف لقائمتي</a>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
 
+    <!-- أزرار التنقل -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+</div>
 <div class="cards-container">
 <?php foreach ($showsPage as $show): ?>
     <?php
@@ -226,6 +301,20 @@ body {
 
 <?php include 'includes/footer.php'; ?>
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+var swiper = new Swiper('.hero-slider', {
+    loop: true,
+    autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+});
+</script>
 
 </body>
 </html>
