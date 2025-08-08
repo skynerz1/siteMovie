@@ -72,7 +72,7 @@ body {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to right, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.2) 100%);
+    background: linear-gradient(to right, rgba(0,0,0,0.85) 30%, rgba(0,0,0,0.3) 100%);
 }
 .hero-content {
     position: absolute;
@@ -81,12 +81,20 @@ body {
     transform: translateY(-50%);
     max-width: 600px;
 }
+.hero-meta {
+    font-size: 0.9rem;
+    color: #bbb;
+    margin-bottom: 10px;
+}
+.hero-meta span {
+    margin-right: 15px;
+}
 .hero-content h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     margin-bottom: 15px;
 }
 .hero-content p {
-    font-size: 1rem;
+    font-size: 1.05rem;
     margin-bottom: 20px;
     color: #ddd;
 }
@@ -97,7 +105,53 @@ body {
     border-radius: 6px;
     font-weight: bold;
     text-decoration: none;
+    transition: background 0.3s;
 }
+.btn-watch {
+    background: #e50914;
+    color: white;
+}
+.btn-watch:hover {
+    background: #f40612;
+}
+.btn-trailer {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+.btn-trailer:hover {
+    background: rgba(255, 255, 255, 0.35);
+}
+.hero-classification {
+    margin-top: 15px;
+    font-size: 0.95rem;
+    color: #aaa;
+}
+
+/* نافذة البرومو */
+.trailer-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+.trailer-modal iframe {
+    width: 80%;
+    height: 70%;
+    border: none;
+    border-radius: 8px;
+}
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
 .btn-watch {
     background: #e50914;
     color: white;
@@ -216,10 +270,30 @@ body {
                 <div class="hero-overlay"></div>
                 <div class="hero-content">
                     <h1><?= htmlspecialchars($show['title']) ?></h1>
+
+                    <!-- القيم فوق الوصف -->
+                    <div class="hero-meta">
+                        <span>📅 <?= htmlspecialchars($show['year'] ?? '') ?></span>
+                        <span>⭐ <?= htmlspecialchars($show['rating'] ?? '') ?></span>
+                        <span>⏳ <?= htmlspecialchars($show['duration'] ?? '') ?></span>
+                    </div>
+
+                    <!-- الوصف -->
                     <p><?= htmlspecialchars(substr($show['description'] ?? '', 0, 150)) ?>...</p>
+
+                    <!-- القيم تحت الوصف -->
+                    <div class="hero-classification">
+                        <strong>تصنيف:</strong> <?= htmlspecialchars($show['classification'] ?? '') ?>
+                    </div>
+
+                    <!-- الأزرار -->
                     <div class="hero-buttons">
-                        <a href="<?= $isMovie ? 'movie/links.php?id=' . urlencode($show['id']) : 'series.php?id=' . urlencode($show['id']) ?>" class="btn-watch">▶ شاهد الآن</a>
-                        <a href="#" class="btn-add">+ أضف لقائمتي</a>
+                        <a href="<?= $isMovie ? 'movie/links.php?id=' . urlencode($show['id']) : 'series.php?id=' . urlencode($show['id']) ?>" 
+                           class="btn-watch">▶ شاهد الآن</a>
+
+                        <button class="btn-trailer" data-trailer="<?= htmlspecialchars($show['trailer_url'] ?? '') ?>">
+                            ▶ شاهد البرومو
+                        </button>
                     </div>
                 </div>
             </div>
@@ -229,6 +303,14 @@ body {
     <!-- أزرار التنقل -->
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
+</div>
+
+<!-- نافذة عرض البرومو -->
+<div id="trailer-modal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <span class="close-modal">✖</span>
+        <iframe id="trailer-frame" width="100%" height="500" frameborder="0" allowfullscreen></iframe>
+    </div>
 </div>
 <div class="cards-container">
 <?php foreach ($showsPage as $show): ?>
@@ -300,6 +382,7 @@ body {
 <script>
 var swiper = new Swiper('.hero-slider', {
     loop: true,
+    speed: 800, // سرعة الانتقال
     autoplay: {
         delay: 4000,
         disableOnInteraction: false,
@@ -308,6 +391,30 @@ var swiper = new Swiper('.hero-slider', {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
+    effect: 'fade', // انتقال ناعم بين الشرائح
+    fadeEffect: {
+        crossFade: true
+    }
+});
+
+// إيقاف التشغيل عند مرور الماوس
+document.querySelector('.hero-slider').addEventListener('mouseenter', () => {
+    swiper.autoplay.stop();
+});
+document.querySelector('.hero-slider').addEventListener('mouseleave', () => {
+    swiper.autoplay.start();
+});
+
+// إيقاف السلايدر عند فتح البرومو
+document.querySelectorAll('.btn-trailer').forEach(btn => {
+    btn.addEventListener('click', () => {
+        swiper.autoplay.stop();
+    });
+});
+
+// إعادة تشغيل السلايدر عند إغلاق البرومو
+document.querySelector('.close-modal').addEventListener('click', () => {
+    swiper.autoplay.start();
 });
 </script>
 
