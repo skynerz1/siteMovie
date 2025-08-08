@@ -32,12 +32,40 @@
       },
       "sources": []
     },
-{"id":25558,
-"title":"عايشين معانا"
-,"label":null,
-"sublabel":"ح 2","type":"serie",
-"description":"تقرر عائلة أبو أنس الانتقال إلى مجمع سكني في الرياض. لكنهم ليسوا كأي سكان جدد عاديين. إنهم غرباء. إنهم مختلفون. إنهم وافدون من عالم (الجن) لتنفيذ مهمة...",
-"year":2025,"rating":5,"imdb":0,"duration":"40 min","comment":true,"downloadas":"1","playas":"1","classification":"كوميديا, خيال, السعودية","image":"https:\/\/image.tmdb.org\/t\/p\/w500\/3EXPNPTMDPWlS5AvbX4HjmZ44G.jpg","cover":"https:\/\/image.tmdb.org\/t\/p\/w780\/pok6dfr4aIlolYpZKBM3qWWfBbq.jpg","genres":[{"id":16,"title":"مسلسلات عربية"},{"id":24,"title":"جديد المسلسلات"}],"trailer":{"id":3272728,"type":"youtube","url":"https:\/\/www.youtube.com\/watch?v=AYZENdYuea4"},"sources":[]}]},
+    {
+      "id": 25558,
+      "title": "عايشين معانا",
+      "label": null,
+      "sublabel": "ح 2",
+      "type": "serie",
+      "description": "تقرر عائلة أبو أنس الانتقال إلى مجمع سكني في الرياض. لكنهم ليسوا كأي سكان جدد عاديين. إنهم غرباء. إنهم مختلفون. إنهم وافدون من عالم (الجن) لتنفيذ مهمة...",
+      "year": 2025,
+      "rating": 5,
+      "imdb": 0,
+      "duration": "40 min",
+      "comment": true,
+      "downloadas": "1",
+      "playas": "1",
+      "classification": "كوميديا, خيال, السعودية",
+      "image": "https://image.tmdb.org/t/p/w500/3EXPNPTMDPWlS5AvbX4HjmZ44G.jpg",
+      "cover": "https://image.tmdb.org/t/p/w780/pok6dfr4aIlolYpZKBM3qWWfBbq.jpg",
+      "genres": [
+        {
+          "id": 16,
+          "title": "مسلسلات عربية"
+        },
+        {
+          "id": 24,
+          "title": "جديد المسلسلات"
+        }
+      ],
+      "trailer": {
+        "id": 3272728,
+        "type": "youtube",
+        "url": "https://www.youtube.com/watch?v=AYZENdYuea4"
+      },
+      "sources": []
+    },
     {
       "id": 23714,
       "title": "هروج",
@@ -106,43 +134,43 @@
       },
       "sources": []
     },
-   {
-    "id": 25125,
-    "title": "حمود وأبوه",
-    "label": "منتهي",
-    "sublabel": "ح 10",
-    "type": "serie",
-    "description": "في يوميات طريفة، تتصادم خطط حمود اليومية مع حكمة والده التقليدية، لتتحول حياتهما إلى رحلة مليئة بالمواقف الكوميدية والمشاعر الصادقة.",
-    "year": 2025,
-    "rating": 2,
-    "imdb": 0,
-    "duration": "30 min",
-    "comment": true,
-    "downloadas": null,
-    "playas": null,
-    "classification": "كوميديا, السعودية",
-    "image": "https://image.tmdb.org/t/p/w500/9yGEmo0JL9VvRlOg9GwBUaYjZ7V.jpg",
-    "genres": [
+    {
+      "id": 25125,
+      "title": "حمود وأبوه",
+      "label": "منتهي",
+      "sublabel": "ح 10",
+      "type": "serie",
+      "description": "في يوميات طريفة، تتصادم خطط حمود اليومية مع حكمة والده التقليدية، لتتحول حياتهما إلى رحلة مليئة بالمواقف الكوميدية والمشاعر الصادقة.",
+      "year": 2025,
+      "rating": 2,
+      "imdb": 0,
+      "duration": "30 min",
+      "comment": true,
+      "downloadas": null,
+      "playas": null,
+      "classification": "كوميديا, السعودية",
+      "image": "https://image.tmdb.org/t/p/w500/9yGEmo0JL9VvRlOg9GwBUaYjZ7V.jpg",
+      "genres": [
         {
-            "id": 16,
-            "title": "مسلسلات عربية"
+          "id": 16,
+          "title": "مسلسلات عربية"
         },
         {
-            "id": 24,
-            "title": "جديد المسلسلات"
+          "id": 24,
+          "title": "جديد المسلسلات"
         },
         {
-            "id": 25,
-            "title": "استمتعوا مع تحياتنا لكم"
+          "id": 25,
+          "title": "استمتعوا مع تحياتنا لكم"
         }
-    ],
-    "trailer": {
+      ],
+      "trailer": {
         "id": 3217582,
         "type": "youtube",
         "url": "https://www.youtube.com/watch?v=eRbJfN1NwAw"
+      },
+      "sources": []
     },
-    "sources": []
-},
     {
       "id": 20545,
       "title": "فيلم شباب البومب",
