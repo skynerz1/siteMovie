@@ -44,6 +44,9 @@ if (file_exists($cacheFile) &&
     file_put_contents($cacheFile, json_encode($showsPage, JSON_UNESCAPED_UNICODE));
     file_put_contents($cacheMeta, $totalPages);
 }
+
+// جلب أول 5 مسلسلات للسلايدر
+$heroShows = array_slice($allShows, 0, 5);
 ?>
 
 
@@ -154,6 +157,8 @@ body {
       <a href="?platform=osn&page=1" class="category-card <?= $platform === 'osn' ? 'active' : '' ?>" style="background-image: url('https://play-lh.googleusercontent.com/1O4pKO7UZtF4lL61zgTeA9aoao3TRCZMgerHrvI-k0DNMvnL2-QQX63l_h2E_ayHvtU');" title="osn"></a>
   <a href="?platform=kids&page=1" class="category-card <?= $platform === 'kids' ? 'active' : '' ?>" style="background-image: url('https://i.pinimg.com/736x/e6/84/49/e68449b851a8ffb8256a71daab209775.jpg');" title="Kids"></a>
 </div>
+
+
 
 <div class="cards-container">
 <?php foreach ($showsPage as $show): ?>
