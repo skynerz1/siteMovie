@@ -1,5 +1,39 @@
 {
   "shahid": [
+{
+      "id": 25558,
+      "title": "عايشين معانا",
+      "label": null,
+      "sublabel": "ح 2",
+      "type": "serie",
+      "description": "تقرر عائلة أبو أنس الانتقال إلى مجمع سكني في الرياض. لكنهم ليسوا كأي سكان جدد عاديين. إنهم غرباء. إنهم مختلفون. إنهم وافدون من عالم (الجن) لتنفيذ مهمة...",
+      "year": 2025,
+      "rating": 5,
+      "imdb": 0,
+      "duration": "40 min",
+      "comment": true,
+      "downloadas": "1",
+      "playas": "1",
+      "classification": "كوميديا, خيال, السعودية",
+      "image": "https://image.tmdb.org/t/p/w500/3EXPNPTMDPWlS5AvbX4HjmZ44G.jpg",
+      "cover": "https://image.tmdb.org/t/p/w780/pok6dfr4aIlolYpZKBM3qWWfBbq.jpg",
+      "genres": [
+        {
+          "id": 16,
+          "title": "مسلسلات عربية"
+        },
+        {
+          "id": 24,
+          "title": "جديد المسلسلات"
+        }
+      ],
+      "trailer": {
+        "id": 3272728,
+        "type": "youtube",
+        "url": "https://www.youtube.com/watch?v=AYZENdYuea4"
+      },
+      "sources": []
+    },
       {
           "id": 25296,
           "title": "الفوز أو الفوز: النادي الأهلي",
