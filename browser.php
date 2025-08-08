@@ -46,7 +46,26 @@ if (file_exists($cacheFile) &&
 }
 
 // جلب أول 5 مسلسلات للسلايدر
-$heroShows = array_slice($allShows, 0, 5);
+// تجهيز بيانات للسلايدر
+$allShowsForHero = [];
+
+// إذا الكاش موجود نقرأ كل البيانات من المصدر
+if (file_exists($cacheFile) && filemtime($cacheFile) >= max(array_map('filemtime', $sourceFiles))) {
+    foreach ($sourceFiles as $file) {
+        if (file_exists($file)) {
+            $data = json_decode(file_get_contents($file), true);
+            if (isset($data[$platform]) && is_array($data[$platform])) {
+                $allShowsForHero = array_merge($allShowsForHero, $data[$platform]);
+            }
+        }
+    }
+} else {
+    $allShowsForHero = $allShows; // إذا أصلاً جلبناها فوق
+}
+
+// أخذ أول 5 عناصر
+$heroShows = array_slice($allShowsForHero, 0, 5);
+
 ?>
 
 
