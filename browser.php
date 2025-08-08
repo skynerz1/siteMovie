@@ -6,67 +6,43 @@ $platform = $_GET['platform'] ?? 'netflix';
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $perPage = 12;
 
-$sourceFiles = ["includes/sourse/browser.json", "includes/sourse/browser1.json"];  // ملفات المصدر
+$sourceFiles = ["includes/sourse/browser.json", "includes/sourse/browser1.json"];
 $cacheDir = "cache";
 $cacheFile = "{$cacheDir}/{$platform}_page_{$page}.json";
 $cacheMeta = "{$cacheDir}/{$platform}_pages.txt";
 
 if (!file_exists($cacheDir)) mkdir($cacheDir, 0777, true);
 
-if (file_exists($cacheFile) && 
-    filemtime($cacheFile) >= max(array_map('filemtime', $sourceFiles))) {
+// مصفوفة رئيسية لكل البيانات
+$allShows = [];
 
-    $showsPage = json_decode(file_get_contents($cacheFile), true);
-    $totalPages = (int)file_get_contents($cacheMeta);
-
-} else {
-    $allShows = [];
-
-    // قراءة ودمج البيانات من الملفين
-    foreach ($sourceFiles as $file) {
-        if (file_exists($file)) {
-            $data = json_decode(file_get_contents($file), true);
-            if (isset($data[$platform]) && is_array($data[$platform])) {
-                $allShows = array_merge($allShows, $data[$platform]);
-            }
+// قراءة ودمج البيانات من الملفات
+foreach ($sourceFiles as $file) {
+    if (file_exists($file)) {
+        $data = json_decode(file_get_contents($file), true);
+        if (isset($data[$platform]) && is_array($data[$platform])) {
+            $allShows = array_merge($allShows, $data[$platform]);
         }
     }
-
-    $totalShows = count($allShows);
-    $totalPages = max(1, ceil($totalShows / $perPage));
-
-    if ($page < 1) $page = 1;
-    if ($page > $totalPages) $page = $totalPages;
-
-    $start = ($page - 1) * $perPage;
-    $showsPage = array_slice($allShows, $start, $perPage);
-
-    file_put_contents($cacheFile, json_encode($showsPage, JSON_UNESCAPED_UNICODE));
-    file_put_contents($cacheMeta, $totalPages);
 }
+
+$totalShows = count($allShows);
+$totalPages = max(1, ceil($totalShows / $perPage));
+
+if ($page < 1) $page = 1;
+if ($page > $totalPages) $page = $totalPages;
+
+$start = ($page - 1) * $perPage;
+$showsPage = array_slice($allShows, $start, $perPage);
+
+// حفظ الكاش
+file_put_contents($cacheFile, json_encode($showsPage, JSON_UNESCAPED_UNICODE));
+file_put_contents($cacheMeta, $totalPages);
 
 // جلب أول 5 مسلسلات للسلايدر
-// تجهيز بيانات للسلايدر
-$allShowsForHero = [];
-
-// إذا الكاش موجود نقرأ كل البيانات من المصدر
-if (file_exists($cacheFile) && filemtime($cacheFile) >= max(array_map('filemtime', $sourceFiles))) {
-    foreach ($sourceFiles as $file) {
-        if (file_exists($file)) {
-            $data = json_decode(file_get_contents($file), true);
-            if (isset($data[$platform]) && is_array($data[$platform])) {
-                $allShowsForHero = array_merge($allShowsForHero, $data[$platform]);
-            }
-        }
-    }
-} else {
-    $allShowsForHero = $allShows; // إذا أصلاً جلبناها فوق
-}
-
-// أخذ أول 5 عناصر
-$heroShows = array_slice($allShowsForHero, 0, 5);
-
+$heroShows = array_slice($allShows, 0, 5);
 ?>
+
 
 
 <style>
