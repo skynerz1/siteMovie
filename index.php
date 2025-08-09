@@ -304,6 +304,12 @@ function filterRamadanAraby($seriesArray) {
     <link rel="icon" type="image/png" href="a.png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+
     <style>
         body {
               background-color: #1c2229;
@@ -313,28 +319,373 @@ function filterRamadanAraby($seriesArray) {
             padding: 0;
         }
      
+        >
+          @import url('https://fonts.googleapis.com/css2?family=Material+Icons');
+
+          body {
+            margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #141414; color: white;
+          }
         .hero {
-            background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/f841d4c7-10e1-40af-bcae-07a3f8dc141a/f6d7434e-d6de-4185-a6d4-c77a2d08737b/US-en-20220502-popsignuptwoweeks-perspective_alpha_website_medium.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 60vh;
-            display: flex;
+          position: relative;
+          min-height: 100vh; /* زودنا ارتفاع الصفحة عشان تكفي المحتوى + الثومب */
+          background-size: cover;
+          background-position: center center;
+          display: flex;
+          flex-direction: column; /* خلي المحتوى والـ thumbnails عمودياً */
+          padding: 40px 40px;
+          box-sizing: border-box;
+        }
+
+        .hero-content {
+          max-width: 700px;
+          align-self: flex-end; /* يخلي المحتوى عاليمين */
+          z-index: 1;
+          text-align: right;
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        .hero-img {
+          width: 256px; /* صغر الحجم حوالي 20% */
+          max-width: 100%;
+          border-radius: 12px;
+          margin-bottom: 15px;
+          align-self: flex-end;
+        }
+
+        .classification {
+          font-size: 1rem;
+          opacity: 0.8;
+          margin-bottom: 6px; /* خففنا من 12px لـ 6px */
+          letter-spacing: 1.1px;
+        }
+
+        .hero-desc {
+          font-size: 1.15rem;
+          line-height: 1.6;
+          margin-bottom: 8px; /* خففنا من 15px لـ 8px */
+          white-space: pre-line;
+        }
+
+        .genres {
+          font-size: 1rem;
+          opacity: 0.7;
+          margin-bottom: 4px; /* خففنا من 10px لـ 4px */
+        }
+
+        .classification span,
+        .genres span {
+          margin: 0 8px;
+        }
+
+        .classification span:not(:last-child)::after,
+        .genres span:not(:last-child)::after {
+          content: '•';
+          margin-left: 8px;
+          color: #ff0000;
+        }
+
+
+
+        /* الأزرار تظل عاليمين */
+        .buttons {
+          display: flex;
+          gap: 15px;
+          justify-content: flex-end;
+          flex-wrap: wrap;
+        }
+
+
+        button {
+          cursor: pointer;
+          border: none;
+          border-radius: 30px;
+          padding: 12px 28px;
+          font-weight: 700;
+          font-size: 1.1rem;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          transition: background-color 0.3s ease;
+          white-space: nowrap;
+        }
+
+        .watch-btn {
+          background-color: #e50914;
+          color: white;
+        }
+
+        .watch-btn:hover {
+          background-color: #f40612;
+        }
+
+        .download-btn {
+          background-color: rgba(109,109,110,0.7);
+          color: white;
+        }
+
+        .download-btn:hover {
+          background-color: rgba(109,109,110,1);
+        }
+
+        .material-icons {
+          font-family: 'Material Icons';
+          font-weight: normal;
+          font-style: normal;
+          font-size: 20px;
+          line-height: 1;
+          user-select: none;
+        }
+
+        /* Trailer Overlay */
+        .trailer-overlay {
+          display: none;
+          position: fixed;
+          inset: 0;
+          background-color: rgba(0,0,0,0.9);
+          justify-content: center;
+          align-items: center;
+          z-index: 9999;
+        }
+
+        .trailer-container {
+          position: relative;
+          width: 90%;
+          max-width: 900px;
+          aspect-ratio: 16 / 9;
+          background: black;
+        }
+
+        .trailer-close {
+          position: absolute;
+          top: -40px;
+          right: 0;
+          font-size: 36px;
+          font-weight: 900;
+          color: white;
+          cursor: pointer;
+          user-select: none;
+        }
+
+        /* Responsive - الأجهزة اللوحية والشاشات الصغيرة */
+        @media (max-width: 1024px) {
+          .hero {
+            padding: 30px 40px;
+            height: auto;
+          }
+          .hero-content {
+            max-width: 100%;
+          }
+          .hero-img {
+            width: 280px;
+            margin-bottom: 12px;
+          }
+          .hero-desc {
+            display: none; /* إخفاء الوصف */
+          }
+        }
+
+        /* Responsive - الجوال */
+        @media (max-width: 600px) {
+          .hero {
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 20px;
+            height: auto;
+          }
+          .hero-content {
+            text-align: center;
             align-items: center;
+            max-width: 100%;
+          }
+          .hero-img {
+            width: 256px;
+            max-width: 100%;
+            border-radius: 12px;
+            background-color: transparent; /* شل الخلفية */
+            padding: 0; /* شل المساحة حول الصورة */
+            object-fit: contain;
+            margin-bottom: 15px;
+            align-self: flex-end;
+            display: block;
+            box-shadow: none;
+            border: none; /* تأكد ما فيه إطار */
+          }
+
+          .classification, .genres {
+            font-size: 0.9rem;
+          }
+          .hero-desc {
+            display: none; /* إخفاء الوصف */
+          }
+          .buttons {
             justify-content: center;
+          }
+          button {
+            font-size: 1rem;
+            padding: 10px 20px;
+          }
         }
-        .hero .search-form {
+
+        .overlay-gradient {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(to top, #141414 20%, transparent 80%);
+          z-index: 0;
+        }
+        .thumbnails-container {
+          margin: 30px auto 0 auto; /* فوق 30px، مركز بالوسط */
+          display: flex;
+          gap: 12px;
+          justify-content: center;
+          overflow-x: auto;
+          padding: 0 10px;
+          max-width: 90%;
+          z-index: 1;
+          -ms-overflow-style: none;  /* للإنترنت إكسبلورر */
+          scrollbar-width: none;     /* للفايرفوكس */
+          direction: rtl; /* عكس الاتجاه من اليمين لليسار */
+        }
+
+
+        /* اخفاء scrollbar في Chrome وSafari */
+        .thumbnails-container::-webkit-scrollbar {
+          display: none;
+        }
+
+        .thumbnail {
+          flex: 0 0 auto;
+          width: 80px;
+          cursor: pointer;
+          opacity: 0.7;
+          transition: opacity 0.3s ease, transform 0.3s ease;
+          border-radius: 8px;
+          text-align: center;
+          color: white;
+          font-size: 0.75rem;
+          user-select: none;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          position: relative; /* ضروري للعنصر ::after */
+        }
+
+        /* الخط الافتراضي تحت الصورة - خفيف جدا (خط رفيع جدا) */
+        .thumbnail::after {
+          content: "";
+          position: absolute;
+          bottom: -6px;
+          left: 0;
+          width: 100%;
+          height: 1.5px; /* خط رفيع جدا */
+          background-color: transparent; /* مخفي افتراضيا */
+          border-bottom: 1.5px dashed transparent; /* خط شرط متخفي */
+          transition: all 0.3s ease;
+        }
+
+        /* لما يكون العنصر hover أو active */
+        .thumbnail:hover,
+        .thumbnail.active {
+          opacity: 1;
+          transform: scale(1.05);
+          position: relative;
+        }
+
+        /* الخط واضح وأحمر متصل تحت الصورة */
+        .thumbnail:hover::after,
+        .thumbnail.active::after {
+          height: 3px;
+          background-color: transparent; /* نخلي الخلفية شفافة */
+          border-bottom: 3px solid #e50914; /* خط أحمر سميك متصل */
+        }
+
+
+
+        .thumbnail img {
+          position: relative;
+          display: block;
+          border-radius: 8px 8px 0 0;
+        }
+
+        .thumbnail img::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          width: 0;
+          height: 2px;
+          background-color: #e50914;
+          transition: width 0.4s ease, left 0.4s ease;
+          transform: translateX(-50%);
+          pointer-events: none;
+        }
+
+        /* عشان ::after تظهر لازم الصورة تكون position: relative + parent position: relative */
+        .thumbnail {
+          position: relative;
+        }
+
+        .thumbnail.active img::after {
+          animation: expandLine 1.5s forwards;
+        }
+
+        @keyframes expandLine {
+          0% {
+            width: 0;
+            left: 50%;
+          }
+          100% {
             width: 100%;
-            max-width: 600px;
-            display: flex;
+            left: 0;
+          }
         }
-        .hero .search-input {
-            width: 70%;
-            padding: 15px;
-            font-size: 1.1rem;
-            border: none;
-            border-radius: 30px 0 0 30px;
-            outline: none;
+
+
+        /* تكبير الصور في الثومب على الآيباد */
+        @media (min-width: 601px) and (max-width: 1024px) {
+          .thumbnail {
+            width: 110px; /* زودنا العرض من 80px إلى 110px */
+          }
+          .thumbnail img {
+            width: 110px;
+            height: 150px; /* تناسب الحجم الجديد */
+          }
+          .thumbnail .thumbnail-title {
+            font-size: 0.9rem; /* تكبير النص شوي */
+          }
         }
+
+        /* Responsive للجوال - إخفاء الثومب */
+        @media (max-width: 600px) {
+          .hero {
+            padding: 20px;
+            min-height: auto;
+          }
+          .hero-content {
+            align-self: center;
+            text-align: center;
+            max-width: 100%;
+          }
+          .buttons {
+            justify-content: center;
+          }
+          .thumbnails-container {
+            display: none;
+            max-width: 100%;
+          }
+        }
+
+        .mobile-list,
+        .mobile-list-item {
+          display: none !important;
+        }
+
+        }
+
+
+
     
         .movie-section {
             padding: 40px 0;
@@ -683,15 +1034,45 @@ nav {
 
 
     <main class="main-content">
-        <section class="hero">
-          <div class="container">
-            <form class="search-form" onsubmit="return false;">
-                <input type="text" class="search-input" placeholder="شي يستاهل الانتظار" disabled style="background-color: white; color: black;" />
-
-              <button type="button" class="search-button">قريباً</button>
-            </form>
+        <section class="hero" id="hero">
+          <div class="overlay-gradient">
           </div>
+
+          <div class="hero-content">
+            <img src="" alt="poster" class="hero-img" id="hero-img" />
+            <div class="classification" id="classification"></div>
+            <p class="hero-desc" id="desc">...</p>
+            <div class="genres" id="genres"></div>
+            <div class="buttons">
+              <button class="watch-btn" id="watch-btn">
+                <span class="material-icons">play_arrow</span> شاهد
+              </button>
+              <button class="download-btn" id="download-btn">
+                <span class="material-icons">ondemand_video</span> مشاهدة التريلر
+              </button>
+            </div>
+          </div>
+
+              <div class="dfkz-th">
+                  <!-- حط الصور الصغيرة جوا التدرج -->
+                  <div class="thumbnails-container" id="thumbnails-container">
+                    <!-- الصور الصغيرة يتم إضافتها ديناميكياً عبر الجافاسكريبت -->
+                  </div>
+              </div>
         </section>
+
+
+
+
+
+        <div class="trailer-overlay" id="trailer-overlay">
+          <div class="trailer-container">
+            <span class="trailer-close" id="trailer-close">&times;</span>
+            <iframe id="trailer-iframe" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+
+
 
 
 
@@ -1445,6 +1826,144 @@ if (isset($_SESSION['favorites']) && is_array($_SESSION['favorites'])) {
             });
           });
     </script>
+
+    <script>
+        const hero = document.getElementById('hero');
+        const imgEl = document.getElementById('hero-img');
+        const classificationEl = document.getElementById('classification');
+        const descEl = document.getElementById('desc');
+        const genresEl = document.getElementById('genres');
+        const watchBtn = document.getElementById('watch-btn');
+        const downloadBtn = document.getElementById('download-btn');
+        const trailerOverlay = document.getElementById('trailer-overlay');
+        const trailerClose = document.getElementById('trailer-close');
+        const trailerIframe = document.getElementById('trailer-iframe');
+        const thumbnailsContainer = document.getElementById('thumbnails-container');
+
+        let data = null;
+        let currentIndex = 0;
+        // بدء التغيير التلقائي كل 10 ثواني
+        setInterval(() => {
+          if(!data || !data.posters || data.posters.length === 0) return;
+          currentIndex = (currentIndex + 1) % data.posters.length;
+          updateHero(currentIndex);
+        }, 5000);
+
+        // إنشاء قائمة الجوال (مخفية افتراضياً)
+        const mobileList = document.createElement('div');
+        mobileList.className = 'mobile-list';
+        document.body.appendChild(mobileList);
+
+        function convertYouTubeUrl(url) {
+          const regex = /(?:v=|\/)([0-9A-Za-z_-]{11})/;
+          const match = url.match(regex);
+          if(match && match[1]){
+            return `https://www.youtube.com/embed/${match[1]}?autoplay=1`;
+          }
+          return url;
+        }
+
+        function formatWithDots(text) {
+          return text.split(',').map(t => t.trim()).join(' • ');
+        }
+
+        function updateHero(index) {
+          if(!data || !data.posters || data.posters.length === 0) return;
+          currentIndex = index;
+          const item = data.posters[index];
+          hero.style.backgroundImage = `url(${item.cover})`;
+          imgEl.src = item.dfkz || item.image;  // عرض dfkz لو موجود، وإلا image
+          imgEl.alt = item.title;
+
+          classificationEl.textContent = formatWithDots(item.classification);
+          descEl.textContent = item.description;
+          genresEl.textContent = item.genres.map(g => g.title).join(' • ');
+
+          watchBtn.onclick = () => {
+            const url = (item.type === 'serie') 
+              ? `series.php?id=${item.id}` 
+              : `movie/links.php?id=${item.id}`;
+            window.location.href = url;
+          };
+
+            downloadBtn.onclick = () => {
+              if(!data || !data.posters || data.posters.length === 0) return;
+              const item = data.posters[currentIndex];
+              trailerIframe.src = convertYouTubeUrl(item.trailer.url);
+              trailerOverlay.style.display = 'flex';
+            };
+
+
+          // تفعيل حالة التحديد في الصور الصغيرة
+          const thumbnails = thumbnailsContainer.querySelectorAll('.thumbnail');
+          thumbnails.forEach((thumb, i) => {
+            thumb.classList.toggle('active', i === index);
+          });
+
+          // تفعيل حالة التحديد في قائمة الجوال
+          const mobileItems = mobileList.querySelectorAll('.mobile-list-item');
+          mobileItems.forEach((itemEl, i) => {
+            itemEl.classList.toggle('active', i === index);
+          });
+        }
+
+        // إنشاء الصور الصغيرة ديناميكياً
+        function createThumbnails() {
+          if(!data || !data.posters) return;
+          thumbnailsContainer.innerHTML = '';
+          mobileList.innerHTML = '';
+
+          data.posters.forEach((item, i) => {
+            // صور سطح المكتب
+            const img = document.createElement('img');
+            img.src = item.dfkz || item.image; // استخدم dfkz لو موجود
+            img.alt = item.title;
+            img.className = 'thumbnail';
+            img.addEventListener('click', () => {
+              updateHero(i);
+            });
+            thumbnailsContainer.appendChild(img);
+
+            // عناصر قائمة الجوال
+            const mobileItem = document.createElement('div');
+            mobileItem.className = 'mobile-list-item';
+            mobileItem.textContent = item.title;
+            mobileItem.addEventListener('click', () => {
+              updateHero(i);
+              // اسكر قائمة الجوال لو حبيت (اختياري)
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            mobileList.appendChild(mobileItem);
+          });
+        }
+
+        // إغلاق التريلر
+        trailerClose.onclick = () => {
+          trailerOverlay.style.display = 'none';
+          trailerIframe.src = '';
+        };
+
+        // تحميل ملف JSON عند بداية الصفحة (مثلاً save.json)
+        fetch('a.json')
+          .then(response => {
+            if(!response.ok) throw new Error('Failed to load JSON');
+            return response.json();
+          })
+          .then(jsonData => {
+            data = jsonData;
+            createThumbnails();
+            updateHero(currentIndex);
+            // ما تحتاج دورة تلقائية الآن لأن المستخدم يختار المسلسل
+          })
+          .catch(err => {
+            console.error('Error loading JSON:', err);
+          });
+
+        
+
+        </script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <?php include 'includes/footer.php'; ?>
 </body>
 </html>
