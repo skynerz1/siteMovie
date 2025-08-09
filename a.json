@@ -1,0 +1,177 @@
+{
+  "posters": [
+    {
+      "id": 24072,
+      "title": "أمي",
+      "type": "serie",
+      "description": "وسط الصراعات والتحديات التي تتقاطع خلالها حياة خمس أمهات، تسعى المعلمة مريم لإنقاذ حياة إحدى طالباتها من قسوة زوج والدتها وإهمال الأخيرة لها.\r\nمقتبس من المسلسل التركي Anne",
+      "year": 2025,
+      "rating": 4,
+      "imdb": 0,
+      "duration": "45 min",
+      "comment": true,
+      "downloadas": null,
+      "playas": null,
+      "classification": "دراما, السعودية",
+      "image": "https://shahid.mbc.net/mediaObject/b8f771fb-dab0-4c54-b455-f59022a6ddbf?width=356&version=1&type=avif&q=80",
+      "cover": "https://shahid.mbc.net/mediaObject/90533309-720b-40e0-95f0-21d0da7a3451?height=1848&width=3840&croppingPoint=tc&version=1&type=avif",
+      "genres": [
+        {
+          "id": 1,
+          "title": "مسلسلات سعوديه"
+        },
+        {
+          "id": 2,
+          "title": "جديد المسلسلات"
+        }
+      ],
+      "trailer": {
+        "id": 3064013,
+        "type": "youtube",
+        "url": "https://www.youtube.com/watch?v=ze4xTbW-ixs"
+      },
+      "sources": []
+    },
+    {
+        "id": 24916,
+        "title": "كويت رياض كويت",
+        "label": null,
+        "sublabel": "ح 10",
+        "type": "serie",
+        "description": "تعمل العنود في بيع الأغراض المستعملة وتعيش في الكويت مع أبنائها ووالدتها تتجه مع عائلتها إلى الرياض لحضور زفاف قريبتها فتشعر بالحنين للرياض وتقرر العيش بين البلدين",
+        "year": 2025,
+        "rating": 4.4,
+        "imdb": 0,
+        "duration": "30 min",
+        "comment": true,
+        "downloadas": null,
+        "playas": null,
+        "classification": "كوميديا, الكويت",
+        "image": "../includes/img/q8.webp",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/ujjIMv0YWgRogZKP50JEqikUMse.jpg",
+        "genres": [
+            {
+                "id": 16,
+                "title": "مسلسلات عربية"
+            },
+            {
+                "id": 24,
+                "title": "جديد المسلسلات"
+            }
+        ],
+        "trailer": {
+            "id": 3176098,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=22Mckbdsj8A"
+        },
+        "sources": []
+    },
+    {
+      "id": 25558,
+      "title": "عايشين معانا",
+      "label": null,
+      "sublabel": "ح 2",
+      "type": "serie",
+      "description": "تقرر عائلة أبو أنس الانتقال إلى مجمع سكني في الرياض. لكنهم ليسوا كأي سكان جدد عاديين. إنهم غرباء. إنهم مختلفون. إنهم وافدون من عالم (الجن) لتنفيذ مهمة...",
+      "year": 2025,
+      "rating": 5,
+      "imdb": 0,
+      "duration": "40 min",
+      "comment": true,
+      "downloadas": "1",
+      "playas": "1",
+      "classification": "كوميديا, خيال, السعودية",
+      "image": "https://shahid.mbc.net/mediaObject/3135675d-e51b-4e0b-9b0c-21b23ae5d846?width=356&version=1&type=avif&q=80",
+      "cover": "https://shahid.mbc.net/mediaObject/ab726256-295e-4f21-a514-856b77c6498e?height=1848&width=3840&croppingPoint=tc&version=1&type=avif",
+      "genres": [
+        {
+          "id": 16,
+          "title": "مسلسلات عربية"
+        },
+        {
+          "id": 24,
+          "title": "جديد المسلسلات"
+        }
+      ],
+      "trailer": {
+        "id": 3272728,
+        "type": "youtube",
+        "url": "https://www.youtube.com/watch?v=AYZENdYuea4"
+      },
+      "sources": []
+    },
+    {
+      "id": 25125,
+      "title": "حمود وأبوه",
+      "label": "منتهي",
+      "sublabel": "ح 10",
+      "type": "serie",
+      "description": "في يوميات طريفة، تتصادم خطط حمود اليومية مع حكمة والده التقليدية، لتتحول حياتهما إلى رحلة مليئة بالمواقف الكوميدية والمشاعر الصادقة.",
+      "year": 2025,
+      "rating": 2,
+      "imdb": 0,
+      "duration": "30 min",
+      "comment": true,
+      "downloadas": null,
+      "playas": null,
+      "classification": "كوميديا, السعودية",
+      "image": "https://shahid.mbc.net/mediaObject/53ac8781-c326-40ca-9c86-5f041c86e5b7?width=356&version=1&type=avif&q=80",
+      "cover": "https://shahid.mbc.net/mediaObject/fd055564-d133-4fa6-9776-bf93ad4d578f?height=2160&width=3840&croppingPoint=tc&version=1&type=avif",
+      "genres": [
+        {
+          "id": 16,
+          "title": "مسلسلات عربية"
+        },
+        {
+          "id": 24,
+          "title": "جديد المسلسلات"
+        },
+        {
+          "id": 25,
+          "title": "استمتعوا مع تحياتنا لكم"
+        }
+      ],
+      "trailer": {
+        "id": 3217582,
+        "type": "youtube",
+        "url": "https://www.youtube.com/watch?v=eRbJfN1NwAw"
+      },
+      "sources": []
+    },
+    {
+        "id": 22253,
+        "title": "البحث عن منفذ لخروج السيد رامبو",
+        "label": "WEB-DL",
+        "sublabel": "1080p",
+        "type": "movie",
+        "description": "تدور أحداث الفيلم حول (حسن)، الشاب الثلاثيني الذي يتورط برفقة (رامبو)؛ كلبه وصديقه الوحيد، في حادث خطير دون ذنب، ليصبح بين ليلة وضحاها مطاردًا من قِبل جاره (كارم)، الأمر الذي يدفع (حسن) للبحث عن طريقة آمنة لإنقاذ نفسه و(رامبو) من مصير مجهول.",
+        "year": 2025,
+        "rating": 4.4,
+        "imdb": 0,
+        "duration": "1h 40min",
+        "comment": true,
+        "downloadas": "3",
+        "playas": "1",
+        "classification": "كوميديا, دراما, اثارة, مصر",
+        "image": "https://shahid.mbc.net/mediaObject/5c8a5fb6-9790-401d-a805-8f44d1e96d03?height=&width=450&croppingPoint=mc&version=1&type=avif",
+        "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/zMIAkebGFDHvGep2vYvDM27qhxj.jpg",
+        "genres": [
+            {
+                "id": 19,
+                "title": "أفلام عربية"
+            },
+            {
+                "id": 25,
+                "title": "الأفلام الأكثر مشاهدة"
+            }
+        ],
+        "trailer": {
+            "id": 2687558,
+            "type": "youtube",
+            "url": "https:\/\/www.youtube.com\/watch?v=XjAYJkuYH4Y"
+        },
+        "sources": []
+    }
+   
+  ]
+}
