@@ -99,12 +99,12 @@ body {
 /* Hero Section */
 .hero {
   background-image: url("https://assets.nflxext.com/ffe/siteui/vlv3/f841d4c7-10e1-40af-bcae-07a3f8dc141a/f6d7434e-d6de-4185-a6d4-c77a2d08737b/US-en-20220502-popsignuptwoweeks-perspective_alpha_website_medium.jpg");
-  background-size: cover;
+  /* background-size: cover;
   background-position: center;
   height: 80vh;
   display: flex;
   align-items: center;
-  text-align: center;
+  text-align: center; */
 }
 
 .hero .container {
@@ -117,7 +117,7 @@ body {
 }
 
 .hero p {
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin-bottom: 30px;
 }
 
