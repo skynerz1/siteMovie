@@ -1020,7 +1020,26 @@ nav {
           fill: currentColor;
         }
 
+         .arrow-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 30px;
+            color: white;
+            background: rgba(0,0,0,0.4);
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 50%;
+            user-select: none;
+            z-index: 10;
+          }
+          .left-arrow { left: 10px; }
+          .right-arrow { right: 10px; }
 
+          /* تظهر الأسهم فقط في الجوال */
+          @media (min-width: 768px) {
+            .arrow-btn { display: none; }
+          }
     </style>
 </head>
 <body>
@@ -1054,6 +1073,9 @@ nav {
                   </div>
               </div>
         </section>
+        <!-- أزرار التنقل -->
+        <div class="arrow-btn left-arrow">&#10094;</div>
+        <div class="arrow-btn right-arrow">&#10095;</div>
 
 
 
@@ -1956,6 +1978,20 @@ if (isset($_SESSION['favorites']) && is_array($_SESSION['favorites'])) {
         
 
         </script>
+    <script>
+      const leftArrow = document.querySelector('.left-arrow');
+      const rightArrow = document.querySelector('.right-arrow');
+
+      leftArrow.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + data.posters.length) % data.posters.length;
+        updateHero(currentIndex);
+      });
+
+      rightArrow.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % data.posters.length;
+        updateHero(currentIndex);
+      });
+    </script>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <?php include 'includes/footer.php'; ?>
