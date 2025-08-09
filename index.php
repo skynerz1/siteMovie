@@ -536,27 +536,20 @@ function filterRamadanAraby($seriesArray) {
           z-index: 0;
         }
         .thumbnails-container {
-          margin: 30px auto 0 auto; /* فوق 30px، مركز بالوسط */
+          margin: 30px auto 0 auto;
           display: flex;
+          flex-wrap: nowrap; /* يمنع النزول لسطر جديد */
           gap: 12px;
           justify-content: center;
-          overflow-x: auto;
+          overflow: hidden; /* يخفي أي زيادة بدلاً من السحب */
           padding: 0 10px;
           max-width: 90%;
           z-index: 1;
-          -ms-overflow-style: none;  /* للإنترنت إكسبلورر */
-          scrollbar-width: none;     /* للفايرفوكس */
-          direction: rtl; /* عكس الاتجاه من اليمين لليسار */
-        }
-
-
-        /* اخفاء scrollbar في Chrome وSafari */
-        .thumbnails-container::-webkit-scrollbar {
-          display: none;
+          direction: rtl; /* من اليمين لليسار */
         }
 
         .thumbnail {
-          flex: 0 0 auto;
+          flex: 0 0 auto; /* حجم ثابت */
           width: 80px;
           cursor: pointer;
           opacity: 0.7;
@@ -569,8 +562,9 @@ function filterRamadanAraby($seriesArray) {
           display: flex;
           flex-direction: column;
           align-items: center;
-          position: relative; /* ضروري للعنصر ::after */
+          position: relative;
         }
+
 
         /* الخط الافتراضي تحت الصورة - خفيف جدا (خط رفيع جدا) */
         .thumbnail::after {
