@@ -919,33 +919,49 @@ nav {
         /* الكروت */
         .category-card {
             flex: 0 0 auto;
-            width: 200px;
-            height: 120px;
-            border-radius: 12px;
+            width: 300px; /* أكبر وعريض */
+            height: 160px; /* أعلى */
+            border-radius: 8px; /* حواف خفيفة */
             overflow: hidden;
             background-size: cover;
             background-position: center;
             text-decoration: none;
             color: white;
-            box-shadow: var(--text-color);
             transition: transform 0.3s ease;
             position: relative;
+            margin: 12px 0;
+            box-shadow: 0 0 6px rgba(255,255,255,0.05); /* ظل خفيف جداً */
         }
 
         /* تأثير التحويم */
         .category-card:hover,
         .category-card.active {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px var(--2-color);
+            transform: scale(1.1);
+            box-shadow: none;
+        }
+
+        /* صورة لايف في الزاوية اليمنى العليا */
+        .category-card .live-tag {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 50px;
+            height: 25px;
+            background: url('https://shahid-static.s3.us-east-1.amazonaws.com/shahid-subscription-config/GEA-PRD/tag-live.png') no-repeat center center;
+            background-size: contain;
+            pointer-events: none; /* حتى لا تؤثر على النقر */
         }
 
         /* تحسين العرض للجوال */
         @media (max-width: 600px) {
             .category-card {
-                width: 150px;
-                height: 100px;
+                width: 260px;
+                height: 140px;
+                border-radius: 6px;
             }
         }
+
+
 
         /* تصميم الزر "مشاهدة الكل" */
         .view-all-button {
@@ -1003,7 +1019,8 @@ nav {
           gap: 6px;
           color: #fff;
           font-size: 14px;
-          font-weight: 500;
+            font-weight: 700;
+
           text-decoration: none;
           transition: color 0.3s ease;
           cursor: pointer;
@@ -1040,6 +1057,61 @@ nav {
           @media (min-width: 768px) {
             .arrow-btn { display: none; }
           }
+        .header-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 20px 10px;
+          font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .header-title {
+          font-weight: 700;
+          font-size: 1.8rem;
+          margin: 0;
+          display: flex;
+          gap: 6px;
+          align-items: center;
+        }
+
+        .white-text {
+          color: #ffffff; /* أبيض */
+        }
+
+        .color2-text {
+          color: var(--2-color); /* اللون الخاص */
+        }
+
+        .view-all {
+          font-weight: 700;
+          font-size: 1.1rem;
+          color: #ffffff; /* أبيض */
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          cursor: pointer;
+          transition: color 0.3s ease;
+        }
+
+        .view-all:hover {
+          color: var(--2-color);
+        }
+
+        .icon {
+          fill: currentColor;
+        }
+
+        .tv-icon {
+          width: 24px;
+          height: 24px;
+        }
+
+        .grid-icon {
+          width: 20px;
+          height: 20px;
+        }
+
     </style>
 </head>
 <body>
@@ -1143,7 +1215,24 @@ nav {
         <?php else: ?>
 
 
-    <h1>📺 اختر المنصة</h1>
+    <div class="header-container">
+      <h1 class="header-title" dir="rtl">
+          <span class="white-text">اختر</span>
+        <span class="color2-text">المنصة</span>
+
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon tv-icon" viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden="true">
+          <path d="M21 17H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1zM4 8v7h16V8H4z"></path>
+        </svg>
+      </h1>
+      <a href="browser.php" class="view-all" dir="rtl">
+        مشاهدة الكل
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon grid-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
+          <path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z"></path>
+        </svg>
+      </a>
+    </div>
+
+
 
     <div class="category-container">
 
@@ -1317,38 +1406,67 @@ if (!empty($limitedGulf)):
 </div>
 <?php endif; ?>
 
-    <h1>📺 اختر القناه</h1>
+    <div class="header-container">
+      <h1 class="header-title" dir="rtl">
+          <span class="white-text">اختر</span>
+        <span class="color2-text">القناه</span>
+
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon tv-icon" viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden="true">
+          <path d="M21 17H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1zM4 8v7h16V8H4z"></path>
+        </svg>
+      </h1>
+      <a href="cat.php?category=channels" class="view-all" dir="rtl">
+        مشاهدة الكل
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon grid-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
+          <path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z"></path>
+        </svg>
+      </a>
+    </div>
+
 
     <div class="category-container">
 
-      <a href="server-live.php?id=1" class="category-card <?= $platform == 'mbc' ? 'active' : '' ?>" style="background-image: url('https://shahid.mbc.net/mediaObject/a7dcf0c9-1178-4cb9-a490-a8313975e37c?height=129&width=230&croppingPoint=&version=1&type=avif');">
+      <a href="server-live.php?id=1" class="category-card
+          <?= $platform == 'mbc' ? 'active' : '' ?>" style="background-image: url('https://shahid.mbc.net/mediaObject/a7dcf0c9-1178-4cb9-a490-a8313975e37c?height=129&width=230&croppingPoint=&version=1&type=avif');">
+          <div class="live-tag"></div>
       </a>
 
           <a href="server-live.php?id=18" class="category-card <?= $platform == 'ssc' ? 'active' : '' ?>" style="background-image: url('https://shahid.mbc.net/mediaObject/8abc6233-1ef2-443b-8de6-d401a60aa025?height=129&width=230&croppingPoint=&version=1&type=avif');">
+              <div class="live-tag"></div>
           </a>
 
           <a href="server-live.php?id=19" class="category-card <?= $platform == 'bein' ? 'active' : '' ?>" style="background-image: url('https://play-lh.googleusercontent.com/BDUySDHFzY4JcRzQpLsIHiZKLvIEmVL5N30qc-DWwVhwN3dJqV0J4BKE6XH9EOw_ygQ');">
+              <div class="live-tag"></div>
           </a>
 
           <a href="server-live.php?id=17" class="category-card <?= $platform == 'rot' ? 'active' : '' ?>" style="background-image: url('https://www.wesal.com.sa/public/storage/uploaded/projects/project_bwCK2gz1XfMp_2022-08-24.jpeg');">
+              <div class="live-tag"></div>
           </a>
 
           <a href="server-live.php?id=16" class="category-card <?= $platform == 'wansah' ? 'active' : '' ?>" style="background-image: url('https://shahid.mbc.net/mediaObject/97613919-40eb-4032-9dcb-e940e08ae761?height=129&width=230&croppingPoint=&version=1&type=avif');">
+              <div class="live-tag"></div>
           </a>
+
 
           <a href="server-live.php?id=13" class="category-card <?= $platform == 'ror' ? 'active' : '' ?>" style="background-image: url('https://jordandir.com/images/screenshots/1711030162.webp');">
+              <div class="live-tag"></div>
           </a>
+        
 
           <a href="server-live.php?id=8" class="category-card <?= $platform == 'qa6' ? 'active' : '' ?>" style="background-image: url('https://yt3.googleusercontent.com/pcLGQIWlrO000zyC8SEZzOmm3iZmDAmMQSNRTG28toSt9p-QX88NuiEc4GCmfXk8EwH3twcb=s900-c-k-c0x00ffffff-no-rj');">
+              <div class="live-tag"></div>
           </a>
 
           <a href="server-live.php?id=14" class="category-card <?= $platform == 'dbay' ? 'active' : '' ?>" style="background-image: url('https://admango.cdn.mangomolo.com/analytics/uploads/71/5fb0fc1d19.png');">
+              <div class="live-tag"></div>
           </a>
 
           <a href="server-live.php?id=15" class="category-card <?= $platform == 'dbay2' ? 'active' : '' ?>" style="background-image: url('https://admango.cdn.mangomolo.com/analytics/uploads/71/659cd942e4.png');">
+              <div class="live-tag"></div>
           </a>
 
           <a href="server-live.php?id=12" class="category-card <?= $platform == '7dth' ? 'active' : '' ?>" style="background-image: url('https://yt3.googleusercontent.com/ehhpuQeVHO0g3kIPkmwrw1x0fLqDk7RyWH733oe4wcKb_1jBEMvGt4WVlQEEzcTCL6zq01K5HQ=s900-c-k-c0x00ffffff-no-rj');">
+              <div class="live-tag"></div>
           </a>
 
     </div>
@@ -1823,24 +1941,7 @@ if (isset($_SESSION['favorites']) && is_array($_SESSION['favorites'])) {
                     });
             });
         });
-          document.querySelectorAll('a').forEach(link => {
-            let timer;
 
-            link.addEventListener('touchstart', e => {
-              // شغّل مؤقت الضغط المطوّل
-              timer = setTimeout(() => {
-                window.location.href = link.href; // يعتبرها نقرة
-              }, 300); // بعد 300 مللي ثانية يدخل
-            });
-
-            link.addEventListener('touchend', e => {
-              clearTimeout(timer); // إذا ترك قبل 300ms، ما يسوي شي
-            });
-
-            link.addEventListener('contextmenu', e => {
-              e.preventDefault(); // يمنع ظهور قائمة "فتح في متصفح"
-            });
-          });
     </script>
 
     <script>
