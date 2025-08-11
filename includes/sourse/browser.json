@@ -201,6 +201,949 @@
         },
         "sources": []
     },
+      {
+          "id": 23166,
+          "title": "للمعاريس فقط",
+          "label": null,
+          "sublabel": "ح 30",
+          "type": "serie",
+          "description": "تتناول الأحداث جوانب الحياة الزوجية والعلاقات بين الأزواج حديثي الزواج والمشاكل التي تحدث بينهم بصورة يومية، وأدوار الأشخاص المحيطين بهم في تهدئة الخلافات بينهم أو تأجيجها.",
+          "year": 2025,
+          "rating": 2.7,
+          "imdb": 0,
+          "duration": "40 min",
+          "comment": true,
+          "downloadas": "1",
+          "playas": "1",
+          "classification": "دراما, الكويت",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/ikKZ6Trlq9WGfQj42nni5mwhEZL.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/x8cWXmNppC0ogvOxRVZR2dBBgfM.jpg",
+          "genres": [
+              {
+                  "id": 24,
+                  "title": "جديد المسلسلات"
+              },
+              {
+                  "id": 88,
+                  "title": "مسلسلات رمضان 2025"
+              }
+          ],
+          "trailer": {
+              "id": 2848185,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=5a6-hcaKSms"
+          },
+          "sources": []
+      },
+      {
+          "id": 12908,
+          "title": "ولد أمه",
+          "label": null,
+          "sublabel": null,
+          "type": "serie",
+          "description": "تهتز حياة أم عزباء وابنها الشاب عندما يطاردهما ماضي الأب المتوفي، فيتوجب عليهما إيجاد حلا لمشكلة لا تمت لهما بصلة أبدا.",
+          "year": 2022,
+          "rating": 4.9,
+          "imdb": 0,
+          "duration": "45 min",
+          "comment": true,
+          "downloadas": null,
+          "playas": null,
+          "classification": "دراما, الكويت",
+          "image": "https:\/\/app.arabypros.com\/uploads\/cache\/poster_thumb\/uploads\/jpg\/afca5bd090c54560b30d9ca828296033.jpg",
+          "genres": [
+              {
+                  "id": 16,
+                  "title": "مسلسلات عربية"
+              }
+          ],
+          "trailer": {
+              "id": 999089,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=N66y-2u0RkY"
+          },
+          "sources": []
+      },
+      {
+          "id": 11308,
+          "title": "فقد",
+          "label": null,
+          "sublabel": null,
+          "type": "serie",
+          "description": "تجبر سارة على خوض تجربة مؤلمة عندما تفقد ابنها الصغير فيصل أثناء لعبه في الحديقة، ويتسلل إليها الشك بكل من حولها واحدا تلو الآخر.",
+          "year": 2022,
+          "rating": 5,
+          "imdb": 0,
+          "duration": "40 min",
+          "comment": true,
+          "downloadas": null,
+          "playas": null,
+          "classification": "دراما, غموض, السعودية",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/rCHhbK8RGBqhCNlOD6JOWOsw2Z2.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/ihmOI4A6UUIS314ex9ceif9yDRZ.jpg",
+          "genres": [
+              {
+                  "id": 16,
+                  "title": "مسلسلات عربية"
+              }
+          ],
+          "trailer": {
+              "id": 801077,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=4BK1I6_wtzQ"
+          },
+          "sources": []
+      },
+      {
+          "id": 22177,
+          "title": "البث: خاطف من نوع آخر",
+          "label": null,
+          "sublabel": "ح 8",
+          "type": "serie",
+          "description": "تختطف مجموعة من المؤثرين على وسائل التواصل الاجتماعي من قبل شخص مجهول، يجبرهم على تنفيذ أوامره في بث مباشر مقابل حصولهم على الحرية.",
+          "year": 2025,
+          "rating": 3,
+          "imdb": 0,
+          "duration": "40 min",
+          "comment": true,
+          "downloadas": "1",
+          "playas": "1",
+          "classification": "دراما, اثارة, جريمة, الكويت",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/kdGoR3sZV7As34TAJI8nIVOUdsn.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/iD7i8ftIN9wDL4d9yUi89mYg4LA.jpg",
+          "genres": [
+              {
+                  "id": 16,
+                  "title": "مسلسلات عربية"
+              },
+              {
+                  "id": 24,
+                  "title": "جديد المسلسلات"
+              }
+          ],
+          "trailer": {
+              "id": 2679468,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=IEhsMmaSZhc"
+          },
+          "sources": []
+      },
+      {
+          "id": 18898,
+          "title": "زوجة واحدة لا تكفي",
+          "label": null,
+          "sublabel": "ح 30",
+          "type": "serie",
+          "description": "يعيش (رشيد) وزوجته (هيلة) وبناتهما الثلاثة حياة مثالية، ويديرون مدرسة مختلطة، ولكن مع مرور الوقت تنكشف أسرار تخص (رشيد) لم يكن أحد يتوقعها.",
+          "year": 2024,
+          "rating": 4.3,
+          "imdb": 0,
+          "duration": "45 min",
+          "comment": true,
+          "downloadas": "1",
+          "playas": "1",
+          "classification": "دراما, السعودية",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/kDj4irjtdsNRgHOcshEnBFaT6vh.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/jhNISmE5ddYf8jS3Uq20aNnGNAK.jpg",
+          "genres": [
+              {
+                  "id": 24,
+                  "title": "جديد المسلسلات"
+              },
+              {
+                  "id": 79,
+                  "title": "مسلسلات رمضان 2024"
+              }
+          ],
+          "trailer": {
+              "id": 1952162,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=d0hPCiH1rOs"
+          },
+          "sources": []
+      },
+      {
+          "id": 25438,
+          "title": "220 يوم",
+          "label": null,
+          "sublabel": "ح 7",
+          "type": "serie",
+          "description": "بينما يبلغ أحمد أن حياته مهددة بسبب عملية جراحية خطيرة، تكتشف مريم أنها حامل بطفلتهما الأولى. يفصل 220 يوما فقط بين عمليته ووصولها، وبين أحداث قد تغير كل شيء.",
+          "year": 2025,
+          "rating": 4.3,
+          "imdb": 0,
+          "duration": "35 min",
+          "comment": true,
+          "downloadas": "1",
+          "playas": "1",
+          "classification": "دراما, رومانسي, مصر",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/dYpuV6HMBAuMAVLMQfLKITKQZZF.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/xSTvojKYjGCAitFCONv8Br60wA1.jpg",
+          "genres": [
+              {
+                  "id": 16,
+                  "title": "مسلسلات عربية"
+              },
+              {
+                  "id": 24,
+                  "title": "جديد المسلسلات"
+              }
+          ],
+          "trailer": {
+              "id": 3261533,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=Q6z0EKgBvmw"
+          },
+          "sources": []
+      },
+      {
+          "id": 4771,
+          "title": "حامض حلو",
+          "label": "الموسم السادس",
+          "sublabel": "ح 30",
+          "type": "serie",
+          "description": "تتولى الأحداث الكوميدية والمفارقات التي يقع فيها كلا من خاشع وناشع، وما يتسببان فيه من مشاكل لأهالي الفريج",
+          "year": 2021,
+          "rating": 4.1,
+          "imdb": 0,
+          "duration": "30 min",
+          "comment": true,
+          "downloadas": "3",
+          "playas": "1",
+          "classification": "كوميديا, العراق",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/5zrXGMc4Ja4aGeMQGwSVjuaORyP.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/3OhttUWbVtv6YXSS1Y00NeearGH.jpg",
+          "genres": [
+              {
+                  "id": 24,
+                  "title": "جديد المسلسلات"
+              },
+              {
+                  "id": 60,
+                  "title": "مسلسلات رمضان 2021"
+              },
+              {
+                  "id": 66,
+                  "title": "مسلسلات رمضان 2022"
+              },
+              {
+                  "id": 78,
+                  "title": "مسلسلات رمضان 2023"
+              },
+              {
+                  "id": 79,
+                  "title": "مسلسلات رمضان 2024"
+              },
+              {
+                  "id": 88,
+                  "title": "مسلسلات رمضان 2025"
+              }
+          ],
+          "trailer": {
+              "id": 112384,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=NsgISDXefSY"
+          },
+          "sources": []
+      },
+      {
+          "id": 23835,
+          "title": "يا غايب: فضل شاكر",
+          "label": null,
+          "sublabel": "ح 9",
+          "type": "serie",
+          "description": "تغوص صحفية في ماضي فضل شاكر، بحثا عن إجابة وافية على \"السؤال الصحيح\" قبل لقائه، تجتمع بعائلته، لتكتشف الإنسان والأب والفنان بين سطور تغيره المثير للجدل قصة يعاد تمثيلها ويرويها فضل بنفسه!",
+          "year": 2025,
+          "rating": 4.3,
+          "imdb": 0,
+          "duration": "30 min",
+          "comment": true,
+          "downloadas": null,
+          "playas": null,
+          "classification": "وثائقي",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/eU5u4aSdjvl7EAsFJWqKVvCGxTF.jpg",
+          "genres": [
+              {
+                  "id": 16,
+                  "title": "مسلسلات عربية"
+              },
+              {
+                  "id": 24,
+                  "title": "جديد المسلسلات"
+              }
+          ],
+          "trailer": {
+              "id": 3037560,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=hbz8VDJYe5U"
+          },
+          "sources": []
+      },
+      {
+          "id": 17931,
+          "title": "عرابة بيروت",
+          "label": null,
+          "sublabel": "ح 10",
+          "type": "serie",
+          "description": "تدير مدام جولييت أولد بيروت، وهو ناد ليلي تقبض من خلاله على خفايا الطبقة المخملية للمدينة. لكنها خلف السهرات الصاخبة، تخبئ سرا دفينا يهدد بتدمير الإمبراطورية التي بنتها.",
+          "year": 2024,
+          "rating": 4.4,
+          "imdb": 0,
+          "duration": "45 min",
+          "comment": true,
+          "downloadas": "1",
+          "playas": "1",
+          "classification": "دراما, اثارة, لبنان",
+          "image": "https:\/\/app.arabypros.com\/uploads\/cache\/poster_thumb\/uploads\/jpg\/vaQzBNVMw15Nc72rzk4xSsVCeWE.jpg",
+          "cover": "https:\/\/app.arabypros.com\/uploads\/cache\/cover_thumb\/uploads\/jpg\/nh6MWH1PCiWBUQgQ3YkcTTW115w.jpg",
+          "genres": [
+              {
+                  "id": 16,
+                  "title": "مسلسلات عربية"
+              },
+              {
+                  "id": 24,
+                  "title": "جديد المسلسلات"
+              }
+          ],
+          "trailer": {
+              "id": 1803800,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=FbnRAQXPQtY"
+          },
+          "sources": []
+      },
+      {
+          "id": 15265,
+          "title": "جريمة قلب",
+          "label": null,
+          "sublabel": "ح 8",
+          "type": "serie",
+          "description": "تنتهي رحلة هايكنغ لثلاث فتيات سعوديات بموت إحداهن، ليكتشف المحقق أن الحادثة ليست قضاء وقدر.",
+          "year": 2023,
+          "rating": 4.9,
+          "imdb": 0,
+          "duration": "40 min",
+          "comment": true,
+          "downloadas": "1",
+          "playas": "1",
+          "classification": "دراما, اثارة, جريمة, غموض, السعودية",
+          "image": "https:\/\/app.arabypros.com\/uploads\/cache\/poster_thumb\/uploads\/jpg\/6b3929583adf12dfdba941dcb21a6848.jpg",
+          "cover": "https:\/\/app.arabypros.com\/uploads\/cache\/cover_thumb\/uploads\/jpg\/68b6f4be070682670c13f80d017880f1.jpg",
+          "genres": [
+              {
+                  "id": 16,
+                  "title": "مسلسلات عربية"
+              },
+              {
+                  "id": 24,
+                  "title": "جديد المسلسلات"
+              }
+          ],
+          "trailer": {
+              "id": 1405439,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=5EZrDe5xDRQ"
+          },
+          "sources": []
+      },
+      {
+          "id": 6026,
+          "title": "اختطاف",
+          "label": null,
+          "sublabel": null,
+          "type": "serie",
+          "description": "يحكي المسلسل قصة لينا التي تم اختطافها وإبعادها عن عائلتها منذ طفولتها حيث قضت عشرين عاما تحت رحمة الرجل الذي يحتجزها.",
+          "year": 2021,
+          "rating": 4.8,
+          "imdb": 0,
+          "duration": "45 min",
+          "comment": true,
+          "downloadas": "3",
+          "playas": "1",
+          "classification": "دراما, اثارة",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/gbacwNh1gxCyB0KC93UprgCJxfa.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/ggeOIH4Fuec9A7zMntadZJ4aCXC.jpg",
+          "genres": [
+              {
+                  "id": 16,
+                  "title": "مسلسلات عربية"
+              }
+          ],
+          "trailer": {
+              "id": 167369,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=ZJ7UyOtYagM"
+          },
+          "sources": []
+      },
+      {
+          "id": 8692,
+          "title": "أحلام سعيدة",
+          "label": null,
+          "sublabel": null,
+          "type": "serie",
+          "description": "ثلاث سيدات في منتصف العمر يعانين من الأرق وصعوبة في النوم، يجمعهن القدر سويا ليخضن تجارب ستساعدهن في التغلب على مشاكلهن ومواصلة حياتهن بطريقة أفضل.",
+          "year": 2022,
+          "rating": 4.7,
+          "imdb": 0,
+          "duration": "40 min",
+          "comment": true,
+          "downloadas": "3",
+          "playas": "1",
+          "classification": "كوميديا, مصر",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/iJrD7lzvWnXaO4jgkmONhk71LDq.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/tPEU2VjtBh2rSqMVdyr4cBeIcbw.jpg",
+          "genres": [
+              {
+                  "id": 66,
+                  "title": "مسلسلات رمضان 2022"
+              }
+          ],
+          "trailer": {
+              "id": 375662,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=QqGx32kH7sU"
+          },
+          "sources": []
+      },
+      {
+          "id": 16853,
+          "title": "السلة المتسخة",
+          "label": "مترجم - ح 40",
+          "sublabel": "مدبلج 2 - ح 40",
+          "type": "serie",
+          "description": "بإحدى أحياء إسطنبول الثرية، يستعرض المسلسل قصة حياة الخادمات و أرباب عملهم في مجمع صغير، حيث نشاهد الفجوة الكبيرة بين الأغنياء و الفقراء. تدور الأحداث حول رحلة ثلاث نساء قررن مواجهة هذه التحديات معاً.",
+          "year": 2023,
+          "rating": 4.7,
+          "imdb": 0,
+          "duration": "120 min",
+          "comment": true,
+          "downloadas": "1",
+          "playas": "1",
+          "classification": "كوميديا, دراما, غموض",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/o4MLJkl02LUMC5cLPjSjYpUKlBI.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/3g4Uj32auzYZMjwm2hlDPJtVZXu.jpg",
+          "genres": [
+              {
+                  "id": 17,
+                  "title": "مسلسلات تركية"
+              },
+              {
+                  "id": 24,
+                  "title": "جديد المسلسلات"
+              }
+          ],
+          "trailer": {
+              "id": 1667917,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=DKc3YJyzFSc"
+          },
+          "sources": []
+      },
+      {
+          "id": 99,
+          "title": "مسلسل مامجي",
+          "label": null,
+          "sublabel": null,
+          "type": "serie",
+          "description": "مشاري يشارك في لعبة للتسلية ليفاجأ بأنها لعبة الحياة والموت تقودها كائنات (المامجي) ومن خلفهم مستر أي تي مخترع اللعبة و يخوض مشاري معركة البقاء على قيد الحياة هو و زملاءه.",
+          "year": 2020,
+          "rating": 4.3,
+          "imdb": 8,
+          "duration": "30 min",
+          "comment": true,
+          "downloadas": null,
+          "playas": null,
+          "classification": "اكشن",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/p7LCgQydl9CHbHTINrNVXmi9kCn.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/v4EZ9R7kYeNNFylaGAGHDjWQy8O.jpg",
+          "genres": [
+              {
+                  "id": 16,
+                  "title": "مسلسلات عربية"
+              }
+          ],
+          "sources": []
+      },
+      {
+          "id": 17969,
+          "title": "كلاود كيتشن",
+          "label": null,
+          "sublabel": "ح 10",
+          "type": "serie",
+          "description": "عندما تتشاجر الصديقتان سحاب وعبير، تتحطم خطتهما لتطوير عملهما. تضطران الآن لتقسيم مساحتهما المشتركة بين مطبخين منافسين.",
+          "year": 2023,
+          "rating": 3.7,
+          "imdb": 0,
+          "duration": "25 min",
+          "comment": true,
+          "downloadas": "1",
+          "playas": "1",
+          "classification": "كوميديا, السعودية",
+          "image": "https:\/\/app.arabypros.com\/uploads\/cache\/poster_thumb\/uploads\/jpg\/buGATiZu7GMisTmB2OhKn03th3M.jpg",
+          "cover": "https:\/\/app.arabypros.com\/uploads\/cache\/cover_thumb\/uploads\/jpg\/or4grRMARO3kx8vlcFPlytoeqxd.jpg",
+          "genres": [
+              {
+                  "id": 16,
+                  "title": "مسلسلات عربية"
+              },
+              {
+                  "id": 24,
+                  "title": "جديد المسلسلات"
+              }
+          ],
+          "trailer": {
+              "id": 1813206,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=_WrOcC4jXLk"
+          },
+          "sources": []
+      },
+      {
+          "id": 20657,
+          "title": "بيت العنكبوت",
+          "label": null,
+          "sublabel": "ح 30",
+          "type": "serie",
+          "description": "يعمل الشقيقان راشد وفيصل مع والدهما في تجارة الذهب، لكن طمعهما في المال والسلطة يزرع بذور عداوة بينهما، ستحرص زوجة أبيهما نورا على تغذية نارها بمهارة...",
+          "year": 2024,
+          "rating": 4.2,
+          "imdb": 0,
+          "duration": "45 min",
+          "comment": true,
+          "downloadas": "1",
+          "playas": "1",
+          "classification": "دراما, السعودية",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/9iFP4I8DmtaT3docyDMRP9xws8K.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/dy3I35957BozGCSYc0SxKuobSw8.jpg",
+          "genres": [
+              {
+                  "id": 16,
+                  "title": "مسلسلات عربية"
+              },
+              {
+                  "id": 24,
+                  "title": "جديد المسلسلات"
+              }
+          ],
+          "trailer": {
+              "id": 2377364,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=a190gYmH6HA"
+          },
+          "sources": []
+      },
+      {
+          "id": 23215,
+          "title": "الزافر",
+          "label": null,
+          "sublabel": "ح 30",
+          "type": "serie",
+          "description": "مسلسل تاريخي تراثي، يحكي عن عادات وتقاليد وحياة العوائل والأُسر في جنوب المملكة العربية السعودية، وكيف يمكن للصراعات والشك والغيرة أن تخلق الفوضى والكراهية.",
+          "year": 2025,
+          "rating": 4,
+          "imdb": 0,
+          "duration": "40 min",
+          "comment": true,
+          "downloadas": "1",
+          "playas": "1",
+          "classification": "دراما, تاريخ, السعودية",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/xTaMZhH3RWNQ5cllQsRkgeAbmE8.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/tNxV1QsJIlvPNL2mMDt7pByNV96.jpg",
+          "genres": [
+              {
+                  "id": 24,
+                  "title": "جديد المسلسلات"
+              },
+              {
+                  "id": 88,
+                  "title": "مسلسلات رمضان 2025"
+              }
+          ],
+          "trailer": {
+              "id": 2850976,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=Bn61m3-wDT8"
+          },
+          "sources": []
+      },
+      {
+          "id": 18928,
+          "title": "خيوط المعازيب",
+          "label": null,
+          "sublabel": "ح 25",
+          "type": "serie",
+          "description": "في إطار درامي تاريخي يتحدث عن مهنة حياكة البشوت، وهي إحدى النهن التي كانت منتشرة بشكل كبير في منطقة الأحساء حيث كانت هذه المهنة مؤثرة على الحياة الاجتماعية والإقتصادية للناس، كما يصور لنا هذا العمل حياة الآباء والأجداد الأسرية والعملية وعلاقة الناس ببعضها بالإضافة إلى علاقة أرباب العمل مع المعازيب أو العمال في وقتها.",
+          "year": 2024,
+          "rating": 4.3,
+          "imdb": 0,
+          "duration": "40 min",
+          "comment": true,
+          "downloadas": "1",
+          "playas": "1",
+          "classification": "دراما, تاريخ, السعودية",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/wSqvBQXiNP4WI0uDdTfnsyGeXCp.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/uRcqh6GNY3tr1irFHwR8cXYO9bI.jpg",
+          "genres": [
+              {
+                  "id": 24,
+                  "title": "جديد المسلسلات"
+              },
+              {
+                  "id": 79,
+                  "title": "مسلسلات رمضان 2024"
+              }
+          ],
+          "trailer": {
+              "id": 1954785,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=m7R5YlvQCAs"
+          },
+          "sources": []
+      },
+      {
+          "id": 138,
+          "title": "الميراث",
+          "label": null,
+          "sublabel": null,
+          "type": "serie",
+          "description": "في بيئة سامة يتخللها الكيد والحقد، يفارق عبد المحسن الحياة تاركا وراءه وصية الميراث التي تظهر المعدن الحقيقي لكل من حوله.",
+          "year": 2020,
+          "rating": 3.3,
+          "imdb": 7,
+          "duration": "30 min",
+          "comment": true,
+          "downloadas": null,
+          "playas": null,
+          "classification": "دراما, تشويق",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/pxdAX8gNtLJrWItxgKs1XIcs7lL.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/qUbxZ0jJNfFlcDQdQUeASKJyIFc.jpg",
+          "genres": [
+              {
+                  "id": 16,
+                  "title": "مسلسلات عربية"
+              }
+          ],
+          "trailer": {
+              "id": 142243,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=nh3zPbpr_kw"
+          },
+          "sources": []
+      },
+      {
+          "id": 18905,
+          "title": "الشرار",
+          "label": null,
+          "sublabel": "ح 21",
+          "type": "serie",
+          "description": "دور أحداث العمل في إطار دراما إجتماعية حيث يسلط الضوء على العديد من القضايا في المجتمع السعودي وما يصاحبها من مواقف انسانية ومؤثرة تغير مجرى الأحداث",
+          "year": 2024,
+          "rating": 4.6,
+          "imdb": 0,
+          "duration": "45 min",
+          "comment": true,
+          "downloadas": "1",
+          "playas": "1",
+          "classification": "دراما, السعودية",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/1s5JMMvkmmAohYNWPZRMoG0iI6z.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/s9ofsfqLeLiSJJ8Z18itAUftqVG.jpg",
+          "genres": [
+              {
+                  "id": 24,
+                  "title": "جديد المسلسلات"
+              },
+              {
+                  "id": 79,
+                  "title": "مسلسلات رمضان 2024"
+              }
+          ],
+          "trailer": {
+              "id": 1952707,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=jCRVH1FqK3A"
+          },
+          "sources": []
+      },
+      {
+          "id": 18441,
+          "title": "مجمع 75",
+          "label": null,
+          "sublabel": "ح 250",
+          "type": "serie",
+          "description": "في إطار من الدراما والجريمة، يتناول المسلسل قصص خمس عائلات مقيمين داخل مجمع سكني راقي في مدينة الرياض بالسعودية، والعلاقات المتشابكة فيما بينهم، ويلقي الضوء على تحديات وأحلام وقيم  الشباب السعودي.",
+          "year": 2024,
+          "rating": 1.8,
+          "imdb": 0,
+          "duration": "25 min",
+          "comment": true,
+          "downloadas": "1",
+          "playas": "1",
+          "classification": "دراما, جريمة, السعودية",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/giLgk6c4b9f5VHDXFpcYtdmbCH0.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/3HHKl1z61RQESpXkRGA2ip62miM.jpg",
+          "genres": [
+              {
+                  "id": 16,
+                  "title": "مسلسلات عربية"
+              },
+              {
+                  "id": 24,
+                  "title": "جديد المسلسلات"
+              }
+          ],
+          "trailer": {
+              "id": 1890661,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=DQqR-N6XCHw"
+          },
+          "sources": []
+      },
+      {
+          "id": 23180,
+          "title": "يوميات رجل عانس",
+          "label": null,
+          "sublabel": "ح 30",
+          "type": "serie",
+          "description": "يتجاوز رجل سعودي سن الزواج المعتاد، مما يجعله عرضة للعديد من الضغوط العائلية والمجتمعية التي تحثه على الزواج، وتحاول والدته والمقربين منه مساعدته للعثور على زوجة مناسبة، لكنه يحاول التهرب بطرق مختلفة",
+          "year": 2025,
+          "rating": 4.6,
+          "imdb": 0,
+          "duration": "20 min",
+          "comment": true,
+          "downloadas": "1",
+          "playas": "1",
+          "classification": "كوميديا, السعودية",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/o8BnbzdV5A983tBYP6VzONQL9ig.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/hmRj9Y68kTrtlgzJ77lPIEybsea.jpg",
+          "genres": [
+              {
+                  "id": 24,
+                  "title": "جديد المسلسلات"
+              },
+              {
+                  "id": 88,
+                  "title": "مسلسلات رمضان 2025"
+              }
+          ],
+          "trailer": {
+              "id": 2848703,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=UXqPRNFMP_w"
+          },
+          "sources": []
+      },
+      {
+          "id": 5558,
+          "title": "وش تبي بس",
+          "label": null,
+          "sublabel": null,
+          "type": "serie",
+          "description": "يبتدع مجموعة من الأصدقاء تطبيقا تقوم فكرته على تقديم أي خدمة يطلبها المستخدمون، ويجدون أنفسهم وسط مواقف كوميدية لا تنتهي خلال تعاملهم مع طلب جديد في كل حلقة.",
+          "year": 2021,
+          "rating": 4.6,
+          "imdb": 0,
+          "duration": "15 min",
+          "comment": true,
+          "downloadas": null,
+          "playas": null,
+          "classification": "كوميديا",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/uqwE0LAMohsXkAbPLbNiUlnQavs.jpg",
+          "cover": "https:\/\/app.arabypros.com\/uploads\/cache\/cover_thumb\/uploads\/jpg\/823a3cc0a905ddf682db4feb4774f61d.jpg",
+          "genres": [
+              {
+                  "id": 16,
+                  "title": "مسلسلات عربية"
+              }
+          ],
+          "trailer": {
+              "id": 151454,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=Hi6QrhOxK6w"
+          },
+          "sources": []
+      },
+      {
+          "id": 8017,
+          "title": "جميل جدا",
+          "label": null,
+          "sublabel": null,
+          "type": "serie",
+          "description": "بعد خمسة أعوام قضتها في غيبوبة، تستيقظ شابة لتجد أن كل شيء في حياتها قد تغير، ولكن عليها أن تعود للثانوية لإنهاء السنة الدراسية الأخيرة.",
+          "year": 2022,
+          "rating": 4.5,
+          "imdb": 0,
+          "duration": "30 min",
+          "comment": true,
+          "downloadas": "3",
+          "playas": "1",
+          "classification": "كوميديا, دراما",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/mrzRmf0MOfpVjWOloT0QuHKlb8K.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/1HVOoAKv241STPQRzio8sQFW3BF.jpg",
+          "genres": [
+              {
+                  "id": 16,
+                  "title": "مسلسلات عربية"
+              }
+          ],
+          "trailer": {
+              "id": 288743,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=lF1irCDmh0Q"
+          },
+          "sources": []
+      },
+      {
+          "id": 10734,
+          "title": "آخر ريال",
+          "label": null,
+          "sublabel": null,
+          "type": "serie",
+          "description": "ينطلق خمسة شبان وشابات من عائلات ثرية في رحلة شاقة وأحيانا مضحكة عندما يحرمهم أهاليهم من المصروف لتلقينهم درسا",
+          "year": 2022,
+          "rating": 0,
+          "imdb": 0,
+          "duration": "35 min",
+          "comment": true,
+          "downloadas": null,
+          "playas": null,
+          "classification": "كوميديا, السعودية",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/48sjEilxSI3aE1AoijGWM4pGfEl.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/Hg41bVRsjX5SbyO36P6oL2gViD.jpg",
+          "genres": [
+              {
+                  "id": 16,
+                  "title": "مسلسلات عربية"
+              }
+          ],
+          "trailer": {
+              "id": 720534,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=ffT-H4Ssq4Q"
+          },
+          "sources": []
+      },
+      {
+          "id": 6522,
+          "title": "الجدار الرابع",
+          "label": null,
+          "sublabel": null,
+          "type": "serie",
+          "description": "بعد أن يتم اختيارهم للانضمام إلى فرقة مسرحية، يتعرض أربعة مراهقين لاختراق هواتفهم عند وصولهم إلى مقر خاص للفرقة من قبل شخص يهدد بكشف أسوأ أسرارهم.",
+          "year": 2021,
+          "rating": 0,
+          "imdb": 0,
+          "duration": "40 min",
+          "comment": true,
+          "downloadas": "3",
+          "playas": "1",
+          "classification": "دراما, اثارة",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/rs3jdGvcyNObSQZ6el8T88nW0hf.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/p86wazWvr3o2wZQ6g4splwO7XnY.jpg",
+          "genres": [
+              {
+                  "id": 16,
+                  "title": "مسلسلات عربية"
+              }
+          ],
+          "trailer": {
+              "id": 188021,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=u4b5Le-yTpA"
+          },
+          "sources": []
+      },
+      {
+          "id": 13113,
+          "title": "كيان",
+          "label": null,
+          "sublabel": null,
+          "type": "movie",
+          "description": "في إطار من الرعب، تدور الأحداث حول سلمان وثريا، الزوجان اللذان يجدا أنفسهما بعيدان عن المنزل وعن بعضهما البعض، ويصبح عليهما قضاء ليلة مضطرين في فندق يضم العديد من الظواهر المرعبة.",
+          "year": 2022,
+          "rating": 0.7,
+          "imdb": 0,
+          "duration": "1h 15min",
+          "comment": true,
+          "downloadas": "3",
+          "playas": "1",
+          "classification": "رعب, اثارة, السعودية",
+          "image": "https:\/\/app.arabypros.com\/uploads\/cache\/poster_thumb\/uploads\/jpg\/bebe7f720d55bacb8a15eb5a4476f076.jpg",
+          "cover": "https:\/\/app.arabypros.com\/uploads\/cache\/cover_thumb\/uploads\/jpg\/42523c08d446c800a73695f0f53f09f2.jpg",
+          "genres": [
+              {
+                  "id": 19,
+                  "title": "أفلام عربية"
+              }
+          ],
+          "trailer": {
+              "id": 1023403,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=VZ2KfWvE3hU"
+          },
+          "sources": []
+      },
+      {
+          "id": 11679,
+          "title": "مرزوقة",
+          "label": null,
+          "sublabel": null,
+          "type": "serie",
+          "description": "تنفصل مرزوقة عن زوجها بعد أن خانها مع امرأة غنية، وتستخدم جمالها كسلاح لخداع الرجال والحصول على ثروتهم، بهدف أن تصبح أغنى امرأة في البلد.",
+          "year": 2022,
+          "rating": 4.3,
+          "imdb": 0,
+          "duration": "35 min",
+          "comment": true,
+          "downloadas": null,
+          "playas": null,
+          "classification": "كوميديا, دراما, عائلي, السعودية",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/uU7bkYr1ZMAXJKUxt7bztddt9a6.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/kI68ylpkUZLPbjVE1gKz5pkbbsf.jpg",
+          "genres": [
+              {
+                  "id": 16,
+                  "title": "مسلسلات عربية"
+              }
+          ],
+          "trailer": {
+              "id": 844752,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=yRUgNjcs8Wc"
+          },
+          "sources": []
+      },
+      {
+          "id": 6473,
+          "title": "فندق الأقدار",
+          "label": null,
+          "sublabel": null,
+          "type": "serie",
+          "description": "في إطار من التشويق، يجمع فندق قديم مجموعة من الأشخاص غير المرتبطين ببعضهم البعض، وهي تجربة ستغير حياتهم للأبد.",
+          "year": 2021,
+          "rating": 5,
+          "imdb": 0,
+          "duration": "45 min",
+          "comment": true,
+          "downloadas": "3",
+          "playas": "1",
+          "classification": "دراما, جريمة, اثارة",
+          "image": "https:\/\/image.tmdb.org\/t\/p\/w500\/rViMgC1dvEa1AwHnvTqteQrkMff.jpg",
+          "cover": "https:\/\/image.tmdb.org\/t\/p\/w780\/lfdnwY8i6qfv3UeRJTwzbEfvdp2.jpg",
+          "genres": [
+              {
+                  "id": 16,
+                  "title": "مسلسلات عربية"
+              }
+          ],
+          "trailer": {
+              "id": 183179,
+              "type": "youtube",
+              "url": "https:\/\/www.youtube.com\/watch?v=8JixO5Bw_XM"
+          },
+          "sources": []
+      },
     {
         "id": 21494,
         "title": "المدينة البعيدة",
