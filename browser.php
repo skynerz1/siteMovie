@@ -2,6 +2,19 @@
 include 'load.php';
 include 'includes/header.php';
 
+// دالة لإزالة العناصر المكررة حسب مفتاح معين (مثل 'id')
+function uniqueById(array $items, string $idKey = 'id') {
+    $unique = [];
+    $seenIds = [];
+    foreach ($items as $item) {
+        if (isset($item[$idKey]) && !in_array($item[$idKey], $seenIds, true)) {
+            $unique[] = $item;
+            $seenIds[] = $item[$idKey];
+        }
+    }
+    return $unique;
+}
+
 $platform = $_GET['platform'] ?? 'netflix';
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $perPage = 12;
@@ -26,6 +39,16 @@ foreach ($sourceFiles as $file) {
     }
 }
 
+// إزالة العناصر المتكررة حسب 'id'
+$allShows = uniqueById($allShows, 'id');
+
+// ترتيب المسلسلات حسب السنة (الأحدث أول)
+usort($allShows, function($a, $b) {
+    $yearA = isset($a['year']) ? (int)$a['year'] : 0;
+    $yearB = isset($b['year']) ? (int)$b['year'] : 0;
+    return $yearB <=> $yearA; // ترتيب تنازلي
+});
+
 $totalShows = count($allShows);
 $totalPages = max(1, ceil($totalShows / $perPage));
 
@@ -41,7 +64,10 @@ file_put_contents($cacheMeta, $totalPages);
 
 // جلب أول 5 مسلسلات للسلايدر
 $heroShows = array_slice($allShows, 0, 5);
+
 ?>
+
+
 
 
 
@@ -263,65 +289,7 @@ body {
 </div>
 
 
-<div class="swiper hero-slider">
-    <div class="swiper-wrapper">
-        <?php foreach ($heroShows as $show): ?>
-            <div class="swiper-slide hero-slide" style="background-image: url('<?= htmlspecialchars($show['image']) ?>');">
-                <div class="hero-overlay"></div>
-                <div class="hero-content">
-                    <h1><?= htmlspecialchars($show['title']) ?></h1>
 
-                    <!-- القيم فوق الوصف -->
-                    <div class="hero-meta">
-                        <span>📅 <?= htmlspecialchars($show['year'] ?? '') ?></span>
-                        <span>⭐ <?= htmlspecialchars($show['rating'] ?? '') ?></span>
-                        <span>⏳ <?= htmlspecialchars($show['duration'] ?? '') ?></span>
-                    </div>
-
-                    <!-- الوصف -->
-                    <p><?= htmlspecialchars(substr($show['description'] ?? '', 0, 150)) ?>...</p>
-
-                    <!-- القيم تحت الوصف -->
-                    <div class="hero-classification">
-                        <strong>تصنيف:</strong> <?= htmlspecialchars($show['classification'] ?? '') ?>
-                    </div>
-
-<!-- الأزرار -->
-<div class="hero-buttons">
-    <a href="<?= $isMovie ? 'movie/links.php?id=' . urlencode($show['id']) : 'series.php?id=' . urlencode($show['id']) ?>" 
-       class="btn-watch">▶ شاهد الآن</a>
-
-    <button class="btn-trailer" data-trailer="<?= htmlspecialchars($show['trailer_url'] ?? '') ?>">
-        ▶ شاهد البرومو
-    </button>
-</div>
-
-<!-- ... -->
-
-<!-- نافذة عرض البرومو -->
-<div id="trailer-modal" class="trailer-modal">
-    <span class="close-modal">✖</span>
-    <iframe id="trailer-frame" src="" allowfullscreen></iframe>
-</div>
-
-<!-- ... -->
-                </div>
-            </div>
-        <?php endforeach; ?>
-    </div>
-
-    <!-- أزرار التنقل -->
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-</div>
-
-<!-- نافذة عرض البرومو -->
-<div id="trailer-modal" class="modal" style="display:none;">
-    <div class="modal-content">
-        <span class="close-modal">✖</span>
-        <iframe id="trailer-frame" width="100%" height="500" frameborder="0" allowfullscreen></iframe>
-    </div>
-</div>
 <div class="cards-container">
 <?php foreach ($showsPage as $show): ?>
     <?php
