@@ -142,9 +142,12 @@ $initialServer = '';
 foreach ($episodeLinks as $link) {
     if (!empty($link['url']) && isServerAlive($link['url'])) {
         $initialServer = $link['url'];
+        // تحويل الرابط ليشتغل عبر mycime
+        $initialServer = "https://mycime.online/e.php?url=" . urlencode($initialServer);
         break; // أول سيرفر شغال، نوقف
     }
 }
+
 
 
 
