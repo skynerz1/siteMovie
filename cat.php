@@ -300,10 +300,56 @@ if (!($type === 'ramadan' && $category === 'series')) {
                     'url' => 'server-live.php?id=7'
                 ],
                 [
+                    'name' => '2 ام بي سي مصر',
+                    'image' => 'https://shahid.mbc.net/mediaObject/997486ba-a0e4-4d75-8575-6dd2e341adee?height=129&width=230&croppingPoint=&version=1&type=avif',
+                    'url' => 'server-live.php?id=25'
+                ],
+                [
+                    'name' => 'ام بي سي مصر دراما',
+                    'image' => 'https://shahid.mbc.net/mediaObject/8c152402-a127-4bcf-89a8-4aaf6ac000ff?height=129&width=230&croppingPoint=&version=1&type=avif',
+                    'url' => 'server-live.php?id=26'
+                ],
+                [
                     'name' => 'ام بي سي دراما',
                     'image' => 'https://shahid.mbc.net/mediaObject/4bac4257-39fa-4e00-b91e-befdcff0091a?height=129&width=230&croppingPoint=&version=1&type=avif%22%20alt=%22MBC%202',
                     'url' => 'server-live.php?id=24'
                 ],
+                [
+                    'name' => 'ام بي سي قيمنق',
+                    'image' => 'https://shahid.mbc.net/mediaObject/dee97619-f135-409c-88a4-470a41018a5e?height=129&width=230&croppingPoint=&version=1&type=avif',
+                    'url' => 'server-live.php?id=27'
+                ],
+               [
+                    'name' => 'شاهد : أفلام',
+                    'image' => 'https://shahid.mbc.net/mediaObject/e63c71af-6e93-43f6-8713-21ab41b46ead?height=129&width=230&croppingPoint=&version=1&type=avif',
+                    'url' => 'server-live.php?id=28'
+                ],
+                [
+                 
+                'name' => 'شاهد : باب الحاره',
+                'image' => 'https://shahid.mbc.net/mediaObject/2d38f35a-a36c-4fb7-ac80-d639bda10cd5?height=129&width=230&croppingPoint=&version=1&type=avif',
+                'url' => 'server-live.php?id=29'
+                ],
+                [
+
+                'name' => 'شاهد : مرايا',
+                'image' => 'https://shahid.mbc.net/mediaObject/60a952c2-cfe6-4c21-bc51-11108e17fef3?height=129&width=230&croppingPoint=&version=1&type=avif',
+                'url' => 'server-live.php?id=30'
+                ],
+                [
+
+                'name' => 'شاهد : افلام اكشن',
+                'image' => 'https://shahid.mbc.net/mediaObject/d1a30edd-509d-49dd-8706-4adac4c51ffc?height=129&width=230&croppingPoint=&version=1&type=avif',
+                'url' => 'server-live.php?id=31'
+                ],
+                [
+
+                'name' => 'شاهد : افلام اثاره',
+                'image' => 'https://shahid.mbc.net/mediaObject/9c15e63b-2780-4617-92c7-24ac142920a2?height=129&width=230&croppingPoint=&version=1&type=avif',
+                'url' => 'server-live.php?id=32'
+                ],
+                
+                
                 [
                     'name' => 'ssc 1',
                     'image' => 'https://shahid.mbc.net/mediaObject/8abc6233-1ef2-443b-8de6-d401a60aa025?height=129&width=230&croppingPoint=&version=1&type=avif',
