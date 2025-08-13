@@ -1,9 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DFKZ WATCH MOVIE & SERIES & CHANNEL</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Cache-Control" content="NO-CACHE">
+
+  <title>دفكز تي في | مشاهدة أحدث الأفلام والمسلسلات مجاناً dfkztv</title>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://dfkz.up.railway.app/includes/img/dfkz.png"/>
+  <link rel="icon" type="image/x-icon" href="https://dfkz.up.railway.app/includes/img/dfkz.png"/>
+
+  <!-- Meta SEO -->
+  <meta name="author" content="https://dfkztv.xo.je/">
+  <meta name="description" content="في دفكز تي في يمكنك مشاهدة أحدث الأفلام والمسلسلات العربية والأجنبية مجاناً بجودة عالية، مع روابط مباشرة وسهولة التصفح.">
+  <meta name="keywords" content="دفكز تي في, dfkztv, افلام, مسلسلات, مشاهدة افلام,شباب البومب,صالون زهره,صالون زهره 2,امي,عايشين معانا,مسلسل,فلم,مسلسل امي,ماي سيما,وي سيما,شانيل تيفي,اللوي تيفي,جو تيفي,تيفي,مسلسلاتك,انمي,افلام مسلسلات اون لاين, افلام عربية, افلام اجنبية, اكشن, دراما, كوميديا, رمضان 2025">
+
+  <!-- Open Graph (Facebook, WhatsApp) -->
+  <meta property="og:site_name" content="dfkztv.xo.je | ✨💙 TV موقع دفكز" />
+  <meta property="og:url" content="https://dfkztv.xo.je/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="دفكز تي في | مشاهدة أحدث الأفلام والمسلسلات مجاناً" />
+  <meta property="og:description" content="في دفكز تي في يمكنك مشاهدة أحدث الأفلام والمسلسلات العربية والأجنبية مجاناً بجودة عالية، مع روابط مباشرة وسهولة التصفح." />
+  <meta property="og:image" content="https://dfkz.up.railway.app/includes/img/dfkz.png" />
+  <meta property="og:image:width" content="800" />
+  <meta property="og:image:height" content="800" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="دفكز تي في | مشاهدة أحدث الأفلام والمسلسلات مجاناً" />
+  <meta name="twitter:description" content="في دفكز تي في يمكنك مشاهدة أحدث الأفلام والمسلسلات العربية والأجنبية مجاناً بجودة عالية، مع روابط مباشرة وسهولة التصفح." />
+  <meta name="twitter:image" content="https://dfkz.up.railway.app/includes/img/dfkz.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="styles.css">
 <!-- ====== Hero Slider ====== -->
